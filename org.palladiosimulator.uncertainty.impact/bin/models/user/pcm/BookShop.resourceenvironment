@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resourceenvironment:ResourceEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" entityName="Book Shop Resource Environment">
+  <linkingResources__ResourceEnvironment id="_GUwtAH9REeaHNuq2j06i3A" entityName="LAN" connectedResourceContainers_LinkingResource="_mtXBcH9QEeaHNuq2j06i3A _ln1j0H9QEeaHNuq2j06i3A _j4BMAH9QEeaHNuq2j06i3A">
+    <communicationLinkResourceSpecifications_LinkingResource id="_GUxUEH9REeaHNuq2j06i3A">
+      <communicationLinkResourceType_CommunicationLinkResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_o3sScH2AEdyH8uerKnHYug"/>
+      <latency_CommunicationLinkResourceSpecification specification="0"/>
+      <throughput_CommunicationLinkResourceSpecification specification="100000"/>
+    </communicationLinkResourceSpecifications_LinkingResource>
+  </linkingResources__ResourceEnvironment>
+  <resourceContainer_ResourceEnvironment id="_j4BMAH9QEeaHNuq2j06i3A" entityName="Web &amp; Application Server">
+    <activeResourceSpecifications_ResourceContainer id="_obFHgH9QEeaHNuq2j06i3A">
+      <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#ProcessorSharing"/>
+      <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+      <processingRate_ProcessingResourceSpecification specification="1000"/>
+    </activeResourceSpecifications_ResourceContainer>
+  </resourceContainer_ResourceEnvironment>
+  <resourceContainer_ResourceEnvironment id="_ln1j0H9QEeaHNuq2j06i3A" entityName="Database Server">
+    <activeResourceSpecifications_ResourceContainer id="_vH_rcH9QEeaHNuq2j06i3A">
+      <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#ProcessorSharing"/>
+      <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+      <processingRate_ProcessingResourceSpecification specification="1000"/>
+    </activeResourceSpecifications_ResourceContainer>
+  </resourceContainer_ResourceEnvironment>
+  <resourceContainer_ResourceEnvironment id="_mtXBcH9QEeaHNuq2j06i3A" entityName="Image Server">
+    <activeResourceSpecifications_ResourceContainer id="_1sqSUH9QEeaHNuq2j06i3A">
+      <schedulingPolicy href="pathmap://PCM_MODELS/Palladio.resourcetype#ProcessorSharing"/>
+      <activeResourceType_ActiveResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_oro4gG3fEdy4YaaT-RYrLQ"/>
+      <processingRate_ProcessingResourceSpecification specification="1000"/>
+    </activeResourceSpecifications_ResourceContainer>
+  </resourceContainer_ResourceEnvironment>
+</resourceenvironment:ResourceEnvironment>

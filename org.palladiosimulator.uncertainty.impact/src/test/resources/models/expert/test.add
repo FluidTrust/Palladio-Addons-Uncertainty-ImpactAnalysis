@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<add:ADDContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:add="http://www.example.org/add">
+  <adds id="_dEna0DWREeyX2v1Sswnu1Q" name="ADD_Structural"/>
+  <adds id="_fs_LQDWREeyX2v1Sswnu1Q" name="ADD_Behavioural" addClass="BEHAVIOURAL_DECISION" amountOfAlternatives="OPEN_SET" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO" costsOfRevision="LOW"/>
+  <adds id="_UPKRMDvgEey_pcVcOzlgag" name="ADD_Property" addClass="PROPERTY_DECISION" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO"/>
+  <adds id="_aboagDvgEey_pcVcOzlgag" name="ADD_Executive" addClass="EXECUTIVE_DECISION" amountOfAlternatives="OPEN_SET" costsOfRevision="LOW"/>
+</add:ADDContainer>

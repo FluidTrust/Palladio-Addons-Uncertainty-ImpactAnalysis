@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<palladioelementtype:PalladioElementTypeContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:palladioelementtype="http://www.example.org/palladioElementType">
+  <palladioElementTypes id="_ogKREDWREeyX2v1Sswnu1Q" name="System"/>
+  <palladioElementTypes id="_pE4HsDWREeyX2v1Sswnu1Q" type="HARDWARE_RESOURCE" name="Hardware Resource"/>
+  <palladioElementTypes id="_pVIxQDWREeyX2v1Sswnu1Q" type="BASIC_COMPONENT_TYPE" name="Basic Component Type"/>
+  <palladioElementTypes id="_uQHRoDvgEey_pcVcOzlgag" type="COMPONENT_INSTANCE" name="Component Instance"/>
+  <palladioElementTypes id="_uj8zoDvgEey_pcVcOzlgag" type="BASIC_COMPONENT_BEHAVIOUR" name="Basic Component Behaviour"/>
+  <palladioElementTypes id="_u2df8DvgEey_pcVcOzlgag" type="COMMUNICATION_COMPONENTS" name="Communication Components"/>
+  <palladioElementTypes id="_vEk0cDvgEey_pcVcOzlgag" type="COMMUNICATION_RESOURCES" name="Communication Resources"/>
+  <palladioElementTypes id="_vUJhgDvgEey_pcVcOzlgag" type="SYSTEM_INTERFACE" name="System Interface"/>
+  <palladioElementTypes id="_-GJ9QDvgEey_pcVcOzlgag" type="COMPONENT_INTERFACE_INSTANCE" name="Component Interface Instance"/>
+  <palladioElementTypes id="_-W_1oDvgEey_pcVcOzlgag" type="COMPONENT_INTERFACE_TYPE" name="Component Interface Type"/>
+  <palladioElementTypes id="_-oU2MDvgEey_pcVcOzlgag" type="USAGE_BEHAVIOUR" name="Usage Behaviour"/>
+</palladioelementtype:PalladioElementTypeContainer>

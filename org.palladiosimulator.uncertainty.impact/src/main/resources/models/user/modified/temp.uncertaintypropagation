@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uncertaintypropagation:UCImpactRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.2" xmlns:uncertainty="http://www.example.org/uncertainty" xmlns:uncertaintypropagation="http://www.example.org/uncertaintyPropagation">
+  <seedModifications xsi:type="uncertaintypropagation:UCPropagationRulesSeed">
+    <affectedBasicComponentBehaviours affectedElement="_SUSloH9HEeaHNuq2j06i3A" causingElements="_0UMy0FR9Eey8zrmYphemuA"/>
+    <affectedBasicComponentTypes causingElements="_0UMy0VR9Eey8zrmYphemuA">
+      <affectedElement xsi:type="repository:BasicComponent" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_NdX6AH9HEeaHNuq2j06i3A"/>
+    </affectedBasicComponentTypes>
+    <affectedCommunicationComponents causingElements="_0UMy0lR9Eey8zrmYphemuA">
+      <affectedElement xsi:type="composition:AssemblyConnector" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_2y-hgH9NEeaHNuq2j06i3A"/>
+    </affectedCommunicationComponents>
+    <affectedHardwareResources causingElements="_0UMy01R9Eey8zrmYphemuA">
+      <affectedElement xsi:type="resourceenvironment:ResourceContainer" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.resourceenvironment#_j4BMAH9QEeaHNuq2j06i3A"/>
+    </affectedHardwareResources>
+    <affectedSystems causingElements="_0UMy1FR9Eey8zrmYphemuA">
+      <affectedElement xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+    </affectedSystems>
+    <causingUncertainties id="_0UMy0FR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_-nLMUFA8Eeyz3Nx0Skljhg"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UMy0VR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_KVdoEFDwEeynTa2gGAZIIg"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UMy0lR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_MXw3AFDwEeynTa2gGAZIIg"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UMy01R9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_OVXzMFDwEeynTa2gGAZIIg"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UMy1FR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+    </causingUncertainties>
+  </seedModifications>
+  <changePropagationSteps xsi:type="uncertaintypropagation:UncertaintyPropagation">
+    <affectedCommunicationComponents causingElements="_0UNZ5FR9Eey8zrmYphemuA _0UNZ5VR9Eey8zrmYphemuA _0UNZ6FR9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="composition:AssemblyConnector" href="../pcm/BookShop.system#_2y-hgH9NEeaHNuq2j06i3A"/>
+    </affectedCommunicationComponents>
+    <affectedCommunicationComponents causingElements="_0UNZ5lR9Eey8zrmYphemuA _0UNZ6VR9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="composition:AssemblyConnector" href="../pcm/BookShop.system#_4GSjgH9NEeaHNuq2j06i3A"/>
+    </affectedCommunicationComponents>
+    <affectedCommunicationComponents causingElements="_0UNZ51R9Eey8zrmYphemuA _0UNZ6lR9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="composition:AssemblyConnector" href="../pcm/BookShop.system#_5GCJQH9NEeaHNuq2j06i3A"/>
+    </affectedCommunicationComponents>
+    <affectedComponentInterfaceInstances affectedElement="_x5MkkH9MEeaHNuq2j06i3A$_SUHmgH9HEeaHNuq2j06i3A" causingElements="_0UNZ91R9Eey8zrmYphemuA" toolderived="true"/>
+    <affectedComponentInterfaceInstances affectedElement="_x5MkkH9MEeaHNuq2j06i3A$_cMTzoH9HEeaHNuq2j06i3A" causingElements="_0UNZ-FR9Eey8zrmYphemuA" toolderived="true"/>
+    <affectedComponentInterfaceInstances affectedElement="_x5MkkH9MEeaHNuq2j06i3A$_QEtvsH9HEeaHNuq2j06i3A" causingElements="_0UNZ-VR9Eey8zrmYphemuA" toolderived="true"/>
+    <affectedComponentInterfaceInstances affectedElement="_8yiFoH9MEeaHNuq2j06i3A$_5F_UsH9HEeaHNuq2j06i3A" causingElements="_0UNZ-lR9Eey8zrmYphemuA" toolderived="true"/>
+    <affectedComponentInterfaceInstances affectedElement="_DKoQIH9NEeaHNuq2j06i3A$_naQ50H9HEeaHNuq2j06i3A" causingElements="_0UNZ-1R9Eey8zrmYphemuA" toolderived="true"/>
+    <affectedComponentInterfaceInstances affectedElement="_DKoQIH9NEeaHNuq2j06i3A$_mM2EcH9HEeaHNuq2j06i3A" causingElements="_0UNZ_FR9Eey8zrmYphemuA" toolderived="true"/>
+    <affectedComponentInterfaceInstances affectedElement="_DKoQIH9NEeaHNuq2j06i3A$_0Kww0H9HEeaHNuq2j06i3A" causingElements="_0UNZ_VR9Eey8zrmYphemuA" toolderived="true"/>
+    <affectedComponentInterfaceInstances affectedElement="_UFP-MH9NEeaHNuq2j06i3A$_QEtBQH9KEeaHNuq2j06i3A" causingElements="_0UNZ_lR9Eey8zrmYphemuA" toolderived="true"/>
+    <affectedComponentInterfaceInstances affectedElement="_UFP-MH9NEeaHNuq2j06i3A$_RJe4AH9KEeaHNuq2j06i3A" causingElements="_0UNZ_1R9Eey8zrmYphemuA" toolderived="true"/>
+    <affectedComponentInterfaceTypes causingElements="_0UOA8FR9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_SUHmgH9HEeaHNuq2j06i3A"/>
+    </affectedComponentInterfaceTypes>
+    <affectedComponentInterfaceTypes causingElements="_0UOA8VR9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_cMTzoH9HEeaHNuq2j06i3A"/>
+    </affectedComponentInterfaceTypes>
+    <affectedComponentInterfaceTypes causingElements="_0UOA8lR9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationRequiredRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_QEtvsH9HEeaHNuq2j06i3A"/>
+    </affectedComponentInterfaceTypes>
+    <affectedComponentInterfaceTypes causingElements="_0UOA81R9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_5F_UsH9HEeaHNuq2j06i3A"/>
+    </affectedComponentInterfaceTypes>
+    <affectedComponentInterfaceTypes causingElements="_0UOA9FR9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_naQ50H9HEeaHNuq2j06i3A"/>
+    </affectedComponentInterfaceTypes>
+    <affectedComponentInterfaceTypes causingElements="_0UOA9VR9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationRequiredRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_mM2EcH9HEeaHNuq2j06i3A"/>
+    </affectedComponentInterfaceTypes>
+    <affectedComponentInterfaceTypes causingElements="_0UOA9lR9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationRequiredRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_0Kww0H9HEeaHNuq2j06i3A"/>
+    </affectedComponentInterfaceTypes>
+    <affectedComponentInterfaceTypes causingElements="_0UOA91R9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_QEtBQH9KEeaHNuq2j06i3A"/>
+    </affectedComponentInterfaceTypes>
+    <affectedComponentInterfaceTypes causingElements="_0UOA-FR9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_RJe4AH9KEeaHNuq2j06i3A"/>
+    </affectedComponentInterfaceTypes>
+    <affectedHardwareResources causingElements="_0UNZ4VR9Eey8zrmYphemuA _0UNZ4lR9Eey8zrmYphemuA _0UNZ41R9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="resourceenvironment:ResourceContainer" href="../pcm/BookShop.resourceenvironment#_j4BMAH9QEeaHNuq2j06i3A"/>
+    </affectedHardwareResources>
+    <affectedSystemInterface causingElements="_0UMy1VR9Eey8zrmYphemuA _0UNZ61R9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="../pcm/BookShop.system#_gtkJkH9NEeaHNuq2j06i3A"/>
+    </affectedSystemInterface>
+    <affectedSystemInterface causingElements="_0UNZ4FR9Eey8zrmYphemuA _0UNZ7FR9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="../pcm/BookShop.system#_huuEkH9NEeaHNuq2j06i3A"/>
+    </affectedSystemInterface>
+    <affectedSystemInterface causingElements="_0UNZ7VR9Eey8zrmYphemuA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_kXMisH9NEeaHNuq2j06i3A"/>
+    </affectedSystemInterface>
+    <causingUncertainties id="_0UMy1VR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_-nLMUFA8Eeyz3Nx0Skljhg"/>
+      <path xsi:type="uncertainty:BasicComponentBehaviour" href="#_SUSloH9HEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:BasicComponent" href="../pcm/BookShop.repository#_NdX6AH9HEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../pcm/BookShop.system#_x5MkkH9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:ProvidedDelegationConnector" href="../pcm/BookShop.system#_vk0RsH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:OperationProvidedRole" href="../pcm/BookShop.system#_gtkJkH9NEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ4FR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_-nLMUFA8Eeyz3Nx0Skljhg"/>
+      <path xsi:type="uncertainty:BasicComponentBehaviour" href="#_SUSloH9HEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:BasicComponent" href="../pcm/BookShop.repository#_NdX6AH9HEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../pcm/BookShop.system#_x5MkkH9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:ProvidedDelegationConnector" href="../pcm/BookShop.system#_wOjLMH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:OperationProvidedRole" href="../pcm/BookShop.system#_huuEkH9NEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ4VR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_KVdoEFDwEeynTa2gGAZIIg"/>
+      <path xsi:type="repository:BasicComponent" href="../pcm/BookShop.repository#_NdX6AH9HEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../pcm/BookShop.system#_x5MkkH9MEeaHNuq2j06i3A"/>
+      <path xsi:type="allocation:AllocationContext" href="../pcm/BookShop.allocation#_imCKQH9REeaHNuq2j06i3A"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="../pcm/BookShop.resourceenvironment#_j4BMAH9QEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ4lR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_MXw3AFDwEeynTa2gGAZIIg"/>
+      <path xsi:type="composition:AssemblyConnector" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_2y-hgH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_DKoQIH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="allocation:AllocationContext" href="../pcm/BookShop.allocation#_kU7VAH9REeaHNuq2j06i3A"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="../pcm/BookShop.resourceenvironment#_j4BMAH9QEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ41R9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_MXw3AFDwEeynTa2gGAZIIg"/>
+      <path xsi:type="composition:AssemblyConnector" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_2y-hgH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_x5MkkH9MEeaHNuq2j06i3A"/>
+      <path xsi:type="allocation:AllocationContext" href="../pcm/BookShop.allocation#_imCKQH9REeaHNuq2j06i3A"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="../pcm/BookShop.resourceenvironment#_j4BMAH9QEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ5FR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_OVXzMFDwEeynTa2gGAZIIg"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.resourceenvironment#_j4BMAH9QEeaHNuq2j06i3A"/>
+      <path xsi:type="allocation:AllocationContext" href="../pcm/BookShop.allocation#_kU7VAH9REeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../pcm/BookShop.system#_DKoQIH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyConnector" href="../pcm/BookShop.system#_2y-hgH9NEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ5VR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_OVXzMFDwEeynTa2gGAZIIg"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.resourceenvironment#_j4BMAH9QEeaHNuq2j06i3A"/>
+      <path xsi:type="allocation:AllocationContext" href="../pcm/BookShop.allocation#_imCKQH9REeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../pcm/BookShop.system#_x5MkkH9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyConnector" href="../pcm/BookShop.system#_2y-hgH9NEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ5lR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_OVXzMFDwEeynTa2gGAZIIg"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.resourceenvironment#_j4BMAH9QEeaHNuq2j06i3A"/>
+      <path xsi:type="allocation:AllocationContext" href="../pcm/BookShop.allocation#_kU7VAH9REeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../pcm/BookShop.system#_DKoQIH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyConnector" href="../pcm/BookShop.system#_4GSjgH9NEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ51R9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_OVXzMFDwEeynTa2gGAZIIg"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.resourceenvironment#_j4BMAH9QEeaHNuq2j06i3A"/>
+      <path xsi:type="allocation:AllocationContext" href="../pcm/BookShop.allocation#_kU7VAH9REeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../pcm/BookShop.system#_DKoQIH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyConnector" href="../pcm/BookShop.system#_5GCJQH9NEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ6FR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyConnector" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_2y-hgH9NEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ6VR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyConnector" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_4GSjgH9NEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ6lR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyConnector" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_5GCJQH9NEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ61R9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_gtkJkH9NEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ7FR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_huuEkH9NEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ7VR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_kXMisH9NEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ91R9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_x5MkkH9MEeaHNuq2j06i3A"/>
+      <path xsi:type="uncertainty:ComponentInterfaceInstance" href="#_x5MkkH9MEeaHNuq2j06i3A$_SUHmgH9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ-FR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_x5MkkH9MEeaHNuq2j06i3A"/>
+      <path xsi:type="uncertainty:ComponentInterfaceInstance" href="#_x5MkkH9MEeaHNuq2j06i3A$_cMTzoH9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ-VR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_x5MkkH9MEeaHNuq2j06i3A"/>
+      <path xsi:type="uncertainty:ComponentInterfaceInstance" href="#_x5MkkH9MEeaHNuq2j06i3A$_QEtvsH9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ-lR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_8yiFoH9MEeaHNuq2j06i3A"/>
+      <path xsi:type="uncertainty:ComponentInterfaceInstance" href="#_8yiFoH9MEeaHNuq2j06i3A$_5F_UsH9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ-1R9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_DKoQIH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="uncertainty:ComponentInterfaceInstance" href="#_DKoQIH9NEeaHNuq2j06i3A$_naQ50H9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ_FR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_DKoQIH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="uncertainty:ComponentInterfaceInstance" href="#_DKoQIH9NEeaHNuq2j06i3A$_mM2EcH9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ_VR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_DKoQIH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="uncertainty:ComponentInterfaceInstance" href="#_DKoQIH9NEeaHNuq2j06i3A$_0Kww0H9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ_lR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_UFP-MH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="uncertainty:ComponentInterfaceInstance" href="#_UFP-MH9NEeaHNuq2j06i3A$_QEtBQH9KEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UNZ_1R9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="composition:AssemblyContext" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_UFP-MH9NEeaHNuq2j06i3A"/>
+      <path xsi:type="uncertainty:ComponentInterfaceInstance" href="#_UFP-MH9NEeaHNuq2j06i3A$_RJe4AH9KEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UOA8FR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:BasicComponent" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_NdX6AH9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UOA8VR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:BasicComponent" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_NdX6AH9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UOA8lR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:BasicComponent" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_NdX6AH9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UOA81R9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:BasicComponent" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_3EW0IH9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UOA9FR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:BasicComponent" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_fmYGwH9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UOA9VR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:BasicComponent" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_fmYGwH9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UOA9lR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:BasicComponent" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_fmYGwH9HEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UOA91R9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:BasicComponent" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_mnCQoH9IEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <causingUncertainties id="_0UOA-FR9Eey8zrmYphemuA">
+      <causingUncertainty href="../sample.uncertainty#_QCRZ4FDwEeynTa2gGAZIIg"/>
+      <path xsi:type="system:System" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+      <path xsi:type="repository:BasicComponent" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_mnCQoH9IEeaHNuq2j06i3A"/>
+    </causingUncertainties>
+    <componentInterfaceInstanceContainer>
+      <componentInterfaceInstances id="_DKoQIH9NEeaHNuq2j06i3A$_mM2EcH9HEeaHNuq2j06i3A" entityName="Assembly_Book Shop Business Rules &lt;Book Shop Business Rules> - IBook">
+        <assemblyContext href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_DKoQIH9NEeaHNuq2j06i3A"/>
+        <interface xsi:type="repository:OperationRequiredRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_mM2EcH9HEeaHNuq2j06i3A"/>
+      </componentInterfaceInstances>
+      <componentInterfaceInstances id="_x5MkkH9MEeaHNuq2j06i3A$_QEtvsH9HEeaHNuq2j06i3A" entityName="Assembly_Book Shop Web Pages &lt;Book Shop Web Pages> - IBusiness">
+        <assemblyContext href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_x5MkkH9MEeaHNuq2j06i3A"/>
+        <interface xsi:type="repository:OperationRequiredRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_QEtvsH9HEeaHNuq2j06i3A"/>
+      </componentInterfaceInstances>
+      <componentInterfaceInstances id="_UFP-MH9NEeaHNuq2j06i3A$_QEtBQH9KEeaHNuq2j06i3A" entityName="Assembly_Book &amp; Customer Data Provider &lt;Book &amp; Customer Data Provider> - IBook">
+        <assemblyContext href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_UFP-MH9NEeaHNuq2j06i3A"/>
+        <interface xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_QEtBQH9KEeaHNuq2j06i3A"/>
+      </componentInterfaceInstances>
+      <componentInterfaceInstances id="_DKoQIH9NEeaHNuq2j06i3A$_0Kww0H9HEeaHNuq2j06i3A" entityName="Assembly_Book Shop Business Rules &lt;Book Shop Business Rules> - ICustomer">
+        <assemblyContext href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_DKoQIH9NEeaHNuq2j06i3A"/>
+        <interface xsi:type="repository:OperationRequiredRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_0Kww0H9HEeaHNuq2j06i3A"/>
+      </componentInterfaceInstances>
+      <componentInterfaceInstances id="_DKoQIH9NEeaHNuq2j06i3A$_naQ50H9HEeaHNuq2j06i3A" entityName="Assembly_Book Shop Business Rules &lt;Book Shop Business Rules> - IBusiness">
+        <assemblyContext href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_DKoQIH9NEeaHNuq2j06i3A"/>
+        <interface xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_naQ50H9HEeaHNuq2j06i3A"/>
+      </componentInterfaceInstances>
+      <componentInterfaceInstances id="_x5MkkH9MEeaHNuq2j06i3A$_SUHmgH9HEeaHNuq2j06i3A" entityName="Assembly_Book Shop Web Pages &lt;Book Shop Web Pages> - IBrowseBooks">
+        <assemblyContext href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_x5MkkH9MEeaHNuq2j06i3A"/>
+        <interface xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_SUHmgH9HEeaHNuq2j06i3A"/>
+      </componentInterfaceInstances>
+      <componentInterfaceInstances id="_x5MkkH9MEeaHNuq2j06i3A$_cMTzoH9HEeaHNuq2j06i3A" entityName="Assembly_Book Shop Web Pages &lt;Book Shop Web Pages> - IOrderBooks">
+        <assemblyContext href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_x5MkkH9MEeaHNuq2j06i3A"/>
+        <interface xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_cMTzoH9HEeaHNuq2j06i3A"/>
+      </componentInterfaceInstances>
+      <componentInterfaceInstances id="_8yiFoH9MEeaHNuq2j06i3A$_5F_UsH9HEeaHNuq2j06i3A" entityName="Assembly_Book Image Provider &lt;Book Image Provider> - IImages">
+        <assemblyContext href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_8yiFoH9MEeaHNuq2j06i3A"/>
+        <interface xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_5F_UsH9HEeaHNuq2j06i3A"/>
+      </componentInterfaceInstances>
+      <componentInterfaceInstances id="_UFP-MH9NEeaHNuq2j06i3A$_RJe4AH9KEeaHNuq2j06i3A" entityName="Assembly_Book &amp; Customer Data Provider &lt;Book &amp; Customer Data Provider> - ICustomer">
+        <assemblyContext href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system#_UFP-MH9NEeaHNuq2j06i3A"/>
+        <interface xsi:type="repository:OperationProvidedRole" href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_RJe4AH9KEeaHNuq2j06i3A"/>
+      </componentInterfaceInstances>
+    </componentInterfaceInstanceContainer>
+    <basicComponentBehaviourContainer>
+      <basicComponentBehaviours id="_SUSloH9HEeaHNuq2j06i3A" entityName="home - Book Shop Web Pages">
+        <resourceDemandingSEFF href="../../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository#_SUSloH9HEeaHNuq2j06i3A"/>
+      </basicComponentBehaviours>
+    </basicComponentBehaviourContainer>
+  </changePropagationSteps>
+</uncertaintypropagation:UCImpactRepository>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel/src"
+    editDirectory="/org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.edit/src"
+    editorDirectory="/org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.editor/src"
+    modelPluginID="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel"
+    modelName="UCImpactMarks" editPluginClass="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.provider.UCImpactMarksEditPlugin"
+    editorPluginClass="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.presentation.UCImpactMarksEditorPlugin"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" testSuiteClass="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.tests.UCImpactMarksAllTests"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    editPluginID="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.edit"
+    editorPluginID="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.editor"
+    usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore ../../de.uka.ipd.sdq.identifier/model/identifier.genmodel#//identifier ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.genmodel#//modificationmarks ../../org.palladiosimulator.pcm/model/pcm.genmodel#//pcm ../../de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel#//probfunction ../../de.uka.ipd.sdq.stoex/model/stoex.genmodel#//stoex ../../org.palladiosimulator.uncertainty.impact.uncertaintymodel/model/uncertaintyPlugin.genmodel#//uncertainty ../../org.palladiosimulator.uncertainty.impact.uncertaintymodel/model/uncertaintyPlugin.genmodel#//uncertaintytype ../../org.palladiosimulator.uncertainty.impact.uncertaintymodel/model/uncertaintyPlugin.genmodel#//uncertaintytemplate ../../org.palladiosimulator.uncertainty.impact.uncertaintymodel/model/uncertaintyPlugin.genmodel#//palladioelementtype ../../org.palladiosimulator.uncertainty.impact.uncertaintymodel/model/uncertaintyPlugin.genmodel#//add ../../de.uka.ipd.sdq.units/model/Units.genmodel#//units"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>UCImpactMarks.ecore</foreignModel>
+  <genPackages prefix="Uncertaintypropagation" basePackage="org.palladiosimulator.uncertainty.impact"
+      disposableProviderFactory="true" ecorePackage="UCImpactMarks.ecore#/">
+    <genClasses image="false" ecoreClass="UCImpactMarks.ecore#//AbstractUCImpactRepository">
+      <genTypeParameters ecoreTypeParameter="UCImpactMarks.ecore#//AbstractUCImpactRepository/S"/>
+    </genClasses>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCImpactRepository"/>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCPropagationRulesSeed">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UCPropagationRulesSeed/affectedBasicComponentBehaviours"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UCPropagationRulesSeed/affectedBasicComponentTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UCPropagationRulesSeed/affectedCommunicationComponents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UCPropagationRulesSeed/affectedCommunicationResources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UCPropagationRulesSeed/affectedComponentInstances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UCPropagationRulesSeed/affectedComponentInterfaceInstances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UCPropagationRulesSeed/affectedComponentInterfaceTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UCPropagationRulesSeed/affectedHardwareResources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UCPropagationRulesSeed/affectedSystems"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UCPropagationRulesSeed/affectedSystemInterfaces"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UCPropagationRulesSeed/affectedUsageBehaviours"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UCPropagationRulesSeed/causingUncertainties"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="UCImpactMarks.ecore#//UCImpactEntity">
+      <genTypeParameters ecoreTypeParameter="UCImpactMarks.ecore#//UCImpactEntity/T"/>
+    </genClasses>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//CausingUncertainty">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//CausingUncertainty/causingUncertainty"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//CausingUncertainty/path"/>
+    </genClasses>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UncertaintyPropagation">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/affectedBasicComponentBehaviours"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/affectedBasicComponentTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/affectedCommunicationComponents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/affectedCommunicationResources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/affecteComponentInstances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/affectedComponentInterfaceInstances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/affectedComponentInterfaceTypes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/affectedHardwareResources"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/affectedSystems"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/affectedSystemInterface"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/affectedUsageBehaviours"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/causingUncertainties"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/componentInterfaceInstanceContainer"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//UncertaintyPropagation/basicComponentBehaviourContainer"/>
+    </genClasses>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCImpactAtBasicComponentBehaviour"/>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCImpactAtBasicComponentType"/>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCImpactAtCommunicationComponents"/>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCImpactAtCommunicationResources"/>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCImpactAtComponentInstance"/>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCImpactAtComponentInterfaceInstance"/>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCImpactAtComponentInterfaceType"/>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCImpactAtHardwareResource"/>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCImpactAtSystem"/>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCImpactAtSystemInterface"/>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//UCImpactAtUsageBehaviour"/>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//ComponentInterfaceInstanceContainer">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//ComponentInterfaceInstanceContainer/componentInterfaceInstances"/>
+    </genClasses>
+    <genClasses ecoreClass="UCImpactMarks.ecore#//BasicComponentBehaviourContainer">
+      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference UCImpactMarks.ecore#//BasicComponentBehaviourContainer/basicComponentBehaviours"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Palladio Uncertainty Modelling"
+            id="org.palladiosimulator.uncertainty.impact">
+      </category>
+      <view
+            id="org.palladiosimulator.uncertainty.impact.PluginMain"
+            name="Uncertainty View"
+            icon="icons/sample.png"
+            class="org.palladiosimulator.uncertainty.impact.PluginMain"
+            category="org.palladiosimulator.uncertainty.impact"
+            inject="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               id="org.palladiosimulator.uncertainty.impact.PluginMain"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               ratio="0.5">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+
+</plugin>

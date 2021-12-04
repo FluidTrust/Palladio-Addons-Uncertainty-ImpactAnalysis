@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="add" nsURI="http://www.example.org/add" nsPrefix="add">
+  <eClassifiers xsi:type="ecore:EClass" name="ADDContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="adds" upperBound="-1" eType="#//ADD"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ADD" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="addClass" eType="#//ADDClass"
+        defaultValueLiteral="STRUCTURAL_DECISION"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="amountOfAlternatives" eType="#//AmountOfAlternatives"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="probabilityOfRevisability"
+        eType="#//ProbabilityOfRevisability"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="possibilityOfRevisability"
+        eType="#//PossibilityOfRevisability"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="costsOfRevision" eType="#//CostsOfRevision"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ADDClass">
+    <eLiterals name="StructuralDecision" literal="STRUCTURAL_DECISION"/>
+    <eLiterals name="BehaviouralDecision" value="1" literal="BEHAVIOURAL_DECISION"/>
+    <eLiterals name="PropertyDecision" value="2" literal="PROPERTY_DECISION"/>
+    <eLiterals name="ExecutiveDecision" value="3" literal="EXECUTIVE_DECISION"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="AmountOfAlternatives">
+    <eLiterals name="ClosedSet" literal="CLOSED_SET"/>
+    <eLiterals name="OpenSet" value="1" literal="OPEN_SET"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ProbabilityOfRevisability">
+    <eLiterals name="Likely" literal="LIKELY"/>
+    <eLiterals name="Unlikely" value="1" literal="UNLIKELY"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PossibilityOfRevisability">
+    <eLiterals name="Yes" literal="YES"/>
+    <eLiterals name="No" value="1" literal="NO"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="CostsOfRevision">
+    <eLiterals name="High" literal="HIGH"/>
+    <eLiterals name="Low" value="1" literal="LOW"/>
+  </eClassifiers>
+</ecore:EPackage>

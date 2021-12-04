@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="palladioelementtype" nsURI="http://www.example.org/palladioElementType"
+    nsPrefix="palladioelementtype">
+  <eClassifiers xsi:type="ecore:EEnum" name="PalladioElementTypes">
+    <eLiterals name="System" literal="SYSTEM"/>
+    <eLiterals name="HardwareResource" value="1" literal="HARDWARE_RESOURCE"/>
+    <eLiterals name="BasicComponent_Type" value="2" literal="BASIC_COMPONENT_TYPE"/>
+    <eLiterals name="Component_Instance" value="3" literal="COMPONENT_INSTANCE"/>
+    <eLiterals name="BasicComponentBehaviour" value="4" literal="BASIC_COMPONENT_BEHAVIOUR"/>
+    <eLiterals name="Communication_Components" value="5" literal="COMMUNICATION_COMPONENTS"/>
+    <eLiterals name="Communication_Resources" value="6" literal="COMMUNICATION_RESOURCES"/>
+    <eLiterals name="SystemInterface" value="7" literal="SYSTEM_INTERFACE"/>
+    <eLiterals name="ComponentInterface_Instance" value="8" literal="COMPONENT_INTERFACE_INSTANCE"/>
+    <eLiterals name="ComponentInterface_Type" value="9" literal="COMPONENT_INTERFACE_TYPE"/>
+    <eLiterals name="UsageBehaviour" value="10" literal="USAGE_BEHAVIOUR"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PalladioElementType" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PalladioElementTypes"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PalladioElementTypeContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="palladioElementTypes" upperBound="-1"
+        eType="#//PalladioElementType" containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

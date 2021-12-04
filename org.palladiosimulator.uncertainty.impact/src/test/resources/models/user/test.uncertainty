@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uncertainty:UncertaintyContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:uncertainty="http://www.example.org/uncertainty">
+  <uncertainties id="_PYC0cDvkEeyKcZ3NE6_IOQ" name="Test Uncertainty">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/BookShop.repository#_NdX6AH9HEeaHNuq2j06i3A"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/test.uncertaintytype#_HOiMIDvjEeyKcZ3NE6_IOQ"/>
+  </uncertainties>
+  <uncertaintyTemplate href="../expert/test.uncertaintytemplate#/"/>
+</uncertainty:UncertaintyContainer>

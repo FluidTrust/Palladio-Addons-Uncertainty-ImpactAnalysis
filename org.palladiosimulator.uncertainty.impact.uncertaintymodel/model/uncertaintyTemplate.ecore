@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="uncertaintytemplate" nsURI="http://www.example.org/uncertaintyTemplate"
+    nsPrefix="uncertaintytemplate">
+  <eClassifiers xsi:type="ecore:EClass" name="UncertaintyTemplate">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="addContainer" lowerBound="1"
+        eType="ecore:EClass add.ecore#//ADDContainer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="palladioElementTypeContainer"
+        lowerBound="1" eType="ecore:EClass palladioElementType.ecore#//PalladioElementTypeContainer"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uncertaintyTypeContainer"
+        lowerBound="1" eType="ecore:EClass uncertaintyType.ecore#//UncertaintyTypeContainer"/>
+  </eClassifiers>
+</ecore:EPackage>

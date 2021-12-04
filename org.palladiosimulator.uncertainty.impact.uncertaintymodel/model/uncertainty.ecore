@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="uncertainty" nsURI="http://www.example.org/uncertainty" nsPrefix="uncertainty">
+  <eClassifiers xsi:type="ecore:EClass" name="PalladioElementWrapper">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="referencedElement" lowerBound="1"
+        eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Uncertainty" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignedElement" lowerBound="1"
+        eType="#//PalladioElementWrapper" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uncertaintyType" lowerBound="1"
+        eType="ecore:EClass uncertaintyType.ecore#//UncertaintyType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UncertaintyContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uncertainties" upperBound="-1"
+        eType="#//Uncertainty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uncertaintyTemplate" lowerBound="1"
+        eType="ecore:EClass uncertaintyTemplate.ecore#//UncertaintyTemplate"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="basicComponentBehaviours"
+        upperBound="-1" eType="#//BasicComponentBehaviour" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentInterfaceInstances"
+        upperBound="-1" eType="#//ComponentInterfaceInstance" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInterfaceInstance" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assemblyContext" lowerBound="1"
+        eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interface" lowerBound="1"
+        eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/Role"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicComponentBehaviour" eSuperTypes="../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resourceDemandingSEFF"
+        lowerBound="1" eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//seff/ResourceDemandingSEFF"/>
+  </eClassifiers>
+</ecore:EPackage>

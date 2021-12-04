@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            adaptable="false"
+            id="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.UCImpactRepositoryID"
+            objectClass="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.UCImpactRepository">
+         <action
+               class="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.editor.UCImpactPropagationAction"
+               icon="../edu.kit.ipd.sdq.kamp/icons/run.png"
+               id="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.editor.UCImpactPropagationActionID"
+               label="Step 3: Calculate uncertainty impact propagation"
+               menubarPath="edit">
+         </action>
+      </objectContribution>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated UCImpactMarks -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.uncertainty.impact.uncertaintypropagation.presentation.UncertaintypropagationModelWizardID"
+            name="%_UI_UncertaintypropagationModelWizard_label"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintypropagation.presentation.UncertaintypropagationModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UncertaintypropagationModelFile.gif">
+         <description>%_UI_UncertaintypropagationModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated UCImpactMarks -->
+      <editor
+            id="org.palladiosimulator.uncertainty.impact.uncertaintypropagation.presentation.UncertaintypropagationEditorID"
+            name="%_UI_UncertaintypropagationEditor_label"
+            icon="icons/full/obj16/UncertaintypropagationModelFile.gif"
+            extensions="uncertaintypropagation"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintypropagation.presentation.UncertaintypropagationEditor"
+            contributorClass="org.palladiosimulator.uncertainty.impact.uncertaintypropagation.presentation.UncertaintypropagationActionBarContributor">
+      </editor>
+   </extension>
+</plugin>

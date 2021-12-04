@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="uncertaintytype" nsURI="http://www.example.org/uncertaintyType"
+    nsPrefix="uncertaintytype">
+  <eClassifiers xsi:type="ecore:EClass" name="UncertaintyType" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="impactOn" lowerBound="1"
+        upperBound="-1" eType="ecore:EClass palladioElementType.ecore#//PalladioElementType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="assignableElementType"
+        lowerBound="1" eType="ecore:EClass palladioElementType.ecore#//PalladioElementType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resolvedBy" eType="ecore:EClass add.ecore#//ADD"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="#//Location"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="informationAvailability"
+        eType="#//InformationAvailability"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nature" eType="#//Nature"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="manageability" eType="#//Manageability"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="impactOnConfidentiality"
+        eType="#//ImpactOnConfidentiality"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="severityOfImpact" eType="#//SeverityOfImpact"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="resolutionTime" eType="#//ResolutionTime"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootCause" eType="#//RootCause"
+        defaultValueLiteral="ASSUMPTION"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Nature">
+    <eLiterals name="Aleatory" literal="ALEATORY"/>
+    <eLiterals name="Epistemic" value="1" literal="EPISTEMIC"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UncertaintyTypeContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="uncertaintyTypes" upperBound="-1"
+        eType="#//UncertaintyType" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Location">
+    <eLiterals name="SystemStructure" literal="SYSTEM_STRUCTURE"/>
+    <eLiterals name="SystemBehaviour" value="1" literal="SYSTEM_BEHAVIOUR"/>
+    <eLiterals name="SystemEnvironment" value="2" literal="SYSTEM_ENVIRONMENT"/>
+    <eLiterals name="Input" value="3" literal="INPUT"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="InformationAvailability">
+    <eLiterals name="StatisticalUncertainty" literal="STATISTICAL_UNCERTAINTY"/>
+    <eLiterals name="ScenarioUncertainty" value="1" literal="SCENARIO_UNCERTAINTY"/>
+    <eLiterals name="RecognizedIgnorance" value="2" literal="RECOGNIZED_IGNORANCE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Manageability">
+    <eLiterals name="FullyReducible" literal="FULLY_REDUCIBLE"/>
+    <eLiterals name="PartialReducible" value="1" literal="PARTIAL_REDUCIBLE"/>
+    <eLiterals name="Irreducible" value="2" literal="IRREDUCIBLE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ImpactOnConfidentiality">
+    <eLiterals name="Direct" literal="DIRECT"/>
+    <eLiterals name="Indirect" value="1" literal="INDIRECT"/>
+    <eLiterals name="None" value="2" literal="NONE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="SeverityOfImpact">
+    <eLiterals name="High" literal="HIGH"/>
+    <eLiterals name="Low" value="1" literal="LOW"/>
+    <eLiterals name="None" value="2" literal="NONE"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ResolutionTime">
+    <eLiterals name="RequirementsTime" literal="REQUIREMENTS_TIME"/>
+    <eLiterals name="DesignTime" value="1" literal="DESIGN_TIME"/>
+    <eLiterals name="DeploymentTime" value="2" literal="DEPLOYMENT_TIME"/>
+    <eLiterals name="RunTime" value="3" literal="RUN_TIME"/>
+    <eLiterals name="Never" value="4" literal="NEVER"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RootCause">
+    <eLiterals name="Assumption" literal="ASSUMPTION"/>
+    <eLiterals name="MissingInformation" value="1" literal="MISSING_INFORMATION"/>
+  </eClassifiers>
+</ecore:EPackage>

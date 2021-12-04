@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="uncertaintypropagation" nsURI="http://www.example.org/uncertaintyPropagation"
+    nsPrefix="uncertaintypropagation">
+  <eClassifiers xsi:type="ecore:EClass" name="AbstractUCImpactRepository" abstract="true">
+    <eTypeParameters name="S">
+      <eBounds eClassifier="#//UCPropagationRulesSeed"/>
+    </eTypeParameters>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModificationRepository">
+      <eTypeArguments eTypeParameter="#//AbstractUCImpactRepository/S"/>
+      <eTypeArguments eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactRepository">
+    <eGenericSuperTypes eClassifier="#//AbstractUCImpactRepository">
+      <eTypeArguments eClassifier="#//UCPropagationRulesSeed"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCPropagationRulesSeed" eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractSeedModifications">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedBasicComponentBehaviours"
+        upperBound="-1" eType="#//UCImpactAtBasicComponentBehaviour" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedBasicComponentTypes"
+        upperBound="-1" eType="#//UCImpactAtBasicComponentType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedCommunicationComponents"
+        upperBound="-1" eType="#//UCImpactAtCommunicationComponents" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedCommunicationResources"
+        upperBound="-1" eType="#//UCImpactAtCommunicationResources" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedComponentInstances"
+        upperBound="-1" eType="#//UCImpactAtComponentInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedComponentInterfaceInstances"
+        upperBound="-1" eType="#//UCImpactAtComponentInterfaceInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedComponentInterfaceTypes"
+        upperBound="-1" eType="#//UCImpactAtComponentInterfaceType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedHardwareResources"
+        upperBound="-1" eType="#//UCImpactAtHardwareResource" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedSystems" upperBound="-1"
+        eType="#//UCImpactAtSystem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedSystemInterfaces"
+        upperBound="-1" eType="#//UCImpactAtSystemInterface" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedUsageBehaviours"
+        upperBound="-1" eType="#//UCImpactAtUsageBehaviour" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="causingUncertainties" upperBound="-1"
+        eType="#//CausingUncertainty" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactEntity" abstract="true">
+    <eTypeParameters name="T">
+      <eBounds eClassifier="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
+    </eTypeParameters>
+    <eGenericSuperTypes eClassifier="ecore:EClass ../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//AbstractModification">
+      <eTypeArguments eTypeParameter="#//UCImpactEntity/T"/>
+      <eTypeArguments eClassifier="#//CausingUncertainty"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="CausingUncertainty" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="causingUncertainty" lowerBound="1"
+        eType="ecore:EClass ../../org.palladiosimulator.uncertainty.impact.uncertaintymodel/model/uncertainty.ecore#//Uncertainty"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="path" lowerBound="1" upperBound="-1"
+        eType="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//core/entity/Entity"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UncertaintyPropagation" eSuperTypes="../../edu.kit.ipd.sdq.kamp.model.modificationmarks/model/Modificationmarks.ecore#//ChangePropagationStep">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedBasicComponentBehaviours"
+        upperBound="-1" eType="#//UCImpactAtBasicComponentBehaviour" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedBasicComponentTypes"
+        upperBound="-1" eType="#//UCImpactAtBasicComponentType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedCommunicationComponents"
+        upperBound="-1" eType="#//UCImpactAtCommunicationComponents" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedCommunicationResources"
+        upperBound="-1" eType="#//UCImpactAtCommunicationResources" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affecteComponentInstances"
+        upperBound="-1" eType="#//UCImpactAtComponentInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedComponentInterfaceInstances"
+        upperBound="-1" eType="#//UCImpactAtComponentInterfaceInstance" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedComponentInterfaceTypes"
+        upperBound="-1" eType="#//UCImpactAtComponentInterfaceType" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedHardwareResources"
+        upperBound="-1" eType="#//UCImpactAtHardwareResource" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedSystems" upperBound="-1"
+        eType="#//UCImpactAtSystem" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedSystemInterface"
+        upperBound="-1" eType="#//UCImpactAtSystemInterface" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="affectedUsageBehaviours"
+        upperBound="-1" eType="#//UCImpactAtUsageBehaviour" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="causingUncertainties" upperBound="-1"
+        eType="#//CausingUncertainty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentInterfaceInstanceContainer"
+        lowerBound="1" eType="#//ComponentInterfaceInstanceContainer" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="basicComponentBehaviourContainer"
+        lowerBound="1" eType="#//BasicComponentBehaviourContainer" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactAtBasicComponentBehaviour">
+    <eGenericSuperTypes eClassifier="#//UCImpactEntity">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.palladiosimulator.uncertainty.impact.uncertaintymodel/model/uncertainty.ecore#//BasicComponentBehaviour"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactAtBasicComponentType">
+    <eGenericSuperTypes eClassifier="#//UCImpactEntity">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/BasicComponent"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactAtCommunicationComponents">
+    <eGenericSuperTypes eClassifier="#//UCImpactEntity">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyConnector"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactAtCommunicationResources">
+    <eGenericSuperTypes eClassifier="#//UCImpactEntity">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/LinkingResource"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactAtComponentInstance">
+    <eGenericSuperTypes eClassifier="#//UCImpactEntity">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//core/composition/AssemblyContext"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactAtComponentInterfaceInstance">
+    <eGenericSuperTypes eClassifier="#//UCImpactEntity">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.palladiosimulator.uncertainty.impact.uncertaintymodel/model/uncertainty.ecore#//ComponentInterfaceInstance"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactAtComponentInterfaceType">
+    <eGenericSuperTypes eClassifier="#//UCImpactEntity">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/Role"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactAtHardwareResource">
+    <eGenericSuperTypes eClassifier="#//UCImpactEntity">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//resourceenvironment/ResourceContainer"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactAtSystem">
+    <eGenericSuperTypes eClassifier="#//UCImpactEntity">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//system/System"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactAtSystemInterface">
+    <eGenericSuperTypes eClassifier="#//UCImpactEntity">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//repository/Role"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="UCImpactAtUsageBehaviour">
+    <eGenericSuperTypes eClassifier="#//UCImpactEntity">
+      <eTypeArguments eClassifier="ecore:EClass ../../org.palladiosimulator.pcm/model/pcm.ecore#//usagemodel/EntryLevelSystemCall"/>
+    </eGenericSuperTypes>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComponentInterfaceInstanceContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentInterfaceInstances"
+        upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.uncertainty.impact.uncertaintymodel/model/uncertainty.ecore#//ComponentInterfaceInstance"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BasicComponentBehaviourContainer">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="basicComponentBehaviours"
+        upperBound="-1" eType="ecore:EClass ../../org.palladiosimulator.uncertainty.impact.uncertaintymodel/model/uncertainty.ecore#//BasicComponentBehaviour"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

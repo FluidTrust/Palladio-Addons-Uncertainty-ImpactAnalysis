@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+
+   
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated uncertaintyPlugin -->
+      <package
+            uri="http://www.example.org/uncertainty"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyPackage"
+            genModel="model/uncertaintyPlugin.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated uncertaintyPlugin -->
+      <package
+            uri="http://www.example.org/uncertaintyType"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyTypePackage"
+            genModel="model/uncertaintyPlugin.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated uncertaintyPlugin -->
+      <package
+            uri="http://www.example.org/uncertaintyTemplate"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplatePackage"
+            genModel="model/uncertaintyPlugin.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated uncertaintyPlugin -->
+      <package
+            uri="http://www.example.org/palladioElementType"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypePackage"
+            genModel="model/uncertaintyPlugin.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated uncertaintyPlugin -->
+      <package
+            uri="http://www.example.org/add"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.AddPackage"
+            genModel="model/uncertaintyPlugin.genmodel"/>
+   </extension>
+</plugin>

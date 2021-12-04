@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated uncertaintyPlugin -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.presentation.UncertaintyModelWizardID"
+            name="%_UI_UncertaintyModelWizard_label"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.presentation.UncertaintyModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UncertaintyModelFile.gif">
+         <description>%_UI_UncertaintyModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated uncertaintyPlugin -->
+      <editor
+            id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.presentation.UncertaintyEditorID"
+            name="%_UI_UncertaintyEditor_label"
+            icon="icons/full/obj16/UncertaintyModelFile.gif"
+            extensions="uncertainty"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.presentation.UncertaintyEditor"
+            contributorClass="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.presentation.UncertaintyActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated uncertaintyPlugin -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.presentation.UncertaintyTypeModelWizardID"
+            name="%_UI_UncertaintyTypeModelWizard_label"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.presentation.UncertaintyTypeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UncertaintyTypeModelFile.gif">
+         <description>%_UI_UncertaintyTypeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated uncertaintyPlugin -->
+      <editor
+            id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.presentation.UncertaintyTypeEditorID"
+            name="%_UI_UncertaintyTypeEditor_label"
+            icon="icons/full/obj16/UncertaintyTypeModelFile.gif"
+            extensions="uncertaintytype"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.presentation.UncertaintyTypeEditor"
+            contributorClass="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.presentation.UncertaintyTypeActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated uncertaintyPlugin -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.presentation.UncertaintyTemplateModelWizardID"
+            name="%_UI_UncertaintyTemplateModelWizard_label"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.presentation.UncertaintyTemplateModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/UncertaintyTemplateModelFile.gif">
+         <description>%_UI_UncertaintyTemplateModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated uncertaintyPlugin -->
+      <editor
+            id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.presentation.UncertaintyTemplateEditorID"
+            name="%_UI_UncertaintyTemplateEditor_label"
+            icon="icons/full/obj16/UncertaintyTemplateModelFile.gif"
+            extensions="uncertaintytemplate"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.presentation.UncertaintyTemplateEditor"
+            contributorClass="org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.presentation.UncertaintyTemplateActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated uncertaintyPlugin -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.presentation.PalladioElementTypeModelWizardID"
+            name="%_UI_PalladioElementTypeModelWizard_label"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.presentation.PalladioElementTypeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/PalladioElementTypeModelFile.gif">
+         <description>%_UI_PalladioElementTypeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated uncertaintyPlugin -->
+      <editor
+            id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.presentation.PalladioElementTypeEditorID"
+            name="%_UI_PalladioElementTypeEditor_label"
+            icon="icons/full/obj16/PalladioElementTypeModelFile.gif"
+            extensions="palladioelementtype"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.presentation.PalladioElementTypeEditor"
+            contributorClass="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.presentation.PalladioElementTypeActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated uncertaintyPlugin -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.presentation.AddModelWizardID"
+            name="%_UI_AddModelWizard_label"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.presentation.AddModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AddModelFile.gif">
+         <description>%_UI_AddModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated uncertaintyPlugin -->
+      <editor
+            id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.presentation.AddEditorID"
+            name="%_UI_AddEditor_label"
+            icon="icons/full/obj16/AddModelFile.gif"
+            extensions="add"
+            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.presentation.AddEditor"
+            contributorClass="org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.presentation.AddActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
