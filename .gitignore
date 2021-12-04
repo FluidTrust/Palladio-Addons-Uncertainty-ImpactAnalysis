@@ -1,0 +1,6 @@
+# EMF GeneratedFiles
+*src-gen*
+
+#My gitignores
+*.prefs
+bin/
