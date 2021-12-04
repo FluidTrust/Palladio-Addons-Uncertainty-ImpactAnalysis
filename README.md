@@ -93,7 +93,7 @@ This document provides a profound introduction into a Palladio extension which e
 * Start new eclipse instance from current instance
 	* RightClick -> org.palladiosimulator.uncertainty.impact -> Run As -> Eclipse Application
 	* Create new workspace (do not reuse workspace of "outer" instance)
-	* OPTIONAL: Import org.palladiosimulator.uncertainty.impact from UncertaintPlugin
+	* Import org.palladiosimulator.uncertainty.impact from UncertaintPlugin
 		* Tree Editors for Uncertainty Models available in inner instance
 		* Sample uncertainty models located in
 			* src/test/resources
