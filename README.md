@@ -13,7 +13,7 @@ This document provides a profound introduction into a Palladio extension which e
 	* Plain Java
 	* KAMP Framework extended
 
-###Content Structure
+### Content Structure
 * Installation in a Nutshell
 	* Installation Guide
 * Usage of UIA Plugin
@@ -378,9 +378,9 @@ The reachable architectural elements are identified via propagation algorithms d
 
 ------------------------------
 
-###Example:
+### Example:
 
-####Situation:
+#### Situation:
 
 * Component A is encapsulated in AssemblyContext A which is allocatioed on AllocationContext A which is deployed on Resource Container A
 * Component B is encapsulated in AssemblyContext B which is allocatioed on AllocationContext B which is deployed on Resource Container B
@@ -390,15 +390,16 @@ The reachable architectural elements are identified via propagation algorithms d
 * Uncertainty x
 	* Type: Uncertainty Type 1
 	* Referenced Element: Component A
+	
 
-####Propagation Algorithm: "Component ~> Resource Container"
+#### Propagation Algorithm: "Component ~> Resource Container"
 
 * Given Component 1
 	* ~> find AssemblyContexts in which instances of Component 1 are encapsulated
 	* ~> For each AssemblyContext:
 		* Retrieve AllocationContext & ResourceContainer
 
-####Application of Propagation:
+#### Application of Propagation:
 
 * Given Uncertainty x 
 	* ReferencedElement: Component A
@@ -418,7 +419,7 @@ The reachable architectural elements are identified via propagation algorithms d
 
 Design was influenced by KAMP approach.
 
-####Propagation Elements:
+#### Propagation Elements:
 
 	 UCImpactEntity.java 
 		* AffectedElement: Entity //Palladio Element
