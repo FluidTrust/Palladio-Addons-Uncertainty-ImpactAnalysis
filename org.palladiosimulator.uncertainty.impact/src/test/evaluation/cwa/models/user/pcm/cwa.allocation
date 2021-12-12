@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ASCII"?>
+<allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" id="_VpqNEFqcEeyjS5hmr-doJA" entityName="CWA Allocation">
+  <targetResourceEnvironment_Allocation href="cwa.resourceenvironment#/"/>
+  <system_Allocation href="cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+  <allocationContexts_Allocation id="_sMxNoFqcEeyjS5hmr-doJA" entityName="Allocation_TestResult_Server">
+    <resourceContainer_AllocationContext href="cwa.resourceenvironment#_v-rZAFqcEeyjS5hmr-doJA"/>
+    <assemblyContext_AllocationContext href="cwa.system#_pPW2wFqbEeyjS5hmr-doJA"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_F4Ae8FqsEeyjS5hmr-doJA" entityName="Allocation_Portal_Server">
+    <resourceContainer_AllocationContext href="cwa.resourceenvironment#_-_crsFqrEeyjS5hmr-doJA"/>
+    <assemblyContext_AllocationContext href="cwa.system#_olC7MFqrEeyjS5hmr-doJA"/>
+  </allocationContexts_Allocation>
+</allocation:Allocation>

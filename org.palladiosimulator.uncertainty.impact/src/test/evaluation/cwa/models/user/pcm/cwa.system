@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<system:System xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.2" id="_4AJ1wFqUEeyjS5hmr-doJA" entityName="CoronaWarnApp">
+  <assemblyContexts__ComposedStructure id="_skotEFs2EeyZguoeZPFbfQ" entityName="Assembly_TestResultServer &lt;TestResultServer>">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:CompositeComponent" href="cwa.repository#_U1OjoFqVEeyjS5hmr-doJA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_efuEAFs6EeyZguoeZPFbfQ" entityName="Assembly_Portal &lt;Portal>">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="cwa.repository#_WTisAFqmEeyjS5hmr-doJA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_zBPAQFs6EeyZguoeZPFbfQ" entityName="Assembly_VerificationServer &lt;VerificationServer>">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="cwa.repository#_l1GtsFqsEeyjS5hmr-doJA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_FeoIoFs7EeyZguoeZPFbfQ" entityName="Assembly_CoronaWarnAppServer &lt;CoronaWarnAppServer>">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:CompositeComponent" href="cwa.repository#_9iaPgFq3EeyjS5hmr-doJA"/>
+  </assemblyContexts__ComposedStructure>
+  <assemblyContexts__ComposedStructure id="_hD8e0Fs7EeyZguoeZPFbfQ" entityName="Assembly_ContentDeliveryNetwork &lt;ContentDeliveryNetwork>">
+    <encapsulatedComponent__AssemblyContext xsi:type="repository:BasicComponent" href="cwa.repository#_488TsFrMEeyjS5hmr-doJA"/>
+  </assemblyContexts__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_5df5UFqbEeyjS5hmr-doJA" entityName="ProvDelegation Provided_ITestResult -> ITestResultServer">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_dU3-n1qXEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_6QUDEFqrEeyjS5hmr-doJA" entityName="ProvDelegation Provided_IHotline -> Provided_IHotline_PortalServer">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_bcFTIFqmEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_2seH4Fq2EeyjS5hmr-doJA" entityName="Connector Assembly_Verification &lt;Verification> -> Assembly_TestResultServer &lt;TestResultServer>">
+    <providedRole_AssemblyConnector href="cwa.repository#_dU3-n1qXEeert5hmr-doJA"/>
+    <requiredRole_AssemblyConnector href="cwa.repository#_pYswQFqsEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_5aNggFq2EeyjS5hmr-doJA" entityName="Connector Assembly_Portal &lt;PortalServer> -> Assembly_Verification &lt;Verification>">
+    <providedRole_AssemblyConnector href="cwa.repository#_rgSu4FqsEeyjS5hmr-doJA"/>
+    <requiredRole_AssemblyConnector href="cwa.repository#_lols8FqyEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_F8LMQFq3EeyjS5hmr-doJA" entityName="ProvDelegation IRegistrationToken_System_Provided -> IRegistrationToken_Assembly_Provided">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_152xcFqxEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_LedJEFq3EeyjS5hmr-doJA" entityName="ProvDelegation Provided_ITestResult_Verification -> ITestResult_Verification_Assembly_Provided">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_ClIUwFqzEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_q7CwIFrVEeyjS5hmr-doJA" entityName="Connector Assembly_CWA_Backend_Composite &lt;CWA_Backend_Composite> -> Assembly_Verification &lt;Verification>">
+    <providedRole_AssemblyConnector href="cwa.repository#_rgSu4FqsEeyjS5hmr-doJA"/>
+    <requiredRole_AssemblyConnector href="cwa.repository#_yyauY1rQEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_vtWBgFrVEeyjS5hmr-doJA" entityName="ProvDelegation Provided_IUploadDiagnosisKeys_CWA -> IUploadDiagnosisKeys_CWA_Assembly_Provided">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_v8ZOX1rOEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_96QMIFrVEeyjS5hmr-doJA" entityName="ProvDelegation Provided_IDownloadDiagnosisKey -> Provided_IDownloadDiagnosisKey_CDN_ContentDeliveryNetwork">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_Kgr3QFrNEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="__H8uUFrVEeyjS5hmr-doJA" entityName="Connector Assembly_CWA_Backend_Composite &lt;CWA_Backend_Composite> -> Assembly_ContentDeliveryNetwork &lt;ContentDeliveryNetwork>">
+    <providedRole_AssemblyConnector href="cwa.repository#_LLgV4FrNEeyjS5hmr-doJA"/>
+    <requiredRole_AssemblyConnector href="cwa.repository#_wMUj81rSEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:RequiredDelegationConnector" id="_nzCygFrXEeyjS5hmr-doJA" entityName="ReqDelegation Required_IFederationGateway -> Required_IFederationGateway">
+    <innerRequiredRole_RequiredDelegationConnector href="cwa.repository#_efWZkFrXEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_5kyJoFs2EeyZguoeZPFbfQ" entityName="ProvDelegation Provided_System_ITestResultLab -> Provided_ITestResultServerLab" outerProvidedRole_ProvidedDelegationConnector="_wNXHQFs2EeyZguoeZPFbfQ" assemblyContext_ProvidedDelegationConnector="_skotEFs2EeyZguoeZPFbfQ">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_z4EtMFswEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_o9viEFs6EeyZguoeZPFbfQ" entityName="ProvDelegation Provided_System_IHotline -> Provided_IPortal_Portal" outerProvidedRole_ProvidedDelegationConnector="_ihDygFs6EeyZguoeZPFbfQ" assemblyContext_ProvidedDelegationConnector="_efuEAFs6EeyZguoeZPFbfQ">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_ujDeYFsyEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_7cofQFs6EeyZguoeZPFbfQ" entityName="Connector Assembly_Portal &lt;Portal> -> Assembly_VerificationServer &lt;VerificationServer>" requiringAssemblyContext_AssemblyConnector="_efuEAFs6EeyZguoeZPFbfQ" providingAssemblyContext_AssemblyConnector="_zBPAQFs6EeyZguoeZPFbfQ">
+    <providedRole_AssemblyConnector href="cwa.repository#_nwFVwFsyEeyjS5hmr-doJA"/>
+    <requiredRole_AssemblyConnector href="cwa.repository#_xQJWwFsyEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="__i6_MFs6EeyZguoeZPFbfQ" entityName="Connector Assembly_VerificationServer &lt;VerificationServer> -> Assembly_TestResultServer &lt;TestResultServer>" requiringAssemblyContext_AssemblyConnector="_zBPAQFs6EeyZguoeZPFbfQ" providingAssemblyContext_AssemblyConnector="_skotEFs2EeyZguoeZPFbfQ">
+    <providedRole_AssemblyConnector href="cwa.repository#_2IX74FswEeyjS5hmr-doJA"/>
+    <requiredRole_AssemblyConnector href="cwa.repository#_T_lmwFsyEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_LseyAFs7EeyZguoeZPFbfQ" entityName="Connector Assembly_CoronaWarnAppServer &lt;CoronaWarnAppServer> -> Assembly_VerificationServer &lt;VerificationServer>" requiringAssemblyContext_AssemblyConnector="_FeoIoFs7EeyZguoeZPFbfQ" providingAssemblyContext_AssemblyConnector="_zBPAQFs6EeyZguoeZPFbfQ">
+    <providedRole_AssemblyConnector href="cwa.repository#_nwFVwFsyEeyjS5hmr-doJA"/>
+    <requiredRole_AssemblyConnector href="cwa.repository#_oRFCoFs1EeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_SvwngFs7EeyZguoeZPFbfQ" entityName="ProvDelegation Provided_ISubmissionService -> Provided_ISubmissionService" outerProvidedRole_ProvidedDelegationConnector="_PpkSoFs7EeyZguoeZPFbfQ" assemblyContext_ProvidedDelegationConnector="_FeoIoFs7EeyZguoeZPFbfQ">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_1PQJQFs1EeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:RequiredDelegationConnector" id="_deMgIFs7EeyZguoeZPFbfQ" entityName="ReqDelegation Required_IFederationGateway -> Required_IFederationGateway" outerRequiredRole_RequiredDelegationConnector="_am3GoFs7EeyZguoeZPFbfQ" assemblyContext_RequiredDelegationConnector="_FeoIoFs7EeyZguoeZPFbfQ">
+    <innerRequiredRole_RequiredDelegationConnector href="cwa.repository#_vsvi8Fs1EeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_jeVdoFs7EeyZguoeZPFbfQ" entityName="Connector Assembly_CoronaWarnAppServer &lt;CoronaWarnAppServer> -> Assembly_ContentDeliveryNetwork &lt;ContentDeliveryNetwork>" requiringAssemblyContext_AssemblyConnector="_FeoIoFs7EeyZguoeZPFbfQ" providingAssemblyContext_AssemblyConnector="_hD8e0Fs7EeyZguoeZPFbfQ">
+    <providedRole_AssemblyConnector href="cwa.repository#_AF9pkFs1EeyjS5hmr-doJA"/>
+    <requiredRole_AssemblyConnector href="cwa.repository#_86joEFs1EeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_3768IFs7EeyZguoeZPFbfQ" entityName="ProvDelegation Provided_IDownloadData -> Provided_IDownloadData_ContentDeliveryNetwork" outerProvidedRole_ProvidedDelegationConnector="_1LIPgFs7EeyZguoeZPFbfQ" assemblyContext_ProvidedDelegationConnector="_hD8e0Fs7EeyZguoeZPFbfQ">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_Ad_vEFs1EeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_EOuKgFs8EeyZguoeZPFbfQ" entityName="ProvDelegation Provided_System_IRegistrationToken -> Provided_IRegistrationToken_VerificationServer" outerProvidedRole_ProvidedDelegationConnector="_BDN30Fs8EeyZguoeZPFbfQ" assemblyContext_ProvidedDelegationConnector="_zBPAQFs6EeyZguoeZPFbfQ">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_debfwFsyEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_J5zeAFs8EeyZguoeZPFbfQ" entityName="ProvDelegation Provided_System_ITestResult -> Provided_ITestResult_VerificationServer" outerProvidedRole_ProvidedDelegationConnector="_F1xA0Fs8EeyZguoeZPFbfQ" assemblyContext_ProvidedDelegationConnector="_zBPAQFs6EeyZguoeZPFbfQ">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_icU9IFsyEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_wNXHQFs2EeyZguoeZPFbfQ" entityName="Provided_System_ITestResultLab">
+    <providedInterface__OperationProvidedRole href="cwa.repository#_JIJ_4FqSEeyIwpELWBrX7Q"/>
+  </providedRoles_InterfaceProvidingEntity>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_ihDygFs6EeyZguoeZPFbfQ" entityName="Provided_System_IHotline">
+    <providedInterface__OperationProvidedRole href="cwa.repository#_XOppYFqmEeyjS5hmr-doJA"/>
+  </providedRoles_InterfaceProvidingEntity>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_PpkSoFs7EeyZguoeZPFbfQ" entityName="Provided_System_IUploadData">
+    <providedInterface__OperationProvidedRole href="cwa.repository#_5js8QFrNEeyjS5hmr-doJA"/>
+  </providedRoles_InterfaceProvidingEntity>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1LIPgFs7EeyZguoeZPFbfQ" entityName="Provided_System_IDownloadData">
+    <providedInterface__OperationProvidedRole href="cwa.repository#_-LUdEFrMEeyjS5hmr-doJA"/>
+  </providedRoles_InterfaceProvidingEntity>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_BDN30Fs8EeyZguoeZPFbfQ" entityName="Provided_System_IRegistrationToken">
+    <providedInterface__OperationProvidedRole href="cwa.repository#_ZbnMAFqtEeyjS5hmr-doJA"/>
+  </providedRoles_InterfaceProvidingEntity>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_F1xA0Fs8EeyZguoeZPFbfQ" entityName="Provided_System_ITestResult">
+    <providedInterface__OperationProvidedRole href="cwa.repository#_AdFqMFqzEeyjS5hmr-doJA"/>
+  </providedRoles_InterfaceProvidingEntity>
+  <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_am3GoFs7EeyZguoeZPFbfQ" entityName="Required_System_IFederationGateway">
+    <requiredInterface__OperationRequiredRole href="cwa.repository#_1iO70FrWEeyjS5hmr-doJA"/>
+  </requiredRoles_InterfaceRequiringEntity>
+</system:System>

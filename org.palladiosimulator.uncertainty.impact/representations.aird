@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:usagemodel="http://palladiosimulator.org/PalladioComponentModel/UsageModel/5.2" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2 http://palladiosimulator.org/PalladioComponentModel/5.2#//allocation http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2 http://palladiosimulator.org/PalladioComponentModel/5.2#//resourceenvironment http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style http://palladiosimulator.org/PalladioComponentModel/UsageModel/5.2 http://palladiosimulator.org/PalladioComponentModel/5.2#//usagemodel">
+  <viewpoint:DAnalysis uid="_PobDYFqcEeyjS5hmr-doJA" selectedViews="_Q5JEYFqcEeyjS5hmr-doJA _UEK18FqcEeyjS5hmr-doJA _dZOg0FqcEeyjS5hmr-doJA" version="14.5.1.202106111100">
+    <semanticResources>src/main/resources/models/user/pcm/BookShop.allocation</semanticResources>
+    <semanticResources>src/main/resources/models/user/pcm/BookShop.resourceenvironment</semanticResources>
+    <semanticResources>pathmap://PCM_MODELS/Palladio.resourcetype</semanticResources>
+    <semanticResources>src/main/resources/models/user/pcm/BookShop.system</semanticResources>
+    <semanticResources>src/main/resources/models/user/pcm/BookShop.repository</semanticResources>
+    <semanticResources>pathmap://PCM_MODELS/PrimitiveTypes.repository</semanticResources>
+    <semanticResources>src/main/resources/models/user/pcm/BookShop.allocation_diagram</semanticResources>
+    <semanticResources>src/main/resources/models/user/pcm/BookShop.composite_diagram</semanticResources>
+    <semanticResources>src/main/resources/models/user/pcm/BookShop.repository_diagram</semanticResources>
+    <semanticResources>src/main/resources/models/user/pcm/BookShop.usagemodel</semanticResources>
+    <semanticResources>src/main/resources/models/user/pcm/BookShop.usagemodel_diagram</semanticResources>
+    <semanticResources>src/test/evaluation/cwa/models/user/pcm/cwa.composite_diagram</semanticResources>
+    <semanticResources>src/test/evaluation/cwa/models/user/pcm/cwa.system</semanticResources>
+    <semanticResources>src/test/evaluation/cwa/models/user/pcm/cwa.repository</semanticResources>
+    <semanticResources>src/test/resources/models/user/pcm/BookShop.allocation</semanticResources>
+    <semanticResources>src/test/resources/models/user/pcm/BookShop.resourceenvironment</semanticResources>
+    <semanticResources>src/test/resources/models/user/pcm/BookShop.system</semanticResources>
+    <semanticResources>src/test/resources/models/user/pcm/BookShop.repository</semanticResources>
+    <semanticResources>src/test/resources/models/user/pcm/BookShop.allocation_diagram</semanticResources>
+    <semanticResources>src/test/resources/models/user/pcm/BookShop.composite_diagram</semanticResources>
+    <semanticResources>src/test/resources/models/user/pcm/BookShop.repository_diagram</semanticResources>
+    <semanticResources>src/test/resources/models/user/pcm/BookShop.usagemodel</semanticResources>
+    <semanticResources>src/test/resources/models/user/pcm/BookShop.usagemodel_diagram</semanticResources>
+    <semanticResources>src/test/evaluation/cwa/models/user/pcm/cwa.usagemodel</semanticResources>
+    <semanticResources>src/test/evaluation/cwa/models/user/pcm/cwa.resourceenvironment</semanticResources>
+    <semanticResources>pathmap://PCM_MODELS/FailureTypes.repository</semanticResources>
+    <semanticResources>src/test/evaluation/cwa/models/user/pcm/cwa.allocation</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" uid="_Q5JEYFqcEeyjS5hmr-doJA">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Q6FfkFqcEeyjS5hmr-doJA" name="new UsageModel Diagram" repPath="#_Q5jUEFqcEeyjS5hmr-doJA" changeId="374716ff-dbb0-46b8-b122-aa74377f508c">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']"/>
+        <target xmi:type="usagemodel:UsageModel" href="src/test/evaluation/cwa/models/user/pcm/cwa.usagemodel#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_UEK18FqcEeyjS5hmr-doJA">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.palladiosimulator.editors.sirius.resourceenvironment/description/resourceenvironment.odesign#//@ownedViewpoints[name='ResourceEnvironment']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_UEtogFqcEeyjS5hmr-doJA" name="new ResourceEnvironment Diagram" repPath="#_UEaGgFqcEeyjS5hmr-doJA" changeId="f4ac5e55-5760-4a8d-b76c-39b6bb188a73">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.palladiosimulator.editors.sirius.resourceenvironment/description/resourceenvironment.odesign#//@ownedViewpoints[name='ResourceEnvironment']/@ownedRepresentations[name='ResourceEnvironment%20Diagram']"/>
+        <target xmi:type="resourceenvironment:ResourceEnvironment" href="src/test/evaluation/cwa/models/user/pcm/cwa.resourceenvironment#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+    <ownedViews xmi:type="viewpoint:DView" uid="_dZOg0FqcEeyjS5hmr-doJA">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.palladiosimulator.editors.sirius.allocation/description/allocation.odesign#//@ownedViewpoints[name='Allocation']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_db4MMFqcEeyjS5hmr-doJA" name="cwa_allocation" repPath="#_db2XAFqcEeyjS5hmr-doJA" changeId="14fcea75-11f5-43a4-9380-db5d0e096be8">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.palladiosimulator.editors.sirius.allocation/description/allocation.odesign#//@ownedViewpoints[name='Allocation']/@ownedRepresentations[name='Allocation%20Diagram']"/>
+        <target xmi:type="allocation:Allocation" href="src/test/evaluation/cwa/models/user/pcm/cwa.allocation#_VpqNEFqcEeyjS5hmr-doJA"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram uid="_Q5jUEFqcEeyjS5hmr-doJA">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_Q6WlUFqcEeyjS5hmr-doJA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_Q6WlUVqcEeyjS5hmr-doJA" type="Sirius" element="_Q5jUEFqcEeyjS5hmr-doJA" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_Q6WlUlqcEeyjS5hmr-doJA"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_Q9gnAFqcEeyjS5hmr-doJA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_Q9hOEFqcEeyjS5hmr-doJA"/>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_Q5wIYFqcEeyjS5hmr-doJA"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']/@ownedRepresentations[name='UsageModel%20Diagram']/@defaultLayer"/>
+    <target xmi:type="usagemodel:UsageModel" href="src/test/evaluation/cwa/models/user/pcm/cwa.usagemodel#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_UEaGgFqcEeyjS5hmr-doJA">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_UEuPkFqcEeyjS5hmr-doJA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_UEuPkVqcEeyjS5hmr-doJA" type="Sirius" element="_UEaGgFqcEeyjS5hmr-doJA" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_v-yGsFqcEeyjS5hmr-doJA" type="2002" element="_v-ucUFqcEeyjS5hmr-doJA">
+          <children xmi:type="notation:Node" xmi:id="_v-ytwFqcEeyjS5hmr-doJA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_v-ytwVqcEeyjS5hmr-doJA" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_v-ytwlqcEeyjS5hmr-doJA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_v-ytw1qcEeyjS5hmr-doJA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_v-yGsVqcEeyjS5hmr-doJA" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_v-yGslqcEeyjS5hmr-doJA" x="365" y="135" height="100"/>
+        </children>
+        <children xmi:type="notation:Node" xmi:id="_-_fH8FqrEeyjS5hmr-doJA" type="2002" element="_-_crsVqrEeyjS5hmr-doJA">
+          <children xmi:type="notation:Node" xmi:id="_-_fvAFqrEeyjS5hmr-doJA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_-_fvAVqrEeyjS5hmr-doJA" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_-_fvAlqrEeyjS5hmr-doJA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_-_fvA1qrEeyjS5hmr-doJA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_-_fH8VqrEeyjS5hmr-doJA" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-_fH8lqrEeyjS5hmr-doJA" x="745" y="175" height="100"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_UEuPklqcEeyjS5hmr-doJA"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_UE2LYFqcEeyjS5hmr-doJA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_UE2LYVqcEeyjS5hmr-doJA"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_v-ucUFqcEeyjS5hmr-doJA" name="&lt;&lt;ResourceContainer>>&#xA;TestResult_Server" tooltipText="ResourceContainer" height="10">
+      <target xmi:type="resourceenvironment:ResourceContainer" href="src/test/evaluation/cwa/models/user/pcm/cwa.resourceenvironment#_v-rZAFqcEeyjS5hmr-doJA"/>
+      <semanticElements xmi:type="resourceenvironment:ResourceContainer" href="src/test/evaluation/cwa/models/user/pcm/cwa.resourceenvironment#_v-rZAFqcEeyjS5hmr-doJA"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_v-vDYFqcEeyjS5hmr-doJA" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.palladiosimulator.editors.sirius.resourceenvironment/description/resourceenvironment.odesign#//@ownedViewpoints[name='ResourceEnvironment']/@ownedRepresentations[name='ResourceEnvironment%20Diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.palladiosimulator.editors.sirius.resourceenvironment/description/resourceenvironment.odesign#//@ownedViewpoints[name='ResourceEnvironment']/@ownedRepresentations[name='ResourceEnvironment%20Diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']"/>
+    </ownedDiagramElements>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_-_crsVqrEeyjS5hmr-doJA" name="&lt;&lt;ResourceContainer>>&#xA;Portal_Server" tooltipText="ResourceContainer" height="10">
+      <target xmi:type="resourceenvironment:ResourceContainer" href="src/test/evaluation/cwa/models/user/pcm/cwa.resourceenvironment#_-_crsFqrEeyjS5hmr-doJA"/>
+      <semanticElements xmi:type="resourceenvironment:ResourceContainer" href="src/test/evaluation/cwa/models/user/pcm/cwa.resourceenvironment#_-_crsFqrEeyjS5hmr-doJA"/>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_-_dSwFqrEeyjS5hmr-doJA" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.palladiosimulator.editors.sirius.resourceenvironment/description/resourceenvironment.odesign#//@ownedViewpoints[name='ResourceEnvironment']/@ownedRepresentations[name='ResourceEnvironment%20Diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.palladiosimulator.editors.sirius.resourceenvironment/description/resourceenvironment.odesign#//@ownedViewpoints[name='ResourceEnvironment']/@ownedRepresentations[name='ResourceEnvironment%20Diagram']/@defaultLayer/@containerMappings[name='ResourceContainer']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.palladiosimulator.editors.sirius.resourceenvironment/description/resourceenvironment.odesign#//@ownedViewpoints[name='ResourceEnvironment']/@ownedRepresentations[name='ResourceEnvironment%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_UEowAFqcEeyjS5hmr-doJA"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.palladiosimulator.editors.sirius.resourceenvironment/description/resourceenvironment.odesign#//@ownedViewpoints[name='ResourceEnvironment']/@ownedRepresentations[name='ResourceEnvironment%20Diagram']/@defaultLayer"/>
+    <target xmi:type="resourceenvironment:ResourceEnvironment" href="src/test/evaluation/cwa/models/user/pcm/cwa.resourceenvironment#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram uid="_db2XAFqcEeyjS5hmr-doJA">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_db4zQFqcEeyjS5hmr-doJA" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_db4zQVqcEeyjS5hmr-doJA" type="Sirius" element="_db2XAFqcEeyjS5hmr-doJA" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_t0eyUFqcEeyjS5hmr-doJA" type="2002" element="_tz0rAFqcEeyjS5hmr-doJA">
+          <children xmi:type="notation:Node" xmi:id="_t0h1oFqcEeyjS5hmr-doJA" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_t0icsFqcEeyjS5hmr-doJA" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_t0icsVqcEeyjS5hmr-doJA"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_t0icslqcEeyjS5hmr-doJA"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_t0fZYFqcEeyjS5hmr-doJA" fontName="Segoe UI" fontHeight="8"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_t0fZYVqcEeyjS5hmr-doJA" x="200" y="105" width="343" height="243"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_db4zQlqcEeyjS5hmr-doJA"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" uid="_dcEZcFqcEeyjS5hmr-doJA" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" uid="_dcEZcVqcEeyjS5hmr-doJA"/>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" uid="_tz0rAFqcEeyjS5hmr-doJA" name="&lt;&lt;Allocation>>&#xA;aName" tooltipText="Invalid AllocationContext: A ResourceContainer must be specified">
+      <target xmi:type="allocation:AllocationContext" href="src/test/evaluation/cwa/models/user/pcm/cwa.allocation#_sMxNoFqcEeyjS5hmr-doJA"/>
+      <semanticElements xmi:type="allocation:AllocationContext" href="src/test/evaluation/cwa/models/user/pcm/cwa.allocation#_sMxNoFqcEeyjS5hmr-doJA"/>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" uid="_tz9N4FqcEeyjS5hmr-doJA" iconPath="/org.palladiosimulator.editors.sirius.allocation/icons/InvalidAllocationContext.png" borderSize="1" borderSizeComputationExpression="1" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/org.palladiosimulator.editors.sirius.allocation/description/allocation.odesign#//@ownedViewpoints[name='Allocation']/@ownedRepresentations[name='Allocation%20Diagram']/@defaultLayer/@containerMappings[name='AllocationContext%20with%20no%20ResourceContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/org.palladiosimulator.editors.sirius.allocation/description/allocation.odesign#//@ownedViewpoints[name='Allocation']/@ownedRepresentations[name='Allocation%20Diagram']/@defaultLayer/@containerMappings[name='AllocationContext%20with%20no%20ResourceContainer']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/org.palladiosimulator.editors.sirius.allocation/description/allocation.odesign#//@ownedViewpoints[name='Allocation']/@ownedRepresentations[name='Allocation%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" uid="_db2XAVqcEeyjS5hmr-doJA"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/org.palladiosimulator.editors.sirius.allocation/description/allocation.odesign#//@ownedViewpoints[name='Allocation']/@ownedRepresentations[name='Allocation%20Diagram']/@defaultLayer"/>
+    <target xmi:type="allocation:Allocation" href="src/test/evaluation/cwa/models/user/pcm/cwa.allocation#_VpqNEFqcEeyjS5hmr-doJA"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
