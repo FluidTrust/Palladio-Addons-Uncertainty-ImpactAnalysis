@@ -174,7 +174,14 @@
         <layoutConstraint xmi:type="notation:Location" xmi:id="_HUlvQFs8EeyZguoeZPFbfQ" y="5"/>
       </children>
       <element xmi:type="repository:OperationProvidedRole" href="cwa.system#_F1xA0Fs8EeyZguoeZPFbfQ"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HUlIMVs8EeyZguoeZPFbfQ" x="1010" y="280"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HUlIMVs8EeyZguoeZPFbfQ" x="1010" y="345"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_XYdMwFtCEeyZguoeZPFbfQ" type="3011" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_XYdMwltCEeyZguoeZPFbfQ" type="5013">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_XYdMw1tCEeyZguoeZPFbfQ" y="5"/>
+      </children>
+      <element xmi:type="repository:OperationProvidedRole" href="cwa.system#_WyA30FtCEeyZguoeZPFbfQ"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XYdMwVtCEeyZguoeZPFbfQ" x="1010" y="245"/>
     </children>
     <element xmi:type="system:System" href="cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
     <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AOYbcVqVEeyjS5hmr-doJA" x="85" y="30" width="1011" height="696"/>
@@ -242,5 +249,11 @@
     <element xmi:type="composition:ProvidedDelegationConnector" href="cwa.system#_J5zeAFs8EeyZguoeZPFbfQ"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_J50FEls8EeyZguoeZPFbfQ" points="[-30, 0, 410, -75]$[-448, 82, -8, 7]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_J50sIFs8EeyZguoeZPFbfQ" id="(0.8166666666666667,0.5)"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_coI9sFtCEeyZguoeZPFbfQ" type="4006" source="_XYdMwFtCEeyZguoeZPFbfQ" target="_zbCAUFs6EeyZguoeZPFbfQ">
+    <styles xmi:type="notation:FontStyle" xmi:id="_coI9sVtCEeyZguoeZPFbfQ" fontName="Segoe UI"/>
+    <element xmi:type="composition:ProvidedDelegationConnector" href="cwa.system#_coGhcFtCEeyZguoeZPFbfQ"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_coI9sltCEeyZguoeZPFbfQ" points="[-30, 0, 372, -55]$[-395, 62, 7, 7]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_coKL0FtCEeyZguoeZPFbfQ" id="(0.8333333333333334,0.5166666666666667)"/>
   </edges>
 </notation:Diagram>

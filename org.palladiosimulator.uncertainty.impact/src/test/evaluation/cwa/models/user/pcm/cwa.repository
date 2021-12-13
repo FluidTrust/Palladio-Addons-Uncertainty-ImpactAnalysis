@@ -5,12 +5,14 @@
     <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_bI9IEFswEeyjS5hmr-doJA" entityName="Provided_ITestResultApp_TestResultLogic" providedInterface__OperationProvidedRole="_Feq2EFqlEeyjS5hmr-doJA"/>
     <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_V9gMUFsvEeyjS5hmr-doJA" entityName="Required_ITestResultDB_TestResultLogic" requiredInterface__OperationRequiredRole="_ncxYcFqTEeyIwpELWBrX7Q"/>
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_Ve-dQVsvEeyjS5hmr-doJA" describedService__SEFF="_rHoWEFqSEeyIwpELWBrX7Q">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_Ve-dQlsvEeyjS5hmr-doJA" entityName="start" successor_AbstractAction="_Ve-dQ1svEeyjS5hmr-doJA"/>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_Ve-dQ1svEeyjS5hmr-doJA" entityName="stop" predecessor_AbstractAction="_Ve-dQlsvEeyjS5hmr-doJA"/>
+      <steps_Behaviour xsi:type="seff:StartAction" id="_Ve-dQlsvEeyjS5hmr-doJA" entityName="start" successor_AbstractAction="_ROqnIFwKEeyZguoeZPFbfQ"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_Ve-dQ1svEeyjS5hmr-doJA" entityName="stop" predecessor_AbstractAction="_ROqnIFwKEeyZguoeZPFbfQ"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_ROqnIFwKEeyZguoeZPFbfQ" predecessor_AbstractAction="_Ve-dQlsvEeyjS5hmr-doJA" successor_AbstractAction="_Ve-dQ1svEeyjS5hmr-doJA" calledService_ExternalService="_pO9HwFqTEeyIwpELWBrX7Q" role_ExternalService="_V9gMUFsvEeyjS5hmr-doJA"/>
     </serviceEffectSpecifications__BasicComponent>
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_bI9IEVswEeyjS5hmr-doJA" describedService__SEFF="_RKHrMFqSEeyIwpELWBrX7Q">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_bI9IElswEeyjS5hmr-doJA" entityName="start" successor_AbstractAction="_bI9IE1swEeyjS5hmr-doJA"/>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_bI9IE1swEeyjS5hmr-doJA" entityName="stop" predecessor_AbstractAction="_bI9IElswEeyjS5hmr-doJA"/>
+      <steps_Behaviour xsi:type="seff:StartAction" id="_bI9IElswEeyjS5hmr-doJA" entityName="start" successor_AbstractAction="_VsmLAFwKEeyZguoeZPFbfQ"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_bI9IE1swEeyjS5hmr-doJA" entityName="stop" predecessor_AbstractAction="_VsmLAFwKEeyZguoeZPFbfQ"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_VsmLAFwKEeyZguoeZPFbfQ" predecessor_AbstractAction="_bI9IElswEeyjS5hmr-doJA" successor_AbstractAction="_bI9IE1swEeyjS5hmr-doJA" calledService_ExternalService="_tztFUFqTEeyIwpELWBrX7Q" role_ExternalService="_V9gMUFsvEeyjS5hmr-doJA"/>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
   <components__Repository xsi:type="repository:CompositeComponent" id="_U1OjoFqVEeyjS5hmr-doJA" entityName="TestResultServer">
@@ -48,8 +50,9 @@
       <steps_Behaviour xsi:type="seff:StopAction" id="_decG1VsyEeyjS5hmr-doJA" entityName="stop" predecessor_AbstractAction="_decG1FsyEeyjS5hmr-doJA"/>
     </serviceEffectSpecifications__BasicComponent>
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_icXZYFsyEeyjS5hmr-doJA" describedService__SEFF="_EKbeoFqzEeyjS5hmr-doJA">
-      <steps_Behaviour xsi:type="seff:StartAction" id="_icXZYVsyEeyjS5hmr-doJA" entityName="start" successor_AbstractAction="_icYAcFsyEeyjS5hmr-doJA"/>
-      <steps_Behaviour xsi:type="seff:StopAction" id="_icYAcFsyEeyjS5hmr-doJA" entityName="stop" predecessor_AbstractAction="_icXZYVsyEeyjS5hmr-doJA"/>
+      <steps_Behaviour xsi:type="seff:StartAction" id="_icXZYVsyEeyjS5hmr-doJA" entityName="start" successor_AbstractAction="_bBJ04FwKEeyZguoeZPFbfQ"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_icYAcFsyEeyjS5hmr-doJA" entityName="stop" predecessor_AbstractAction="_bBJ04FwKEeyZguoeZPFbfQ"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_bBJ04FwKEeyZguoeZPFbfQ" predecessor_AbstractAction="_icXZYVsyEeyjS5hmr-doJA" successor_AbstractAction="_icYAcFsyEeyjS5hmr-doJA" calledService_ExternalService="_RKHrMFqSEeyIwpELWBrX7Q" role_ExternalService="_T_lmwFsyEeyjS5hmr-doJA"/>
     </serviceEffectSpecifications__BasicComponent>
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_nwFVwVsyEeyjS5hmr-doJA" describedService__SEFF="_GqLtUFqtEeyjS5hmr-doJA">
       <steps_Behaviour xsi:type="seff:StartAction" id="_nwFVwlsyEeyjS5hmr-doJA" entityName="start" successor_AbstractAction="_nwFVw1syEeyjS5hmr-doJA"/>

@@ -1,13 +1,25 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <allocation:Allocation xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" id="_VpqNEFqcEeyjS5hmr-doJA" entityName="CWA Allocation">
   <targetResourceEnvironment_Allocation href="cwa.resourceenvironment#/"/>
   <system_Allocation href="cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
-  <allocationContexts_Allocation id="_sMxNoFqcEeyjS5hmr-doJA" entityName="Allocation_TestResult_Server">
-    <resourceContainer_AllocationContext href="cwa.resourceenvironment#_v-rZAFqcEeyjS5hmr-doJA"/>
-    <assemblyContext_AllocationContext href="cwa.system#_pPW2wFqbEeyjS5hmr-doJA"/>
+  <allocationContexts_Allocation id="_uJdtEFwLEeyZguoeZPFbfQ" entityName="Allocation_Assembly_VerificationServer &lt;VerificationServer> &lt;VerificationServer>">
+    <resourceContainer_AllocationContext href="cwa.resourceenvironment#_ymr7wFwKEeyZguoeZPFbfQ"/>
+    <assemblyContext_AllocationContext href="cwa.system#_zBPAQFs6EeyZguoeZPFbfQ"/>
   </allocationContexts_Allocation>
-  <allocationContexts_Allocation id="_F4Ae8FqsEeyjS5hmr-doJA" entityName="Allocation_Portal_Server">
+  <allocationContexts_Allocation id="_wTRSMFwLEeyZguoeZPFbfQ" entityName="Allocation_Assembly_TestResultServer &lt;TestResultServer> &lt;TestResultServer>">
+    <resourceContainer_AllocationContext href="cwa.resourceenvironment#_v-rZAFqcEeyjS5hmr-doJA"/>
+    <assemblyContext_AllocationContext href="cwa.system#_skotEFs2EeyZguoeZPFbfQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_xOEtkFwLEeyZguoeZPFbfQ" entityName="Allocation_Assembly_Portal &lt;Portal> &lt;Portal>">
     <resourceContainer_AllocationContext href="cwa.resourceenvironment#_-_crsFqrEeyjS5hmr-doJA"/>
-    <assemblyContext_AllocationContext href="cwa.system#_olC7MFqrEeyjS5hmr-doJA"/>
+    <assemblyContext_AllocationContext href="cwa.system#_efuEAFs6EeyZguoeZPFbfQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_yF8JsFwLEeyZguoeZPFbfQ" entityName="Allocation_Assembly_CoronaWarnAppServer &lt;CoronaWarnAppServer> &lt;CoronaWarnAppServer>">
+    <resourceContainer_AllocationContext href="cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+    <assemblyContext_AllocationContext href="cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+  </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_zm2i0FwLEeyZguoeZPFbfQ" entityName="Allocation_Assembly_ContentDeliveryNetwork &lt;ContentDeliveryNetwork> &lt;ContentDeliveryNetwork>">
+    <resourceContainer_AllocationContext href="cwa.resourceenvironment#_WMc6UFwLEeyZguoeZPFbfQ"/>
+    <assemblyContext_AllocationContext href="cwa.system#_hD8e0Fs7EeyZguoeZPFbfQ"/>
   </allocationContexts_Allocation>
 </allocation:Allocation>

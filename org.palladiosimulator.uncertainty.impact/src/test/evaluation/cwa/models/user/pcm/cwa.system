@@ -89,6 +89,9 @@
   <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_J5zeAFs8EeyZguoeZPFbfQ" entityName="ProvDelegation Provided_System_ITestResult -> Provided_ITestResult_VerificationServer" outerProvidedRole_ProvidedDelegationConnector="_F1xA0Fs8EeyZguoeZPFbfQ" assemblyContext_ProvidedDelegationConnector="_zBPAQFs6EeyZguoeZPFbfQ">
     <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_icU9IFsyEeyjS5hmr-doJA"/>
   </connectors__ComposedStructure>
+  <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_coGhcFtCEeyZguoeZPFbfQ" entityName="ProvDelegation Provided_System_ITAN -> Provided_ITAN_VerificationServer" outerProvidedRole_ProvidedDelegationConnector="_WyA30FtCEeyZguoeZPFbfQ" assemblyContext_ProvidedDelegationConnector="_zBPAQFs6EeyZguoeZPFbfQ">
+    <innerProvidedRole_ProvidedDelegationConnector href="cwa.repository#_nwFVwFsyEeyjS5hmr-doJA"/>
+  </connectors__ComposedStructure>
   <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_wNXHQFs2EeyZguoeZPFbfQ" entityName="Provided_System_ITestResultLab">
     <providedInterface__OperationProvidedRole href="cwa.repository#_JIJ_4FqSEeyIwpELWBrX7Q"/>
   </providedRoles_InterfaceProvidingEntity>
@@ -106,6 +109,9 @@
   </providedRoles_InterfaceProvidingEntity>
   <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_F1xA0Fs8EeyZguoeZPFbfQ" entityName="Provided_System_ITestResult">
     <providedInterface__OperationProvidedRole href="cwa.repository#_AdFqMFqzEeyjS5hmr-doJA"/>
+  </providedRoles_InterfaceProvidingEntity>
+  <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_WyA30FtCEeyZguoeZPFbfQ" entityName="Provided_System_ITAN">
+    <providedInterface__OperationProvidedRole href="cwa.repository#_Dya9YFqqEeyjS5hmr-doJA"/>
   </providedRoles_InterfaceProvidingEntity>
   <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_am3GoFs7EeyZguoeZPFbfQ" entityName="Required_System_IFederationGateway">
     <requiredInterface__OperationRequiredRole href="cwa.repository#_1iO70FrWEeyjS5hmr-doJA"/>

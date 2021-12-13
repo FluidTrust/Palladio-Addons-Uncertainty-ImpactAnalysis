@@ -1,5 +1,36 @@
-<?xml version="1.0" encoding="ASCII"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <resourceenvironment:ResourceEnvironment xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" entityName="cwa resource environment">
-  <resourceContainer_ResourceEnvironment id="_v-rZAFqcEeyjS5hmr-doJA" entityName="TestResult_Server"/>
-  <resourceContainer_ResourceEnvironment id="_-_crsFqrEeyjS5hmr-doJA" entityName="Portal_Server"/>
+  <linkingResources__ResourceEnvironment id="_9qyiYFwKEeyZguoeZPFbfQ" entityName="PortalServer_TO_VerificationServer" connectedResourceContainers_LinkingResource="_-_crsFqrEeyjS5hmr-doJA _ymr7wFwKEeyZguoeZPFbfQ">
+    <communicationLinkResourceSpecifications_LinkingResource id="_9q0-oFwKEeyZguoeZPFbfQ">
+      <communicationLinkResourceType_CommunicationLinkResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_o3sScH2AEdyH8uerKnHYug"/>
+      <latency_CommunicationLinkResourceSpecification specification="10"/>
+      <throughput_CommunicationLinkResourceSpecification specification="10"/>
+    </communicationLinkResourceSpecifications_LinkingResource>
+  </linkingResources__ResourceEnvironment>
+  <linkingResources__ResourceEnvironment id="_H6xkcFwLEeyZguoeZPFbfQ" entityName="TestResultServer_TO_VerificationServer" connectedResourceContainers_LinkingResource="_v-rZAFqcEeyjS5hmr-doJA _ymr7wFwKEeyZguoeZPFbfQ">
+    <communicationLinkResourceSpecifications_LinkingResource id="_H6xkcVwLEeyZguoeZPFbfQ">
+      <communicationLinkResourceType_CommunicationLinkResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_o3sScH2AEdyH8uerKnHYug"/>
+      <latency_CommunicationLinkResourceSpecification specification="10"/>
+      <throughput_CommunicationLinkResourceSpecification specification="10"/>
+    </communicationLinkResourceSpecifications_LinkingResource>
+  </linkingResources__ResourceEnvironment>
+  <linkingResources__ResourceEnvironment id="_QHz3UFwLEeyZguoeZPFbfQ" entityName="CoronaWarnAppServer_TO_VerificationServer" connectedResourceContainers_LinkingResource="_zudcIFwKEeyZguoeZPFbfQ _ymr7wFwKEeyZguoeZPFbfQ">
+    <communicationLinkResourceSpecifications_LinkingResource id="_QH0eYFwLEeyZguoeZPFbfQ">
+      <communicationLinkResourceType_CommunicationLinkResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_o3sScH2AEdyH8uerKnHYug"/>
+      <latency_CommunicationLinkResourceSpecification specification="10"/>
+      <throughput_CommunicationLinkResourceSpecification specification="10"/>
+    </communicationLinkResourceSpecifications_LinkingResource>
+  </linkingResources__ResourceEnvironment>
+  <linkingResources__ResourceEnvironment id="_bC1acFwLEeyZguoeZPFbfQ" entityName="ContentDeliveryNetwork_TO_CoronaWarnAppServer" connectedResourceContainers_LinkingResource="_WMc6UFwLEeyZguoeZPFbfQ _zudcIFwKEeyZguoeZPFbfQ">
+    <communicationLinkResourceSpecifications_LinkingResource id="_bC2BgFwLEeyZguoeZPFbfQ">
+      <communicationLinkResourceType_CommunicationLinkResourceSpecification href="pathmap://PCM_MODELS/Palladio.resourcetype#_o3sScH2AEdyH8uerKnHYug"/>
+      <latency_CommunicationLinkResourceSpecification specification="10"/>
+      <throughput_CommunicationLinkResourceSpecification specification="10"/>
+    </communicationLinkResourceSpecifications_LinkingResource>
+  </linkingResources__ResourceEnvironment>
+  <resourceContainer_ResourceEnvironment id="_v-rZAFqcEeyjS5hmr-doJA" entityName="TestResultServer_HWResource"/>
+  <resourceContainer_ResourceEnvironment id="_-_crsFqrEeyjS5hmr-doJA" entityName="PortalServer_HWResource"/>
+  <resourceContainer_ResourceEnvironment id="_ymr7wFwKEeyZguoeZPFbfQ" entityName="VerificationServer_HWResource"/>
+  <resourceContainer_ResourceEnvironment id="_zudcIFwKEeyZguoeZPFbfQ" entityName="CoronaWarnAppServer_HWResource"/>
+  <resourceContainer_ResourceEnvironment id="_WMc6UFwLEeyZguoeZPFbfQ" entityName="ContentDeliveryNetwork"/>
 </resourceenvironment:ResourceEnvironment>
