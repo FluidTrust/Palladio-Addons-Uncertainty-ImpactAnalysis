@@ -23,7 +23,7 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype
  * @author Niko
  *
  */
-public class UncertaintyTemplateModel extends ModelLoader implements IUncertaintyTemplateModel {
+public class UncertaintyTemplateModel extends Model implements IUncertaintyTemplateModel {
 
 	private UncertaintyTemplate uncertainyTemplate;
 

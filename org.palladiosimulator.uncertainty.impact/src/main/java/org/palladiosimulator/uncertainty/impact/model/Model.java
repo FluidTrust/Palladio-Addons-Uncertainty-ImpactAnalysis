@@ -14,13 +14,13 @@ import org.palladiosimulator.uncertainty.impact.exception.LoadModelFailedExcepti
 import org.palladiosimulator.uncertainty.impact.persistence.EMFPersistenceHelper;
 
 /**
- * Model loader is the super class for all models that shall be "loadable" from
+ * Model  is the super class for all models that shall be "loadable" from
  * a file. Provides methods to load specified models.
  * 
  * @author Niko
  *
  */
-public abstract class ModelLoader {
+public abstract class Model {
 
 	/**
 	 * Implementing classes need to call getModel() with this resourceList and the type (=clazz) they expect.

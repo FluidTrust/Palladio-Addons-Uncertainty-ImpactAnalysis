@@ -63,7 +63,7 @@ public class DisplayUncertaintyTypeInfoViewDialog extends TitleAreaDialog {
 
 		// Assignable Element
 		addLabel(container, "Assignable Element Type: ");
-		addLabel(container, uncertaintyTypeViewModel.getAssignableElementType().getType());
+		addLabel(container, uncertaintyTypeViewModel.getAssignableElementType().getName());
 
 		// ImpactOn
 		addLabel(container, "Impact on following Element Types: ");

@@ -34,7 +34,7 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Com
  * @author Niko
  *
  */
-public class PalladioModel extends ModelLoader implements IPalladioModel {
+public class PalladioModel extends Model implements IPalladioModel {
 
 	private Allocation allocation;
 	private Repository repository;

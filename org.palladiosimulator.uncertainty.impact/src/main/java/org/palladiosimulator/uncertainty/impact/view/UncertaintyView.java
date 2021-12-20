@@ -25,6 +25,7 @@ import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyView;
 import org.palladiosimulator.uncertainty.impact.view.listener.api.IUncertaintyViewListener;
 import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyPropagationResultViewModel;
+import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyViewModel;
 import org.palladiosimulator.uncertainty.impact.view.util.ViewFactory;
 
@@ -217,8 +218,8 @@ public class UncertaintyView extends AbstractView implements IUncertaintyView {
 						return;
 					}
 
-					displayUncertaintyTypeInfoView
-							.openView(((UncertaintyViewModel) checkedElements.get(0)).getUncertaintyTypeViewModel());
+					listener.onDisplayTypeInformationButtonClicked((UncertaintyViewModel) checkedElements.get(0));
+					
 					break;
 				}
 
@@ -227,6 +228,9 @@ public class UncertaintyView extends AbstractView implements IUncertaintyView {
 		});
 
 	}
+	
+	
+	
 
 	/**
 	 * Add button and delegate to {@link IUncertaintyViewListener}
@@ -505,5 +509,13 @@ public class UncertaintyView extends AbstractView implements IUncertaintyView {
 	public void displayPropagationResult(List<UncertaintyPropagationResultViewModel> result) {
 		propagationResultView.openView(result);
 	}
+	
+	@Override
+	public void displayUncertaintyTypeInformation(UncertaintyTypeViewModel uncertaintyTypeViewModel) {
+		displayUncertaintyTypeInfoView.openView(uncertaintyTypeViewModel);
+	}
+	
+	
+	
 
 }

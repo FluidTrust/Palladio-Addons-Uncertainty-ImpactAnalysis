@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.palladiosimulator.uncertainty.impact.view.listener.api.IUncertaintyViewListener;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyPropagationResultViewModel;
+import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyViewModel;
 
 public interface IUncertaintyView extends PluginView {
@@ -37,5 +38,7 @@ public interface IUncertaintyView extends PluginView {
 	public void removeUncertainties(List<UncertaintyViewModel> uncertaintyViewModels);
 
 	public void displayPropagationResult(List<UncertaintyPropagationResultViewModel> result);
+
+	void displayUncertaintyTypeInformation(UncertaintyTypeViewModel uncertaintyTypeViewModel);
 
 }

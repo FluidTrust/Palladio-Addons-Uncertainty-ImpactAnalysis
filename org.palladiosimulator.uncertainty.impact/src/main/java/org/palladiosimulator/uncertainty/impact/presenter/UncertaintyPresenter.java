@@ -27,9 +27,11 @@ import org.palladiosimulator.uncertainty.impact.propagation.UCImpactPropagationA
 import org.palladiosimulator.uncertainty.impact.propagation.UCImpactPropagationAnalysisInitializer;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplate;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;
 import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyView;
 import org.palladiosimulator.uncertainty.impact.view.listener.api.IUncertaintyViewListener;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyPropagationResultViewModel;
+import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyViewModel;
 
 /**
@@ -186,15 +188,44 @@ public class UncertaintyPresenter implements IUncertaintyPresenter, IUncertainty
 	}
 
 	/**
+	 * Retrieve type information for given uncertainty view model
+	 * 
+	 * @throws UncertaintyTemplateElementNotFoundException
+	 */
+	@Override
+	public void onDisplayTypeInformationButtonClicked(UncertaintyViewModel uncertaintyViewModel)
+			 {
+
+		/*
+		 * UncertaintyViewModel already references UncertaintyTypeViewModel but we
+		 * "reload" it from uncertaintyTemplate model in case it has been changed while
+		 * the plugin was running.
+		 */
+
+		String uncertaintyTypeId = uncertaintyViewModel.getUncertaintyTypeViewModel().getId();
+		UncertaintyType uncertaintyType;
+		try {
+			uncertaintyType = uncertaintyTemplateModel.getUncertaintyTypeById(uncertaintyTypeId);
+			view.displayUncertaintyTypeInformation(
+					ModelToViewModelConverter.convertUncertaintyTypeToUncertaintyTypeViewModel(uncertaintyType));
+			
+		} catch (UncertaintyTemplateElementNotFoundException e) {
+			view.showMessage("Error while retrieving uncertainty type information. Error message: " + e.getMessage());
+		}
+		
+
+	}
+
+	/**
 	 * Enables to save (or overwrite if already existing) uncertainty model.
 	 */
 	@Override
 	public void onSaveUncertaintyModelButtonClicked(String path) {
-		
+
 		if (!allModelsInitialized()) {
 			return;
 		}
-		
+
 		try {
 			SaveUncertaintyModelHelper.saveUncertaintyModel(uncertaintyModel.getUncertaintyModel(), path);
 		} catch (SaveModelFailedException e) {
@@ -210,11 +241,11 @@ public class UncertaintyPresenter implements IUncertaintyPresenter, IUncertainty
 	 */
 	@Override
 	public void onPropagateUncertaintiesButtonClicked(List<UncertaintyViewModel> uncertaintyViewModels) {
-		
+
 		if (!allModelsInitialized()) {
 			return;
 		}
-		
+
 		UCArchitectureVersion ucArchitectureVersion = executePropagation(uncertaintyViewModels);
 		if (ucArchitectureVersion == null) {
 			return;
@@ -237,7 +268,7 @@ public class UncertaintyPresenter implements IUncertaintyPresenter, IUncertainty
 		if (!allModelsInitialized()) {
 			return;
 		}
-		
+
 		UCArchitectureVersion ucArchitectureVersion = executePropagation(uncertaintyViewModels);
 		if (ucArchitectureVersion == null) {
 			return;

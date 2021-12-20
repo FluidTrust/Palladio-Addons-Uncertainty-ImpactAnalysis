@@ -21,7 +21,7 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemp
  * @author Niko
  *
  */
-public class UncertaintyModel extends ModelLoader implements IUncertaintyModel {
+public class UncertaintyModel extends Model implements IUncertaintyModel {
 
 	private UncertaintyContainer uncertaintyContainer;
 

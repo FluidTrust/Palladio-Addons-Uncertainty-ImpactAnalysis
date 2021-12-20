@@ -95,53 +95,53 @@ public class UncertaintyTemplateModelTest extends TestBase {
 		assertEquals(11, elementTypes.size());
 
 		PalladioElementType type = elementTypes.get(0);
-		testPalladioElementType(type, "_ogKREDWREeyX2v1Sswnu1Q", "System", PalladioElementTypes.SYSTEM);
+		testPalladioElementType(type, "_ogKREDWREeyX2v1Sswnu1Q", "System (System)", PalladioElementTypes.SYSTEM);
 
 		type = elementTypes.get(1);
-		testPalladioElementType(type, "_pE4HsDWREeyX2v1Sswnu1Q", "Hardware Resource",
+		testPalladioElementType(type, "_pE4HsDWREeyX2v1Sswnu1Q", "Hardware Resource (ResourceContainer)",
 				PalladioElementTypes.HARDWARE_RESOURCE);
 
 		type = elementTypes.get(2);
-		testPalladioElementType(type, "_pVIxQDWREeyX2v1Sswnu1Q", "Basic Component Type",
+		testPalladioElementType(type, "_pVIxQDWREeyX2v1Sswnu1Q", "Basic Component Type (BasicComponent)",
 				PalladioElementTypes.BASIC_COMPONENT_TYPE);
 
 		type = elementTypes.get(3);
-		testPalladioElementType(type, "_uQHRoDvgEey_pcVcOzlgag", "Component Instance",
+		testPalladioElementType(type, "_uQHRoDvgEey_pcVcOzlgag", "Component Instance (AssemblyContext)",
 				PalladioElementTypes.COMPONENT_INSTANCE);
 
 		type = elementTypes.get(4);
-		testPalladioElementType(type, "_uj8zoDvgEey_pcVcOzlgag", "Basic Component Behaviour",
+		testPalladioElementType(type, "_uj8zoDvgEey_pcVcOzlgag", "Basic Component Behaviour (RDSEFF)",
 				PalladioElementTypes.BASIC_COMPONENT_BEHAVIOUR);
 
 		type = elementTypes.get(5);
-		testPalladioElementType(type, "_u2df8DvgEey_pcVcOzlgag", "Communication Components",
+		testPalladioElementType(type, "_u2df8DvgEey_pcVcOzlgag", "Communication Components (AssemblyConnector)",
 				PalladioElementTypes.COMMUNICATION_COMPONENTS);
 
 		type = elementTypes.get(6);
-		testPalladioElementType(type, "_vEk0cDvgEey_pcVcOzlgag", "Communication Resources",
+		testPalladioElementType(type, "_vEk0cDvgEey_pcVcOzlgag", "Communication Resources (LinkingResource)",
 				PalladioElementTypes.COMMUNICATION_RESOURCES);
 
 		type = elementTypes.get(7);
-		testPalladioElementType(type, "_vUJhgDvgEey_pcVcOzlgag", "System Interface",
+		testPalladioElementType(type, "_vUJhgDvgEey_pcVcOzlgag", "System Interface (Role)",
 				PalladioElementTypes.SYSTEM_INTERFACE);
 
 		type = elementTypes.get(8);
-		testPalladioElementType(type, "_-GJ9QDvgEey_pcVcOzlgag", "Component Interface Instance",
+		testPalladioElementType(type, "_-GJ9QDvgEey_pcVcOzlgag", "Component Interface Instance (AssemblyContext&Role)",
 				PalladioElementTypes.COMPONENT_INTERFACE_INSTANCE);
 
 		type = elementTypes.get(9);
-		testPalladioElementType(type, "_-W_1oDvgEey_pcVcOzlgag", "Component Interface Type",
+		testPalladioElementType(type, "_-W_1oDvgEey_pcVcOzlgag", "Component Interface Type (Role)",
 				PalladioElementTypes.COMPONENT_INTERFACE_TYPE);
 
 		type = elementTypes.get(10);
-		testPalladioElementType(type, "_-oU2MDvgEey_pcVcOzlgag", "Usage Behaviour",
+		testPalladioElementType(type, "_-oU2MDvgEey_pcVcOzlgag", "Usage Behaviour (EntryLevelSystemCall)",
 				PalladioElementTypes.USAGE_BEHAVIOUR);
 	}
 
 	@Test
 	public void testGetElementTypeById() throws UncertaintyTemplateElementNotFoundException {
 		PalladioElementType type = cut.getElementTypeById("_ogKREDWREeyX2v1Sswnu1Q");
-		testPalladioElementType(type, "_ogKREDWREeyX2v1Sswnu1Q", "System", PalladioElementTypes.SYSTEM);
+		testPalladioElementType(type, "_ogKREDWREeyX2v1Sswnu1Q", "System (System)", PalladioElementTypes.SYSTEM);
 	}
 
 	@Test

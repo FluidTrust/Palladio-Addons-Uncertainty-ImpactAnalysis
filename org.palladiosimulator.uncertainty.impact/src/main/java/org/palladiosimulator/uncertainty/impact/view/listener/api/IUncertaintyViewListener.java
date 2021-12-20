@@ -20,4 +20,6 @@ public interface IUncertaintyViewListener {
 
 	public void onPropagateUncertaintiesButtonClicked(List<UncertaintyViewModel> collect);
 
+	public void onDisplayTypeInformationButtonClicked(UncertaintyViewModel uncertaintyViewModel);
+
 }
