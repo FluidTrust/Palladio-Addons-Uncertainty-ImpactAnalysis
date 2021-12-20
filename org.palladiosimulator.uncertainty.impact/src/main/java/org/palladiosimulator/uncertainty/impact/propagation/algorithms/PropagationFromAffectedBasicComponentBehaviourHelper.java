@@ -224,7 +224,7 @@ public class PropagationFromAffectedBasicComponentBehaviourHelper extends Abstra
 
 	}
 
-	private static BasicComponentBehaviour extractBasicComponentBehaviour(Uncertainty uncertainty)
+	private  BasicComponentBehaviour extractBasicComponentBehaviour(Uncertainty uncertainty)
 			throws UncertaintyPropagationException {
 		Entity referencedElement = uncertainty.getAssignedElement().getReferencedElement();
 		if (referencedElement instanceof BasicComponentBehaviour) {

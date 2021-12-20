@@ -1,7 +1,7 @@
 package org.palladiosimulator.uncertainty.impact.propagation.util;
 
 /**
- * Enum that holds n² combinations for starting and ending element.
+ * Enum that holds n^2 combinations for starting and ending element.
  * 
  * @author Niko
  *

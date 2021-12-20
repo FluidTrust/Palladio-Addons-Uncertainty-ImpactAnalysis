@@ -337,7 +337,7 @@ public class PropagationFromAffectedSystemHelper extends AbstractPropagationHelp
 
 	}
 
-	private static System extractSystem(Uncertainty uncertainty) throws UncertaintyPropagationException {
+	private System extractSystem(Uncertainty uncertainty) throws UncertaintyPropagationException {
 		Entity referencedElement = uncertainty.getAssignedElement().getReferencedElement();
 		if (referencedElement instanceof System) {
 			return (System) referencedElement;

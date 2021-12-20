@@ -16,12 +16,16 @@ import org.eclipse.emf.common.util.URI;
 import org.junit.jupiter.api.BeforeAll;
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.pcm.core.entity.EntityFactory;
+import org.palladiosimulator.uncertainty.impact.exception.InitializePropagationException;
 import org.palladiosimulator.uncertainty.impact.exception.LoadModelFailedException;
 import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyTemplateElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.model.PalladioModel;
 import org.palladiosimulator.uncertainty.impact.model.UncertaintyModel;
 import org.palladiosimulator.uncertainty.impact.model.UncertaintyTemplateModel;
+import org.palladiosimulator.uncertainty.impact.propagation.UCArchitectureVersion;
+import org.palladiosimulator.uncertainty.impact.propagation.UCArchitectureVersionFacade;
+import org.palladiosimulator.uncertainty.impact.propagation.UCImpactPropagationAnalysisInitializer;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADD;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADDClass;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.AddFactory;
@@ -45,6 +49,9 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.SeverityOfImpact;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyTypeFactory;
+import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.CausingUncertainty;
+import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactEntity;
+import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UncertaintypropagationFactory;
 import org.palladiosimulator.uncertainty.impact.view.model.ADDViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementViewModel;
@@ -133,6 +140,67 @@ public abstract class TestBase {
 		model.loadNewUncertaintyModel(getInitializedUncertaintyTemplateModel().getTemplateModel());
 		return model;
 	}
+	
+	/**
+	 * Helper method to initialize input with uncertainties. (Types/Elements
+	 * selected, so that each propagation algorithm is executed)
+	 * 
+	 * @return
+	 * @throws InitializePropagationException
+	 * @throws UncertaintyTemplateElementNotFoundException
+	 * @throws PalladioElementNotFoundException
+	 * @throws LoadModelFailedException
+	 */
+	public  UCArchitectureVersion initializePropagation(Uncertainty... uncertainties)
+			throws InitializePropagationException, LoadModelFailedException {
+		PalladioModel palladioModel = getInitializedPalladioModel();
+
+		// Empty version (only intialized with palladio models)
+		UCArchitectureVersion version = UCArchitectureVersionFacade.createEmptyModel("test",
+				palladioModel.getRepository(), palladioModel.getSystem(), palladioModel.getAllocation(),
+				palladioModel.getResourceEnvironment(), palladioModel.getUsageModel());
+
+		return UCImpactPropagationAnalysisInitializer.addUncertaintyImpactEntitiesToArchitectureVersion(version,
+				List.of(uncertainties));
+
+	}
+	
+	/*
+	 * Helper method to create expected causingUncertainty
+	 */
+	public  CausingUncertainty createTempCausingUncertainty(Uncertainty uncertainty, List<Entity> entities) {
+		CausingUncertainty cu = UncertaintypropagationFactory.eINSTANCE.createCausingUncertainty();
+		cu.setCausingUncertainty(uncertainty);
+		cu.getPath().addAll(entities);
+
+		return cu;
+	}
+	
+	public <T extends UCImpactEntity<?>> void testUCImpactEntityForSingleUncertainty(T ucImpactEntity,
+			Entity expectedAffectedElement, List<CausingUncertainty> expectedCausingUncertainties) {
+
+		// Affected Element should match!
+		testEntityEqualsEntity(expectedAffectedElement, ucImpactEntity.getAffectedElement());
+
+		List<CausingUncertainty> causingUncertainties = ucImpactEntity.getCausingElements();
+		assertEquals(expectedCausingUncertainties.size(), causingUncertainties.size());
+
+		// Causing uncertainty should match! (Wrapped uncertainty & Path!)
+		for (int i = 0; i < causingUncertainties.size(); i++) {
+			testUncertaintyEqualsUncertainty(expectedCausingUncertainties.get(i).getCausingUncertainty(),
+					causingUncertainties.get(i).getCausingUncertainty());
+			assertEquals(expectedCausingUncertainties.get(i).getPath().size(),
+					causingUncertainties.get(i).getPath().size());
+
+			for (int j = 0; j < expectedCausingUncertainties.get(i).getPath().size(); j++) {
+				testEntityEqualsEntity(expectedCausingUncertainties.get(i).getPath().get(j),
+						causingUncertainties.get(i).getPath().get(j));
+			}
+
+		}
+
+	}
+
 
 	/**
 	 * Create Uncertainty with provided characteristics
