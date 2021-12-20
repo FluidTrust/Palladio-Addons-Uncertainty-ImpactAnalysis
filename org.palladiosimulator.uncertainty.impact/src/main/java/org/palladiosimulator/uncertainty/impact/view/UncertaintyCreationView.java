@@ -5,8 +5,8 @@ import java.util.List;
 import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Composite;
 import org.palladiosimulator.uncertainty.impact.PluginMain;
-import org.palladiosimulator.uncertainty.impact.view.api.ICreateNewUncertaintyView;
-import org.palladiosimulator.uncertainty.impact.view.listener.api.ICreateNewUncertaintyViewListener;
+import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyCreationView;
+import org.palladiosimulator.uncertainty.impact.view.listener.api.IUncertaintyCreationViewListener;
 import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyViewModel;
@@ -19,15 +19,15 @@ import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyViewModel;
  * @author Niko
  *
  */
-public class CreateNewUncertaintyView extends AbstractView implements ICreateNewUncertaintyView {
+public class UncertaintyCreationView extends AbstractView implements IUncertaintyCreationView {
 
-	private CreateNewUncertaintyViewDialog dialog;
+	private UncertaintyCreationViewDialog dialog;
 
 	private Composite parent;
 
-	private ICreateNewUncertaintyViewListener listener;
+	private IUncertaintyCreationViewListener listener;
 
-	public CreateNewUncertaintyView(Composite parent) {
+	public UncertaintyCreationView(Composite parent) {
 		super(parent);
 		this.parent = parent;
 	}
@@ -38,7 +38,7 @@ public class CreateNewUncertaintyView extends AbstractView implements ICreateNew
 	@Override
 	public int openView() {
 		// Need to create new dialog as reopening dialog caused strange behavior
-		this.dialog = new CreateNewUncertaintyViewDialog(parent.getShell(), listener);
+		this.dialog = new UncertaintyCreationViewDialog(parent.getShell(), listener);
 		if (this.listener.newUncertaintyDialogCreated()) {
 			return dialog.open();
 
@@ -47,7 +47,7 @@ public class CreateNewUncertaintyView extends AbstractView implements ICreateNew
 	}
 
 	@Override
-	public void setCreateNewUncertaintyViewListener(ICreateNewUncertaintyViewListener listener) {
+	public void setCreateNewUncertaintyViewListener(IUncertaintyCreationViewListener listener) {
 		this.listener = listener;
 	}
 

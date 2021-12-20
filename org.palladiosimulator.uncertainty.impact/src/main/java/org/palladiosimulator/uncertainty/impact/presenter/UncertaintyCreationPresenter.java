@@ -1,7 +1,6 @@
 package org.palladiosimulator.uncertainty.impact.presenter;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.uncertainty.impact.exception.ElementTypeNotSupportedException;
@@ -9,31 +8,31 @@ import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoun
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyTemplateElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.model.api.IPalladioModel;
 import org.palladiosimulator.uncertainty.impact.model.api.IUncertaintyTemplateModel;
-import org.palladiosimulator.uncertainty.impact.presenter.api.ICreateNewUncertaintyPresenter;
+import org.palladiosimulator.uncertainty.impact.presenter.api.IUncertaintyCreationPresenter;
 import org.palladiosimulator.uncertainty.impact.presenter.util.ModelToViewModelConverter;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;
-import org.palladiosimulator.uncertainty.impact.view.api.ICreateNewUncertaintyView;
-import org.palladiosimulator.uncertainty.impact.view.listener.api.ICreateNewUncertaintyViewListener;
+import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyCreationView;
+import org.palladiosimulator.uncertainty.impact.view.listener.api.IUncertaintyCreationViewListener;
 import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
 
 /**
- * MVP-related presenter for views of type {@link ICreateNewUncertaintyView}.
- * Implements {@link ICreateNewUncertaintyViewListener} to be capable to listen
+ * MVP-related presenter for views of type {@link IUncertaintyCreationView}.
+ * Implements {@link IUncertaintyCreationViewListener} to be capable to listen
  * on view events. It is used when a user want to create a new uncertainty.
  * 
  * @author Niko
  *
  */
-public class CreateNewUncertaintyPresenter
-		implements ICreateNewUncertaintyPresenter, ICreateNewUncertaintyViewListener {
+public class UncertaintyCreationPresenter
+		implements IUncertaintyCreationPresenter, IUncertaintyCreationViewListener {
 
-	private ICreateNewUncertaintyView view;
+	private IUncertaintyCreationView view;
 	private IUncertaintyTemplateModel uncertaintyTemplateModel;
 	private IPalladioModel palladioModel;
 
-	public CreateNewUncertaintyPresenter(ICreateNewUncertaintyView view,
+	public UncertaintyCreationPresenter(IUncertaintyCreationView view,
 			IUncertaintyTemplateModel uncertaintyTemplateModel, IPalladioModel palladioModel) {
 		this.view = view;
 		this.uncertaintyTemplateModel = uncertaintyTemplateModel;
@@ -104,41 +103,41 @@ public class CreateNewUncertaintyPresenter
 	private List<PalladioElementViewModel> getAssignableElementsByType(PalladioElementTypes type)
 			throws ElementTypeNotSupportedException, PalladioElementNotFoundException {
 
-		List<Entity> elements;
+		List<? extends Entity> elements;
 
 		switch (type) {
 		case BASIC_COMPONENT_BEHAVIOUR:
-			elements = convertList(palladioModel.getAllBasicComponentBehaviourEntities());
+			elements = palladioModel.getAllBasicComponentBehaviourEntities();
 			break;
 		case BASIC_COMPONENT_TYPE:
-			elements = convertList(palladioModel.getAllBasicComponentTypeEntities());
+			elements = palladioModel.getAllBasicComponentTypeEntities();
 			break;
 		case COMMUNICATION_COMPONENTS:
-			elements = convertList(palladioModel.getAllCommunicationComponentEntities());
+			elements = palladioModel.getAllCommunicationComponentEntities();
 			break;
 		case COMMUNICATION_RESOURCES:
-			elements = convertList(palladioModel.getAllCommunicationResourceEntities());
+			elements = palladioModel.getAllCommunicationResourceEntities();
 			break;
 		case COMPONENT_INSTANCE:
-			elements = convertList(palladioModel.getAllComponentInstanceEntities());
+			elements = palladioModel.getAllComponentInstanceEntities();
 			break;
 		case COMPONENT_INTERFACE_INSTANCE:
-			elements = convertList(palladioModel.getAllComponentInterfaceInstanceEntities());
+			elements = palladioModel.getAllComponentInterfaceInstanceEntities();
 			break;
 		case COMPONENT_INTERFACE_TYPE:
-			elements = convertList(palladioModel.getAllComponentInterfaceTypeEntities());
+			elements = palladioModel.getAllComponentInterfaceTypeEntities();
 			break;
 		case HARDWARE_RESOURCE:
-			elements = convertList(palladioModel.getAllHardwareResourceEntities());
+			elements = palladioModel.getAllHardwareResourceEntities();
 			break;
 		case SYSTEM:
-			elements = convertList(palladioModel.getAllSystemEntities());
+			elements = palladioModel.getAllSystemEntities();
 			break;
 		case SYSTEM_INTERFACE:
-			elements = convertList(palladioModel.getAllSystemInterfaceEntities());
+			elements = palladioModel.getAllSystemInterfaceEntities();
 			break;
 		case USAGE_BEHAVIOUR:
-			elements = convertList(palladioModel.getAllUsageBehaviourEntities());
+			elements = palladioModel.getAllUsageBehaviourEntities();
 			break;
 		default:
 			throw new ElementTypeNotSupportedException(
@@ -147,15 +146,6 @@ public class CreateNewUncertaintyPresenter
 		}
 
 		return ModelToViewModelConverter.convertPalladioElementsToPalladioElementViewModels(elements);
-	}
-
-	/*
-	 * Each element in the PCM Model extends Entity class (which has name and id).
-	 * To display the elements, we are only intereseted in name and id which is why
-	 * we can cast each typed entity to Entity
-	 */
-	private static List<Entity> convertList(List<? extends Entity> list) {
-		return list.stream().map(Entity.class::cast).collect(Collectors.toList());
 	}
 
 }

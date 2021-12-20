@@ -157,7 +157,7 @@ public class UCImpactPropagationAnalysisInitializer {
 					.add(createUncertaintyImpactAtUsageBehaiour(version, uncertainty));
 			break;
 		default:
-			throw new RuntimeException("Type " + type + " not supported!");
+			throw new InitializePropagationException("Type " + type + " not supported!");
 		}
 
 	}

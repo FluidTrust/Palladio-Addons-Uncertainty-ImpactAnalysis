@@ -197,7 +197,7 @@ public class ModelToViewModelConverter {
 	 * @return
 	 */
 	public static List<PalladioElementViewModel> convertPalladioElementsToPalladioElementViewModels(
-			List<Entity> entities) {
+			List<? extends Entity> entities) {
 		return entities.stream().map(ModelToViewModelConverter::convertPalladioElementToPalladioElementViewModel)
 				.collect(Collectors.toList());
 	}

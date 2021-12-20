@@ -13,7 +13,7 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Text;
-import org.palladiosimulator.uncertainty.impact.view.listener.api.ICreateNewUncertaintyViewListener;
+import org.palladiosimulator.uncertainty.impact.view.listener.api.IUncertaintyCreationViewListener;
 import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyViewModel;
@@ -21,12 +21,12 @@ import org.palladiosimulator.uncertainty.impact.view.util.ViewFactory;
 
 /**
  * This class represents the dialog (pop up) with which new uncertainties are
- * created. It is opened by {@link CreateNewUncertaintyView}-
+ * created. It is opened by {@link UncertaintyCreationView}-
  * 
  * @author Niko
  *
  */
-public class CreateNewUncertaintyViewDialog extends TitleAreaDialog {
+public class UncertaintyCreationViewDialog extends TitleAreaDialog {
 
 	private Text txtName;
 
@@ -34,7 +34,7 @@ public class CreateNewUncertaintyViewDialog extends TitleAreaDialog {
 
 	private ComboViewer assignableElementsDropDownMenu;
 
-	private ICreateNewUncertaintyViewListener listener;
+	private IUncertaintyCreationViewListener listener;
 
 	//Data filled on save
 	private UncertaintyViewModel uncertaintyViewModel;
@@ -43,7 +43,7 @@ public class CreateNewUncertaintyViewDialog extends TitleAreaDialog {
 	private UncertaintyTypeViewModel uncertaintyTypeViewModel;
 	private PalladioElementViewModel palladioElementViewModel;
 
-	public CreateNewUncertaintyViewDialog(Shell parentShell, ICreateNewUncertaintyViewListener listener) {
+	public UncertaintyCreationViewDialog(Shell parentShell, IUncertaintyCreationViewListener listener) {
 		super(parentShell);
 		this.listener = listener;
 		super.create();

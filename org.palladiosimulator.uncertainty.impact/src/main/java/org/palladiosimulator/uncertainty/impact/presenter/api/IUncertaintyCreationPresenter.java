@@ -1,5 +1,5 @@
 package org.palladiosimulator.uncertainty.impact.presenter.api;
 
-public interface ICreateNewUncertaintyPresenter {
+public interface IUncertaintyCreationPresenter {
 
 }

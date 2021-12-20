@@ -18,7 +18,7 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
-import org.palladiosimulator.uncertainty.impact.view.api.ICreateNewUncertaintyView;
+import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyCreationView;
 import org.palladiosimulator.uncertainty.impact.view.api.IDisplayUncertaintyPropagationResultView;
 import org.palladiosimulator.uncertainty.impact.view.api.IDisplayUncertaintyTypeInfoView;
 import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyView;
@@ -41,13 +41,13 @@ public class UncertaintyView extends AbstractView implements IUncertaintyView {
 	private CheckboxTableViewer tableViewer;
 	private IUncertaintyViewListener listener;
 
-	private ICreateNewUncertaintyView createNewUncertaintyView;
+	private IUncertaintyCreationView createNewUncertaintyView;
 	private IDisplayUncertaintyTypeInfoView displayUncertaintyTypeInfoView;
 	private IDisplayUncertaintyPropagationResultView propagationResultView;
 
 	private Text uncertaintyModelPathText;
 
-	public UncertaintyView(Composite parent, ICreateNewUncertaintyView createNewUncertaintyView) {
+	public UncertaintyView(Composite parent, IUncertaintyCreationView createNewUncertaintyView) {
 		super(parent);
 		// Created by PluginMain.java, as listener is required
 		this.createNewUncertaintyView = createNewUncertaintyView;

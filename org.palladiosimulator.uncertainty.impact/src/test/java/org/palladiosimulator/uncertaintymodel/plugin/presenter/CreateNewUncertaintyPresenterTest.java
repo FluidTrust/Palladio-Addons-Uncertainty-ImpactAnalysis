@@ -23,16 +23,16 @@ import org.palladiosimulator.uncertainty.impact.model.PalladioModel;
 import org.palladiosimulator.uncertainty.impact.model.UncertaintyTemplateModel;
 import org.palladiosimulator.uncertainty.impact.model.api.IPalladioModel;
 import org.palladiosimulator.uncertainty.impact.model.api.IUncertaintyTemplateModel;
-import org.palladiosimulator.uncertainty.impact.presenter.CreateNewUncertaintyPresenter;
+import org.palladiosimulator.uncertainty.impact.presenter.UncertaintyCreationPresenter;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;
-import org.palladiosimulator.uncertainty.impact.view.api.ICreateNewUncertaintyView;
+import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyCreationView;
 import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
 import org.palladiosimulator.uncertaintymodel.plugin.TestBase;
 
 public class CreateNewUncertaintyPresenterTest extends TestBase {
 
-	CreateNewUncertaintyPresenter cut;
+	UncertaintyCreationPresenter cut;
 	IPalladioModel palladioModel;
 	IUncertaintyTemplateModel uncertaintyTemplateModel;
 
@@ -43,7 +43,7 @@ public class CreateNewUncertaintyPresenterTest extends TestBase {
 	ArgumentCaptor<List<PalladioElementViewModel>> palladioElementViewModelListCaptor;
 
 	@Mock
-	ICreateNewUncertaintyView view;
+	IUncertaintyCreationView view;
 
 	@BeforeEach
 	public void setUp() throws LoadModelFailedException {
@@ -53,7 +53,7 @@ public class CreateNewUncertaintyPresenterTest extends TestBase {
 		uncertaintyTemplateModel = new UncertaintyTemplateModel();
 		uncertaintyTemplateModel.loadUncertaintyTemplateModel(uncertaintyTemplatePath);
 
-		cut = new CreateNewUncertaintyPresenter(view, uncertaintyTemplateModel, palladioModel);
+		cut = new UncertaintyCreationPresenter(view, uncertaintyTemplateModel, palladioModel);
 	}
 
 	@Test
