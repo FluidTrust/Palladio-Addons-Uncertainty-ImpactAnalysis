@@ -7,12 +7,12 @@
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_Ve-dQVsvEeyjS5hmr-doJA" describedService__SEFF="_rHoWEFqSEeyIwpELWBrX7Q">
       <steps_Behaviour xsi:type="seff:StartAction" id="_Ve-dQlsvEeyjS5hmr-doJA" entityName="start" successor_AbstractAction="_ROqnIFwKEeyZguoeZPFbfQ"/>
       <steps_Behaviour xsi:type="seff:StopAction" id="_Ve-dQ1svEeyjS5hmr-doJA" entityName="stop" predecessor_AbstractAction="_ROqnIFwKEeyZguoeZPFbfQ"/>
-      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_ROqnIFwKEeyZguoeZPFbfQ" predecessor_AbstractAction="_Ve-dQlsvEeyjS5hmr-doJA" successor_AbstractAction="_Ve-dQ1svEeyjS5hmr-doJA" calledService_ExternalService="_pO9HwFqTEeyIwpELWBrX7Q" role_ExternalService="_V9gMUFsvEeyjS5hmr-doJA"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_ROqnIFwKEeyZguoeZPFbfQ" entityName="createTestResult" predecessor_AbstractAction="_Ve-dQlsvEeyjS5hmr-doJA" successor_AbstractAction="_Ve-dQ1svEeyjS5hmr-doJA" calledService_ExternalService="_pO9HwFqTEeyIwpELWBrX7Q" role_ExternalService="_V9gMUFsvEeyjS5hmr-doJA"/>
     </serviceEffectSpecifications__BasicComponent>
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_bI9IEVswEeyjS5hmr-doJA" describedService__SEFF="_RKHrMFqSEeyIwpELWBrX7Q">
       <steps_Behaviour xsi:type="seff:StartAction" id="_bI9IElswEeyjS5hmr-doJA" entityName="start" successor_AbstractAction="_VsmLAFwKEeyZguoeZPFbfQ"/>
       <steps_Behaviour xsi:type="seff:StopAction" id="_bI9IE1swEeyjS5hmr-doJA" entityName="stop" predecessor_AbstractAction="_VsmLAFwKEeyZguoeZPFbfQ"/>
-      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_VsmLAFwKEeyZguoeZPFbfQ" predecessor_AbstractAction="_bI9IElswEeyjS5hmr-doJA" successor_AbstractAction="_bI9IE1swEeyjS5hmr-doJA" calledService_ExternalService="_tztFUFqTEeyIwpELWBrX7Q" role_ExternalService="_V9gMUFsvEeyjS5hmr-doJA"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_VsmLAFwKEeyZguoeZPFbfQ" entityName="retrieveTestResult" predecessor_AbstractAction="_bI9IElswEeyjS5hmr-doJA" successor_AbstractAction="_bI9IE1swEeyjS5hmr-doJA" calledService_ExternalService="_tztFUFqTEeyIwpELWBrX7Q" role_ExternalService="_V9gMUFsvEeyjS5hmr-doJA"/>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
   <components__Repository xsi:type="repository:CompositeComponent" id="_U1OjoFqVEeyjS5hmr-doJA" entityName="TestResultServer">
@@ -52,7 +52,7 @@
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_icXZYFsyEeyjS5hmr-doJA" describedService__SEFF="_EKbeoFqzEeyjS5hmr-doJA">
       <steps_Behaviour xsi:type="seff:StartAction" id="_icXZYVsyEeyjS5hmr-doJA" entityName="start" successor_AbstractAction="_bBJ04FwKEeyZguoeZPFbfQ"/>
       <steps_Behaviour xsi:type="seff:StopAction" id="_icYAcFsyEeyjS5hmr-doJA" entityName="stop" predecessor_AbstractAction="_bBJ04FwKEeyZguoeZPFbfQ"/>
-      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_bBJ04FwKEeyZguoeZPFbfQ" predecessor_AbstractAction="_icXZYVsyEeyjS5hmr-doJA" successor_AbstractAction="_icYAcFsyEeyjS5hmr-doJA" calledService_ExternalService="_RKHrMFqSEeyIwpELWBrX7Q" role_ExternalService="_T_lmwFsyEeyjS5hmr-doJA"/>
+      <steps_Behaviour xsi:type="seff:ExternalCallAction" id="_bBJ04FwKEeyZguoeZPFbfQ" entityName="provideTestResult" predecessor_AbstractAction="_icXZYVsyEeyjS5hmr-doJA" successor_AbstractAction="_icYAcFsyEeyjS5hmr-doJA" calledService_ExternalService="_RKHrMFqSEeyIwpELWBrX7Q" role_ExternalService="_T_lmwFsyEeyjS5hmr-doJA"/>
     </serviceEffectSpecifications__BasicComponent>
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_nwFVwVsyEeyjS5hmr-doJA" describedService__SEFF="_GqLtUFqtEeyjS5hmr-doJA">
       <steps_Behaviour xsi:type="seff:StartAction" id="_nwFVwlsyEeyjS5hmr-doJA" entityName="start" successor_AbstractAction="_nwFVw1syEeyjS5hmr-doJA"/>
@@ -67,7 +67,7 @@
       <steps_Behaviour xsi:type="seff:StopAction" id="_nwF81VsyEeyjS5hmr-doJA" entityName="stop" predecessor_AbstractAction="_nwF81FsyEeyjS5hmr-doJA"/>
     </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
-  <components__Repository xsi:type="repository:BasicComponent" id="_7oWWkFq3EeyjS5hmr-doJA" entityName="CoronaWarnAppDB">
+  <components__Repository xsi:type="repository:BasicComponent" id="_7oWWkFq3EeyjS5hmr-doJA" entityName="CoronaWarnAppServerDB">
     <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_TMVvcFszEeyjS5hmr-doJA" entityName="Provided_ICoronaWarnAppDB_CoronaWarnAppDB" providedInterface__OperationProvidedRole="_WLGP8FrNEeyjS5hmr-doJA"/>
     <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_TMWWgFszEeyjS5hmr-doJA" describedService__SEFF="_ZslZsFrNEeyjS5hmr-doJA">
       <steps_Behaviour xsi:type="seff:StartAction" id="_TMWWgVszEeyjS5hmr-doJA" entityName="start" successor_AbstractAction="_TMWWglszEeyjS5hmr-doJA"/>
@@ -94,7 +94,7 @@
     <connectors__ComposedStructure xsi:type="composition:RequiredDelegationConnector" id="_x8bGkFs1EeyjS5hmr-doJA" entityName="ReqDelegation Required_IFederationGateway_CWA_Federation_Gateway -> Required_IFederationGateway" innerRequiredRole_RequiredDelegationConnector="_DFnoUFrXEeyjS5hmr-doJA" outerRequiredRole_RequiredDelegationConnector="_vsvi8Fs1EeyjS5hmr-doJA" assemblyContext_RequiredDelegationConnector="_hSxzwFs1EeyjS5hmr-doJA"/>
     <connectors__ComposedStructure xsi:type="composition:AssemblyConnector" id="_0Al9wFs1EeyjS5hmr-doJA" entityName="Connector Assembly_DistributionServices &lt;DistributionServices> -> Assembly_CoronaWarnAppDB &lt;CoronaWarnAppDB>" requiringAssemblyContext_AssemblyConnector="_kykUYFs1EeyjS5hmr-doJA" providingAssemblyContext_AssemblyConnector="_iwPQQFs1EeyjS5hmr-doJA" providedRole_AssemblyConnector="_TMVvcFszEeyjS5hmr-doJA" requiredRole_AssemblyConnector="_KgNQUFs0EeyjS5hmr-doJA"/>
     <connectors__ComposedStructure xsi:type="composition:ProvidedDelegationConnector" id="_2yvVQFs1EeyjS5hmr-doJA" entityName="ProvDelegation Provided_ISubmissionService -> Provided_ISubmissionService_SubmissionService" innerProvidedRole_ProvidedDelegationConnector="__cu70FszEeyjS5hmr-doJA" outerProvidedRole_ProvidedDelegationConnector="_1PQJQFs1EeyjS5hmr-doJA" assemblyContext_ProvidedDelegationConnector="_d8sowFs1EeyjS5hmr-doJA"/>
-    <connectors__ComposedStructure xsi:type="composition:RequiredDelegationConnector" id="_AqDYoFs2EeyjS5hmr-doJA" entityName="ReqDelegation Required_ISubmitData_DistributionServices -> Required_ISubmitData" innerRequiredRole_RequiredDelegationConnector="_-vXqEFs0EeyjS5hmr-doJA" outerRequiredRole_RequiredDelegationConnector="_86joEFs1EeyjS5hmr-doJA" assemblyContext_RequiredDelegationConnector="_kykUYFs1EeyjS5hmr-doJA"/>
+    <connectors__ComposedStructure xsi:type="composition:RequiredDelegationConnector" id="_AqDYoFs2EeyjS5hmr-doJA" entityName="ReqDelegation Required_ISubmitData_DistributionServices -> Required_ISubmitData" outerRequiredRole_RequiredDelegationConnector="_86joEFs1EeyjS5hmr-doJA" assemblyContext_RequiredDelegationConnector="_kykUYFs1EeyjS5hmr-doJA"/>
     <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_1PQJQFs1EeyjS5hmr-doJA" entityName="Provided_ISubmissionService" providedInterface__OperationProvidedRole="_5js8QFrNEeyjS5hmr-doJA"/>
     <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_oRFCoFs1EeyjS5hmr-doJA" entityName="Required_ITAN" requiredInterface__OperationRequiredRole="_Dya9YFqqEeyjS5hmr-doJA"/>
     <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_vsvi8Fs1EeyjS5hmr-doJA" entityName="Required_IFederationGateway" requiredInterface__OperationRequiredRole="_1iO70FrWEeyjS5hmr-doJA"/>
@@ -142,7 +142,28 @@
   </components__Repository>
   <components__Repository xsi:type="repository:BasicComponent" id="_I9ECkFs0EeyjS5hmr-doJA" entityName="DistributionServices">
     <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_KgNQUFs0EeyjS5hmr-doJA" entityName="Required_ICoronaWarnAppDB_DistributionServices" requiredInterface__OperationRequiredRole="_WLGP8FrNEeyjS5hmr-doJA"/>
-    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_-vXqEFs0EeyjS5hmr-doJA" entityName="Required_ISubmitData_DistributionServices" requiredInterface__OperationRequiredRole="_BG4PQFrNEeyjS5hmr-doJA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_d7700GG5Eeyu14wnCa3pKQ" entityName="Required_ISubmitData_DistributionServices" requiredInterface__OperationRequiredRole="_BG4PQFrNEeyjS5hmr-doJA"/>
+  </components__Repository>
+  <components__Repository xsi:type="repository:BasicComponent" id="_nHL8EGG8EeyYW-3yWDgzyw" entityName="CoronaWarnApp">
+    <providedRoles_InterfaceProvidingEntity xsi:type="repository:OperationProvidedRole" id="_rWnw8GG8EeyYW-3yWDgzyw" entityName="Provided_IMobileUser_CoronaWarnApp" providedInterface__OperationProvidedRole="_Rr2RUGG7EeyYW-3yWDgzyw"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_q0NncGG8EeyYW-3yWDgzyw" entityName="Required_ExposureNotificationFramework_CoronaWarnApp" requiredInterface__OperationRequiredRole="_yzBtYGGWEeyu14wnCa3pKQ"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_ux8oUGG8EeyYW-3yWDgzyw" entityName="Required_ITestResult_CoronaWarnApp" requiredInterface__OperationRequiredRole="_AdFqMFqzEeyjS5hmr-doJA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_z_r4gGG8EeyYW-3yWDgzyw" entityName="Required_ITAN_CoronaWarnApp" requiredInterface__OperationRequiredRole="_Dya9YFqqEeyjS5hmr-doJA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_3jTwQGG8EeyYW-3yWDgzyw" entityName="Required_IRegistrationToken_CoronaWarnApp" requiredInterface__OperationRequiredRole="_ZbnMAFqtEeyjS5hmr-doJA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_540PEGG8EeyYW-3yWDgzyw" entityName="Required_ISubmissionService_CoronaWarnApp" requiredInterface__OperationRequiredRole="_5js8QFrNEeyjS5hmr-doJA"/>
+    <requiredRoles_InterfaceRequiringEntity xsi:type="repository:OperationRequiredRole" id="_7czxYGG8EeyYW-3yWDgzyw" entityName="Required_IDownloadData_CoronaWarnApp" requiredInterface__OperationRequiredRole="_-LUdEFrMEeyjS5hmr-doJA"/>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rWo_EGG8EeyYW-3yWDgzyw" describedService__SEFF="_CdA6MGG8EeyYW-3yWDgzyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rWpmIGG8EeyYW-3yWDgzyw" entityName="start" successor_AbstractAction="_rWpmIWG8EeyYW-3yWDgzyw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rWpmIWG8EeyYW-3yWDgzyw" entityName="stop" predecessor_AbstractAction="_rWpmIGG8EeyYW-3yWDgzyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rWpmImG8EeyYW-3yWDgzyw" describedService__SEFF="_M6bUQGG8EeyYW-3yWDgzyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rWpmI2G8EeyYW-3yWDgzyw" entityName="start" successor_AbstractAction="_rWpmJGG8EeyYW-3yWDgzyw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rWpmJGG8EeyYW-3yWDgzyw" entityName="stop" predecessor_AbstractAction="_rWpmI2G8EeyYW-3yWDgzyw"/>
+    </serviceEffectSpecifications__BasicComponent>
+    <serviceEffectSpecifications__BasicComponent xsi:type="seff:ResourceDemandingSEFF" id="_rWpmJWG8EeyYW-3yWDgzyw" describedService__SEFF="_OdiFwGG8EeyYW-3yWDgzyw">
+      <steps_Behaviour xsi:type="seff:StartAction" id="_rWqNMGG8EeyYW-3yWDgzyw" entityName="start" successor_AbstractAction="_rWqNMWG8EeyYW-3yWDgzyw"/>
+      <steps_Behaviour xsi:type="seff:StopAction" id="_rWqNMWG8EeyYW-3yWDgzyw" entityName="stop" predecessor_AbstractAction="_rWqNMGG8EeyYW-3yWDgzyw"/>
+    </serviceEffectSpecifications__BasicComponent>
   </components__Repository>
   <interfaces__Repository xsi:type="repository:OperationInterface" id="_JIJ_4FqSEeyIwpELWBrX7Q" entityName="ITestResultLab">
     <signatures__OperationInterface id="_rHoWEFqSEeyIwpELWBrX7Q" entityName="createTestResult">
@@ -199,7 +220,7 @@
       <parameters__OperationSignature dataType__Parameter="_MHC7rFrOEeyjS5hmr-doJA" parameterName="diagnosisKeys"/>
     </signatures__OperationInterface>
   </interfaces__Repository>
-  <interfaces__Repository xsi:type="repository:OperationInterface" id="_WLGP8FrNEeyjS5hmr-doJA" entityName="ICoronaWarnAppDB">
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_WLGP8FrNEeyjS5hmr-doJA" entityName="ICoronaWarnAppServerDB">
     <signatures__OperationInterface id="_ZslZsFrNEeyjS5hmr-doJA" entityName="insertKeys">
       <parameters__OperationSignature dataType__Parameter="_MHC7rFrOEeyjS5hmr-doJA" parameterName="diagnosisKeys"/>
     </signatures__OperationInterface>
@@ -216,6 +237,15 @@
       <parameters__OperationSignature dataType__Parameter="_MHC7rFrOEeyjS5hmr-doJA" parameterName="diagnosisKeys"/>
     </signatures__OperationInterface>
     <signatures__OperationInterface id="__TNGoFrWEeyjS5hmr-doJA" entityName="downloadKeys" returnType__OperationSignature="_MHC7rFrOEeyjS5hmr-doJA"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_yzBtYGGWEeyu14wnCa3pKQ" entityName="ExposureNotificationFramework">
+    <signatures__OperationInterface id="_TWZO8GG4Eeyu14wnCa3pKQ" entityName="broadcast"/>
+    <signatures__OperationInterface id="_WDoRQGG4Eeyu14wnCa3pKQ" entityName="receive"/>
+  </interfaces__Repository>
+  <interfaces__Repository xsi:type="repository:OperationInterface" id="_Rr2RUGG7EeyYW-3yWDgzyw" entityName="IMobileUser">
+    <signatures__OperationInterface id="_CdA6MGG8EeyYW-3yWDgzyw" entityName="scanTestQRCode"/>
+    <signatures__OperationInterface id="_M6bUQGG8EeyYW-3yWDgzyw" entityName="uploadDiagnosisKeys()"/>
+    <signatures__OperationInterface id="_OdiFwGG8EeyYW-3yWDgzyw" entityName="provideTeleTAN"/>
   </interfaces__Repository>
   <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_kK-tDVqSEeyIwpELWBrX7Q" entityName="TestResult"/>
   <dataTypes__Repository xsi:type="repository:CompositeDataType" id="_dLFWLVqnEeyjS5hmr-doJA" entityName="TeleTAN"/>
