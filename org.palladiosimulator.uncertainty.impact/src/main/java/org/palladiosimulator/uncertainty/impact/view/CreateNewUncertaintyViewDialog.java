@@ -164,9 +164,7 @@ public class CreateNewUncertaintyViewDialog extends TitleAreaDialog {
 			public String getText(Object element) {
 				if (element instanceof PalladioElementViewModel) {
 					PalladioElementViewModel model = (PalladioElementViewModel) element;
-					String text = model.getName() + "(id: " + model.getId() + ")";
-
-					return text;
+					return model.getName() + "(id: " + model.getId() + ")";
 				}
 				return super.getText(element);
 			}

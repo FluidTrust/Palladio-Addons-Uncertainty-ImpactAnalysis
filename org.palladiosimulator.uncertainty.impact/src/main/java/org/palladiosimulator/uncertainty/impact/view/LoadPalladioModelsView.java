@@ -99,10 +99,6 @@ public class LoadPalladioModelsView extends AbstractView implements ILoadPalladi
 
 	}
 
-	@Override
-	public void showMessage(String message) {
-		super.showMessage(message);
-
-	}
+	
 
 }

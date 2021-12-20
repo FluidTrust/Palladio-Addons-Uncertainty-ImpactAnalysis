@@ -30,7 +30,7 @@ public class PalladioPresenterTest extends TestBase {
 	ILoadPalladioModelsView view;
 
 	@BeforeEach
-	public void setUp() throws Exception {
+	public void setUp()  {
 		MockitoAnnotations.openMocks(this);
 		// Not initialized
 		palladioModel = new PalladioModel();
@@ -49,7 +49,7 @@ public class PalladioPresenterTest extends TestBase {
 	}
 
 	@Test
-	public void testOnLoadPalladioModelsButtonClicked_WithInvalidModelPaths() throws PalladioElementNotFoundException {
+	public void testOnLoadPalladioModelsButtonClicked_WithInvalidModelPaths()  {
 		// Null test
 		cut.onLoadPalladioModelsButtonClicked(null);
 		assertFalse(palladioModel.isInitialized());

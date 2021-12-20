@@ -51,6 +51,11 @@ import edu.kit.ipd.sdq.kamp.architecture.ArchitectureModelLookup;
  *
  */
 public class UCImpactPropagationAnalysisInitializer {
+	
+	private UCImpactPropagationAnalysisInitializer() {
+		
+	}
+	
 
 	/**
 	 * For each uncertainty, create (or add to) a typed {@link UCImpactEntity} that

@@ -8,8 +8,6 @@ public class PalladioElementTypeViewModel {
 
 	private String type;
 
-	public PalladioElementTypeViewModel() {
-	}
 
 	public String getName() {
 		return name;

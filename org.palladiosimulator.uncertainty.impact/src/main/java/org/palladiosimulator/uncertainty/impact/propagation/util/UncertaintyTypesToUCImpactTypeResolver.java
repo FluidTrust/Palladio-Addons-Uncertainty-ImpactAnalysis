@@ -28,6 +28,10 @@ import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactE
  *
  */
 public class UncertaintyTypesToUCImpactTypeResolver {
+	
+	private UncertaintyTypesToUCImpactTypeResolver() {
+
+	}
 
 	private static final Map<PalladioElementTypes, Class<? extends UCImpactEntity<? extends Entity>>> fromElementTypeToImpactTypeResolverMap;
 	static {

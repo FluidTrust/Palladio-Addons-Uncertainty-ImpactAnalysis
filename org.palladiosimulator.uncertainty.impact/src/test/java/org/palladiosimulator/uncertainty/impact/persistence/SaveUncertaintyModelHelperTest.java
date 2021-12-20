@@ -21,7 +21,7 @@ public class SaveUncertaintyModelHelperTest extends TestBase {
 
 
 	@BeforeEach
-	public void init() throws LoadModelFailedException {
+	public void init() {
 		cleanTestData();
 
 	}

@@ -7,6 +7,10 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelement
 
 public class UncertaintyPropagationTypeToRuleResolver {
 
+	private UncertaintyPropagationTypeToRuleResolver() {
+
+	}
+
 	private static final Map<String, PropagationRuleType> fromElementTypeToElementTypeResolverMap;
 	static {
 		fromElementTypeToElementTypeResolverMap = new HashMap<>();
@@ -377,15 +381,16 @@ public class UncertaintyPropagationTypeToRuleResolver {
 	}
 
 	/**
-	 * Given starting and ending element, this methods resolves to the correct {@link PropagationRuleType}
+	 * Given starting and ending element, this methods resolves to the correct
+	 * {@link PropagationRuleType}
+	 * 
 	 * @param from
 	 * @param to
 	 * @return
 	 */
 	public static PropagationRuleType resolve(PalladioElementTypes from, PalladioElementTypes to) {
 		String key = from + "_TO_" + to;
-		PropagationRuleType rule = fromElementTypeToElementTypeResolverMap.get(key);
-		return rule;
+		return fromElementTypeToElementTypeResolverMap.get(key);
 	}
 
 	// Generator code -> use if more elements arise

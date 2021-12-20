@@ -13,6 +13,8 @@ import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.composition.DelegationConnector;
 import org.palladiosimulator.pcm.core.composition.ProvidedDelegationConnector;
 import org.palladiosimulator.pcm.core.composition.RequiredDelegationConnector;
+import org.palladiosimulator.pcm.core.entity.InterfaceProvidingEntity;
+import org.palladiosimulator.pcm.core.entity.InterfaceRequiringEntity;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.ProvidedRole;
 import org.palladiosimulator.pcm.repository.Repository;
@@ -31,6 +33,7 @@ import org.palladiosimulator.pcm.usagemodel.ScenarioBehaviour;
 import org.palladiosimulator.pcm.usagemodel.Start;
 import org.palladiosimulator.pcm.usagemodel.Stop;
 import org.palladiosimulator.pcm.usagemodel.UsageModel;
+import org.palladiosimulator.pcm.usagemodel.UsageScenario;
 import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.BasicComponentBehaviour;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ComponentInterfaceInstance;
@@ -44,6 +47,10 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Com
  */
 public class PalladioModelsLookupHelper {
 
+	private PalladioModelsLookupHelper() {
+
+	}
+
 	public static List<BasicComponentBehaviour> getAllBasicComponentBehaviourEntities(Repository repository)
 			throws PalladioElementNotFoundException {
 		validate(repository);
@@ -56,8 +63,8 @@ public class PalladioModelsLookupHelper {
 		 * 
 		 */
 		return getAllBasicComponentTypeEntities(repository).stream()
-				.map(x -> x.getServiceEffectSpecifications__BasicComponent()).flatMap(List::stream)
-				.filter(x -> x instanceof ResourceDemandingSEFF)
+				.map(BasicComponent::getServiceEffectSpecifications__BasicComponent).flatMap(List::stream)
+				.filter(ResourceDemandingSEFF.class::isInstance)
 				.map(x -> PalladioElementWrapperFactoryHelper.createBasicComponentBehaviour((ResourceDemandingSEFF) x))
 				.collect(Collectors.toList());
 
@@ -74,8 +81,8 @@ public class PalladioModelsLookupHelper {
 	public static List<BasicComponent> getAllBasicComponentTypeEntities(Repository repository)
 			throws PalladioElementNotFoundException {
 		validate(repository);
-		return repository.getComponents__Repository().stream().filter(comp -> comp instanceof BasicComponent)
-				.map(comp -> (BasicComponent) comp).collect(Collectors.toList());
+		return repository.getComponents__Repository().stream().filter(BasicComponent.class::isInstance)
+				.map(BasicComponent.class::cast).collect(Collectors.toList());
 	}
 
 	public static BasicComponent getBasicComponentTypeEntityById(Repository repository, String id)
@@ -89,8 +96,8 @@ public class PalladioModelsLookupHelper {
 	public static List<AssemblyConnector> getAllCommunicationComponentEntities(System system)
 			throws PalladioElementNotFoundException {
 		validate(system);
-		return system.getConnectors__ComposedStructure().stream().filter(x -> x instanceof AssemblyConnector)
-				.map(x -> (AssemblyConnector) x).collect(Collectors.toList());
+		return system.getConnectors__ComposedStructure().stream().filter(AssemblyConnector.class::isInstance)
+				.map(AssemblyConnector.class::cast).collect(Collectors.toList());
 	}
 
 	public static AssemblyConnector getCommunicationComponentEntityById(System system, String id)
@@ -173,10 +180,10 @@ public class PalladioModelsLookupHelper {
 		List<Role> roles = new ArrayList<>();
 
 		roles.addAll(
-				repository.getComponents__Repository().stream().map(x -> x.getProvidedRoles_InterfaceProvidingEntity())
+				repository.getComponents__Repository().stream().map(InterfaceProvidingEntity::getProvidedRoles_InterfaceProvidingEntity)
 						.flatMap(List::stream).collect(Collectors.toList()));
 		roles.addAll(
-				repository.getComponents__Repository().stream().map(x -> x.getRequiredRoles_InterfaceRequiringEntity())
+				repository.getComponents__Repository().stream().map(InterfaceRequiringEntity::getRequiredRoles_InterfaceRequiringEntity)
 						.flatMap(List::stream).collect(Collectors.toList()));
 		return roles;
 	}
@@ -217,8 +224,8 @@ public class PalladioModelsLookupHelper {
 	public static List<DelegationConnector> getAllDelegationConnectorEntities(System system)
 			throws PalladioElementNotFoundException {
 		validate(system);
-		return system.getConnectors__ComposedStructure().stream().filter(x -> (x instanceof DelegationConnector))
-				.map(x -> (DelegationConnector) x).collect(Collectors.toList());
+		return system.getConnectors__ComposedStructure().stream().filter(DelegationConnector.class::isInstance)
+				.map(DelegationConnector.class::cast).collect(Collectors.toList());
 	}
 
 	public static DelegationConnector getDelegationConnectorEntityById(System system, String id)
@@ -228,8 +235,7 @@ public class PalladioModelsLookupHelper {
 				.orElseThrow(
 						() -> new PalladioElementNotFoundException("DelegationConnector with id " + id + " not found"));
 	}
-	
-	
+
 	public static List<AllocationContext> getAllAllocationContextEntities(Allocation allocation)
 			throws PalladioElementNotFoundException {
 		validate(allocation);
@@ -247,9 +253,9 @@ public class PalladioModelsLookupHelper {
 	public static List<Role> getAllSystemInterfaceEntities(System system) throws PalladioElementNotFoundException {
 		validate(system);
 		List<Role> roles = new ArrayList<>();
-		roles.addAll(system.getProvidedRoles_InterfaceProvidingEntity().stream().map(x -> (Role) x)
+		roles.addAll(system.getProvidedRoles_InterfaceProvidingEntity().stream().map(Role.class::cast)
 				.collect(Collectors.toList()));
-		roles.addAll(system.getRequiredRoles_InterfaceRequiringEntity().stream().map(x -> (Role) x)
+		roles.addAll(system.getRequiredRoles_InterfaceRequiringEntity().stream().map(Role.class::cast)
 				.collect(Collectors.toList()));
 		return roles;
 	}
@@ -268,7 +274,7 @@ public class PalladioModelsLookupHelper {
 
 		// Need to perform DepthSearch for each scenario behaviour
 		List<ScenarioBehaviour> scenarioBehaviours = usageModel.getUsageScenario_UsageModel().stream()
-				.map(x -> x.getScenarioBehaviour_UsageScenario()).collect(Collectors.toList());
+				.map(UsageScenario::getScenarioBehaviour_UsageScenario).collect(Collectors.toList());
 
 		for (ScenarioBehaviour scenarioBehaviour : scenarioBehaviours) {
 			List<AbstractUserAction> actions = scenarioBehaviour.getActions_ScenarioBehaviour();
@@ -344,7 +350,7 @@ public class PalladioModelsLookupHelper {
 		}
 
 	}
-	
+
 	private static void validate(Allocation allocation) throws PalladioElementNotFoundException {
 		if (allocation == null) {
 			throw new PalladioElementNotFoundException(
@@ -375,7 +381,7 @@ public class PalladioModelsLookupHelper {
 		validate(system);
 
 		return system.getConnectors__ComposedStructure().stream()
-				.filter(x -> (x instanceof ProvidedDelegationConnector)).map(x -> (ProvidedDelegationConnector) x)
+				.filter(ProvidedDelegationConnector.class::isInstance).map(ProvidedDelegationConnector.class::cast)
 				.collect(Collectors.toList());
 	}
 
@@ -390,7 +396,7 @@ public class PalladioModelsLookupHelper {
 		validate(system);
 
 		return system.getConnectors__ComposedStructure().stream()
-				.filter(x -> (x instanceof RequiredDelegationConnector)).map(x -> (RequiredDelegationConnector) x)
+				.filter(RequiredDelegationConnector.class::isInstance).map(RequiredDelegationConnector.class::cast)
 				.collect(Collectors.toList());
 	}
 

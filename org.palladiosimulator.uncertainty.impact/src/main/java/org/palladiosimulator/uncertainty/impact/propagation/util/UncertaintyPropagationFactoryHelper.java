@@ -28,6 +28,10 @@ import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.Uncertain
  *
  */
 public class UncertaintyPropagationFactoryHelper {
+	
+private UncertaintyPropagationFactoryHelper() {
+		
+	}
 
 	private static final UncertaintypropagationFactory factory = UncertaintypropagationFactory.eINSTANCE;
 

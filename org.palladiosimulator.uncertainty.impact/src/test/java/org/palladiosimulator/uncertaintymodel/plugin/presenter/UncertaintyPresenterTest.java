@@ -55,7 +55,7 @@ public class UncertaintyPresenterTest extends TestBase {
 	ArgumentCaptor<UncertaintyViewModel> uncertaintyViewModelCaptor;
 
 	@BeforeEach
-	public void setUp() throws Exception {
+	public void setUp()  {
 		MockitoAnnotations.openMocks(this);
 		// Not initialized
 		uncertaintyModel = new UncertaintyModel();
@@ -235,8 +235,7 @@ public class UncertaintyPresenterTest extends TestBase {
 
 		UncertaintyViewModel uncertaintyViewModel_1 = ModelToViewModelConverter
 				.convertUncertaintyToUncertaintyViewModel(uncertainty_1);
-		UncertaintyViewModel uncertaintyViewModel_2 = ModelToViewModelConverter
-				.convertUncertaintyToUncertaintyViewModel(uncertainty_2);
+
 		UncertaintyViewModel uncertaintyViewModel_3 = ModelToViewModelConverter
 				.convertUncertaintyToUncertaintyViewModel(uncertainty_3);
 

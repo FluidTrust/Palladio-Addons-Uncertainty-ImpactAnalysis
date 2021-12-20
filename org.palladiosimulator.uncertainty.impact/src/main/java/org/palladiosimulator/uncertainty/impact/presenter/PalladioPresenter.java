@@ -66,7 +66,7 @@ public class PalladioPresenter implements IPalladioPresenter, IPalladioViewListe
 	private boolean areModelPathsValid(final List<String> modelPaths) {
 
 		List<String> missingModelExtensions = defineMissingModelPaths(modelPaths);
-		if (missingModelExtensions.size() > 0) {
+		if (!missingModelExtensions.isEmpty()) {
 
 			StringBuilder sb = new StringBuilder();
 			sb.append("Cannot initialize Palladio model. Following models are missing: ");

@@ -17,6 +17,10 @@ import org.eclipse.swt.widgets.Text;
  *
  */
 public class ViewFactory {
+	
+	private ViewFactory() {
+
+	}
 
 
 	/**

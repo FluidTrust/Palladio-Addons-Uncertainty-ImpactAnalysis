@@ -1,6 +1,7 @@
 package org.palladiosimulator.uncertainty.impact.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -51,7 +52,7 @@ public class UncertaintyTemplateModel extends ModelLoader implements IUncertaint
 	@Override
 	public List<ADD> getADDs() {
 		if (!isInitialized()) {
-			return null;
+			return Collections.emptyList();
 		}
 		return addContainer.getAdds();
 	}
@@ -68,7 +69,7 @@ public class UncertaintyTemplateModel extends ModelLoader implements IUncertaint
 	@Override
 	public List<PalladioElementType> getElementTypes() {
 		if (!isInitialized()) {
-			return null;
+			return Collections.emptyList();
 		}
 		return elementTypeContainer.getPalladioElementTypes();
 	}
@@ -85,7 +86,7 @@ public class UncertaintyTemplateModel extends ModelLoader implements IUncertaint
 	@Override
 	public List<UncertaintyType> getUncertaintyTypes() {
 		if (!isInitialized()) {
-			return null;
+			return Collections.emptyList();
 		}
 		return uncertaintyTypeContainer.getUncertaintyTypes();
 	}

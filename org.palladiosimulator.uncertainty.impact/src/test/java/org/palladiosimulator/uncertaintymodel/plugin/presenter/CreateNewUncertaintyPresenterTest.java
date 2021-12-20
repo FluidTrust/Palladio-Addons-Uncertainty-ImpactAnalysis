@@ -18,6 +18,7 @@ import org.mockito.ArgumentCaptor;
 import org.mockito.Captor;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+import org.palladiosimulator.uncertainty.impact.exception.LoadModelFailedException;
 import org.palladiosimulator.uncertainty.impact.model.PalladioModel;
 import org.palladiosimulator.uncertainty.impact.model.UncertaintyTemplateModel;
 import org.palladiosimulator.uncertainty.impact.model.api.IPalladioModel;
@@ -45,7 +46,7 @@ public class CreateNewUncertaintyPresenterTest extends TestBase {
 	ICreateNewUncertaintyView view;
 
 	@BeforeEach
-	public void setUp() throws Exception {
+	public void setUp() throws LoadModelFailedException {
 		MockitoAnnotations.openMocks(this);
 		palladioModel = new PalladioModel();
 		palladioModel.loadPalladioModels(palladioModelPaths);

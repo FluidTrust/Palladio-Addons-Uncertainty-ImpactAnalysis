@@ -26,6 +26,8 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Bas
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ComponentInterfaceInstance;
 import org.palladiosimulator.uncertaintymodel.plugin.TestBase;
 
+import de.uka.ipd.sdq.identifier.Identifier;
+
 public class PalladioModelTest extends TestBase {
 
 	PalladioModel cut;
@@ -303,7 +305,7 @@ public class PalladioModelTest extends TestBase {
 		assertNotNull(expectedIds);
 		assertNotNull(entities);
 
-		List<String> actualIds = entities.stream().map(x -> x.getId()).collect(Collectors.toList());
+		List<String> actualIds = entities.stream().map(Identifier::getId).collect(Collectors.toList());
 
 		assertEquals(expectedIds.size(), entities.size());
 

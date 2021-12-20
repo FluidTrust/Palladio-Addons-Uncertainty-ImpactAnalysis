@@ -183,7 +183,7 @@ public class UncertaintyView extends AbstractView implements IUncertaintyView {
 
 					//Cast to UncertaintyViewModel
 					List<UncertaintyViewModel> uncertainties = checkedElements.stream()
-							.map(x -> (UncertaintyViewModel) x).collect(Collectors.toList());
+							.map(UncertaintyViewModel.class::cast).collect(Collectors.toList());
 					
 					listener.onRemoveUncertaintyButtonClicked(uncertainties);
 
@@ -212,7 +212,7 @@ public class UncertaintyView extends AbstractView implements IUncertaintyView {
 
 					//Get current checked element from tableViewer
 					List<Object> checkedElements = Arrays.asList(tableViewer.getCheckedElements());
-					if (!(checkedElements.size() == 1)) {
+					if (checkedElements.size() != 1) {
 						showMessage("Please select exactly one uncertainty");
 						return;
 					}
@@ -290,14 +290,14 @@ public class UncertaintyView extends AbstractView implements IUncertaintyView {
 				case SWT.Selection:
 
 					List<Object> checkedElements = Arrays.asList(tableViewer.getCheckedElements());
-					if (checkedElements.size() == 0) {
+					if (checkedElements.isEmpty()) {
 						showMessage("Please select at least one uncertainty");
 						return;
 					}
 
 					// Propagate checked elements only
 					listener.onPropagateUncertaintiesButtonClicked(
-							checkedElements.stream().map(x -> (UncertaintyViewModel) x).collect(Collectors.toList()));
+							checkedElements.stream().map(UncertaintyViewModel.class::cast).collect(Collectors.toList()));
 
 					break;
 				}
@@ -323,14 +323,14 @@ public class UncertaintyView extends AbstractView implements IUncertaintyView {
 				case SWT.Selection:
 
 					List<Object> checkedElements = Arrays.asList(tableViewer.getCheckedElements());
-					if (checkedElements.size() == 0) {
+					if (checkedElements.isEmpty()) {
 						showMessage("Please select at least one uncertainty");
 						return;
 					}
 
 					// propagate and save checked elements only
 					listener.onSavePropagationButtonClicked(
-							checkedElements.stream().map(x -> (UncertaintyViewModel) x).collect(Collectors.toList()));
+							checkedElements.stream().map(UncertaintyViewModel.class::cast).collect(Collectors.toList()));
 
 					break;
 
@@ -499,11 +499,7 @@ public class UncertaintyView extends AbstractView implements IUncertaintyView {
 		tableViewer.remove(uncertaintyViewModels.toArray());
 	}
 
-	@Override
-	public void showMessage(String message) {
-		super.showMessage(message);
 
-	}
 
 	@Override
 	public void displayPropagationResult(List<UncertaintyPropagationResultViewModel> result) {

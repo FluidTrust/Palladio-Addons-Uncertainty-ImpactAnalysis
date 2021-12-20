@@ -12,7 +12,7 @@ public abstract class AbstractView {
 
 	private Composite parent;
 
-	public AbstractView(Composite parent) {
+	protected AbstractView(Composite parent) {
 		this.parent = parent;
 	}
 

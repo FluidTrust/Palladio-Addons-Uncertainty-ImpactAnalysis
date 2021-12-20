@@ -24,9 +24,7 @@ public class UncertaintyTypeViewModel {
 	private String rootCause;
 	private String severityOfImpact;
 
-	public UncertaintyTypeViewModel() {
-
-	}
+	
 
 	public void setName(String name) {
 		this.name = name;

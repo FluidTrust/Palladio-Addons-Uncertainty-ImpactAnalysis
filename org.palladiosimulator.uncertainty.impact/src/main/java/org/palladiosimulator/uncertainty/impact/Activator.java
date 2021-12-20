@@ -17,11 +17,10 @@ public class Activator extends AbstractUIPlugin {
 	public static final String PLUGIN_ID = "UncertaintyPluginProject";
 
 	// The shared instance
-	public static Activator plugin;
+	private static Activator plugin;
 
-	public Activator() {
-	}
 
+	@Override
 	public void start(BundleContext context) throws Exception {
 		super.start(context);
 		plugin = this;
@@ -30,13 +29,13 @@ public class Activator extends AbstractUIPlugin {
 
 	private static void registerModelExtension() {
 
-		// TODO others?
 		Resource.Factory.Registry reg = Resource.Factory.Registry.INSTANCE;
 		Map<String, Object> m = reg.getExtensionToFactoryMap();
 		m.put(UncertaintyPackage.eNAME, new XMIResourceFactoryImpl());
 
 	}
 
+	@Override
 	public void stop(BundleContext context) throws Exception {
 		plugin = null;
 		super.stop(context);

@@ -35,6 +35,10 @@ import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.Uncertain
  */
 public class UCImpactPropagationAnalysis {
 
+	private UCImpactPropagationAnalysis() {
+		
+	}
+	
 	public static UCArchitectureVersion runUncertaintyPropagationAnalysis(UCArchitectureVersion version)
 			throws UncertaintyPropagationException {
 

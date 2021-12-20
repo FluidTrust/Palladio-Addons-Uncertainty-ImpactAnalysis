@@ -1,10 +1,6 @@
 package org.palladiosimulator.evaluation.generator;
 
-import java.lang.reflect.InvocationTargetException;
-
-import org.junit.jupiter.api.Test;
 import org.palladiosimulator.uncertainty.impact.exception.LoadModelFailedException;
-import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.model.UncertaintyTemplateModel;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADD;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementType;
@@ -33,8 +29,8 @@ public class UncertaintyTemplateConvenienceMethodGenerator extends TestBase {
 	 */
 	//@Test // TODO Run as test to enable class generation
 	public void generateClass()
-			throws PalladioElementNotFoundException, LoadModelFailedException, NoSuchMethodException, SecurityException,
-			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+			throws LoadModelFailedException, SecurityException,
+			IllegalArgumentException {
 
 		/*
 		 * //TODO replace this by model for which you want to create convenience methods

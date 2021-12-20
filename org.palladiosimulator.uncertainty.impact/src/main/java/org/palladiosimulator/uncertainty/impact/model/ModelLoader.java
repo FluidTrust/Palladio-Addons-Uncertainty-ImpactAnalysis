@@ -56,7 +56,7 @@ public abstract class ModelLoader {
 	 * @throws LoadModelFailedException
 	 */
 	protected void loadModels(List<String> modelPaths) throws LoadModelFailedException {
-		final List<Resource> listResources = new ArrayList<Resource>();
+		final List<Resource> listResources = new ArrayList<>();
 		final ResourceSet resourceSet = new ResourceSetImpl();
 
 		for (final String modelPath : modelPaths) {

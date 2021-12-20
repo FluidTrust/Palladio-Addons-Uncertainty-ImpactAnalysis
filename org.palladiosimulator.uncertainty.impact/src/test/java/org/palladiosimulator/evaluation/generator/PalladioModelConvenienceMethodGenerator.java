@@ -4,14 +4,12 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
-import org.junit.jupiter.api.Test;
 import org.palladiosimulator.pcm.core.composition.ProvidedDelegationConnector;
 import org.palladiosimulator.pcm.core.composition.RequiredDelegationConnector;
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.pcm.repository.OperationProvidedRole;
 import org.palladiosimulator.pcm.repository.OperationRequiredRole;
 import org.palladiosimulator.uncertainty.impact.exception.LoadModelFailedException;
-import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.model.PalladioModel;
 import org.palladiosimulator.uncertaintymodel.plugin.BookStoreLoader;
 import org.palladiosimulator.uncertaintymodel.plugin.TestBase;
@@ -37,7 +35,7 @@ public class PalladioModelConvenienceMethodGenerator extends TestBase {
 	 */
 	//@Test // TODO Run as test to enable class generation
 	public void generateClass()
-			throws PalladioElementNotFoundException, LoadModelFailedException, NoSuchMethodException, SecurityException,
+			throws LoadModelFailedException, NoSuchMethodException, SecurityException,
 			IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 
 		/*
@@ -92,6 +90,7 @@ public class PalladioModelConvenienceMethodGenerator extends TestBase {
 			Method modelMethod = model.getClass().getMethod(callingMethodName);
 
 			// Change method call
+			@SuppressWarnings("unchecked")
 			List<? extends Entity> entities = (List<? extends Entity>) modelMethod.invoke(model);
 
 			// Change those two variable

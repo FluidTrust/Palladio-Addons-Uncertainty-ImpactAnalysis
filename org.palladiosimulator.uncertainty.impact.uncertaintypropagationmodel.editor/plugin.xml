@@ -11,10 +11,10 @@
       <objectContribution
             adaptable="false"
             id="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.UCImpactRepositoryID"
-            objectClass="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.UCImpactRepository">
+            objectClass="org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactRepository">
          <action
                class="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.editor.UCImpactPropagationAction"
-               icon="../edu.kit.ipd.sdq.kamp/icons/run.png"
+               icon="icons/run.png"
                id="org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.editor.UCImpactPropagationActionID"
                label="Step 3: Calculate uncertainty impact propagation"
                menubarPath="edit">

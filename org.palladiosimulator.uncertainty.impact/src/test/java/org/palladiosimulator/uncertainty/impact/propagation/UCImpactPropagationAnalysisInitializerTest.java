@@ -13,10 +13,10 @@ import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.uncertainty.impact.exception.InitializePropagationException;
 import org.palladiosimulator.uncertainty.impact.exception.LoadModelFailedException;
 import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoundException;
-import org.palladiosimulator.uncertainty.impact.exception.SaveModelFailedException;
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyTemplateElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.model.PalladioModel;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
+import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.CausingUncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactEntity;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCPropagationRulesSeed;
 import org.palladiosimulator.uncertaintymodel.plugin.TestBase;
@@ -24,7 +24,7 @@ import org.palladiosimulator.uncertaintymodel.plugin.TestBase;
 public class UCImpactPropagationAnalysisInitializerTest extends TestBase {
 
 	@BeforeEach
-	public void init() throws LoadModelFailedException {
+	public void init() {
 		cleanTestData();
 
 	}
@@ -32,7 +32,7 @@ public class UCImpactPropagationAnalysisInitializerTest extends TestBase {
 	@Test
 	public void testPropagationInitialization()
 			throws LoadModelFailedException, UncertaintyTemplateElementNotFoundException,
-			PalladioElementNotFoundException, SaveModelFailedException, InitializePropagationException {
+			PalladioElementNotFoundException, InitializePropagationException {
 
 		PalladioModel palladioModel = getInitializedPalladioModel();
 
@@ -136,7 +136,7 @@ public class UCImpactPropagationAnalysisInitializerTest extends TestBase {
 	@Test
 	public void testPropagationInitialization_Throws_Error()
 			throws LoadModelFailedException, UncertaintyTemplateElementNotFoundException,
-			PalladioElementNotFoundException, SaveModelFailedException, InitializePropagationException {
+			PalladioElementNotFoundException, InitializePropagationException {
 
 		PalladioModel palladioModel = getInitializedPalladioModel();
 
@@ -152,10 +152,10 @@ public class UCImpactPropagationAnalysisInitializerTest extends TestBase {
 		List<Uncertainty> uncertainties = List.of(uncertainty_invalid);
 
 		// Execute test
-		assertThrows(InitializePropagationException.class, () -> {
+		assertThrows(InitializePropagationException.class, () ->
 			UCImpactPropagationAnalysisInitializer
-			.addUncertaintyImpactEntitiesToArchitectureVersion(version, uncertainties);
-		});
+			.addUncertaintyImpactEntitiesToArchitectureVersion(version, uncertainties)
+		);
 
 		
 
@@ -170,12 +170,12 @@ public class UCImpactPropagationAnalysisInitializerTest extends TestBase {
 		testEntityEqualsEntity(expectedAffectedElement, affectedElement);
 
 		// Check that path was not set
-		entity.getCausingElements().forEach((x) -> {
-			assertEquals(0, x.getPath().size());
-		});
+		entity.getCausingElements().forEach(x -> 
+			assertEquals(0, x.getPath().size())
+		);
 
 		// Extract actual uncertainties
-		List<Uncertainty> uncertainties = entity.getCausingElements().stream().map(x -> x.getCausingUncertainty())
+		List<Uncertainty> uncertainties = entity.getCausingElements().stream().map(CausingUncertainty::getCausingUncertainty)
 				.collect(Collectors.toList());
 		assertEquals(expectedUncertainties.length, uncertainties.size());
 

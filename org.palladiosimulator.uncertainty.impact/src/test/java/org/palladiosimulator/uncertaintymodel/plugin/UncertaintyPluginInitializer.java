@@ -12,6 +12,11 @@ import tools.mdsd.library.standalone.initialization.StandaloneInitializerBuilder
 import tools.mdsd.library.standalone.initialization.log4j.Log4jInitilizationTask;
 
 public class UncertaintyPluginInitializer {
+	
+private UncertaintyPluginInitializer() {
+		
+	}
+
 
 	public static void init() throws StandaloneInitializationException {
 

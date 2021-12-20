@@ -1,6 +1,7 @@
 package org.palladiosimulator.uncertainty.impact.model;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.emf.ecore.resource.Resource;
@@ -41,7 +42,7 @@ public class UncertaintyModel extends ModelLoader implements IUncertaintyModel {
 	@Override
 	public List<Uncertainty> getUncertainties() {
 		if (!isInitialized()) {
-			return null;
+			return Collections.emptyList();
 		}
 
 		return uncertaintyContainer.getUncertainties();
@@ -66,10 +67,8 @@ public class UncertaintyModel extends ModelLoader implements IUncertaintyModel {
 
 	@Override
 	public void removeUncertaintyById(String id) throws UncertaintyNotFoundException {
-		if (isInitialized()) {
-			if (!uncertaintyContainer.getUncertainties().removeIf(u -> u.getId().equals(id))) {
+		if (isInitialized() && !uncertaintyContainer.getUncertainties().removeIf(u -> u.getId().equals(id)) ) {
 				throw new UncertaintyNotFoundException("Uncertainty with id " + id + "not found.");
-			}
 		}
 
 	}

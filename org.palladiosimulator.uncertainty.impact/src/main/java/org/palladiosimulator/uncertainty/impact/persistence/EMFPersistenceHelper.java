@@ -54,7 +54,7 @@ public class EMFPersistenceHelper {
 			loadURI = loadURI.appendSegment(filePath);
 		try {
 			Resource resource = resourceSet.createResource(loadURI);
-			((ResourceImpl) resource).setIntrinsicIDToEObjectMap(new HashMap<String, EObject>());
+			((ResourceImpl) resource).setIntrinsicIDToEObjectMap(new HashMap<>());
 			Map<Object, Object> loadOptions = setupLoadOptions(resource);
 			resource.load(loadOptions);
 			return resource;
@@ -167,10 +167,8 @@ public class EMFPersistenceHelper {
 			} catch (CoreException e) {
 				throw new SaveModelFailedException(e.getMessage());
 			}
-		} else if (resource instanceof IFile) {
-			if (resource.getFileExtension().equals(fileExtension)) {
+		} else if (resource instanceof IFile && resource.getFileExtension().equals(fileExtension)) {
 				return (IFile) resource;
-			}
 		}
 
 		return null;

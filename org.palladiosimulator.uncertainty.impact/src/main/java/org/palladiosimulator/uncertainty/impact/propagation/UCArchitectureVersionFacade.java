@@ -18,6 +18,10 @@ import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCPropaga
  *
  */
 public class UCArchitectureVersionFacade {
+	
+	private UCArchitectureVersionFacade() {
+		
+	}
 
 	/**
 	 * Create {@link UCArchitectureVersion} with empty

@@ -15,6 +15,7 @@ import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyProp
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementType;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
+import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.CausingUncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtBasicComponentBehaviour;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtBasicComponentType;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtCommunicationComponents;
@@ -55,7 +56,7 @@ public abstract class AbstractPropagationHelper {
 	protected final UCArchitectureVersion version;
 	protected final UncertaintyPropagation uncertaintyPropagation;
 
-	public AbstractPropagationHelper(UCArchitectureVersion version, UncertaintyPropagation uncertaintyPropagation) {
+	protected AbstractPropagationHelper(UCArchitectureVersion version, UncertaintyPropagation uncertaintyPropagation) {
 		this.version = version;
 		this.uncertaintyPropagation = uncertaintyPropagation;
 	}
@@ -83,7 +84,7 @@ public abstract class AbstractPropagationHelper {
 
 		// Collect all uncertainties that have to be propagated
 		for (UCImpactEntity<? extends Entity> affectedEntity : affectedEntities) {
-			uncertainties.addAll(affectedEntity.getCausingElements().stream().map(x -> x.getCausingUncertainty())
+			uncertainties.addAll(affectedEntity.getCausingElements().stream().map(CausingUncertainty::getCausingUncertainty)
 					.collect(Collectors.toList()));
 		}
 
@@ -126,7 +127,7 @@ public abstract class AbstractPropagationHelper {
 			 * the given UCImpactEntity
 			 */
 			Switch<Boolean> ucImpactEntitySwitch = new SwitchForAddingOrMergingUCImpactEntities();
-			if (!ucImpactEntitySwitch.doSwitch(uncertaintyImpact)) {
+			if (Boolean.FALSE.equals(ucImpactEntitySwitch.doSwitch(uncertaintyImpact))) {
 				throw new UncertaintyPropagationException(
 						"UncertaintyImpact of type " + uncertaintyImpact.getClass().getSimpleName() + " is unknown!");
 			}
@@ -147,6 +148,7 @@ public abstract class AbstractPropagationHelper {
 	 */
 	private class SwitchForAddingOrMergingUCImpactEntities extends UncertaintypropagationSwitch<Boolean> {
 
+		@Override
 		public Boolean caseUCImpactAtBasicComponentBehaviour(UCImpactAtBasicComponentBehaviour ucImpact) {
 			if (!addCausingUncertaintiesIfUCImpactAlreadyExists(UCImpactAtBasicComponentBehaviour.class, ucImpact)) {
 				uncertaintyPropagation.getAffectedBasicComponentBehaviours().add(ucImpact);
@@ -154,6 +156,7 @@ public abstract class AbstractPropagationHelper {
 			return true;
 		};
 
+		@Override
 		public Boolean caseUCImpactAtBasicComponentType(UCImpactAtBasicComponentType ucImpact) {
 			if (!addCausingUncertaintiesIfUCImpactAlreadyExists(UCImpactAtBasicComponentType.class, ucImpact)) {
 				uncertaintyPropagation.getAffectedBasicComponentTypes().add(ucImpact);
@@ -161,6 +164,7 @@ public abstract class AbstractPropagationHelper {
 			return true;
 		};
 
+		@Override
 		public Boolean caseUCImpactAtCommunicationComponents(UCImpactAtCommunicationComponents ucImpact) {
 			if (!addCausingUncertaintiesIfUCImpactAlreadyExists(UCImpactAtCommunicationComponents.class, ucImpact)) {
 				uncertaintyPropagation.getAffectedCommunicationComponents().add(ucImpact);
@@ -168,6 +172,7 @@ public abstract class AbstractPropagationHelper {
 			return true;
 		};
 
+		@Override
 		public Boolean caseUCImpactAtCommunicationResources(UCImpactAtCommunicationResources ucImpact) {
 			if (!addCausingUncertaintiesIfUCImpactAlreadyExists(UCImpactAtCommunicationResources.class, ucImpact)) {
 				uncertaintyPropagation.getAffectedCommunicationResources().add(ucImpact);
@@ -175,6 +180,7 @@ public abstract class AbstractPropagationHelper {
 			return true;
 		};
 
+		@Override
 		public Boolean caseUCImpactAtComponentInstance(UCImpactAtComponentInstance ucImpact) {
 			if (!addCausingUncertaintiesIfUCImpactAlreadyExists(UCImpactAtComponentInstance.class, ucImpact)) {
 				uncertaintyPropagation.getAffecteComponentInstances().add(ucImpact);
@@ -182,6 +188,7 @@ public abstract class AbstractPropagationHelper {
 			return true;
 		};
 
+		@Override
 		public Boolean caseUCImpactAtComponentInterfaceInstance(UCImpactAtComponentInterfaceInstance ucImpact) {
 			if (!addCausingUncertaintiesIfUCImpactAlreadyExists(UCImpactAtComponentInterfaceInstance.class, ucImpact)) {
 				uncertaintyPropagation.getAffectedComponentInterfaceInstances().add(ucImpact);
@@ -189,6 +196,7 @@ public abstract class AbstractPropagationHelper {
 			return true;
 		};
 
+		@Override
 		public Boolean caseUCImpactAtComponentInterfaceType(UCImpactAtComponentInterfaceType ucImpact) {
 			if (!addCausingUncertaintiesIfUCImpactAlreadyExists(UCImpactAtComponentInterfaceType.class, ucImpact)) {
 				uncertaintyPropagation.getAffectedComponentInterfaceTypes().add(ucImpact);
@@ -196,6 +204,7 @@ public abstract class AbstractPropagationHelper {
 			return true;
 		};
 
+		@Override
 		public Boolean caseUCImpactAtHardwareResource(UCImpactAtHardwareResource ucImpact) {
 			if (!addCausingUncertaintiesIfUCImpactAlreadyExists(UCImpactAtHardwareResource.class, ucImpact)) {
 				uncertaintyPropagation.getAffectedHardwareResources().add(ucImpact);
@@ -203,6 +212,7 @@ public abstract class AbstractPropagationHelper {
 			return true;
 		};
 
+		@Override
 		public Boolean caseUCImpactAtSystem(UCImpactAtSystem ucImpact) {
 			if (!addCausingUncertaintiesIfUCImpactAlreadyExists(UCImpactAtSystem.class, ucImpact)) {
 				uncertaintyPropagation.getAffectedSystems().add(ucImpact);
@@ -210,6 +220,7 @@ public abstract class AbstractPropagationHelper {
 			return true;
 		};
 
+		@Override
 		public Boolean caseUCImpactAtSystemInterface(UCImpactAtSystemInterface ucImpact) {
 			if (!addCausingUncertaintiesIfUCImpactAlreadyExists(UCImpactAtSystemInterface.class, ucImpact)) {
 				uncertaintyPropagation.getAffectedSystemInterface().add(ucImpact);
@@ -217,6 +228,7 @@ public abstract class AbstractPropagationHelper {
 			return true;
 		};
 
+		@Override
 		public Boolean caseUCImpactAtUsageBehaviour(UCImpactAtUsageBehaviour ucImpact) {
 			if (!addCausingUncertaintiesIfUCImpactAlreadyExists(UCImpactAtUsageBehaviour.class, ucImpact)) {
 				uncertaintyPropagation.getAffectedUsageBehaviours().add(ucImpact);
@@ -224,6 +236,7 @@ public abstract class AbstractPropagationHelper {
 			return true;
 		};
 
+		@Override
 		public Boolean defaultCase(EObject object) {
 			return false;
 

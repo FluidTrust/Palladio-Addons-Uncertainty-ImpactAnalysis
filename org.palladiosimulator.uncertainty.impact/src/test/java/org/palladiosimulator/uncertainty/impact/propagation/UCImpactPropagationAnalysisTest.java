@@ -378,8 +378,7 @@ public class UCImpactPropagationAnalysisTest extends TestBase {
 	 * @throws LoadModelFailedException
 	 */
 	private UCArchitectureVersion initializePropagation(Uncertainty... uncertainties)
-			throws InitializePropagationException, UncertaintyTemplateElementNotFoundException,
-			PalladioElementNotFoundException, LoadModelFailedException {
+			throws InitializePropagationException, LoadModelFailedException {
 		PalladioModel palladioModel = getInitializedPalladioModel();
 
 		// Empty version (only intialized with palladio models)

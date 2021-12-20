@@ -27,6 +27,10 @@ import edu.kit.ipd.sdq.kamp.architecture.ArchitectureModelLookup;
  */
 public class SaveUncertaintyPropagationModelHelper {
 
+	private SaveUncertaintyPropagationModelHelper() {
+
+	}
+
 	/**
 	 * Saves uncertainty propagation to path within workspace. (only relative paths
 	 * allowed)
@@ -126,7 +130,6 @@ public class SaveUncertaintyPropagationModelHelper {
 
 	}
 
-
 	/*
 	 * Helper method to retrieve UncertaintyPropagation object from change
 	 * propagation steps.
@@ -135,9 +138,7 @@ public class SaveUncertaintyPropagationModelHelper {
 			throws SaveModelFailedException {
 		return version.getUncertaintyImpactRepository().getChangePropagationSteps().stream()
 				.filter(UncertaintyPropagation.class::isInstance).map(UncertaintyPropagation.class::cast).findFirst()
-				.orElseThrow(() -> {
-					return new SaveModelFailedException("Save propagation failed. No propagation available.");
-				});
+				.orElseThrow(() -> new SaveModelFailedException("Save propagation failed. No propagation available."));
 
 	}
 

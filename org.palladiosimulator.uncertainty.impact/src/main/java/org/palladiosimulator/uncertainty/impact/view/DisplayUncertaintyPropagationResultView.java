@@ -16,7 +16,6 @@ import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyPropagatio
 public class DisplayUncertaintyPropagationResultView extends AbstractView
 		implements IDisplayUncertaintyPropagationResultView {
 
-	private DisplayUncertaintyPropagationResultViewDialog dialog;
 	private Composite parent;
 
 	public DisplayUncertaintyPropagationResultView(Composite parent) {
@@ -30,14 +29,9 @@ public class DisplayUncertaintyPropagationResultView extends AbstractView
 	@Override
 	public int openView(List<UncertaintyPropagationResultViewModel> uncertaintyPropagationResultViewModels) {
 		// Need to create new dialog as reopening dialog caused strange behavior
-		this.dialog = new DisplayUncertaintyPropagationResultViewDialog(parent.getShell(),
+		DisplayUncertaintyPropagationResultViewDialog dialog = new DisplayUncertaintyPropagationResultViewDialog(parent.getShell(),
 				uncertaintyPropagationResultViewModels);
 		return dialog.open();
-	}
-
-	@Override
-	public void showMessage(String message) {
-		super.showMessage(message);
 	}
 
 }

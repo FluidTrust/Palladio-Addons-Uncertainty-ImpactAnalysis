@@ -31,15 +31,13 @@ public class UCArchitectureVersionFacadeTest extends TestBase {
 	}
 
 	@Test
-	public void testCreateEmptyUCArchitectureVersion_ErrorExpected()
-			throws LoadModelFailedException, InitializePropagationException {
+	public void testCreateEmptyUCArchitectureVersion_ErrorExpected() throws LoadModelFailedException {
 		PalladioModel palladioModel = getInitializedPalladioModel();
 
-		assertThrows(InitializePropagationException.class, () -> {
-			UCArchitectureVersionFacade.createEmptyModel("test", palladioModel.getRepository(),
-					palladioModel.getSystem(), palladioModel.getAllocation(), palladioModel.getResourceEnvironment(),
-					null);
-		});
+		assertThrows(InitializePropagationException.class,
+				() -> UCArchitectureVersionFacade.createEmptyModel("test", palladioModel.getRepository(),
+						palladioModel.getSystem(), palladioModel.getAllocation(),
+						palladioModel.getResourceEnvironment(), null));
 	}
 
 }

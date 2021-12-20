@@ -51,24 +51,25 @@ import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementViewMo
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyViewModel;
 
+import de.uka.ipd.sdq.identifier.Identifier;
 import tools.mdsd.library.standalone.initialization.StandaloneInitializationException;
 
 public abstract class TestBase {
 
 	// Paths to Palladio Test Models
-	public static String allocationPath = "src/test/resources/models/user/pcm/BookShop.allocation";
-	public static String repositoryPath = "src/test/resources/models/user/pcm/BookShop.repository";
-	public static String resourceEnvPath = "src/test/resources/models/user/pcm/BookShop.resourceenvironment";
-	public static String systemPath = "src/test/resources/models/user/pcm/BookShop.system";
-	public static String usageModelPath = "src/test/resources/models/user/pcm/BookShop.usagemodel";
+	public static final String allocationPath = "src/test/resources/models/user/pcm/BookShop.allocation";
+	public static final String repositoryPath = "src/test/resources/models/user/pcm/BookShop.repository";
+	public static final String resourceEnvPath = "src/test/resources/models/user/pcm/BookShop.resourceenvironment";
+	public static final String systemPath = "src/test/resources/models/user/pcm/BookShop.system";
+	public static final String usageModelPath = "src/test/resources/models/user/pcm/BookShop.usagemodel";
 
-	public static String uncertaintyPath = "src/test/resources/models/user/test.uncertainty";
-	public static String uncertaintyTemplatePath = "src/test/resources/models/expert/test.uncertaintytemplate";
+	public static final  String uncertaintyPath = "src/test/resources/models/user/test.uncertainty";
+	public static final String uncertaintyTemplatePath = "src/test/resources/models/expert/test.uncertaintytemplate";
 
-	public static List<String> palladioModelPaths = new ArrayList<>(
+	public static final List<String> palladioModelPaths = new ArrayList<>(
 			List.of(allocationPath, repositoryPath, resourceEnvPath, systemPath, usageModelPath));
 
-	public static String testDataPath = "src/test/resources/testdata/";
+	public static final String testDataPath = "src/test/resources/testdata/";
 
 	private UncertaintyFactory uncertaintyFactory = UncertaintyFactory.eINSTANCE;
 
@@ -80,7 +81,7 @@ public abstract class TestBase {
 
 	private PalladioElementTypeFactory palladioElementTypeFactory = PalladioElementTypeFactory.eINSTANCE;
 
-	public static BookStoreLoader bookStore;
+	public static  BookStoreLoader bookStore;
 	public static TestUncertaintyTemplateLoader testTemplateLoader;
 
 	@BeforeAll
@@ -534,7 +535,7 @@ public abstract class TestBase {
 
 		// Check impact on elements
 		assertEquals(impactOnElementIds.size(), uncertaintyType.getImpactOn().size());
-		List<String> actualImpactOnElementIds = uncertaintyType.getImpactOn().stream().map(x -> x.getId())
+		List<String> actualImpactOnElementIds = uncertaintyType.getImpactOn().stream().map(Identifier::getId)
 				.collect(Collectors.toList());
 		assertTrue(actualImpactOnElementIds.containsAll(impactOnElementIds));
 

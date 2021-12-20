@@ -66,8 +66,6 @@ public class CreateNewUncertaintyView extends AbstractView implements ICreateNew
 		dialog.setAssignablePalladioElements(assignableElements);
 	}
 
-	public void showMessage(String message) {
-		super.showMessage(message);
-	}
+
 
 }

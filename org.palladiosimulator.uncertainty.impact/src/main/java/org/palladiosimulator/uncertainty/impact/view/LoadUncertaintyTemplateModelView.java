@@ -67,10 +67,6 @@ public class LoadUncertaintyTemplateModelView extends AbstractView implements IL
 
 	}
 
-	@Override
-	public void showMessage(String message) {
-		super.showMessage(message);
 
-	}
 
 }

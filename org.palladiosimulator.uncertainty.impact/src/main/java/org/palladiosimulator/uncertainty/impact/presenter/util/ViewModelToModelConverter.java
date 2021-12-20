@@ -23,11 +23,11 @@ import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyViewModel;
  */
 public class ViewModelToModelConverter {
 
-	private static UncertaintyFactory factory = UncertaintyFactory.eINSTANCE;
-
-	public ViewModelToModelConverter() {
+	private ViewModelToModelConverter() {
 
 	}
+
+	private static UncertaintyFactory factory = UncertaintyFactory.eINSTANCE;
 
 	/**
 	 * Create new Uncertainty from given Uncertainty View Model. Referenced
@@ -73,11 +73,10 @@ public class ViewModelToModelConverter {
 		return uncertaintyTemplateModel.getUncertaintyTypeById(uncertaintyTypeId);
 	}
 
-
 	private static PalladioElementWrapper createElementWrapper(IPalladioModel palladioModel,
 			UncertaintyType uncertaintyType, String assignedElementId)
 			throws ElementTypeNotSupportedException, PalladioElementNotFoundException {
-		//Element Wrapper encapsulate referenced palladio element
+		// Element Wrapper encapsulate referenced palladio element
 		PalladioElementWrapper wrapper = factory.createPalladioElementWrapper();
 
 		Entity entity;

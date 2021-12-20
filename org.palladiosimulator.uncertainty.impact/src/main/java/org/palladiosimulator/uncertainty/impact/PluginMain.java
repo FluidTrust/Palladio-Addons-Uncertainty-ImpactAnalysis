@@ -17,10 +17,6 @@ import org.palladiosimulator.uncertainty.impact.presenter.CreateNewUncertaintyPr
 import org.palladiosimulator.uncertainty.impact.presenter.PalladioPresenter;
 import org.palladiosimulator.uncertainty.impact.presenter.UncertaintyPresenter;
 import org.palladiosimulator.uncertainty.impact.presenter.UncertaintyTemplatePresenter;
-import org.palladiosimulator.uncertainty.impact.presenter.api.ICreateNewUncertaintyPresenter;
-import org.palladiosimulator.uncertainty.impact.presenter.api.IPalladioPresenter;
-import org.palladiosimulator.uncertainty.impact.presenter.api.IUncertaintyPresenter;
-import org.palladiosimulator.uncertainty.impact.presenter.api.IUncertaintyTemplatePresenter;
 import org.palladiosimulator.uncertainty.impact.view.CreateNewUncertaintyView;
 import org.palladiosimulator.uncertainty.impact.view.LoadPalladioModelsView;
 import org.palladiosimulator.uncertainty.impact.view.LoadUncertaintyTemplateModelView;
@@ -59,11 +55,6 @@ public class PluginMain extends ViewPart {
 	private IUncertaintyTemplateModel uncertaintyTemplateModel;
 	private IPalladioModel palladioModel;
 
-	private IUncertaintyPresenter uncertaintyPresenter;
-	private IUncertaintyTemplatePresenter uncertaintyTemplatePresenter;
-	private IPalladioPresenter palladioPresenter;
-	private ICreateNewUncertaintyPresenter createNewUncertaintyPresenter;
-
 	private ILoadPalladioModelsView loadPalladioModelsView;
 	private ILoadUncertaintyTemplateModelView loadUncertaintyTemplateView;
 	private IUncertaintyView uncertaintyView;
@@ -73,10 +64,9 @@ public class PluginMain extends ViewPart {
 
 	@Override
 	public void createPartControl(Composite parent) {
-		
+
 		this.parent = parent;
 
-		// TODO Check this! Create the help context id for the viewer's control
 		workbench.getHelpSystem().setHelp(parent, "org.palladiosimulator.uncertainty.impact.plugin.viewer");
 
 		// Basic Layout: Grid Layout with 4 cells
@@ -108,13 +98,10 @@ public class PluginMain extends ViewPart {
 
 	private void initPresenters() {
 
-		this.uncertaintyPresenter = new UncertaintyPresenter(uncertaintyView, uncertaintyModel,
-				uncertaintyTemplateModel, palladioModel);
-		this.uncertaintyTemplatePresenter = new UncertaintyTemplatePresenter(loadUncertaintyTemplateView,
-				uncertaintyTemplateModel);
-		this.palladioPresenter = new PalladioPresenter(loadPalladioModelsView, palladioModel);
-		this.createNewUncertaintyPresenter = new CreateNewUncertaintyPresenter(createNewUncertaintyView,
-				uncertaintyTemplateModel, palladioModel);
+		new UncertaintyPresenter(uncertaintyView, uncertaintyModel, uncertaintyTemplateModel, palladioModel);
+		new UncertaintyTemplatePresenter(loadUncertaintyTemplateView, uncertaintyTemplateModel);
+		new PalladioPresenter(loadPalladioModelsView, palladioModel);
+		new CreateNewUncertaintyPresenter(createNewUncertaintyView, uncertaintyTemplateModel, palladioModel);
 
 	}
 

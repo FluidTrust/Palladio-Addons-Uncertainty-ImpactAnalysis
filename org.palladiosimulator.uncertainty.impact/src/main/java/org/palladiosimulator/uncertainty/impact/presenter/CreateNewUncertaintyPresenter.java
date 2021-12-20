@@ -155,7 +155,7 @@ public class CreateNewUncertaintyPresenter
 	 * we can cast each typed entity to Entity
 	 */
 	private static List<Entity> convertList(List<? extends Entity> list) {
-		return list.stream().map(e -> (Entity) e).collect(Collectors.toList());
+		return list.stream().map(Entity.class::cast).collect(Collectors.toList());
 	}
 
 }

@@ -13,7 +13,6 @@ import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewMo
  */
 public class DisplayUncertaintyTypeInfoView extends AbstractView implements IDisplayUncertaintyTypeInfoView {
 
-	private DisplayUncertaintyTypeInfoViewDialog dialog;
 	
 	private Composite parent;
 
@@ -28,13 +27,10 @@ public class DisplayUncertaintyTypeInfoView extends AbstractView implements IDis
 	@Override
 	public int openView(UncertaintyTypeViewModel viewModel) {
 		// Need to create new dialog as reopening dialog caused strange behaviour
-		this.dialog = new DisplayUncertaintyTypeInfoViewDialog(parent.getShell(), viewModel);
+		DisplayUncertaintyTypeInfoViewDialog dialog = new DisplayUncertaintyTypeInfoViewDialog(parent.getShell(), viewModel);
 		return dialog.open();
 	}
 
-	@Override
-	public void showMessage(String message) {
-		super.showMessage(message);
-	}
+	
 
 }

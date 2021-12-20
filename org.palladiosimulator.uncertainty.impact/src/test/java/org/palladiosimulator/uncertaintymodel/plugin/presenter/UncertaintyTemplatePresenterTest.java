@@ -25,7 +25,7 @@ public class UncertaintyTemplatePresenterTest extends TestBase {
 	ILoadUncertaintyTemplateModelView view;
 
 	@BeforeEach
-	public void setUp() throws Exception {
+	public void setUp() {
 		MockitoAnnotations.openMocks(this);
 		// Not initialized
 		uncertaintyTemplateModel = new UncertaintyTemplateModel();
@@ -45,13 +45,13 @@ public class UncertaintyTemplatePresenterTest extends TestBase {
 	public void testOnLoadUncertaintyTemplateButtonClicked_NotSuccessfull() {
 		cut.onLoadUncertaintyTemplateButtonClicked("invalidPath");
 		assertFalse(uncertaintyTemplateModel.isInitialized());
-		assertNull(uncertaintyTemplateModel.getElementTypes());
+		assertTrue(uncertaintyTemplateModel.getElementTypes().isEmpty());
 		verify(view, times(1)).showMessage("Error while loading uncertainty template model. Error message = "
 				+ "Load resource with path '/resource/org.palladiosimulator.uncertainty.impact/invalidPath' failed.");
 
 		cut.onLoadUncertaintyTemplateButtonClicked("  "); // Another error message with blank
 		assertFalse(uncertaintyTemplateModel.isInitialized());
-		assertNull(uncertaintyTemplateModel.getElementTypes());
+		assertTrue(uncertaintyTemplateModel.getElementTypes().isEmpty());
 		verify(view, times(1)).showMessage("Please provide valid path to uncertainty template");
 
 	}
