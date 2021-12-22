@@ -12,9 +12,6 @@
     <semanticResources>src/main/resources/models/user/pcm/BookShop.repository_diagram</semanticResources>
     <semanticResources>src/main/resources/models/user/pcm/BookShop.usagemodel</semanticResources>
     <semanticResources>src/main/resources/models/user/pcm/BookShop.usagemodel_diagram</semanticResources>
-    <semanticResources>src/test/evaluation/cwa/models/user/pcm/cwa.composite_diagram</semanticResources>
-    <semanticResources>src/test/evaluation/cwa/models/user/pcm/cwa.system</semanticResources>
-    <semanticResources>src/test/evaluation/cwa/models/user/pcm/cwa.repository</semanticResources>
     <semanticResources>src/test/resources/models/user/pcm/BookShop.allocation</semanticResources>
     <semanticResources>src/test/resources/models/user/pcm/BookShop.resourceenvironment</semanticResources>
     <semanticResources>src/test/resources/models/user/pcm/BookShop.system</semanticResources>
@@ -24,10 +21,7 @@
     <semanticResources>src/test/resources/models/user/pcm/BookShop.repository_diagram</semanticResources>
     <semanticResources>src/test/resources/models/user/pcm/BookShop.usagemodel</semanticResources>
     <semanticResources>src/test/resources/models/user/pcm/BookShop.usagemodel_diagram</semanticResources>
-    <semanticResources>src/test/evaluation/cwa/models/user/pcm/cwa.usagemodel</semanticResources>
-    <semanticResources>src/test/evaluation/cwa/models/user/pcm/cwa.resourceenvironment</semanticResources>
     <semanticResources>pathmap://PCM_MODELS/FailureTypes.repository</semanticResources>
-    <semanticResources>src/test/evaluation/cwa/models/user/pcm/cwa.allocation</semanticResources>
     <semanticResources>platform:/plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.repository</semanticResources>
     <semanticResources>platform:/plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.system</semanticResources>
     <semanticResources>platform:/plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/user/pcm/BookShop.resourceenvironment</semanticResources>
@@ -39,6 +33,28 @@
     <semanticResources>src/main/resources/models/expert/sample.uncertaintytype</semanticResources>
     <semanticResources>src/main/resources/models/plugin/sample.palladioelementtype</semanticResources>
     <semanticResources>src/main/resources/models/expert/sample.add</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.units/model/Units.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.genmodel</semanticResources>
+    <semanticResources>platform:/resource/org.eclipse.emf.ecore/model/Ecore.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.units/model/Units.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.stoex/model/stoex.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.probfunction/model/ProbabilityFunction.ecore</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.stoex/model/stoex.ecore</semanticResources>
+    <semanticResources>platform:/resource/org.palladiosimulator.pcm/model/pcm.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.genmodel</semanticResources>
+    <semanticResources>platform:/resource/de.uka.ipd.sdq.identifier/model/identifier.ecore</semanticResources>
+    <semanticResources>platform:/resource/org.palladiosimulator.pcm/model/pcm.ecore</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.allocation</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.resourceenvironment</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.system</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.repository</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.allocation_diagram</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.composite_diagram</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.repository_diagram</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.resourceenvironment_diagram</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.usagemodel</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.usagemodel_diagram</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Q5JEYFqcEeyjS5hmr-doJA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Q6FfkFqcEeyjS5hmr-doJA" name="new UsageModel Diagram" repPath="#_Q5jUEFqcEeyjS5hmr-doJA" changeId="374716ff-dbb0-46b8-b122-aa74377f508c">

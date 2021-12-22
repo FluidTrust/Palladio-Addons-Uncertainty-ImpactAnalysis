@@ -1,6 +1,8 @@
 # EMF GeneratedFiles
 *src-gen*
 
+*.classpath
+
 #My gitignores
 *.prefs
 bin/
