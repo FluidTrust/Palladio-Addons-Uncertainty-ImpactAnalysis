@@ -329,7 +329,7 @@ The PCM defines various architectural elements to which uncertainties can and wi
 		* Refers to the system
 	* Additional Information:
 		* Only delegation to System (there is only one!)
-* **System**
+* **System Interface**
 	* Technical element: Role
 	* Description:
 		* Refers to the system's provided and required interface
