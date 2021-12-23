@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
-<uncertainty:UncertaintyContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" xmlns:uncertainty="http://www.example.org/uncertainty" xmlns:usagemodel="http://palladiosimulator.org/PalladioComponentModel/UsageModel/5.2">
+<uncertainty:UncertaintyContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.2" xmlns:uncertainty="http://www.example.org/uncertainty" xmlns:usagemodel="http://palladiosimulator.org/PalladioComponentModel/UsageModel/5.2">
   <uncertainties id="_-nLMUFA8Eeyz3Nx0Skljhg" name="Test">
     <assignedElement referencedElement="_SUSloH9HEeaHNuq2j06i3A"/>
     <uncertaintyType href="../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/expert/sample.uncertaintytype#_G-XpMDvjEeyKcZ3NE6_IOQ"/>
@@ -27,6 +27,12 @@
       <referencedElement xsi:type="usagemodel:EntryLevelSystemCall" href="pcm/BookShop.usagemodel#_ypeqoH9PEeaHNuq2j06i3A"/>
     </assignedElement>
     <uncertaintyType href="../expert/sample.uncertaintytype#_MYM0oDvjEeyKcZ3NE6_IOQ"/>
+  </uncertainties>
+  <uncertainties id="_qs0VsGPPEeykKpntQw1HJw" name="dasdas">
+    <assignedElement>
+      <referencedElement xsi:type="system:System" href="pcm/BookShop.system#_obod8H9MEeaHNuq2j06i3A"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/sample.uncertaintytype#_LIVvQDvjEeyKcZ3NE6_IOQ"/>
   </uncertainties>
   <uncertaintyTemplate href="../../../../../../../plugin/org.palladiosimulator.uncertainty.impact/src/main/resources/models/expert/sample.uncertaintytemplate#/"/>
   <basicComponentBehaviours id="_SUSloH9HEeaHNuq2j06i3A" entityName="home - Book Shop Web Pages">

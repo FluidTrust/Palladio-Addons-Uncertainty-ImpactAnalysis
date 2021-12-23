@@ -6,8 +6,6 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADDContainer;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypeContainer;
-
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyTypeContainer;
 
 /**
@@ -20,7 +18,6 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplate#getAddContainer <em>Add Container</em>}</li>
- *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplate#getPalladioElementTypeContainer <em>Palladio Element Type Container</em>}</li>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplate#getUncertaintyTypeContainer <em>Uncertainty Type Container</em>}</li>
  * </ul>
  *
@@ -50,28 +47,6 @@ public interface UncertaintyTemplate extends EObject {
 	 * @generated
 	 */
 	void setAddContainer(ADDContainer value);
-
-	/**
-	 * Returns the value of the '<em><b>Palladio Element Type Container</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Palladio Element Type Container</em>' reference.
-	 * @see #setPalladioElementTypeContainer(PalladioElementTypeContainer)
-	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplatePackage#getUncertaintyTemplate_PalladioElementTypeContainer()
-	 * @model required="true"
-	 * @generated
-	 */
-	PalladioElementTypeContainer getPalladioElementTypeContainer();
-
-	/**
-	 * Sets the value of the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplate#getPalladioElementTypeContainer <em>Palladio Element Type Container</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Palladio Element Type Container</em>' reference.
-	 * @see #getPalladioElementTypeContainer()
-	 * @generated
-	 */
-	void setPalladioElementTypeContainer(PalladioElementTypeContainer value);
 
 	/**
 	 * Returns the value of the '<em><b>Uncertainty Type Container</b></em>' reference.

@@ -25,7 +25,6 @@ import org.palladiosimulator.pcm.usagemodel.UsagemodelPackage;
 import org.palladiosimulator.uncertainty.impact.exception.LoadModelFailedException;
 import org.palladiosimulator.uncertainty.impact.exception.SaveModelFailedException;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.AddPackage;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypePackage;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyPackage;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplatePackage;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyTypePackage;
@@ -196,7 +195,6 @@ public class EMFPersistenceHelper {
 		// Register Uncertainty related packages
 		resourceSet.getPackageRegistry().put(UncertaintyPackage.eNS_URI, UncertaintyPackage.eINSTANCE);
 		resourceSet.getPackageRegistry().put(AddPackage.eNS_URI, AddPackage.eINSTANCE);
-		resourceSet.getPackageRegistry().put(PalladioElementTypePackage.eNS_URI, PalladioElementTypePackage.eINSTANCE);
 		resourceSet.getPackageRegistry().put(UncertaintyTypePackage.eNS_URI, UncertaintyTypePackage.eINSTANCE);
 		resourceSet.getPackageRegistry().put(UncertaintyTemplatePackage.eNS_URI, UncertaintyTemplatePackage.eINSTANCE);
 

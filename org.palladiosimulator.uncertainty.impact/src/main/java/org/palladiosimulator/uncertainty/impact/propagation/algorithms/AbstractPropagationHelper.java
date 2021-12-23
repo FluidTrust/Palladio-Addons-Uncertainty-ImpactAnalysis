@@ -10,11 +10,10 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyPropagationException;
 import org.palladiosimulator.uncertainty.impact.propagation.UCArchitectureVersion;
-import org.palladiosimulator.uncertainty.impact.propagation.util.PropagationRuleType;
+import org.palladiosimulator.uncertainty.impact.propagation.util.PropagationRuleTypes;
 import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyPropagationTypeToRuleResolver;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementType;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.CausingUncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtBasicComponentBehaviour;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtBasicComponentType;
@@ -69,7 +68,7 @@ public abstract class AbstractPropagationHelper {
 	 * @throws UncertaintyPropagationException
 	 */
 	protected abstract List<? extends UCImpactEntity<? extends Entity>> propagateUncertainty(Uncertainty uncertainty,
-			PropagationRuleType rule) throws UncertaintyPropagationException;
+			PropagationRuleTypes rule) throws UncertaintyPropagationException;
 
 	/**
 	 * Calculates Propagation for given input. Input is represented by List of
@@ -95,15 +94,14 @@ public abstract class AbstractPropagationHelper {
 		for (Uncertainty uncertainty : uncertainties) {
 
 			// Starting element type
-			PalladioElementTypes from = uncertainty.getUncertaintyType().getAssignableElementType().getType();
+			ArchitecturalElementTypes from = uncertainty.getUncertaintyType().getAssignableElementType();
 
 			// Ending element types
-			List<PalladioElementTypes> tos = uncertainty.getUncertaintyType().getImpactOn().stream()
-					.map(PalladioElementType::getType).collect(Collectors.toList());
-
-			for (PalladioElementTypes to : tos) {
+			List<ArchitecturalElementTypes> tos = uncertainty.getUncertaintyType().getImpactOnElementTypes();
+					
+			for (ArchitecturalElementTypes to : tos) {
 				// resolve propagation rule based on type tuple <from,to>
-				PropagationRuleType rule = UncertaintyPropagationTypeToRuleResolver.resolve(from, to);
+				PropagationRuleTypes rule = UncertaintyPropagationTypeToRuleResolver.resolve(from, to);
 
 				// Do propagation (method is implemented by sub-classes)
 				List<? extends UCImpactEntity<? extends Entity>> uncertaintyImpacts = propagateUncertainty(uncertainty,

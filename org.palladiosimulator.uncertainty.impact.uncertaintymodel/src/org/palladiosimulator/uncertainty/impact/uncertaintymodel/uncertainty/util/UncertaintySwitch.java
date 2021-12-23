@@ -71,9 +71,9 @@ public class UncertaintySwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case UncertaintyPackage.PALLADIO_ELEMENT_WRAPPER: {
-				PalladioElementWrapper palladioElementWrapper = (PalladioElementWrapper)theEObject;
-				T result = casePalladioElementWrapper(palladioElementWrapper);
+			case UncertaintyPackage.ELEMENT_WRAPPER: {
+				ElementWrapper elementWrapper = (ElementWrapper)theEObject;
+				T result = caseElementWrapper(elementWrapper);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -113,17 +113,17 @@ public class UncertaintySwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Palladio Element Wrapper</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Element Wrapper</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Palladio Element Wrapper</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Element Wrapper</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePalladioElementWrapper(PalladioElementWrapper object) {
+	public T caseElementWrapper(ElementWrapper object) {
 		return null;
 	}
 

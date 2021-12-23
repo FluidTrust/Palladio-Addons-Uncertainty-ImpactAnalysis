@@ -75,22 +75,13 @@ public interface UncertaintyTemplatePackage extends EPackage {
 	int UNCERTAINTY_TEMPLATE__ADD_CONTAINER = 0;
 
 	/**
-	 * The feature id for the '<em><b>Palladio Element Type Container</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNCERTAINTY_TEMPLATE__PALLADIO_ELEMENT_TYPE_CONTAINER = 1;
-
-	/**
 	 * The feature id for the '<em><b>Uncertainty Type Container</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNCERTAINTY_TEMPLATE__UNCERTAINTY_TYPE_CONTAINER = 2;
+	int UNCERTAINTY_TEMPLATE__UNCERTAINTY_TYPE_CONTAINER = 1;
 
 	/**
 	 * The number of structural features of the '<em>Uncertainty Template</em>' class.
@@ -99,7 +90,7 @@ public interface UncertaintyTemplatePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNCERTAINTY_TEMPLATE_FEATURE_COUNT = 3;
+	int UNCERTAINTY_TEMPLATE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Uncertainty Template</em>' class.
@@ -131,17 +122,6 @@ public interface UncertaintyTemplatePackage extends EPackage {
 	 * @generated
 	 */
 	EReference getUncertaintyTemplate_AddContainer();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplate#getPalladioElementTypeContainer <em>Palladio Element Type Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Palladio Element Type Container</em>'.
-	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplate#getPalladioElementTypeContainer()
-	 * @see #getUncertaintyTemplate()
-	 * @generated
-	 */
-	EReference getUncertaintyTemplate_PalladioElementTypeContainer();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplate#getUncertaintyTypeContainer <em>Uncertainty Type Container</em>}'.
@@ -194,14 +174,6 @@ public interface UncertaintyTemplatePackage extends EPackage {
 		 * @generated
 		 */
 		EReference UNCERTAINTY_TEMPLATE__ADD_CONTAINER = eINSTANCE.getUncertaintyTemplate_AddContainer();
-
-		/**
-		 * The meta object literal for the '<em><b>Palladio Element Type Container</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UNCERTAINTY_TEMPLATE__PALLADIO_ELEMENT_TYPE_CONTAINER = eINSTANCE.getUncertaintyTemplate_PalladioElementTypeContainer();
 
 		/**
 		 * The meta object literal for the '<em><b>Uncertainty Type Container</b></em>' reference feature.

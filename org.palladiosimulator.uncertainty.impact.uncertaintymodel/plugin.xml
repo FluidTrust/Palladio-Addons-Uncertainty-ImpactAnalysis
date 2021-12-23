@@ -35,14 +35,6 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated uncertaintyPlugin -->
       <package
-            uri="http://www.example.org/palladioElementType"
-            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypePackage"
-            genModel="model/uncertaintyPlugin.genmodel"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated uncertaintyPlugin -->
-      <package
             uri="http://www.example.org/add"
             class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.AddPackage"
             genModel="model/uncertaintyPlugin.genmodel"/>

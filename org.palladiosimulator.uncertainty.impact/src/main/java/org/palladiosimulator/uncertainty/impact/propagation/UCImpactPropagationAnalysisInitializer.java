@@ -14,10 +14,10 @@ import org.palladiosimulator.pcm.usagemodel.EntryLevelSystemCall;
 import org.palladiosimulator.uncertainty.impact.exception.InitializePropagationException;
 import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyPropagationFactoryHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyTypesToUCImpactTypeResolver;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.BasicComponentBehaviour;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ComponentInterfaceInstance;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.AbstractUCImpactRepository;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.CausingUncertainty;
@@ -95,7 +95,7 @@ public class UCImpactPropagationAnalysisInitializer {
 
 		UCPropagationRulesSeed seedModifications = version.getModificationMarkRepository().getSeedModifications();
 
-		PalladioElementTypes type = uncertainty.getUncertaintyType().getAssignableElementType().getType();
+		ArchitecturalElementTypes type = uncertainty.getUncertaintyType().getAssignableElementType();
 
 		Class<? extends UCImpactEntity<? extends Entity>> ucImpactClass = UncertaintyTypesToUCImpactTypeResolver
 				.resolve(type);
@@ -121,11 +121,11 @@ public class UCImpactPropagationAnalysisInitializer {
 			seedModifications.getAffectedBasicComponentTypes()
 					.add(createUncertaintyImpactAtBasicComponentType(version, uncertainty));
 			break;
-		case COMMUNICATION_COMPONENTS:
+		case COMMUNICATION_COMPONENT:
 			seedModifications.getAffectedCommunicationComponents()
 					.add(createUncertaintyImpactAtCommunicationComponent(version, uncertainty));
 			break;
-		case COMMUNICATION_RESOURCES:
+		case COMMUNICATION_RESOURCE:
 			seedModifications.getAffectedCommunicationResources()
 					.add(createUncertaintyImpactAtCommunicationResources(version, uncertainty));
 			break;

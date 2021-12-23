@@ -5,8 +5,8 @@ import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Shell;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 import org.palladiosimulator.uncertainty.impact.view.model.ADDViewModel;
-import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.util.ViewFactory;
 
@@ -63,17 +63,17 @@ public class DisplayUncertaintyTypeInfoViewDialog extends TitleAreaDialog {
 
 		// Assignable Element
 		addLabel(container, "Assignable Element Type: ");
-		addLabel(container, uncertaintyTypeViewModel.getAssignableElementType().getName());
+		addLabel(container, uncertaintyTypeViewModel.getAssignableElementType());
 
 		// ImpactOn
 		addLabel(container, "Impact on following Element Types: ");
-		if (uncertaintyTypeViewModel.getImpactOn() == null || uncertaintyTypeViewModel.getImpactOn().isEmpty()) {
+		if (uncertaintyTypeViewModel.getImpactOnElementTypes() == null || uncertaintyTypeViewModel.getImpactOnElementTypes().isEmpty()) {
 			addLabel(container, "---");
 		} else {
 			addLabel(container, ""); // Placeholder right column
-			for (PalladioElementTypeViewModel palladioElementTypeViewModel : uncertaintyTypeViewModel.getImpactOn()) {
+			for (String type : uncertaintyTypeViewModel.getImpactOnElementTypes()) {
 				addLabel(container, ""); // Placeholder left column
-				addLabel(container, palladioElementTypeViewModel.getName());
+				addLabel(container, type);
 			}
 		}
 

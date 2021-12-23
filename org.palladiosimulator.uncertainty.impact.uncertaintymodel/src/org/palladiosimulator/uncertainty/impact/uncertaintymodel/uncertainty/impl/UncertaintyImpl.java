@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyPackage;
 
@@ -62,7 +62,7 @@ public class UncertaintyImpl extends IdentifierImpl implements Uncertainty {
 	 * @generated
 	 * @ordered
 	 */
-	protected PalladioElementWrapper assignedElement;
+	protected ElementWrapper assignedElement;
 
 	/**
 	 * The cached value of the '{@link #getUncertaintyType() <em>Uncertainty Type</em>}' reference.
@@ -119,7 +119,7 @@ public class UncertaintyImpl extends IdentifierImpl implements Uncertainty {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PalladioElementWrapper getAssignedElement() {
+	public ElementWrapper getAssignedElement() {
 		return assignedElement;
 	}
 
@@ -128,8 +128,8 @@ public class UncertaintyImpl extends IdentifierImpl implements Uncertainty {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetAssignedElement(PalladioElementWrapper newAssignedElement, NotificationChain msgs) {
-		PalladioElementWrapper oldAssignedElement = assignedElement;
+	public NotificationChain basicSetAssignedElement(ElementWrapper newAssignedElement, NotificationChain msgs) {
+		ElementWrapper oldAssignedElement = assignedElement;
 		assignedElement = newAssignedElement;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, UncertaintyPackage.UNCERTAINTY__ASSIGNED_ELEMENT, oldAssignedElement, newAssignedElement);
@@ -143,7 +143,7 @@ public class UncertaintyImpl extends IdentifierImpl implements Uncertainty {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setAssignedElement(PalladioElementWrapper newAssignedElement) {
+	public void setAssignedElement(ElementWrapper newAssignedElement) {
 		if (newAssignedElement != assignedElement) {
 			NotificationChain msgs = null;
 			if (assignedElement != null)
@@ -240,7 +240,7 @@ public class UncertaintyImpl extends IdentifierImpl implements Uncertainty {
 				setName((String)newValue);
 				return;
 			case UncertaintyPackage.UNCERTAINTY__ASSIGNED_ELEMENT:
-				setAssignedElement((PalladioElementWrapper)newValue);
+				setAssignedElement((ElementWrapper)newValue);
 				return;
 			case UncertaintyPackage.UNCERTAINTY__UNCERTAINTY_TYPE:
 				setUncertaintyType((UncertaintyType)newValue);
@@ -261,7 +261,7 @@ public class UncertaintyImpl extends IdentifierImpl implements Uncertainty {
 				setName(NAME_EDEFAULT);
 				return;
 			case UncertaintyPackage.UNCERTAINTY__ASSIGNED_ELEMENT:
-				setAssignedElement((PalladioElementWrapper)null);
+				setAssignedElement((ElementWrapper)null);
 				return;
 			case UncertaintyPackage.UNCERTAINTY__UNCERTAINTY_TYPE:
 				setUncertaintyType((UncertaintyType)null);

@@ -5,8 +5,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="UncertaintyTemplate">
     <eStructuralFeatures xsi:type="ecore:EReference" name="addContainer" lowerBound="1"
         eType="ecore:EClass add.ecore#//ADDContainer"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="palladioElementTypeContainer"
-        lowerBound="1" eType="ecore:EClass palladioElementType.ecore#//PalladioElementTypeContainer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="uncertaintyTypeContainer"
         lowerBound="1" eType="ecore:EClass uncertaintyType.ecore#//UncertaintyTypeContainer"/>
   </eClassifiers>

@@ -10,8 +10,6 @@ import org.palladiosimulator.uncertainty.impact.exception.UncertaintyTemplateEle
 import org.palladiosimulator.uncertainty.impact.model.api.IUncertaintyTemplateModel;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADD;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADDContainer;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementType;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypeContainer;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplate;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyTypeContainer;
@@ -28,7 +26,6 @@ public class UncertaintyTemplateModel extends Model implements IUncertaintyTempl
 	private UncertaintyTemplate uncertainyTemplate;
 
 	private ADDContainer addContainer;
-	private PalladioElementTypeContainer elementTypeContainer;
 	private UncertaintyTypeContainer uncertaintyTypeContainer;
 
 	@Override
@@ -44,7 +41,6 @@ public class UncertaintyTemplateModel extends Model implements IUncertaintyTempl
 
 		// Load other model from uncertantyTemplate reference
 		this.addContainer = uncertainyTemplate.getAddContainer();
-		this.elementTypeContainer = uncertainyTemplate.getPalladioElementTypeContainer();
 		this.uncertaintyTypeContainer = uncertainyTemplate.getUncertaintyTypeContainer();
 
 	}
@@ -66,22 +62,7 @@ public class UncertaintyTemplateModel extends Model implements IUncertaintyTempl
 				.orElseThrow(() -> new UncertaintyTemplateElementNotFoundException("ADD with id " + id + " not found"));
 	}
 
-	@Override
-	public List<PalladioElementType> getElementTypes() {
-		if (!isInitialized()) {
-			return Collections.emptyList();
-		}
-		return elementTypeContainer.getPalladioElementTypes();
-	}
-
-	@Override
-	public PalladioElementType getElementTypeById(String id) throws UncertaintyTemplateElementNotFoundException {
-		if (!isInitialized()) {
-			return null;
-		}
-		return getElementTypes().stream().filter(x -> x.getId().equals(id)).findFirst().orElseThrow(
-				() -> new UncertaintyTemplateElementNotFoundException("Element Type with id " + id + " not found"));
-	}
+	
 
 	@Override
 	public List<UncertaintyType> getUncertaintyTypes() {
@@ -112,7 +93,7 @@ public class UncertaintyTemplateModel extends Model implements IUncertaintyTempl
 
 	@Override
 	public boolean isInitialized() {
-		return uncertainyTemplate != null && addContainer != null && elementTypeContainer != null
+		return uncertainyTemplate != null && addContainer != null 
 				&& uncertaintyTypeContainer != null;
 	}
 

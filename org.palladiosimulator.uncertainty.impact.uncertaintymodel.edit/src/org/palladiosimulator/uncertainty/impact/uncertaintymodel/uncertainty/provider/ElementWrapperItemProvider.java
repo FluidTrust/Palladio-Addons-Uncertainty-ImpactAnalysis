@@ -25,12 +25,12 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.provider.Uncert
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyPackage;
 
 /**
- * This is the item provider adapter for a {@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper} object.
+ * This is the item provider adapter for a {@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PalladioElementWrapperItemProvider 
+public class ElementWrapperItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -44,7 +44,7 @@ public class PalladioElementWrapperItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PalladioElementWrapperItemProvider(AdapterFactory adapterFactory) {
+	public ElementWrapperItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -75,9 +75,9 @@ public class PalladioElementWrapperItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PalladioElementWrapper_referencedElement_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PalladioElementWrapper_referencedElement_feature", "_UI_PalladioElementWrapper_type"),
-				 UncertaintyPackage.Literals.PALLADIO_ELEMENT_WRAPPER__REFERENCED_ELEMENT,
+				 getString("_UI_ElementWrapper_referencedElement_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ElementWrapper_referencedElement_feature", "_UI_ElementWrapper_type"),
+				 UncertaintyPackage.Literals.ELEMENT_WRAPPER__REFERENCED_ELEMENT,
 				 true,
 				 false,
 				 true,
@@ -94,7 +94,7 @@ public class PalladioElementWrapperItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_PalladioElementWrapper_type");
+		return getString("_UI_ElementWrapper_type");
 	}
 
 

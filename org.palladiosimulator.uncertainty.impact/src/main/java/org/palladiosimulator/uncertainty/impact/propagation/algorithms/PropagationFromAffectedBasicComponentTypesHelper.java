@@ -12,7 +12,7 @@ import org.palladiosimulator.pcm.repository.RepositoryComponent;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyPropagationException;
 import org.palladiosimulator.uncertainty.impact.propagation.UCArchitectureVersion;
-import org.palladiosimulator.uncertainty.impact.propagation.util.PropagationRuleType;
+import org.palladiosimulator.uncertainty.impact.propagation.util.PropagationRuleTypes;
 import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyPropagationFactoryHelper;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.CausingUncertainty;
@@ -39,7 +39,7 @@ public class PropagationFromAffectedBasicComponentTypesHelper extends AbstractPr
 	 */
 	@Override
 	protected List<? extends UCImpactEntity<? extends Entity>> propagateUncertainty(Uncertainty uncertainty,
-			PropagationRuleType rule) throws UncertaintyPropagationException {
+			PropagationRuleTypes rule) throws UncertaintyPropagationException {
 		switch (rule) {
 		case FROM_BASIC_COMPONENT_TYPE_TO_HARDWARE_RESOURCE:
 			return propagateFromBasicComponentTypeToHardwareResource(uncertainty);

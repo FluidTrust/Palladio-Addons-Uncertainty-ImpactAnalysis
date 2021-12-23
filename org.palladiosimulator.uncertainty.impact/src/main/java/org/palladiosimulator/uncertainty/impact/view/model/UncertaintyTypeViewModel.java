@@ -8,9 +8,9 @@ public class UncertaintyTypeViewModel {
 
 	private String id;
 
-	private PalladioElementTypeViewModel assignableElementType;
+	private String assignableElementType;
 
-	private List<PalladioElementTypeViewModel> impactOn;
+	private List<String> impactOnElementTypes;
 
 	private ADDViewModel resolvedBy;
 
@@ -42,20 +42,20 @@ public class UncertaintyTypeViewModel {
 		return id;
 	}
 
-	public PalladioElementTypeViewModel getAssignableElementType() {
+	public String getAssignableElementType() {
 		return assignableElementType;
 	}
 
-	public void setAssignableElementType(PalladioElementTypeViewModel assignableElementType) {
+	public void setAssignableElementType(String assignableElementType) {
 		this.assignableElementType = assignableElementType;
 	}
 
-	public List<PalladioElementTypeViewModel> getImpactOn() {
-		return impactOn;
+	public List<String> getImpactOnElementTypes() {
+		return impactOnElementTypes;
 	}
 
-	public void setImpactOn(List<PalladioElementTypeViewModel> impactOn) {
-		this.impactOn = impactOn;
+	public void setImpactOnElementTypes(List<String> impactOn) {
+		this.impactOnElementTypes = impactOn;
 	}
 
 	public ADDViewModel getResolvedBy() {

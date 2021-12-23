@@ -22,13 +22,13 @@ public interface UncertaintyFactory extends EFactory {
 	UncertaintyFactory eINSTANCE = org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.UncertaintyFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>Palladio Element Wrapper</em>'.
+	 * Returns a new object of class '<em>Element Wrapper</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Palladio Element Wrapper</em>'.
+	 * @return a new object of class '<em>Element Wrapper</em>'.
 	 * @generated
 	 */
-	PalladioElementWrapper createPalladioElementWrapper();
+	ElementWrapper createElementWrapper();
 
 	/**
 	 * Returns a new object of class '<em>Uncertainty</em>'.

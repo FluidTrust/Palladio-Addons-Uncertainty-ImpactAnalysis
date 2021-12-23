@@ -88,31 +88,13 @@ public interface UncertaintyTypePackage extends EPackage {
 	int UNCERTAINTY_TYPE__NAME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Impact On</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNCERTAINTY_TYPE__IMPACT_ON = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Assignable Element Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
-
-	/**
 	 * The feature id for the '<em><b>Resolved By</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int UNCERTAINTY_TYPE__RESOLVED_BY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
+	int UNCERTAINTY_TYPE__RESOLVED_BY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -121,7 +103,7 @@ public interface UncertaintyTypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNCERTAINTY_TYPE__LOCATION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
+	int UNCERTAINTY_TYPE__LOCATION = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Information Availability</b></em>' attribute.
@@ -130,7 +112,7 @@ public interface UncertaintyTypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNCERTAINTY_TYPE__INFORMATION_AVAILABILITY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 5;
+	int UNCERTAINTY_TYPE__INFORMATION_AVAILABILITY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Nature</b></em>' attribute.
@@ -139,7 +121,7 @@ public interface UncertaintyTypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNCERTAINTY_TYPE__NATURE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 6;
+	int UNCERTAINTY_TYPE__NATURE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Manageability</b></em>' attribute.
@@ -148,7 +130,7 @@ public interface UncertaintyTypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNCERTAINTY_TYPE__MANAGEABILITY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 7;
+	int UNCERTAINTY_TYPE__MANAGEABILITY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Impact On Confidentiality</b></em>' attribute.
@@ -157,7 +139,7 @@ public interface UncertaintyTypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNCERTAINTY_TYPE__IMPACT_ON_CONFIDENTIALITY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 8;
+	int UNCERTAINTY_TYPE__IMPACT_ON_CONFIDENTIALITY = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Severity Of Impact</b></em>' attribute.
@@ -166,7 +148,7 @@ public interface UncertaintyTypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNCERTAINTY_TYPE__SEVERITY_OF_IMPACT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 9;
+	int UNCERTAINTY_TYPE__SEVERITY_OF_IMPACT = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Resolution Time</b></em>' attribute.
@@ -175,7 +157,7 @@ public interface UncertaintyTypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNCERTAINTY_TYPE__RESOLUTION_TIME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 10;
+	int UNCERTAINTY_TYPE__RESOLUTION_TIME = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Root Cause</b></em>' attribute.
@@ -184,7 +166,25 @@ public interface UncertaintyTypePackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UNCERTAINTY_TYPE__ROOT_CAUSE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 11;
+	int UNCERTAINTY_TYPE__ROOT_CAUSE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 9;
+
+	/**
+	 * The feature id for the '<em><b>Assignable Element Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 10;
+
+	/**
+	 * The feature id for the '<em><b>Impact On Element Types</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int UNCERTAINTY_TYPE__IMPACT_ON_ELEMENT_TYPES = IdentifierPackage.IDENTIFIER_FEATURE_COUNT + 11;
 
 	/**
 	 * The number of structural features of the '<em>Uncertainty Type</em>' class.
@@ -201,7 +201,7 @@ public interface UncertaintyTypePackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @ordered
 	 */
-	int UNCERTAINTY_TYPE_OPERATION_COUNT =  0;
+	int UNCERTAINTY_TYPE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeContainerImpl <em>Container</em>}' class.
@@ -320,6 +320,16 @@ public interface UncertaintyTypePackage extends EPackage {
 	 */
 	int ROOT_CAUSE = 9;
 
+	/**
+	 * The meta object id for the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes <em>Architectural Element Types</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypePackageImpl#getArchitecturalElementTypes()
+	 * @generated
+	 */
+	int ARCHITECTURAL_ELEMENT_TYPES = 10;
+
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType <em>Uncertainty Type</em>}'.
@@ -341,28 +351,6 @@ public interface UncertaintyTypePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUncertaintyType_Name();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getImpactOn <em>Impact On</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Impact On</em>'.
-	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getImpactOn()
-	 * @see #getUncertaintyType()
-	 * @generated
-	 */
-	EReference getUncertaintyType_ImpactOn();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getAssignableElementType <em>Assignable Element Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Assignable Element Type</em>'.
-	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getAssignableElementType()
-	 * @see #getUncertaintyType()
-	 * @generated
-	 */
-	EReference getUncertaintyType_AssignableElementType();
 
 	/**
 	 * Returns the meta object for the reference '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getResolvedBy <em>Resolved By</em>}'.
@@ -462,6 +450,28 @@ public interface UncertaintyTypePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getUncertaintyType_RootCause();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getAssignableElementType <em>Assignable Element Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Assignable Element Type</em>'.
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getAssignableElementType()
+	 * @see #getUncertaintyType()
+	 * @generated
+	 */
+	EAttribute getUncertaintyType_AssignableElementType();
+
+	/**
+	 * Returns the meta object for the attribute list '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getImpactOnElementTypes <em>Impact On Element Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Impact On Element Types</em>'.
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getImpactOnElementTypes()
+	 * @see #getUncertaintyType()
+	 * @generated
+	 */
+	EAttribute getUncertaintyType_ImpactOnElementTypes();
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyTypeContainer <em>Container</em>}'.
@@ -565,6 +575,16 @@ public interface UncertaintyTypePackage extends EPackage {
 	EEnum getRootCause();
 
 	/**
+	 * Returns the meta object for enum '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes <em>Architectural Element Types</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Architectural Element Types</em>'.
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes
+	 * @generated
+	 */
+	EEnum getArchitecturalElementTypes();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -604,22 +624,6 @@ public interface UncertaintyTypePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNCERTAINTY_TYPE__NAME = eINSTANCE.getUncertaintyType_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Impact On</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UNCERTAINTY_TYPE__IMPACT_ON = eINSTANCE.getUncertaintyType_ImpactOn();
-
-		/**
-		 * The meta object literal for the '<em><b>Assignable Element Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE = eINSTANCE.getUncertaintyType_AssignableElementType();
 
 		/**
 		 * The meta object literal for the '<em><b>Resolved By</b></em>' reference feature.
@@ -692,6 +696,22 @@ public interface UncertaintyTypePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute UNCERTAINTY_TYPE__ROOT_CAUSE = eINSTANCE.getUncertaintyType_RootCause();
+
+		/**
+		 * The meta object literal for the '<em><b>Assignable Element Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE = eINSTANCE.getUncertaintyType_AssignableElementType();
+
+		/**
+		 * The meta object literal for the '<em><b>Impact On Element Types</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute UNCERTAINTY_TYPE__IMPACT_ON_ELEMENT_TYPES = eINSTANCE.getUncertaintyType_ImpactOnElementTypes();
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeContainerImpl <em>Container</em>}' class.
@@ -790,6 +810,16 @@ public interface UncertaintyTypePackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ROOT_CAUSE = eINSTANCE.getRootCause();
+
+		/**
+		 * The meta object literal for the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes <em>Architectural Element Types</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes
+		 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypePackageImpl#getArchitecturalElementTypes()
+		 * @generated
+		 */
+		EEnum ARCHITECTURAL_ELEMENT_TYPES = eINSTANCE.getArchitecturalElementTypes();
 
 	}
 

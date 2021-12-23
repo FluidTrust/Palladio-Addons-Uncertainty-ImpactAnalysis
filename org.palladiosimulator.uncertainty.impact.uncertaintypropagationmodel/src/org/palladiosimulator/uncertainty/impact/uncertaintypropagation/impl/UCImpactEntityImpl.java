@@ -7,7 +7,9 @@ import edu.kit.ipd.sdq.kamp.model.modificationmarks.impl.AbstractModificationImp
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import org.palladiosimulator.pcm.core.entity.Entity;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.CausingUncertainty;

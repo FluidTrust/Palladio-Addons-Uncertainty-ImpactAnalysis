@@ -10,13 +10,12 @@ import org.palladiosimulator.uncertainty.impact.model.api.IPalladioModel;
 import org.palladiosimulator.uncertainty.impact.model.api.IUncertaintyTemplateModel;
 import org.palladiosimulator.uncertainty.impact.presenter.api.IUncertaintyCreationPresenter;
 import org.palladiosimulator.uncertainty.impact.presenter.util.ModelToViewModelConverter;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;
 import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyCreationView;
 import org.palladiosimulator.uncertainty.impact.view.listener.api.IUncertaintyCreationViewListener;
 import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
-
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 /**
  * MVP-related presenter for views of type {@link IUncertaintyCreationView}.
  * Implements {@link IUncertaintyCreationViewListener} to be capable to listen
@@ -81,7 +80,7 @@ public class UncertaintyCreationPresenter
 			return;
 		}
 
-		PalladioElementTypes type = uncertaintyType.getAssignableElementType().getType();
+		ArchitecturalElementTypes type = uncertaintyType.getAssignableElementType();
 
 		try {
 			view.setAssignablePalladioElements(getAssignableElementsByType(type));
@@ -100,7 +99,7 @@ public class UncertaintyCreationPresenter
 	 * @throws ElementTypeNotSupportedException
 	 * @throws PalladioElementNotFoundException
 	 */
-	private List<PalladioElementViewModel> getAssignableElementsByType(PalladioElementTypes type)
+	private List<PalladioElementViewModel> getAssignableElementsByType(ArchitecturalElementTypes type)
 			throws ElementTypeNotSupportedException, PalladioElementNotFoundException {
 
 		List<? extends Entity> elements;
@@ -112,10 +111,10 @@ public class UncertaintyCreationPresenter
 		case BASIC_COMPONENT_TYPE:
 			elements = palladioModel.getAllBasicComponentTypeEntities();
 			break;
-		case COMMUNICATION_COMPONENTS:
+		case COMMUNICATION_COMPONENT:
 			elements = palladioModel.getAllCommunicationComponentEntities();
 			break;
-		case COMMUNICATION_RESOURCES:
+		case COMMUNICATION_RESOURCE:
 			elements = palladioModel.getAllCommunicationResourceEntities();
 			break;
 		case COMPONENT_INSTANCE:

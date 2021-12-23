@@ -6,10 +6,10 @@ import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoun
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyTemplateElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.model.api.IPalladioModel;
 import org.palladiosimulator.uncertainty.impact.model.api.IUncertaintyTemplateModel;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypes;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyFactory;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;
 import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
@@ -61,7 +61,7 @@ public class ViewModelToModelConverter {
 		uncertainty.setUncertaintyType(uncertaintyType);
 
 		// Set element wrapper (ID in UncertaintyViewModel -> PalladioElementViewModel)
-		PalladioElementWrapper wrapper = createElementWrapper(palladioModel, uncertaintyType,
+		ElementWrapper wrapper = createElementWrapper(palladioModel, uncertaintyType,
 				uncertaintyViewModel.getAssignedElement().getId());
 		uncertainty.setAssignedElement(wrapper);
 
@@ -73,15 +73,15 @@ public class ViewModelToModelConverter {
 		return uncertaintyTemplateModel.getUncertaintyTypeById(uncertaintyTypeId);
 	}
 
-	private static PalladioElementWrapper createElementWrapper(IPalladioModel palladioModel,
+	private static ElementWrapper createElementWrapper(IPalladioModel palladioModel,
 			UncertaintyType uncertaintyType, String assignedElementId)
 			throws ElementTypeNotSupportedException, PalladioElementNotFoundException {
 		// Element Wrapper encapsulate referenced palladio element
-		PalladioElementWrapper wrapper = factory.createPalladioElementWrapper();
+		ElementWrapper wrapper = factory.createElementWrapper();
 
 		Entity entity;
 
-		PalladioElementTypes type = uncertaintyType.getAssignableElementType().getType();
+		ArchitecturalElementTypes type = uncertaintyType.getAssignableElementType();
 
 		switch (type) {
 		case BASIC_COMPONENT_BEHAVIOUR:
@@ -90,10 +90,10 @@ public class ViewModelToModelConverter {
 		case BASIC_COMPONENT_TYPE:
 			entity = palladioModel.getBasicComponentTypeEntityById(assignedElementId);
 			break;
-		case COMMUNICATION_COMPONENTS:
+		case COMMUNICATION_COMPONENT:
 			entity = palladioModel.getCommunicationComponentEntityById(assignedElementId);
 			break;
-		case COMMUNICATION_RESOURCES:
+		case COMMUNICATION_RESOURCE:
 			entity = palladioModel.getCommunicationResourceEntityById(assignedElementId);
 			break;
 		case COMPONENT_INSTANCE:

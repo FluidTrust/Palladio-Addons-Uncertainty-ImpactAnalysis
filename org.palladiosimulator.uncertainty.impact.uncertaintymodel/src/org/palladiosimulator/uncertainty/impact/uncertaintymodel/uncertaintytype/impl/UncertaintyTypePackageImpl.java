@@ -25,10 +25,6 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.AddPackage;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.impl.AddPackageImpl;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypePackage;
-
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.impl.PalladioElementTypePackageImpl;
-
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyPackage;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.UncertaintyPackageImpl;
@@ -37,6 +33,7 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemp
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.impl.UncertaintyTemplatePackageImpl;
 
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ImpactOnConfidentiality;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.InformationAvailability;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.Location;
@@ -128,6 +125,13 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 	private EEnum rootCauseEEnum = null;
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum architecturalElementTypesEEnum = null;
+
+	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
@@ -187,8 +191,6 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 		UncertaintyPackageImpl theUncertaintyPackage = (UncertaintyPackageImpl)(registeredPackage instanceof UncertaintyPackageImpl ? registeredPackage : UncertaintyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UncertaintyTemplatePackage.eNS_URI);
 		UncertaintyTemplatePackageImpl theUncertaintyTemplatePackage = (UncertaintyTemplatePackageImpl)(registeredPackage instanceof UncertaintyTemplatePackageImpl ? registeredPackage : UncertaintyTemplatePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PalladioElementTypePackage.eNS_URI);
-		PalladioElementTypePackageImpl thePalladioElementTypePackage = (PalladioElementTypePackageImpl)(registeredPackage instanceof PalladioElementTypePackageImpl ? registeredPackage : PalladioElementTypePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AddPackage.eNS_URI);
 		AddPackageImpl theAddPackage = (AddPackageImpl)(registeredPackage instanceof AddPackageImpl ? registeredPackage : AddPackage.eINSTANCE);
 
@@ -196,14 +198,12 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 		theUncertaintyTypePackage.createPackageContents();
 		theUncertaintyPackage.createPackageContents();
 		theUncertaintyTemplatePackage.createPackageContents();
-		thePalladioElementTypePackage.createPackageContents();
 		theAddPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theUncertaintyTypePackage.initializePackageContents();
 		theUncertaintyPackage.initializePackageContents();
 		theUncertaintyTemplatePackage.initializePackageContents();
-		thePalladioElementTypePackage.initializePackageContents();
 		theAddPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -237,7 +237,7 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUncertaintyType_ImpactOn() {
+	public EReference getUncertaintyType_ResolvedBy() {
 		return (EReference)uncertaintyTypeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -246,26 +246,8 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUncertaintyType_AssignableElementType() {
-		return (EReference)uncertaintyTypeEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getUncertaintyType_ResolvedBy() {
-		return (EReference)uncertaintyTypeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getUncertaintyType_Location() {
-		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(4);
+		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -274,7 +256,7 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 	 * @generated
 	 */
 	public EAttribute getUncertaintyType_InformationAvailability() {
-		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(5);
+		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -283,7 +265,7 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 	 * @generated
 	 */
 	public EAttribute getUncertaintyType_Nature() {
-		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(6);
+		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -292,7 +274,7 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 	 * @generated
 	 */
 	public EAttribute getUncertaintyType_Manageability() {
-		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(7);
+		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -301,7 +283,7 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 	 * @generated
 	 */
 	public EAttribute getUncertaintyType_ImpactOnConfidentiality() {
-		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(8);
+		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -310,7 +292,7 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 	 * @generated
 	 */
 	public EAttribute getUncertaintyType_SeverityOfImpact() {
-		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(9);
+		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -319,7 +301,7 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 	 * @generated
 	 */
 	public EAttribute getUncertaintyType_ResolutionTime() {
-		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(10);
+		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
@@ -328,6 +310,24 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 	 * @generated
 	 */
 	public EAttribute getUncertaintyType_RootCause() {
+		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUncertaintyType_AssignableElementType() {
+		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(10);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getUncertaintyType_ImpactOnElementTypes() {
 		return (EAttribute)uncertaintyTypeEClass.getEStructuralFeatures().get(11);
 	}
 
@@ -426,6 +426,15 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getArchitecturalElementTypes() {
+		return architecturalElementTypesEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public UncertaintyTypeFactory getUncertaintyTypeFactory() {
 		return (UncertaintyTypeFactory)getEFactoryInstance();
 	}
@@ -451,8 +460,6 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 		// Create classes and their features
 		uncertaintyTypeEClass = createEClass(UNCERTAINTY_TYPE);
 		createEAttribute(uncertaintyTypeEClass, UNCERTAINTY_TYPE__NAME);
-		createEReference(uncertaintyTypeEClass, UNCERTAINTY_TYPE__IMPACT_ON);
-		createEReference(uncertaintyTypeEClass, UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE);
 		createEReference(uncertaintyTypeEClass, UNCERTAINTY_TYPE__RESOLVED_BY);
 		createEAttribute(uncertaintyTypeEClass, UNCERTAINTY_TYPE__LOCATION);
 		createEAttribute(uncertaintyTypeEClass, UNCERTAINTY_TYPE__INFORMATION_AVAILABILITY);
@@ -462,6 +469,8 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 		createEAttribute(uncertaintyTypeEClass, UNCERTAINTY_TYPE__SEVERITY_OF_IMPACT);
 		createEAttribute(uncertaintyTypeEClass, UNCERTAINTY_TYPE__RESOLUTION_TIME);
 		createEAttribute(uncertaintyTypeEClass, UNCERTAINTY_TYPE__ROOT_CAUSE);
+		createEAttribute(uncertaintyTypeEClass, UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE);
+		createEAttribute(uncertaintyTypeEClass, UNCERTAINTY_TYPE__IMPACT_ON_ELEMENT_TYPES);
 
 		uncertaintyTypeContainerEClass = createEClass(UNCERTAINTY_TYPE_CONTAINER);
 		createEReference(uncertaintyTypeContainerEClass, UNCERTAINTY_TYPE_CONTAINER__UNCERTAINTY_TYPES);
@@ -475,6 +484,7 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 		severityOfImpactEEnum = createEEnum(SEVERITY_OF_IMPACT);
 		resolutionTimeEEnum = createEEnum(RESOLUTION_TIME);
 		rootCauseEEnum = createEEnum(ROOT_CAUSE);
+		architecturalElementTypesEEnum = createEEnum(ARCHITECTURAL_ELEMENT_TYPES);
 	}
 
 	/**
@@ -503,7 +513,6 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 		// Obtain other dependent packages
 		IdentifierPackage theIdentifierPackage = (IdentifierPackage)EPackage.Registry.INSTANCE.getEPackage(IdentifierPackage.eNS_URI);
 		EcorePackage theEcorePackage = (EcorePackage)EPackage.Registry.INSTANCE.getEPackage(EcorePackage.eNS_URI);
-		PalladioElementTypePackage thePalladioElementTypePackage = (PalladioElementTypePackage)EPackage.Registry.INSTANCE.getEPackage(PalladioElementTypePackage.eNS_URI);
 		AddPackage theAddPackage = (AddPackage)EPackage.Registry.INSTANCE.getEPackage(AddPackage.eNS_URI);
 
 		// Create type parameters
@@ -516,8 +525,6 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 		// Initialize classes, features, and operations; add parameters
 		initEClass(uncertaintyTypeEClass, UncertaintyType.class, "UncertaintyType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUncertaintyType_Name(), theEcorePackage.getEString(), "name", null, 0, 1, UncertaintyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUncertaintyType_ImpactOn(), thePalladioElementTypePackage.getPalladioElementType(), null, "impactOn", null, 1, -1, UncertaintyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUncertaintyType_AssignableElementType(), thePalladioElementTypePackage.getPalladioElementType(), null, "assignableElementType", null, 1, 1, UncertaintyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUncertaintyType_ResolvedBy(), theAddPackage.getADD(), null, "resolvedBy", null, 0, 1, UncertaintyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUncertaintyType_Location(), this.getLocation(), "location", null, 0, 1, UncertaintyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUncertaintyType_InformationAvailability(), this.getInformationAvailability(), "informationAvailability", null, 0, 1, UncertaintyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -527,6 +534,8 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 		initEAttribute(getUncertaintyType_SeverityOfImpact(), this.getSeverityOfImpact(), "severityOfImpact", null, 0, 1, UncertaintyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUncertaintyType_ResolutionTime(), this.getResolutionTime(), "resolutionTime", null, 0, 1, UncertaintyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getUncertaintyType_RootCause(), this.getRootCause(), "rootCause", "ASSUMPTION", 0, 1, UncertaintyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUncertaintyType_AssignableElementType(), this.getArchitecturalElementTypes(), "assignableElementType", null, 0, 1, UncertaintyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUncertaintyType_ImpactOnElementTypes(), this.getArchitecturalElementTypes(), "impactOnElementTypes", null, 0, -1, UncertaintyType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(uncertaintyTypeContainerEClass, UncertaintyTypeContainer.class, "UncertaintyTypeContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUncertaintyTypeContainer_UncertaintyTypes(), this.getUncertaintyType(), null, "uncertaintyTypes", null, 0, -1, UncertaintyTypeContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -572,6 +581,19 @@ public class UncertaintyTypePackageImpl extends EPackageImpl implements Uncertai
 		initEEnum(rootCauseEEnum, RootCause.class, "RootCause");
 		addEEnumLiteral(rootCauseEEnum, RootCause.ASSUMPTION);
 		addEEnumLiteral(rootCauseEEnum, RootCause.MISSING_INFORMATION);
+
+		initEEnum(architecturalElementTypesEEnum, ArchitecturalElementTypes.class, "ArchitecturalElementTypes");
+		addEEnumLiteral(architecturalElementTypesEEnum, ArchitecturalElementTypes.SYSTEM);
+		addEEnumLiteral(architecturalElementTypesEEnum, ArchitecturalElementTypes.HARDWARE_RESOURCE);
+		addEEnumLiteral(architecturalElementTypesEEnum, ArchitecturalElementTypes.BASIC_COMPONENT_TYPE);
+		addEEnumLiteral(architecturalElementTypesEEnum, ArchitecturalElementTypes.COMPONENT_INSTANCE);
+		addEEnumLiteral(architecturalElementTypesEEnum, ArchitecturalElementTypes.BASIC_COMPONENT_BEHAVIOUR);
+		addEEnumLiteral(architecturalElementTypesEEnum, ArchitecturalElementTypes.COMMUNICATION_COMPONENT);
+		addEEnumLiteral(architecturalElementTypesEEnum, ArchitecturalElementTypes.COMMUNICATION_RESOURCE);
+		addEEnumLiteral(architecturalElementTypesEEnum, ArchitecturalElementTypes.SYSTEM_INTERFACE);
+		addEEnumLiteral(architecturalElementTypesEEnum, ArchitecturalElementTypes.COMPONENT_INTERFACE_INSTANCE);
+		addEEnumLiteral(architecturalElementTypesEEnum, ArchitecturalElementTypes.COMPONENT_INTERFACE_TYPE);
+		addEEnumLiteral(architecturalElementTypesEEnum, ArchitecturalElementTypes.USAGE_BEHAVIOUR);
 
 		// Create resource
 		createResource(eNS_URI);

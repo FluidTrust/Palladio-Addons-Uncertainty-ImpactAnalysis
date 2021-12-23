@@ -48,19 +48,6 @@
    <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
       <!-- @generated uncertaintyPlugin -->
       <factory
-            uri="http://www.example.org/palladioElementType"
-            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.provider.PalladioElementTypeItemProviderAdapterFactory"
-            supportedTypes=
-              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
-               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
-               org.eclipse.emf.edit.provider.ITreeItemContentProvider
-               org.eclipse.emf.edit.provider.IItemLabelProvider
-               org.eclipse.emf.edit.provider.IItemPropertySource"/>
-   </extension>
-
-   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
-      <!-- @generated uncertaintyPlugin -->
-      <factory
             uri="http://www.example.org/add"
             class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.provider.AddItemProviderAdapterFactory"
             supportedTypes=

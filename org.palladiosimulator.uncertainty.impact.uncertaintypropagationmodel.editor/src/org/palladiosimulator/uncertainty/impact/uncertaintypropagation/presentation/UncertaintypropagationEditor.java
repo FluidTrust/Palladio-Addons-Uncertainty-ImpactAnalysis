@@ -213,8 +213,6 @@ import org.palladiosimulator.pcm.usagemodel.provider.UsagemodelItemProviderAdapt
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.provider.AddItemProviderAdapterFactory;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.provider.PalladioElementTypeItemProviderAdapterFactory;
-
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.provider.UncertaintyItemProviderAdapterFactory;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.provider.UncertaintyTemplateItemProviderAdapterFactory;
@@ -793,7 +791,6 @@ public class UncertaintypropagationEditor
 		adapterFactory.addAdapterFactory(new UncertaintyItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new UncertaintyTypeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new UncertaintyTemplateItemProviderAdapterFactory());
-		adapterFactory.addAdapterFactory(new PalladioElementTypeItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new AddItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new UnitsItemProviderAdapterFactory());
 		adapterFactory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());

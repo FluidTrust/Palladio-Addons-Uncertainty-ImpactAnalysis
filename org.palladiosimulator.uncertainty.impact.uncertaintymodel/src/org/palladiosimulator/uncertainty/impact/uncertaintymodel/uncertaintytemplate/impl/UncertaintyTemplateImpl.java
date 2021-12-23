@@ -12,8 +12,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADDContainer;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypeContainer;
-
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplate;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplatePackage;
 
@@ -28,7 +26,6 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.impl.UncertaintyTemplateImpl#getAddContainer <em>Add Container</em>}</li>
- *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.impl.UncertaintyTemplateImpl#getPalladioElementTypeContainer <em>Palladio Element Type Container</em>}</li>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.impl.UncertaintyTemplateImpl#getUncertaintyTypeContainer <em>Uncertainty Type Container</em>}</li>
  * </ul>
  *
@@ -44,16 +41,6 @@ public class UncertaintyTemplateImpl extends MinimalEObjectImpl.Container implem
 	 * @ordered
 	 */
 	protected ADDContainer addContainer;
-
-	/**
-	 * The cached value of the '{@link #getPalladioElementTypeContainer() <em>Palladio Element Type Container</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPalladioElementTypeContainer()
-	 * @generated
-	 * @ordered
-	 */
-	protected PalladioElementTypeContainer palladioElementTypeContainer;
 
 	/**
 	 * The cached value of the '{@link #getUncertaintyTypeContainer() <em>Uncertainty Type Container</em>}' reference.
@@ -127,44 +114,6 @@ public class UncertaintyTemplateImpl extends MinimalEObjectImpl.Container implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PalladioElementTypeContainer getPalladioElementTypeContainer() {
-		if (palladioElementTypeContainer != null && palladioElementTypeContainer.eIsProxy()) {
-			InternalEObject oldPalladioElementTypeContainer = (InternalEObject)palladioElementTypeContainer;
-			palladioElementTypeContainer = (PalladioElementTypeContainer)eResolveProxy(oldPalladioElementTypeContainer);
-			if (palladioElementTypeContainer != oldPalladioElementTypeContainer) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__PALLADIO_ELEMENT_TYPE_CONTAINER, oldPalladioElementTypeContainer, palladioElementTypeContainer));
-			}
-		}
-		return palladioElementTypeContainer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PalladioElementTypeContainer basicGetPalladioElementTypeContainer() {
-		return palladioElementTypeContainer;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPalladioElementTypeContainer(PalladioElementTypeContainer newPalladioElementTypeContainer) {
-		PalladioElementTypeContainer oldPalladioElementTypeContainer = palladioElementTypeContainer;
-		palladioElementTypeContainer = newPalladioElementTypeContainer;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__PALLADIO_ELEMENT_TYPE_CONTAINER, oldPalladioElementTypeContainer, palladioElementTypeContainer));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public UncertaintyTypeContainer getUncertaintyTypeContainer() {
 		if (uncertaintyTypeContainer != null && uncertaintyTypeContainer.eIsProxy()) {
 			InternalEObject oldUncertaintyTypeContainer = (InternalEObject)uncertaintyTypeContainer;
@@ -209,9 +158,6 @@ public class UncertaintyTemplateImpl extends MinimalEObjectImpl.Container implem
 			case UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__ADD_CONTAINER:
 				if (resolve) return getAddContainer();
 				return basicGetAddContainer();
-			case UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__PALLADIO_ELEMENT_TYPE_CONTAINER:
-				if (resolve) return getPalladioElementTypeContainer();
-				return basicGetPalladioElementTypeContainer();
 			case UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__UNCERTAINTY_TYPE_CONTAINER:
 				if (resolve) return getUncertaintyTypeContainer();
 				return basicGetUncertaintyTypeContainer();
@@ -229,9 +175,6 @@ public class UncertaintyTemplateImpl extends MinimalEObjectImpl.Container implem
 		switch (featureID) {
 			case UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__ADD_CONTAINER:
 				setAddContainer((ADDContainer)newValue);
-				return;
-			case UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__PALLADIO_ELEMENT_TYPE_CONTAINER:
-				setPalladioElementTypeContainer((PalladioElementTypeContainer)newValue);
 				return;
 			case UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__UNCERTAINTY_TYPE_CONTAINER:
 				setUncertaintyTypeContainer((UncertaintyTypeContainer)newValue);
@@ -251,9 +194,6 @@ public class UncertaintyTemplateImpl extends MinimalEObjectImpl.Container implem
 			case UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__ADD_CONTAINER:
 				setAddContainer((ADDContainer)null);
 				return;
-			case UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__PALLADIO_ELEMENT_TYPE_CONTAINER:
-				setPalladioElementTypeContainer((PalladioElementTypeContainer)null);
-				return;
 			case UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__UNCERTAINTY_TYPE_CONTAINER:
 				setUncertaintyTypeContainer((UncertaintyTypeContainer)null);
 				return;
@@ -271,8 +211,6 @@ public class UncertaintyTemplateImpl extends MinimalEObjectImpl.Container implem
 		switch (featureID) {
 			case UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__ADD_CONTAINER:
 				return addContainer != null;
-			case UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__PALLADIO_ELEMENT_TYPE_CONTAINER:
-				return palladioElementTypeContainer != null;
 			case UncertaintyTemplatePackage.UNCERTAINTY_TEMPLATE__UNCERTAINTY_TYPE_CONTAINER:
 				return uncertaintyTypeContainer != null;
 		}

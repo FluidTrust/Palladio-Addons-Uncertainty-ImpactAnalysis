@@ -5,17 +5,16 @@ import java.util.stream.Collectors;
 
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADD;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementType;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;
 import org.palladiosimulator.uncertainty.impact.view.model.ADDViewModel;
-import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyViewModel;
 
 /**
  * Utility class that converts model objects to view model objects
+ * 
  * @author Niko
  *
  */
@@ -37,11 +36,10 @@ public class ModelToViewModelConverter {
 		viewModel.setName(uncertaintyType.getName());
 		viewModel.setId(uncertaintyType.getId());
 		viewModel.setResolvedBy(convertADDToADDViewModel(uncertaintyType.getResolvedBy()));
-		viewModel.setAssignableElementType(
-				convertPalladioElementTypeToPalladioElementTypeViewModel(uncertaintyType.getAssignableElementType()));
-		viewModel
-				.setImpactOn(convertPalladioElementTypesToPalladioElementTypeViewModels(uncertaintyType.getImpactOn()));
-
+		viewModel.setAssignableElementType(ArchitecturalElementTypeToPalladioElementTypeNameResolver
+				.resolveName(uncertaintyType.getAssignableElementType()));
+		viewModel.setImpactOnElementTypes(ArchitecturalElementTypeToPalladioElementTypeNameResolver
+				.resolveNames(uncertaintyType.getImpactOnElementTypes()));
 		viewModel.setImpactOnConfidentiality(uncertaintyType.getImpactOnConfidentiality().getName());
 		viewModel.setInformationAvailability(uncertaintyType.getInformationAvailability().getName());
 		viewModel.setLocation(uncertaintyType.getLocation().getName());
@@ -101,38 +99,7 @@ public class ModelToViewModelConverter {
 		return adds.stream().map(ModelToViewModelConverter::convertADDToADDViewModel).collect(Collectors.toList());
 	}
 
-	/**
-	 * Converts {@link PalladioElementType} to {@link PalladioElementTypeViewModel}
-	 * 
-	 * @param
-	 * @return
-	 */
-	public static PalladioElementTypeViewModel convertPalladioElementTypeToPalladioElementTypeViewModel(
-			PalladioElementType elementType) {
-		if (elementType == null) {
-			return null;
-		}
-		PalladioElementTypeViewModel viewModel = new PalladioElementTypeViewModel();
-		viewModel.setName(elementType.getName());
-		viewModel.setId(elementType.getId());
-		viewModel.setType(elementType.getType().getName());
-		return viewModel;
-	}
-
-	/**
-	 * Converts list of {@link PalladioElementType} to list of
-	 * {@link PalladioElementTypeViewModel}
-	 * 
-	 * @param
-	 * @return
-	 */
-	public static List<PalladioElementTypeViewModel> convertPalladioElementTypesToPalladioElementTypeViewModels(
-			List<PalladioElementType> elementTypes) {
-
-		return elementTypes.stream()
-				.map(ModelToViewModelConverter::convertPalladioElementTypeToPalladioElementTypeViewModel)
-				.collect(Collectors.toList());
-	}
+	
 
 	/**
 	 * Converts {@link Uncertainty} to {@link UncertaintyTypeViewModel}
@@ -190,8 +157,8 @@ public class ModelToViewModelConverter {
 	}
 
 	/**
-	 * Converts list of {@link Entity} to  list of {@link PalladioElementViewModel}. Each Palladio
-	 * element extends from entity (if not, we use a wapper element).
+	 * Converts list of {@link Entity} to list of {@link PalladioElementViewModel}.
+	 * Each Palladio element extends from entity (if not, we use a wapper element).
 	 * 
 	 * @param
 	 * @return

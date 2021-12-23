@@ -15,8 +15,8 @@
   <foreignModel>uncertainty.ecore</foreignModel>
   <genPackages prefix="Uncertainty" basePackage="org.palladiosimulator.uncertainty.impact.uncertaintymodel"
       disposableProviderFactory="true" ecorePackage="uncertainty.ecore#/">
-    <genClasses image="false" ecoreClass="uncertainty.ecore#//PalladioElementWrapper">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uncertainty.ecore#//PalladioElementWrapper/referencedElement"/>
+    <genClasses image="false" ecoreClass="uncertainty.ecore#//ElementWrapper">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uncertainty.ecore#//ElementWrapper/referencedElement"/>
     </genClasses>
     <genClasses ecoreClass="uncertainty.ecore#//Uncertainty">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uncertainty.ecore#//Uncertainty/name"/>
@@ -80,10 +80,21 @@
       <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//RootCause/Assumption"/>
       <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//RootCause/MissingInformation"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="uncertaintyType.ecore#//ArchitecturalElementTypes">
+      <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//ArchitecturalElementTypes/System"/>
+      <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//ArchitecturalElementTypes/HardwareResource"/>
+      <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//ArchitecturalElementTypes/BasicComponentType"/>
+      <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//ArchitecturalElementTypes/ComponentInstance"/>
+      <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//ArchitecturalElementTypes/BasicComponentBehaviour"/>
+      <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//ArchitecturalElementTypes/CommunicationComponent"/>
+      <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//ArchitecturalElementTypes/CommunicationResource"/>
+      <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//ArchitecturalElementTypes/SystemInterface"/>
+      <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//ArchitecturalElementTypes/ComponentInterfaceInstance"/>
+      <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//ArchitecturalElementTypes/ComponentInterfaceType"/>
+      <genEnumLiterals ecoreEnumLiteral="uncertaintyType.ecore#//ArchitecturalElementTypes/UsageBehaviour"/>
+    </genEnums>
     <genClasses ecoreClass="uncertaintyType.ecore#//UncertaintyType">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uncertaintyType.ecore#//UncertaintyType/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uncertaintyType.ecore#//UncertaintyType/impactOn"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uncertaintyType.ecore#//UncertaintyType/assignableElementType"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uncertaintyType.ecore#//UncertaintyType/resolvedBy"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uncertaintyType.ecore#//UncertaintyType/location"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uncertaintyType.ecore#//UncertaintyType/informationAvailability"/>
@@ -93,6 +104,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uncertaintyType.ecore#//UncertaintyType/severityOfImpact"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uncertaintyType.ecore#//UncertaintyType/resolutionTime"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uncertaintyType.ecore#//UncertaintyType/rootCause"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uncertaintyType.ecore#//UncertaintyType/assignableElementType"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute uncertaintyType.ecore#//UncertaintyType/impactOnElementTypes"/>
     </genClasses>
     <genClasses ecoreClass="uncertaintyType.ecore#//UncertaintyTypeContainer">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference uncertaintyType.ecore#//UncertaintyTypeContainer/uncertaintyTypes"/>
@@ -102,31 +115,7 @@
       disposableProviderFactory="true" ecorePackage="uncertaintyTemplate.ecore#/">
     <genClasses ecoreClass="uncertaintyTemplate.ecore#//UncertaintyTemplate">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uncertaintyTemplate.ecore#//UncertaintyTemplate/addContainer"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uncertaintyTemplate.ecore#//UncertaintyTemplate/palladioElementTypeContainer"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference uncertaintyTemplate.ecore#//UncertaintyTemplate/uncertaintyTypeContainer"/>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="PalladioElementType" basePackage="org.palladiosimulator.uncertainty.impact.uncertaintymodel"
-      disposableProviderFactory="true" ecorePackage="palladioElementType.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="palladioElementType.ecore#//PalladioElementTypes">
-      <genEnumLiterals ecoreEnumLiteral="palladioElementType.ecore#//PalladioElementTypes/System"/>
-      <genEnumLiterals ecoreEnumLiteral="palladioElementType.ecore#//PalladioElementTypes/HardwareResource"/>
-      <genEnumLiterals ecoreEnumLiteral="palladioElementType.ecore#//PalladioElementTypes/BasicComponent_Type"/>
-      <genEnumLiterals ecoreEnumLiteral="palladioElementType.ecore#//PalladioElementTypes/Component_Instance"/>
-      <genEnumLiterals ecoreEnumLiteral="palladioElementType.ecore#//PalladioElementTypes/BasicComponentBehaviour"/>
-      <genEnumLiterals ecoreEnumLiteral="palladioElementType.ecore#//PalladioElementTypes/Communication_Components"/>
-      <genEnumLiterals ecoreEnumLiteral="palladioElementType.ecore#//PalladioElementTypes/Communication_Resources"/>
-      <genEnumLiterals ecoreEnumLiteral="palladioElementType.ecore#//PalladioElementTypes/SystemInterface"/>
-      <genEnumLiterals ecoreEnumLiteral="palladioElementType.ecore#//PalladioElementTypes/ComponentInterface_Instance"/>
-      <genEnumLiterals ecoreEnumLiteral="palladioElementType.ecore#//PalladioElementTypes/ComponentInterface_Type"/>
-      <genEnumLiterals ecoreEnumLiteral="palladioElementType.ecore#//PalladioElementTypes/UsageBehaviour"/>
-    </genEnums>
-    <genClasses ecoreClass="palladioElementType.ecore#//PalladioElementType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute palladioElementType.ecore#//PalladioElementType/type"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute palladioElementType.ecore#//PalladioElementType/name"/>
-    </genClasses>
-    <genClasses ecoreClass="palladioElementType.ecore#//PalladioElementTypeContainer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference palladioElementType.ecore#//PalladioElementTypeContainer/palladioElementTypes"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Add" basePackage="org.palladiosimulator.uncertainty.impact.uncertaintymodel"

@@ -15,12 +15,11 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADD;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementType;
-
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ImpactOnConfidentiality;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.InformationAvailability;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.Location;
@@ -41,8 +40,6 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeImpl#getImpactOn <em>Impact On</em>}</li>
- *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeImpl#getAssignableElementType <em>Assignable Element Type</em>}</li>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeImpl#getResolvedBy <em>Resolved By</em>}</li>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeImpl#getInformationAvailability <em>Information Availability</em>}</li>
@@ -52,6 +49,8 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeImpl#getSeverityOfImpact <em>Severity Of Impact</em>}</li>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeImpl#getResolutionTime <em>Resolution Time</em>}</li>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeImpl#getRootCause <em>Root Cause</em>}</li>
+ *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeImpl#getAssignableElementType <em>Assignable Element Type</em>}</li>
+ *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.impl.UncertaintyTypeImpl#getImpactOnElementTypes <em>Impact On Element Types</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,26 +75,6 @@ public class UncertaintyTypeImpl extends IdentifierImpl implements UncertaintyTy
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getImpactOn() <em>Impact On</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getImpactOn()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<PalladioElementType> impactOn;
-
-	/**
-	 * The cached value of the '{@link #getAssignableElementType() <em>Assignable Element Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAssignableElementType()
-	 * @generated
-	 * @ordered
-	 */
-	protected PalladioElementType assignableElementType;
 
 	/**
 	 * The cached value of the '{@link #getResolvedBy() <em>Resolved By</em>}' reference.
@@ -268,6 +247,36 @@ public class UncertaintyTypeImpl extends IdentifierImpl implements UncertaintyTy
 	protected RootCause rootCause = ROOT_CAUSE_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getAssignableElementType() <em>Assignable Element Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssignableElementType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ArchitecturalElementTypes ASSIGNABLE_ELEMENT_TYPE_EDEFAULT = ArchitecturalElementTypes.SYSTEM;
+
+	/**
+	 * The cached value of the '{@link #getAssignableElementType() <em>Assignable Element Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssignableElementType()
+	 * @generated
+	 * @ordered
+	 */
+	protected ArchitecturalElementTypes assignableElementType = ASSIGNABLE_ELEMENT_TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getImpactOnElementTypes() <em>Impact On Element Types</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImpactOnElementTypes()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<ArchitecturalElementTypes> impactOnElementTypes;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -305,56 +314,6 @@ public class UncertaintyTypeImpl extends IdentifierImpl implements UncertaintyTy
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UncertaintyTypePackage.UNCERTAINTY_TYPE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<PalladioElementType> getImpactOn() {
-		if (impactOn == null) {
-			impactOn = new EObjectResolvingEList<PalladioElementType>(PalladioElementType.class, this, UncertaintyTypePackage.UNCERTAINTY_TYPE__IMPACT_ON);
-		}
-		return impactOn;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PalladioElementType getAssignableElementType() {
-		if (assignableElementType != null && assignableElementType.eIsProxy()) {
-			InternalEObject oldAssignableElementType = (InternalEObject)assignableElementType;
-			assignableElementType = (PalladioElementType)eResolveProxy(oldAssignableElementType);
-			if (assignableElementType != oldAssignableElementType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UncertaintyTypePackage.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE, oldAssignableElementType, assignableElementType));
-			}
-		}
-		return assignableElementType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public PalladioElementType basicGetAssignableElementType() {
-		return assignableElementType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAssignableElementType(PalladioElementType newAssignableElementType) {
-		PalladioElementType oldAssignableElementType = assignableElementType;
-		assignableElementType = newAssignableElementType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UncertaintyTypePackage.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE, oldAssignableElementType, assignableElementType));
 	}
 
 	/**
@@ -568,16 +527,44 @@ public class UncertaintyTypeImpl extends IdentifierImpl implements UncertaintyTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ArchitecturalElementTypes getAssignableElementType() {
+		return assignableElementType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAssignableElementType(ArchitecturalElementTypes newAssignableElementType) {
+		ArchitecturalElementTypes oldAssignableElementType = assignableElementType;
+		assignableElementType = newAssignableElementType == null ? ASSIGNABLE_ELEMENT_TYPE_EDEFAULT : newAssignableElementType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, UncertaintyTypePackage.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE, oldAssignableElementType, assignableElementType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<ArchitecturalElementTypes> getImpactOnElementTypes() {
+		if (impactOnElementTypes == null) {
+			impactOnElementTypes = new EDataTypeUniqueEList<ArchitecturalElementTypes>(ArchitecturalElementTypes.class, this, UncertaintyTypePackage.UNCERTAINTY_TYPE__IMPACT_ON_ELEMENT_TYPES);
+		}
+		return impactOnElementTypes;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__NAME:
 				return getName();
-			case UncertaintyTypePackage.UNCERTAINTY_TYPE__IMPACT_ON:
-				return getImpactOn();
-			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE:
-				if (resolve) return getAssignableElementType();
-				return basicGetAssignableElementType();
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__RESOLVED_BY:
 				if (resolve) return getResolvedBy();
 				return basicGetResolvedBy();
@@ -597,6 +584,10 @@ public class UncertaintyTypeImpl extends IdentifierImpl implements UncertaintyTy
 				return getResolutionTime();
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ROOT_CAUSE:
 				return getRootCause();
+			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE:
+				return getAssignableElementType();
+			case UncertaintyTypePackage.UNCERTAINTY_TYPE__IMPACT_ON_ELEMENT_TYPES:
+				return getImpactOnElementTypes();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -612,13 +603,6 @@ public class UncertaintyTypeImpl extends IdentifierImpl implements UncertaintyTy
 		switch (featureID) {
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__NAME:
 				setName((String)newValue);
-				return;
-			case UncertaintyTypePackage.UNCERTAINTY_TYPE__IMPACT_ON:
-				getImpactOn().clear();
-				getImpactOn().addAll((Collection<? extends PalladioElementType>)newValue);
-				return;
-			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE:
-				setAssignableElementType((PalladioElementType)newValue);
 				return;
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__RESOLVED_BY:
 				setResolvedBy((ADD)newValue);
@@ -647,6 +631,13 @@ public class UncertaintyTypeImpl extends IdentifierImpl implements UncertaintyTy
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ROOT_CAUSE:
 				setRootCause((RootCause)newValue);
 				return;
+			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE:
+				setAssignableElementType((ArchitecturalElementTypes)newValue);
+				return;
+			case UncertaintyTypePackage.UNCERTAINTY_TYPE__IMPACT_ON_ELEMENT_TYPES:
+				getImpactOnElementTypes().clear();
+				getImpactOnElementTypes().addAll((Collection<? extends ArchitecturalElementTypes>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -661,12 +652,6 @@ public class UncertaintyTypeImpl extends IdentifierImpl implements UncertaintyTy
 		switch (featureID) {
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__NAME:
 				setName(NAME_EDEFAULT);
-				return;
-			case UncertaintyTypePackage.UNCERTAINTY_TYPE__IMPACT_ON:
-				getImpactOn().clear();
-				return;
-			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE:
-				setAssignableElementType((PalladioElementType)null);
 				return;
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__RESOLVED_BY:
 				setResolvedBy((ADD)null);
@@ -695,6 +680,12 @@ public class UncertaintyTypeImpl extends IdentifierImpl implements UncertaintyTy
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ROOT_CAUSE:
 				setRootCause(ROOT_CAUSE_EDEFAULT);
 				return;
+			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE:
+				setAssignableElementType(ASSIGNABLE_ELEMENT_TYPE_EDEFAULT);
+				return;
+			case UncertaintyTypePackage.UNCERTAINTY_TYPE__IMPACT_ON_ELEMENT_TYPES:
+				getImpactOnElementTypes().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -709,10 +700,6 @@ public class UncertaintyTypeImpl extends IdentifierImpl implements UncertaintyTy
 		switch (featureID) {
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case UncertaintyTypePackage.UNCERTAINTY_TYPE__IMPACT_ON:
-				return impactOn != null && !impactOn.isEmpty();
-			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE:
-				return assignableElementType != null;
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__RESOLVED_BY:
 				return resolvedBy != null;
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__LOCATION:
@@ -731,6 +718,10 @@ public class UncertaintyTypeImpl extends IdentifierImpl implements UncertaintyTy
 				return resolutionTime != RESOLUTION_TIME_EDEFAULT;
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ROOT_CAUSE:
 				return rootCause != ROOT_CAUSE_EDEFAULT;
+			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE:
+				return assignableElementType != ASSIGNABLE_ELEMENT_TYPE_EDEFAULT;
+			case UncertaintyTypePackage.UNCERTAINTY_TYPE__IMPACT_ON_ELEMENT_TYPES:
+				return impactOnElementTypes != null && !impactOnElementTypes.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -763,6 +754,10 @@ public class UncertaintyTypeImpl extends IdentifierImpl implements UncertaintyTy
 		result.append(resolutionTime);
 		result.append(", rootCause: ");
 		result.append(rootCause);
+		result.append(", assignableElementType: ");
+		result.append(assignableElementType);
+		result.append(", impactOnElementTypes: ");
+		result.append(impactOnElementTypes);
 		result.append(')');
 		return result.toString();
 	}

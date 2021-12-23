@@ -18,8 +18,7 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.AmountOfAlt
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.CostsOfRevision;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.PossibilityOfRevisability;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ProbabilityOfRevisability;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementType;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypes;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ImpactOnConfidentiality;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.InformationAvailability;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.Location;
@@ -89,66 +88,11 @@ public class UncertaintyTemplateModelTest extends TestBase {
 		assertThrows(UncertaintyTemplateElementNotFoundException.class, () -> cut.getAddById("Invalid"));
 	}
 
-	@Test
-	public void testGetElementTypes() {
-		List<PalladioElementType> elementTypes = cut.getElementTypes();
-		assertEquals(11, elementTypes.size());
+	
 
-		PalladioElementType type = elementTypes.get(0);
-		testPalladioElementType(type, "_ogKREDWREeyX2v1Sswnu1Q", "System (System)", PalladioElementTypes.SYSTEM);
+	
 
-		type = elementTypes.get(1);
-		testPalladioElementType(type, "_pE4HsDWREeyX2v1Sswnu1Q", "Hardware Resource (ResourceContainer)",
-				PalladioElementTypes.HARDWARE_RESOURCE);
-
-		type = elementTypes.get(2);
-		testPalladioElementType(type, "_pVIxQDWREeyX2v1Sswnu1Q", "Basic Component Type (BasicComponent)",
-				PalladioElementTypes.BASIC_COMPONENT_TYPE);
-
-		type = elementTypes.get(3);
-		testPalladioElementType(type, "_uQHRoDvgEey_pcVcOzlgag", "Component Instance (AssemblyContext)",
-				PalladioElementTypes.COMPONENT_INSTANCE);
-
-		type = elementTypes.get(4);
-		testPalladioElementType(type, "_uj8zoDvgEey_pcVcOzlgag", "Basic Component Behaviour (RDSEFF)",
-				PalladioElementTypes.BASIC_COMPONENT_BEHAVIOUR);
-
-		type = elementTypes.get(5);
-		testPalladioElementType(type, "_u2df8DvgEey_pcVcOzlgag", "Communication Components (AssemblyConnector)",
-				PalladioElementTypes.COMMUNICATION_COMPONENTS);
-
-		type = elementTypes.get(6);
-		testPalladioElementType(type, "_vEk0cDvgEey_pcVcOzlgag", "Communication Resources (LinkingResource)",
-				PalladioElementTypes.COMMUNICATION_RESOURCES);
-
-		type = elementTypes.get(7);
-		testPalladioElementType(type, "_vUJhgDvgEey_pcVcOzlgag", "System Interface (Role)",
-				PalladioElementTypes.SYSTEM_INTERFACE);
-
-		type = elementTypes.get(8);
-		testPalladioElementType(type, "_-GJ9QDvgEey_pcVcOzlgag", "Component Interface Instance (AssemblyContext&Role)",
-				PalladioElementTypes.COMPONENT_INTERFACE_INSTANCE);
-
-		type = elementTypes.get(9);
-		testPalladioElementType(type, "_-W_1oDvgEey_pcVcOzlgag", "Component Interface Type (Role)",
-				PalladioElementTypes.COMPONENT_INTERFACE_TYPE);
-
-		type = elementTypes.get(10);
-		testPalladioElementType(type, "_-oU2MDvgEey_pcVcOzlgag", "Usage Behaviour (EntryLevelSystemCall)",
-				PalladioElementTypes.USAGE_BEHAVIOUR);
-	}
-
-	@Test
-	public void testGetElementTypeById() throws UncertaintyTemplateElementNotFoundException {
-		PalladioElementType type = cut.getElementTypeById("_ogKREDWREeyX2v1Sswnu1Q");
-		testPalladioElementType(type, "_ogKREDWREeyX2v1Sswnu1Q", "System (System)", PalladioElementTypes.SYSTEM);
-	}
-
-	@Test
-	public void testGetElementTypeByIdNotSuccessfulls() {
-		assertThrows(UncertaintyTemplateElementNotFoundException.class, () -> cut.getElementTypeById("invalid"));
-	}
-
+	
 	@Test
 	public void testGetUncertaintyTypesResolvesReferencesSuccessfull() {
 		List<UncertaintyType> elementTypes = cut.getUncertaintyTypes();
@@ -156,7 +100,7 @@ public class UncertaintyTemplateModelTest extends TestBase {
 
 		UncertaintyType uncertaintyType = elementTypes.get(0);
 		testUncertaintyType(uncertaintyType, "_G-XpMDvjEeyKcZ3NE6_IOQ", "Assignable_to_BasicComponentBehaviour",
-				"_uj8zoDvgEey_pcVcOzlgag", List.of("_vUJhgDvgEey_pcVcOzlgag"),
+				ArchitecturalElementTypes.BASIC_COMPONENT_BEHAVIOUR, List.of(ArchitecturalElementTypes.SYSTEM_INTERFACE),
 				"_fs_LQDWREeyX2v1Sswnu1Q", ImpactOnConfidentiality.DIRECT,
 				InformationAvailability.STATISTICAL_UNCERTAINTY, Location.SYSTEM_STRUCTURE,
 				Manageability.FULLY_REDUCIBLE, Nature.ALEATORY, ResolutionTime.REQUIREMENTS_TIME, RootCause.ASSUMPTION,
@@ -165,7 +109,7 @@ public class UncertaintyTemplateModelTest extends TestBase {
 		// Only check first and fifth uncertainty Type
 		uncertaintyType = elementTypes.get(4);
 		testUncertaintyType(uncertaintyType, "_KH1UgDvjEeyKcZ3NE6_IOQ", "Assignable_to_ComponentInstance",
-				"_uQHRoDvgEey_pcVcOzlgag", List.of(), null, ImpactOnConfidentiality.DIRECT,
+				ArchitecturalElementTypes.COMPONENT_INSTANCE, List.of(), null, ImpactOnConfidentiality.DIRECT,
 				InformationAvailability.STATISTICAL_UNCERTAINTY, Location.SYSTEM_STRUCTURE,
 				Manageability.FULLY_REDUCIBLE, Nature.ALEATORY, ResolutionTime.DEPLOYMENT_TIME,
 				RootCause.MISSING_INFORMATION, SeverityOfImpact.HIGH);
@@ -177,7 +121,7 @@ public class UncertaintyTemplateModelTest extends TestBase {
 
 		UncertaintyType uncertaintyType = cut.getUncertaintyTypeById("_G-XpMDvjEeyKcZ3NE6_IOQ");
 		testUncertaintyType(uncertaintyType, "_G-XpMDvjEeyKcZ3NE6_IOQ", "Assignable_to_BasicComponentBehaviour",
-				"_uj8zoDvgEey_pcVcOzlgag", List.of("_vUJhgDvgEey_pcVcOzlgag"),
+				ArchitecturalElementTypes.BASIC_COMPONENT_BEHAVIOUR, List.of(ArchitecturalElementTypes.SYSTEM_INTERFACE),
 				"_fs_LQDWREeyX2v1Sswnu1Q", ImpactOnConfidentiality.DIRECT,
 				InformationAvailability.STATISTICAL_UNCERTAINTY, Location.SYSTEM_STRUCTURE,
 				Manageability.FULLY_REDUCIBLE, Nature.ALEATORY, ResolutionTime.REQUIREMENTS_TIME, RootCause.ASSUMPTION,

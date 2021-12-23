@@ -30,10 +30,6 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.CostsOfRevi
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.PossibilityOfRevisability;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ProbabilityOfRevisability;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypePackage;
-
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.impl.PalladioElementTypePackageImpl;
-
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyPackage;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.UncertaintyPackageImpl;
@@ -164,22 +160,18 @@ public class AddPackageImpl extends EPackageImpl implements AddPackage {
 		UncertaintyTypePackageImpl theUncertaintyTypePackage = (UncertaintyTypePackageImpl)(registeredPackage instanceof UncertaintyTypePackageImpl ? registeredPackage : UncertaintyTypePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UncertaintyTemplatePackage.eNS_URI);
 		UncertaintyTemplatePackageImpl theUncertaintyTemplatePackage = (UncertaintyTemplatePackageImpl)(registeredPackage instanceof UncertaintyTemplatePackageImpl ? registeredPackage : UncertaintyTemplatePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PalladioElementTypePackage.eNS_URI);
-		PalladioElementTypePackageImpl thePalladioElementTypePackage = (PalladioElementTypePackageImpl)(registeredPackage instanceof PalladioElementTypePackageImpl ? registeredPackage : PalladioElementTypePackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theAddPackage.createPackageContents();
 		theUncertaintyPackage.createPackageContents();
 		theUncertaintyTypePackage.createPackageContents();
 		theUncertaintyTemplatePackage.createPackageContents();
-		thePalladioElementTypePackage.createPackageContents();
 
 		// Initialize created meta-data
 		theAddPackage.initializePackageContents();
 		theUncertaintyPackage.initializePackageContents();
 		theUncertaintyTypePackage.initializePackageContents();
 		theUncertaintyTemplatePackage.initializePackageContents();
-		thePalladioElementTypePackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
 		theAddPackage.freeze();

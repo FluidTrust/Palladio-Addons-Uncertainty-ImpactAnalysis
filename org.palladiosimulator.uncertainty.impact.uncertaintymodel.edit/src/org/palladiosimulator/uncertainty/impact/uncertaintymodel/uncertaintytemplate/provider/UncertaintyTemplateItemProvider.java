@@ -60,7 +60,6 @@ public class UncertaintyTemplateItemProvider
 			super.getPropertyDescriptors(object);
 
 			addAddContainerPropertyDescriptor(object);
-			addPalladioElementTypeContainerPropertyDescriptor(object);
 			addUncertaintyTypeContainerPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -80,28 +79,6 @@ public class UncertaintyTemplateItemProvider
 				 getString("_UI_UncertaintyTemplate_addContainer_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_UncertaintyTemplate_addContainer_feature", "_UI_UncertaintyTemplate_type"),
 				 UncertaintyTemplatePackage.Literals.UNCERTAINTY_TEMPLATE__ADD_CONTAINER,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Palladio Element Type Container feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPalladioElementTypeContainerPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UncertaintyTemplate_palladioElementTypeContainer_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UncertaintyTemplate_palladioElementTypeContainer_feature", "_UI_UncertaintyTemplate_type"),
-				 UncertaintyTemplatePackage.Literals.UNCERTAINTY_TEMPLATE__PALLADIO_ELEMENT_TYPE_CONTAINER,
 				 true,
 				 false,
 				 true,

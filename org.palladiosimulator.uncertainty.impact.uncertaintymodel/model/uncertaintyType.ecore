@@ -4,10 +4,6 @@
     nsPrefix="uncertaintytype">
   <eClassifiers xsi:type="ecore:EClass" name="UncertaintyType" eSuperTypes="../../de.uka.ipd.sdq.identifier/model/identifier.ecore#//Identifier">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType ../../org.eclipse.emf.ecore/model/Ecore.ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="impactOn" lowerBound="1"
-        upperBound="-1" eType="ecore:EClass palladioElementType.ecore#//PalladioElementType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="assignableElementType"
-        lowerBound="1" eType="ecore:EClass palladioElementType.ecore#//PalladioElementType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resolvedBy" eType="ecore:EClass add.ecore#//ADD"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="#//Location"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="informationAvailability"
@@ -20,6 +16,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="resolutionTime" eType="#//ResolutionTime"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="rootCause" eType="#//RootCause"
         defaultValueLiteral="ASSUMPTION"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="assignableElementType"
+        eType="#//ArchitecturalElementTypes"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="impactOnElementTypes" ordered="false"
+        upperBound="-1" eType="#//ArchitecturalElementTypes"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="Nature">
     <eLiterals name="Aleatory" literal="ALEATORY"/>
@@ -65,5 +65,18 @@
   <eClassifiers xsi:type="ecore:EEnum" name="RootCause">
     <eLiterals name="Assumption" literal="ASSUMPTION"/>
     <eLiterals name="MissingInformation" value="1" literal="MISSING_INFORMATION"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ArchitecturalElementTypes">
+    <eLiterals name="System" literal="SYSTEM"/>
+    <eLiterals name="HardwareResource" value="1" literal="HARDWARE_RESOURCE"/>
+    <eLiterals name="BasicComponentType" value="2" literal="BASIC_COMPONENT_TYPE"/>
+    <eLiterals name="ComponentInstance" value="3" literal="COMPONENT_INSTANCE"/>
+    <eLiterals name="BasicComponentBehaviour" value="4" literal="BASIC_COMPONENT_BEHAVIOUR"/>
+    <eLiterals name="CommunicationComponent" value="5" literal="COMMUNICATION_COMPONENT"/>
+    <eLiterals name="CommunicationResource" value="6" literal="COMMUNICATION_RESOURCE"/>
+    <eLiterals name="SystemInterface" value="7" literal="SYSTEM_INTERFACE"/>
+    <eLiterals name="ComponentInterfaceInstance" value="8" literal="COMPONENT_INTERFACE_INSTANCE"/>
+    <eLiterals name="ComponentInterfaceType" value="9" literal="COMPONENT_INTERFACE_TYPE"/>
+    <eLiterals name="UsageBehaviour" value="10" literal="USAGE_BEHAVIOUR"/>
   </eClassifiers>
 </ecore:EPackage>

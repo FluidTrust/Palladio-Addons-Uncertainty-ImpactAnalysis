@@ -72,26 +72,26 @@ public class UncertaintyItemProviderAdapterFactory extends UncertaintyAdapterFac
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper} instances.
+	 * This keeps track of the one adapter used for all {@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PalladioElementWrapperItemProvider palladioElementWrapperItemProvider;
+	protected ElementWrapperItemProvider elementWrapperItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper}.
+	 * This creates an adapter for a {@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPalladioElementWrapperAdapter() {
-		if (palladioElementWrapperItemProvider == null) {
-			palladioElementWrapperItemProvider = new PalladioElementWrapperItemProvider(this);
+	public Adapter createElementWrapperAdapter() {
+		if (elementWrapperItemProvider == null) {
+			elementWrapperItemProvider = new ElementWrapperItemProvider(this);
 		}
 
-		return palladioElementWrapperItemProvider;
+		return elementWrapperItemProvider;
 	}
 
 	/**
@@ -285,7 +285,7 @@ public class UncertaintyItemProviderAdapterFactory extends UncertaintyAdapterFac
 	 * @generated
 	 */
 	public void dispose() {
-		if (palladioElementWrapperItemProvider != null) palladioElementWrapperItemProvider.dispose();
+		if (elementWrapperItemProvider != null) elementWrapperItemProvider.dispose();
 		if (uncertaintyItemProvider != null) uncertaintyItemProvider.dispose();
 		if (uncertaintyContainerItemProvider != null) uncertaintyContainerItemProvider.dispose();
 		if (componentInterfaceInstanceItemProvider != null) componentInterfaceInstanceItemProvider.dispose();

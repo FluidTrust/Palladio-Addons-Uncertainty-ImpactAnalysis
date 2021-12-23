@@ -6,8 +6,11 @@ import java.util.List;
 import org.palladiosimulator.pcm.core.composition.AssemblyConnector;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.entity.Entity;
+import org.palladiosimulator.pcm.core.entity.impl.EntityImpl;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.CompositeComponent;
+import org.palladiosimulator.pcm.repository.OperationProvidedRole;
+import org.palladiosimulator.pcm.repository.OperationRequiredRole;
 import org.palladiosimulator.pcm.repository.RepositoryComponent;
 import org.palladiosimulator.pcm.repository.Role;
 import org.palladiosimulator.pcm.system.System;
@@ -15,7 +18,7 @@ import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoun
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyPropagationException;
 import org.palladiosimulator.uncertainty.impact.model.util.PalladioModelsLookupHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.UCArchitectureVersion;
-import org.palladiosimulator.uncertainty.impact.propagation.util.PropagationRuleType;
+import org.palladiosimulator.uncertainty.impact.propagation.util.PropagationRuleTypes;
 import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyPropagationFactoryHelper;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ComponentInterfaceInstance;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
@@ -43,10 +46,10 @@ public class PropagationFromAffectedSystemHelper extends AbstractPropagationHelp
 
 	@Override
 	protected List<? extends UCImpactEntity<? extends Entity>> propagateUncertainty(Uncertainty uncertainty,
-			PropagationRuleType rule) throws UncertaintyPropagationException {
+			PropagationRuleTypes rule) throws UncertaintyPropagationException {
 
 		switch (rule) {
-		case FROM_SYSTEM_TO_COMMUNICATION_COMPONENTS:
+		case FROM_SYSTEM_TO_COMMUNICATION_COMPONENT:
 			return propagateFromSystemToCommunicationComponents(uncertainty);
 
 		case FROM_SYSTEM_TO_SYSTEM_INTERFACE:
@@ -295,14 +298,22 @@ public class PropagationFromAffectedSystemHelper extends AbstractPropagationHelp
 			BasicComponent basicComponent = (BasicComponent) repositoryComponent;
 
 			// We do not distinguish between provided or required interfaces
-			List<Role> interfaces = new ArrayList<>();
-			interfaces.addAll(basicComponent.getProvidedRoles_InterfaceProvidingEntity());
-			interfaces.addAll(basicComponent.getRequiredRoles_InterfaceRequiringEntity());
+			List<Role> roles = new ArrayList<>();
+			roles.addAll(basicComponent.getProvidedRoles_InterfaceProvidingEntity());
+			roles.addAll(basicComponent.getRequiredRoles_InterfaceRequiringEntity());
+			
+		
 
-			List<Entity> local_path = new ArrayList<>(currentPath);
-			local_path.add(basicComponent);
-
-			for (Role interfaze : interfaces) {
+			for (Role role : roles) {
+				List<Entity> local_path = new ArrayList<>(currentPath);
+				local_path.add(role);
+				
+				
+				if(role instanceof OperationProvidedRole) {
+					local_path.add( ((OperationProvidedRole) role).getProvidedInterface__OperationProvidedRole() );
+				} else if(role instanceof OperationRequiredRole) {
+					local_path.add( ((OperationRequiredRole) role).getRequiredInterface__OperationRequiredRole() );
+				}
 
 				CausingUncertainty causingUncertainty = UncertaintyPropagationFactoryHelper
 						.createCausingUncertainty(uncertaintyPropagation);
@@ -312,7 +323,7 @@ public class PropagationFromAffectedSystemHelper extends AbstractPropagationHelp
 				UCImpactAtComponentInterfaceType ucImpactAtComponentInterfaceType = UncertaintyPropagationFactoryHelper
 						.createUCImpactAtComponentInterfaceType();
 				ucImpactAtComponentInterfaceType.setToolderived(true);
-				ucImpactAtComponentInterfaceType.setAffectedElement(interfaze);
+				ucImpactAtComponentInterfaceType.setAffectedElement(role);
 				ucImpactAtComponentInterfaceType.getCausingElements().add(causingUncertainty);
 
 				affectedComponentInterfaceTypes.add(ucImpactAtComponentInterfaceType);

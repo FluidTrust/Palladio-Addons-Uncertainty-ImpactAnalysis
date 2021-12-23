@@ -96,34 +96,6 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.presentation.PalladioElementTypeModelWizardID"
-            name="%_UI_PalladioElementTypeModelWizard_label"
-            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.presentation.PalladioElementTypeModelWizard"
-            category="org.eclipse.emf.ecore.Wizard.category.ID"
-            icon="icons/full/obj16/PalladioElementTypeModelFile.gif">
-         <description>%_UI_PalladioElementTypeModelWizard_description</description>
-         <selection class="org.eclipse.core.resources.IResource"/>
-      </wizard>
-   </extension>
-
-   <extension point="org.eclipse.ui.editors">
-      <!-- @generated uncertaintyPlugin -->
-      <editor
-            id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.presentation.PalladioElementTypeEditorID"
-            name="%_UI_PalladioElementTypeEditor_label"
-            icon="icons/full/obj16/PalladioElementTypeModelFile.gif"
-            extensions="palladioelementtype"
-            class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.presentation.PalladioElementTypeEditor"
-            contributorClass="org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.presentation.PalladioElementTypeActionBarContributor">
-      </editor>
-   </extension>
-
-   <extension point="org.eclipse.ui.newWizards">
-      <!-- @generated uncertaintyPlugin -->
-      <category
-            id="org.eclipse.emf.ecore.Wizard.category.ID"
-            name="%_UI_Wizard_category"/>
-      <wizard
             id="org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.presentation.AddModelWizardID"
             name="%_UI_AddModelWizard_label"
             class="org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.presentation.AddModelWizard"

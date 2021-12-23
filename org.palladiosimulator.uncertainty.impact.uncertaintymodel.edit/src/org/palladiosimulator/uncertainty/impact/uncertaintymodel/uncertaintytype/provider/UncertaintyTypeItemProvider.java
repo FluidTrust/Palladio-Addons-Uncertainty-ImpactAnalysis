@@ -52,8 +52,6 @@ public class UncertaintyTypeItemProvider extends IdentifierItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addImpactOnPropertyDescriptor(object);
-			addAssignableElementTypePropertyDescriptor(object);
 			addResolvedByPropertyDescriptor(object);
 			addLocationPropertyDescriptor(object);
 			addInformationAvailabilityPropertyDescriptor(object);
@@ -63,6 +61,8 @@ public class UncertaintyTypeItemProvider extends IdentifierItemProvider {
 			addSeverityOfImpactPropertyDescriptor(object);
 			addResolutionTimePropertyDescriptor(object);
 			addRootCausePropertyDescriptor(object);
+			addAssignableElementTypePropertyDescriptor(object);
+			addImpactOnElementTypesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,50 +85,6 @@ public class UncertaintyTypeItemProvider extends IdentifierItemProvider {
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Impact On feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addImpactOnPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UncertaintyType_impactOn_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UncertaintyType_impactOn_feature", "_UI_UncertaintyType_type"),
-				 UncertaintyTypePackage.Literals.UNCERTAINTY_TYPE__IMPACT_ON,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Assignable Element Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAssignableElementTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_UncertaintyType_assignableElementType_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_UncertaintyType_assignableElementType_feature", "_UI_UncertaintyType_type"),
-				 UncertaintyTypePackage.Literals.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -332,6 +288,50 @@ public class UncertaintyTypeItemProvider extends IdentifierItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Assignable Element Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAssignableElementTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UncertaintyType_assignableElementType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UncertaintyType_assignableElementType_feature", "_UI_UncertaintyType_type"),
+				 UncertaintyTypePackage.Literals.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Impact On Element Types feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addImpactOnElementTypesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_UncertaintyType_impactOnElementTypes_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_UncertaintyType_impactOnElementTypes_feature", "_UI_UncertaintyType_type"),
+				 UncertaintyTypePackage.Literals.UNCERTAINTY_TYPE__IMPACT_ON_ELEMENT_TYPES,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns UncertaintyType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -378,6 +378,8 @@ public class UncertaintyTypeItemProvider extends IdentifierItemProvider {
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__SEVERITY_OF_IMPACT:
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__RESOLUTION_TIME:
 			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ROOT_CAUSE:
+			case UncertaintyTypePackage.UNCERTAINTY_TYPE__ASSIGNABLE_ELEMENT_TYPE:
+			case UncertaintyTypePackage.UNCERTAINTY_TYPE__IMPACT_ON_ELEMENT_TYPES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

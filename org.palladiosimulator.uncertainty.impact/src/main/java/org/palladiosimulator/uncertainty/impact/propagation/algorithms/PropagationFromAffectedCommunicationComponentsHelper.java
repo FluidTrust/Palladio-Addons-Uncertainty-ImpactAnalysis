@@ -12,7 +12,7 @@ import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoun
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyPropagationException;
 import org.palladiosimulator.uncertainty.impact.model.util.PalladioModelsLookupHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.UCArchitectureVersion;
-import org.palladiosimulator.uncertainty.impact.propagation.util.PropagationRuleType;
+import org.palladiosimulator.uncertainty.impact.propagation.util.PropagationRuleTypes;
 import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyPropagationFactoryHelper;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.CausingUncertainty;
@@ -36,11 +36,11 @@ public class PropagationFromAffectedCommunicationComponentsHelper extends Abstra
 
 	@Override
 	protected List<? extends UCImpactEntity<? extends Entity>> propagateUncertainty(Uncertainty uncertainty,
-			PropagationRuleType rule) throws UncertaintyPropagationException {
+			PropagationRuleTypes rule) throws UncertaintyPropagationException {
 
 		try {
 			switch (rule) {
-			case FROM_COMMUNICATION_COMPONENTS_TO_HARDWARE_RESOURCE:
+			case FROM_COMMUNICATION_COMPONENT_TO_HARDWARE_RESOURCE:
 				return propagateFromCommunicationComponentsToHardwareResources(uncertainty);
 
 			default:

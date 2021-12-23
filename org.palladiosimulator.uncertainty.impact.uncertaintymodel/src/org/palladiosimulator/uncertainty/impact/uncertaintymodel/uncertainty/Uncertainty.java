@@ -54,12 +54,12 @@ public interface Uncertainty extends EObject, Identifier {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Assigned Element</em>' containment reference.
-	 * @see #setAssignedElement(PalladioElementWrapper)
+	 * @see #setAssignedElement(ElementWrapper)
 	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyPackage#getUncertainty_AssignedElement()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	PalladioElementWrapper getAssignedElement();
+	ElementWrapper getAssignedElement();
 
 	/**
 	 * Sets the value of the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty#getAssignedElement <em>Assigned Element</em>}' containment reference.
@@ -69,7 +69,7 @@ public interface Uncertainty extends EObject, Identifier {
 	 * @see #getAssignedElement()
 	 * @generated
 	 */
-	void setAssignedElement(PalladioElementWrapper value);
+	void setAssignedElement(ElementWrapper value);
 
 	/**
 	 * Returns the value of the '<em><b>Uncertainty Type</b></em>' reference.

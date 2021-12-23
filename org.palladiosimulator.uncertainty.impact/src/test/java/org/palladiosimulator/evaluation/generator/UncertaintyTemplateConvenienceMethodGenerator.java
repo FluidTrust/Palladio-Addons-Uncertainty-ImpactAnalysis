@@ -1,9 +1,9 @@
 package org.palladiosimulator.evaluation.generator;
 
+import org.junit.jupiter.api.Test;
 import org.palladiosimulator.uncertainty.impact.exception.LoadModelFailedException;
 import org.palladiosimulator.uncertainty.impact.model.UncertaintyTemplateModel;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADD;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementType;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;
 import org.palladiosimulator.uncertaintymodel.plugin.BookStoreLoader;
 import org.palladiosimulator.uncertaintymodel.plugin.TestBase;
@@ -27,7 +27,7 @@ public class UncertaintyTemplateConvenienceMethodGenerator extends TestBase {
 	 * code was written in less than one hour. I don't think it is possible to dig
 	 * into code generation within one hour :-)
 	 */
-	//@Test // TODO Run as test to enable class generation
+	@Test // TODO Run as test to enable class generation
 	public void generateClass()
 			throws LoadModelFailedException, SecurityException,
 			IllegalArgumentException {
@@ -43,7 +43,6 @@ public class UncertaintyTemplateConvenienceMethodGenerator extends TestBase {
 				+ "import org.palladiosimulator.uncertainty.impact.exception.UncertaintyTemplateElementNotFoundException;\n"
 				+ "import org.palladiosimulator.uncertainty.impact.model.UncertaintyTemplateModel;\n"
 				+ "import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADD;\n"
-				+ "import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementType;\n"
 				+ "import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;"); 
 		
 
@@ -78,18 +77,8 @@ public class UncertaintyTemplateConvenienceMethodGenerator extends TestBase {
 			sb.append("}");
 
 		}
-
+		
 		sb.append("\n");
-
-		// Create generation for all UncertaintyTypes
-		for (PalladioElementType elementType : model.getElementTypes()) {
-			sb.append("\n");
-			sb.append("public PalladioElementType getElementType_" + elementType.getName().replaceAll("\\s+", "")
-					+ "() throws UncertaintyTemplateElementNotFoundException {");
-			sb.append("return model.getElementTypeById(\"" + elementType.getId() + "\");");
-			sb.append("}");
-
-		}
 
 		// End class
 		sb.append("\n}");

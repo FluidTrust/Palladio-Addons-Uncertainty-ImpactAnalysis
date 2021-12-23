@@ -37,7 +37,6 @@ public class UncertaintyTemplatePresenterTest extends TestBase {
 	public void testOnLoadUncertaintyTemplateButtonClicked() {
 		cut.onLoadUncertaintyTemplateButtonClicked(uncertaintyTemplatePath);
 		assertTrue(uncertaintyTemplateModel.isInitialized());
-		assertFalse(uncertaintyTemplateModel.getElementTypes().isEmpty());
 		verify(view, times(1)).showMessage("Uncertainty template model successfully loaded");
 	}
 
@@ -45,13 +44,11 @@ public class UncertaintyTemplatePresenterTest extends TestBase {
 	public void testOnLoadUncertaintyTemplateButtonClicked_NotSuccessfull() {
 		cut.onLoadUncertaintyTemplateButtonClicked("invalidPath");
 		assertFalse(uncertaintyTemplateModel.isInitialized());
-		assertTrue(uncertaintyTemplateModel.getElementTypes().isEmpty());
 		verify(view, times(1)).showMessage("Error while loading uncertainty template model. Error message = "
 				+ "Load resource with path '/resource/org.palladiosimulator.uncertainty.impact/invalidPath' failed.");
 
 		cut.onLoadUncertaintyTemplateButtonClicked("  "); // Another error message with blank
 		assertFalse(uncertaintyTemplateModel.isInitialized());
-		assertTrue(uncertaintyTemplateModel.getElementTypes().isEmpty());
 		verify(view, times(1)).showMessage("Please provide valid path to uncertainty template");
 
 	}

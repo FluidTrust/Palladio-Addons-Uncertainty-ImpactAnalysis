@@ -32,13 +32,9 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.AddPackage;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.impl.AddPackageImpl;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypePackage;
-
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.impl.PalladioElementTypePackageImpl;
-
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.BasicComponentBehaviour;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ComponentInterfaceInstance;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyContainer;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyFactory;
@@ -64,7 +60,7 @@ public class UncertaintyPackageImpl extends EPackageImpl implements UncertaintyP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass palladioElementWrapperEClass = null;
+	private EClass elementWrapperEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -154,8 +150,6 @@ public class UncertaintyPackageImpl extends EPackageImpl implements UncertaintyP
 		UncertaintyTypePackageImpl theUncertaintyTypePackage = (UncertaintyTypePackageImpl)(registeredPackage instanceof UncertaintyTypePackageImpl ? registeredPackage : UncertaintyTypePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UncertaintyTemplatePackage.eNS_URI);
 		UncertaintyTemplatePackageImpl theUncertaintyTemplatePackage = (UncertaintyTemplatePackageImpl)(registeredPackage instanceof UncertaintyTemplatePackageImpl ? registeredPackage : UncertaintyTemplatePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PalladioElementTypePackage.eNS_URI);
-		PalladioElementTypePackageImpl thePalladioElementTypePackage = (PalladioElementTypePackageImpl)(registeredPackage instanceof PalladioElementTypePackageImpl ? registeredPackage : PalladioElementTypePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AddPackage.eNS_URI);
 		AddPackageImpl theAddPackage = (AddPackageImpl)(registeredPackage instanceof AddPackageImpl ? registeredPackage : AddPackage.eINSTANCE);
 
@@ -163,14 +157,12 @@ public class UncertaintyPackageImpl extends EPackageImpl implements UncertaintyP
 		theUncertaintyPackage.createPackageContents();
 		theUncertaintyTypePackage.createPackageContents();
 		theUncertaintyTemplatePackage.createPackageContents();
-		thePalladioElementTypePackage.createPackageContents();
 		theAddPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theUncertaintyPackage.initializePackageContents();
 		theUncertaintyTypePackage.initializePackageContents();
 		theUncertaintyTemplatePackage.initializePackageContents();
-		thePalladioElementTypePackage.initializePackageContents();
 		theAddPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -186,8 +178,8 @@ public class UncertaintyPackageImpl extends EPackageImpl implements UncertaintyP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getPalladioElementWrapper() {
-		return palladioElementWrapperEClass;
+	public EClass getElementWrapper() {
+		return elementWrapperEClass;
 	}
 
 	/**
@@ -195,8 +187,8 @@ public class UncertaintyPackageImpl extends EPackageImpl implements UncertaintyP
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPalladioElementWrapper_ReferencedElement() {
-		return (EReference)palladioElementWrapperEClass.getEStructuralFeatures().get(0);
+	public EReference getElementWrapper_ReferencedElement() {
+		return (EReference)elementWrapperEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -353,8 +345,8 @@ public class UncertaintyPackageImpl extends EPackageImpl implements UncertaintyP
 		isCreated = true;
 
 		// Create classes and their features
-		palladioElementWrapperEClass = createEClass(PALLADIO_ELEMENT_WRAPPER);
-		createEReference(palladioElementWrapperEClass, PALLADIO_ELEMENT_WRAPPER__REFERENCED_ELEMENT);
+		elementWrapperEClass = createEClass(ELEMENT_WRAPPER);
+		createEReference(elementWrapperEClass, ELEMENT_WRAPPER__REFERENCED_ELEMENT);
 
 		uncertaintyEClass = createEClass(UNCERTAINTY);
 		createEAttribute(uncertaintyEClass, UNCERTAINTY__NAME);
@@ -418,12 +410,12 @@ public class UncertaintyPackageImpl extends EPackageImpl implements UncertaintyP
 		basicComponentBehaviourEClass.getESuperTypes().add(theEntityPackage.getEntity());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(palladioElementWrapperEClass, PalladioElementWrapper.class, "PalladioElementWrapper", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPalladioElementWrapper_ReferencedElement(), theEntityPackage.getEntity(), null, "referencedElement", null, 1, 1, PalladioElementWrapper.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(elementWrapperEClass, ElementWrapper.class, "ElementWrapper", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getElementWrapper_ReferencedElement(), theEntityPackage.getEntity(), null, "referencedElement", null, 1, 1, ElementWrapper.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(uncertaintyEClass, Uncertainty.class, "Uncertainty", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUncertainty_Name(), theEcorePackage.getEString(), "name", null, 0, 1, Uncertainty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUncertainty_AssignedElement(), this.getPalladioElementWrapper(), null, "assignedElement", null, 1, 1, Uncertainty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUncertainty_AssignedElement(), this.getElementWrapper(), null, "assignedElement", null, 1, 1, Uncertainty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUncertainty_UncertaintyType(), theUncertaintyTypePackage.getUncertaintyType(), null, "uncertaintyType", null, 1, 1, Uncertainty.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(uncertaintyContainerEClass, UncertaintyContainer.class, "UncertaintyContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

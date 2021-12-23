@@ -10,8 +10,6 @@ import org.eclipse.emf.ecore.EObject;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADD;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementType;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Uncertainty Type</b></em>'.
@@ -22,8 +20,6 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelement
  * </p>
  * <ul>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getName <em>Name</em>}</li>
- *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getImpactOn <em>Impact On</em>}</li>
- *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getAssignableElementType <em>Assignable Element Type</em>}</li>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getResolvedBy <em>Resolved By</em>}</li>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getLocation <em>Location</em>}</li>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getInformationAvailability <em>Information Availability</em>}</li>
@@ -33,6 +29,8 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelement
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getSeverityOfImpact <em>Severity Of Impact</em>}</li>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getResolutionTime <em>Resolution Time</em>}</li>
  *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getRootCause <em>Root Cause</em>}</li>
+ *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getAssignableElementType <em>Assignable Element Type</em>}</li>
+ *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getImpactOnElementTypes <em>Impact On Element Types</em>}</li>
  * </ul>
  *
  * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyTypePackage#getUncertaintyType()
@@ -61,40 +59,6 @@ public interface UncertaintyType extends EObject, Identifier {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Impact On</b></em>' reference list.
-	 * The list contents are of type {@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementType}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Impact On</em>' reference list.
-	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyTypePackage#getUncertaintyType_ImpactOn()
-	 * @model required="true"
-	 * @generated
-	 */
-	EList<PalladioElementType> getImpactOn();
-
-	/**
-	 * Returns the value of the '<em><b>Assignable Element Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Assignable Element Type</em>' reference.
-	 * @see #setAssignableElementType(PalladioElementType)
-	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyTypePackage#getUncertaintyType_AssignableElementType()
-	 * @model required="true"
-	 * @generated
-	 */
-	PalladioElementType getAssignableElementType();
-
-	/**
-	 * Sets the value of the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getAssignableElementType <em>Assignable Element Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Assignable Element Type</em>' reference.
-	 * @see #getAssignableElementType()
-	 * @generated
-	 */
-	void setAssignableElementType(PalladioElementType value);
 
 	/**
 	 * Returns the value of the '<em><b>Resolved By</b></em>' reference.
@@ -318,5 +282,44 @@ public interface UncertaintyType extends EObject, Identifier {
 	 * @generated
 	 */
 	void setRootCause(RootCause value);
+
+	/**
+	 * Returns the value of the '<em><b>Assignable Element Type</b></em>' attribute.
+	 * The literals are from the enumeration {@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Assignable Element Type</em>' attribute.
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes
+	 * @see #setAssignableElementType(ArchitecturalElementTypes)
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyTypePackage#getUncertaintyType_AssignableElementType()
+	 * @model
+	 * @generated
+	 */
+	ArchitecturalElementTypes getAssignableElementType();
+
+	/**
+	 * Sets the value of the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType#getAssignableElementType <em>Assignable Element Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Assignable Element Type</em>' attribute.
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes
+	 * @see #getAssignableElementType()
+	 * @generated
+	 */
+	void setAssignableElementType(ArchitecturalElementTypes value);
+
+	/**
+	 * Returns the value of the '<em><b>Impact On Element Types</b></em>' attribute list.
+	 * The list contents are of type {@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes}.
+	 * The literals are from the enumeration {@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Impact On Element Types</em>' attribute list.
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyTypePackage#getUncertaintyType_ImpactOnElementTypes()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<ArchitecturalElementTypes> getImpactOnElementTypes();
 
 } // UncertaintyType

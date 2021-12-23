@@ -37,8 +37,6 @@ import org.palladiosimulator.pcm.usagemodel.UsagemodelPackage;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.AddPackage;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypePackage;
-
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyPackage;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytemplate.UncertaintyTemplatePackage;
@@ -264,7 +262,6 @@ public class UncertaintypropagationPackageImpl extends EPackageImpl implements U
 		UncertaintyPackage.eINSTANCE.eClass();
 		UncertaintyTypePackage.eINSTANCE.eClass();
 		UncertaintyTemplatePackage.eINSTANCE.eClass();
-		PalladioElementTypePackage.eINSTANCE.eClass();
 		AddPackage.eINSTANCE.eClass();
 		UnitsPackage.eINSTANCE.eClass();
 

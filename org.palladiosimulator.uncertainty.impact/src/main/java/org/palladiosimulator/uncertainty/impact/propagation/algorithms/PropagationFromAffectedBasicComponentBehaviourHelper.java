@@ -18,7 +18,7 @@ import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoun
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyPropagationException;
 import org.palladiosimulator.uncertainty.impact.model.util.PalladioModelsLookupHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.UCArchitectureVersion;
-import org.palladiosimulator.uncertainty.impact.propagation.util.PropagationRuleType;
+import org.palladiosimulator.uncertainty.impact.propagation.util.PropagationRuleTypes;
 import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyPropagationFactoryHelper;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.BasicComponentBehaviour;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
@@ -43,7 +43,7 @@ public class PropagationFromAffectedBasicComponentBehaviourHelper extends Abstra
 
 	@Override
 	protected List<? extends UCImpactEntity<? extends Entity>> propagateUncertainty(Uncertainty uncertainty,
-			PropagationRuleType rule) throws UncertaintyPropagationException {
+			PropagationRuleTypes rule) throws UncertaintyPropagationException {
 		try {
 			switch (rule) {
 

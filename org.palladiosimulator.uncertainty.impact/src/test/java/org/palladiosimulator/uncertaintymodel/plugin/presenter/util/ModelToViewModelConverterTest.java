@@ -11,11 +11,10 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.AmountOfAlt
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.CostsOfRevision;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.PossibilityOfRevisability;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ProbabilityOfRevisability;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementType;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypes;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyFactory;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ImpactOnConfidentiality;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.InformationAvailability;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.Location;
@@ -26,7 +25,6 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.SeverityOfImpact;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;
 import org.palladiosimulator.uncertainty.impact.view.model.ADDViewModel;
-import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyViewModel;
 import org.palladiosimulator.uncertaintymodel.plugin.TestBase;
@@ -57,49 +55,18 @@ public class ModelToViewModelConverterTest extends TestBase {
 	}
 
 	@Test
-	public void testConvertPalladioElementTypeToPalladioElementTypeViewModel() {
-		PalladioElementType palladioElementType = createPalladioElementType("defaultName",
-				PalladioElementTypes.BASIC_COMPONENT_TYPE);
-		PalladioElementTypeViewModel palladioElementTypeViewModel = ModelToViewModelConverter
-				.convertPalladioElementTypeToPalladioElementTypeViewModel(palladioElementType);
-
-		testPalladioElementTypeEqualsPalladioElementTypeViewModel(palladioElementType, palladioElementTypeViewModel);
-
-	}
-
-	@Test
-	public void testConvertPalladioElementTypesToPalladioElementTypeViewModels() {
-		PalladioElementType palladioElementType_1 = createPalladioElementType("defaultName1",
-				PalladioElementTypes.BASIC_COMPONENT_TYPE);
-		PalladioElementType palladioElementType_2 = createPalladioElementType("defaultName2",
-				PalladioElementTypes.BASIC_COMPONENT_TYPE);
-
-		List<PalladioElementTypeViewModel> palladioElementTypeViewModels = ModelToViewModelConverter
-				.convertPalladioElementTypesToPalladioElementTypeViewModels(
-						List.of(palladioElementType_1, palladioElementType_2));
-
-		testPalladioElementTypeEqualsPalladioElementTypeViewModel(palladioElementType_1,
-				palladioElementTypeViewModels.get(0));
-		testPalladioElementTypeEqualsPalladioElementTypeViewModel(palladioElementType_2,
-				palladioElementTypeViewModels.get(1));
-
-	}
-
-	@Test
 	public void testConvertUncertaintyTypeToUncertaintyTypeViewModel() {
 
 		// Init data
 		ADD add = createADDWithDefaultValues("addDefault");
-		PalladioElementType assignableElementType = createPalladioElementTypeWithDefaultValues("assignableElement");
-		PalladioElementType impact_on_1 = createPalladioElementTypeWithDefaultValues("impactOnElement_1");
-		PalladioElementType impact_on_2 = createPalladioElementTypeWithDefaultValues("impactOnElement_2");
 
 		// Execute test
-		UncertaintyType uncertaintyType = createUncertaintyType("uncertaintyTypeDefault", assignableElementType, add,
-				List.of(impact_on_1, impact_on_2), ImpactOnConfidentiality.DIRECT,
-				InformationAvailability.STATISTICAL_UNCERTAINTY, Location.SYSTEM_STRUCTURE,
-				Manageability.FULLY_REDUCIBLE, Nature.ALEATORY, ResolutionTime.REQUIREMENTS_TIME, RootCause.ASSUMPTION,
-				SeverityOfImpact.HIGH);
+		UncertaintyType uncertaintyType = createUncertaintyType("uncertaintyTypeDefault",
+				ArchitecturalElementTypes.COMMUNICATION_COMPONENT, add,
+				List.of(ArchitecturalElementTypes.SYSTEM, ArchitecturalElementTypes.BASIC_COMPONENT_TYPE),
+				ImpactOnConfidentiality.DIRECT, InformationAvailability.STATISTICAL_UNCERTAINTY,
+				Location.SYSTEM_STRUCTURE, Manageability.FULLY_REDUCIBLE, Nature.ALEATORY,
+				ResolutionTime.REQUIREMENTS_TIME, RootCause.ASSUMPTION, SeverityOfImpact.HIGH);
 
 		UncertaintyTypeViewModel uncertaintyTypeViewModel = ModelToViewModelConverter
 				.convertUncertaintyTypeToUncertaintyTypeViewModel(uncertaintyType);
@@ -113,19 +80,19 @@ public class ModelToViewModelConverterTest extends TestBase {
 
 		// Init data
 		ADD add = createADDWithDefaultValues("addDefault");
-		PalladioElementType assignableElementType = createPalladioElementTypeWithDefaultValues("assignableElement");
-		PalladioElementType impact_on_1 = createPalladioElementTypeWithDefaultValues("impactOnElement_1");
-		PalladioElementType impact_on_2 = createPalladioElementTypeWithDefaultValues("impactOnElement_2");
+		ArchitecturalElementTypes assignableElementType = ArchitecturalElementTypes.SYSTEM;
+		List<ArchitecturalElementTypes> impactOnElementTypes = List.of(ArchitecturalElementTypes.BASIC_COMPONENT_TYPE,
+				ArchitecturalElementTypes.COMPONENT_INSTANCE);
 
 		// Execute test
 		UncertaintyType uncertaintyType_1 = createUncertaintyType("uncertaintyTypeDefault1", assignableElementType, add,
-				List.of(impact_on_1, impact_on_2), ImpactOnConfidentiality.DIRECT,
+				impactOnElementTypes, ImpactOnConfidentiality.DIRECT,
 				InformationAvailability.STATISTICAL_UNCERTAINTY, Location.SYSTEM_STRUCTURE,
 				Manageability.FULLY_REDUCIBLE, Nature.ALEATORY, ResolutionTime.REQUIREMENTS_TIME, RootCause.ASSUMPTION,
 				SeverityOfImpact.HIGH);
 
 		UncertaintyType uncertaintyType_2 = createUncertaintyType("uncertaintyTypeDefault2", assignableElementType, add,
-				List.of(impact_on_1, impact_on_2), ImpactOnConfidentiality.DIRECT,
+				impactOnElementTypes, ImpactOnConfidentiality.DIRECT,
 				InformationAvailability.STATISTICAL_UNCERTAINTY, Location.SYSTEM_STRUCTURE,
 				Manageability.FULLY_REDUCIBLE, Nature.ALEATORY, ResolutionTime.REQUIREMENTS_TIME, RootCause.ASSUMPTION,
 				SeverityOfImpact.HIGH);
@@ -141,11 +108,9 @@ public class ModelToViewModelConverterTest extends TestBase {
 	@Test
 	public void testConvertUncertaintyTypeToUncertaintyTypeViewModelWithoutImpactOnElementsAndWithoutResolvedByADD() {
 
-		// Init data
-		PalladioElementType assignableElementType = createPalladioElementTypeWithDefaultValues("assignableElement");
 
 		// Execute test
-		UncertaintyType uncertaintyType = createUncertaintyType("uncertaintyTypeDefault", assignableElementType, null,
+		UncertaintyType uncertaintyType = createUncertaintyType("uncertaintyTypeDefault", ArchitecturalElementTypes.SYSTEM, null,
 				List.of(), ImpactOnConfidentiality.DIRECT, InformationAvailability.STATISTICAL_UNCERTAINTY,
 				Location.SYSTEM_STRUCTURE, Manageability.FULLY_REDUCIBLE, Nature.ALEATORY,
 				ResolutionTime.REQUIREMENTS_TIME, RootCause.ASSUMPTION, SeverityOfImpact.HIGH);
@@ -161,18 +126,20 @@ public class ModelToViewModelConverterTest extends TestBase {
 	public void testConvertUncertaintyToUncertaintyViewModel() {
 		// Init test data
 		ADD add = createADDWithDefaultValues("addDefault");
-		PalladioElementType assignableElementType = createPalladioElementTypeWithDefaultValues("assignableElement");
-		PalladioElementType impact_on_1 = createPalladioElementTypeWithDefaultValues("impactOnElement_1");
-		PalladioElementType impact_on_2 = createPalladioElementTypeWithDefaultValues("impactOnElement_2");
+		ArchitecturalElementTypes assignableElementType = ArchitecturalElementTypes.SYSTEM;
+		List<ArchitecturalElementTypes> impactOnElementTypes = List.of(ArchitecturalElementTypes.BASIC_COMPONENT_TYPE,
+				ArchitecturalElementTypes.COMPONENT_INSTANCE);
+		
+		
 		UncertaintyType uncertaintyType = createUncertaintyType("uncertaintyTypeDefault", assignableElementType, add,
-				List.of(impact_on_1, impact_on_2), ImpactOnConfidentiality.DIRECT,
+				impactOnElementTypes, ImpactOnConfidentiality.DIRECT,
 				InformationAvailability.STATISTICAL_UNCERTAINTY, Location.SYSTEM_STRUCTURE,
 				Manageability.FULLY_REDUCIBLE, Nature.ALEATORY, ResolutionTime.REQUIREMENTS_TIME, RootCause.ASSUMPTION,
 				SeverityOfImpact.HIGH);
 
 		Entity myEntity = UncertaintyFactory.eINSTANCE.createComponentInterfaceInstance();
 		myEntity.setEntityName("test");
-		PalladioElementWrapper assignedElement = createPalladioElementWrapper(myEntity);
+		ElementWrapper assignedElement = createElementWrapper(myEntity);
 
 		Uncertainty uncertainty = createUncertainty("uncertaintyName", uncertaintyType, assignedElement);
 
@@ -188,19 +155,21 @@ public class ModelToViewModelConverterTest extends TestBase {
 	public void testConvertUncertaintiesToUncertaintyViewModels() {
 		// Init test data
 		ADD add = createADDWithDefaultValues("addDefault");
-		PalladioElementType assignableElementType = createPalladioElementTypeWithDefaultValues("assignableElement");
-		PalladioElementType impact_on_1 = createPalladioElementTypeWithDefaultValues("impactOnElement_1");
-		PalladioElementType impact_on_2 = createPalladioElementTypeWithDefaultValues("impactOnElement_2");
+		ArchitecturalElementTypes assignableElementType = ArchitecturalElementTypes.SYSTEM;
+		List<ArchitecturalElementTypes> impactOnElementTypes = List.of(ArchitecturalElementTypes.BASIC_COMPONENT_TYPE,
+				ArchitecturalElementTypes.COMPONENT_INSTANCE);
+		
+		
 		UncertaintyType uncertaintyType = createUncertaintyType("uncertaintyTypeDefault", assignableElementType, add,
-				List.of(impact_on_1, impact_on_2), ImpactOnConfidentiality.DIRECT,
+				impactOnElementTypes, ImpactOnConfidentiality.DIRECT,
 				InformationAvailability.STATISTICAL_UNCERTAINTY, Location.SYSTEM_STRUCTURE,
 				Manageability.FULLY_REDUCIBLE, Nature.ALEATORY, ResolutionTime.REQUIREMENTS_TIME, RootCause.ASSUMPTION,
 				SeverityOfImpact.HIGH);
 
 		Entity myEntity = UncertaintyFactory.eINSTANCE.createComponentInterfaceInstance();
 		myEntity.setEntityName("test");
-		PalladioElementWrapper assignedElement_1 = createPalladioElementWrapper(myEntity);
-		PalladioElementWrapper assignedElement_2 = createPalladioElementWrapper(myEntity);
+		ElementWrapper assignedElement_1 = createElementWrapper(myEntity);
+		ElementWrapper assignedElement_2 = createElementWrapper(myEntity);
 
 		Uncertainty uncertainty_1 = createUncertainty("uncertaintyName1", uncertaintyType, assignedElement_1);
 		Uncertainty uncertainty_2 = createUncertainty("uncertaintyName2", uncertaintyType, assignedElement_2);

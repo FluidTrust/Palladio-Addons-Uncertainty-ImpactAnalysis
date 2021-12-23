@@ -1,10 +1,10 @@
 package org.palladiosimulator.uncertainty.impact.view.model;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper;
 
 /**
- * View model that represents a concrete Palladio element <br>
- * Technically represents {@link PalladioElementWrapper}
+ * View model that represents a concrete Architectural element <br>
+ * Technically represents {@link ElementWrapper}
  * 
  * @author Niko
  *

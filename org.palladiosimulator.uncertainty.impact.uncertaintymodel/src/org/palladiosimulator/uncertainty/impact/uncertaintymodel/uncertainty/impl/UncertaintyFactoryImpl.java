@@ -56,7 +56,7 @@ public class UncertaintyFactoryImpl extends EFactoryImpl implements UncertaintyF
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case UncertaintyPackage.PALLADIO_ELEMENT_WRAPPER: return createPalladioElementWrapper();
+			case UncertaintyPackage.ELEMENT_WRAPPER: return createElementWrapper();
 			case UncertaintyPackage.UNCERTAINTY: return createUncertainty();
 			case UncertaintyPackage.UNCERTAINTY_CONTAINER: return createUncertaintyContainer();
 			case UncertaintyPackage.COMPONENT_INTERFACE_INSTANCE: return createComponentInterfaceInstance();
@@ -71,9 +71,9 @@ public class UncertaintyFactoryImpl extends EFactoryImpl implements UncertaintyF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PalladioElementWrapper createPalladioElementWrapper() {
-		PalladioElementWrapperImpl palladioElementWrapper = new PalladioElementWrapperImpl();
-		return palladioElementWrapper;
+	public ElementWrapper createElementWrapper() {
+		ElementWrapperImpl elementWrapper = new ElementWrapperImpl();
+		return elementWrapper;
 	}
 
 	/**

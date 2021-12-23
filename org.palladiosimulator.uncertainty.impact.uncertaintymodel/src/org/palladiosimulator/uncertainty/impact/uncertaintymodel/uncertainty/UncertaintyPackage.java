@@ -61,14 +61,14 @@ public interface UncertaintyPackage extends EPackage {
 	UncertaintyPackage eINSTANCE = org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.UncertaintyPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.PalladioElementWrapperImpl <em>Palladio Element Wrapper</em>}' class.
+	 * The meta object id for the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.ElementWrapperImpl <em>Element Wrapper</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.PalladioElementWrapperImpl
-	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.UncertaintyPackageImpl#getPalladioElementWrapper()
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.ElementWrapperImpl
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.UncertaintyPackageImpl#getElementWrapper()
 	 * @generated
 	 */
-	int PALLADIO_ELEMENT_WRAPPER = 0;
+	int ELEMENT_WRAPPER = 0;
 
 	/**
 	 * The feature id for the '<em><b>Referenced Element</b></em>' reference.
@@ -77,25 +77,25 @@ public interface UncertaintyPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PALLADIO_ELEMENT_WRAPPER__REFERENCED_ELEMENT = 0;
+	int ELEMENT_WRAPPER__REFERENCED_ELEMENT = 0;
 
 	/**
-	 * The number of structural features of the '<em>Palladio Element Wrapper</em>' class.
+	 * The number of structural features of the '<em>Element Wrapper</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PALLADIO_ELEMENT_WRAPPER_FEATURE_COUNT = 1;
+	int ELEMENT_WRAPPER_FEATURE_COUNT = 1;
 
 	/**
-	 * The number of operations of the '<em>Palladio Element Wrapper</em>' class.
+	 * The number of operations of the '<em>Element Wrapper</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PALLADIO_ELEMENT_WRAPPER_OPERATION_COUNT = 0;
+	int ELEMENT_WRAPPER_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.UncertaintyImpl <em>Uncertainty</em>}' class.
@@ -339,29 +339,29 @@ public interface UncertaintyPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @ordered
 	 */
-	int BASIC_COMPONENT_BEHAVIOUR_OPERATION_COUNT =   0;
+	int BASIC_COMPONENT_BEHAVIOUR_OPERATION_COUNT =  0;
 
 
 	/**
-	 * Returns the meta object for class '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper <em>Palladio Element Wrapper</em>}'.
+	 * Returns the meta object for class '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper <em>Element Wrapper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Palladio Element Wrapper</em>'.
-	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper
+	 * @return the meta object for class '<em>Element Wrapper</em>'.
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper
 	 * @generated
 	 */
-	EClass getPalladioElementWrapper();
+	EClass getElementWrapper();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper#getReferencedElement <em>Referenced Element</em>}'.
+	 * Returns the meta object for the reference '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper#getReferencedElement <em>Referenced Element</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Referenced Element</em>'.
-	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper#getReferencedElement()
-	 * @see #getPalladioElementWrapper()
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper#getReferencedElement()
+	 * @see #getElementWrapper()
 	 * @generated
 	 */
-	EReference getPalladioElementWrapper_ReferencedElement();
+	EReference getElementWrapper_ReferencedElement();
 
 	/**
 	 * Returns the meta object for class '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty <em>Uncertainty</em>}'.
@@ -537,14 +537,14 @@ public interface UncertaintyPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.PalladioElementWrapperImpl <em>Palladio Element Wrapper</em>}' class.
+		 * The meta object literal for the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.ElementWrapperImpl <em>Element Wrapper</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.PalladioElementWrapperImpl
-		 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.UncertaintyPackageImpl#getPalladioElementWrapper()
+		 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.ElementWrapperImpl
+		 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.UncertaintyPackageImpl#getElementWrapper()
 		 * @generated
 		 */
-		EClass PALLADIO_ELEMENT_WRAPPER = eINSTANCE.getPalladioElementWrapper();
+		EClass ELEMENT_WRAPPER = eINSTANCE.getElementWrapper();
 
 		/**
 		 * The meta object literal for the '<em><b>Referenced Element</b></em>' reference feature.
@@ -552,7 +552,7 @@ public interface UncertaintyPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference PALLADIO_ELEMENT_WRAPPER__REFERENCED_ELEMENT = eINSTANCE.getPalladioElementWrapper_ReferencedElement();
+		EReference ELEMENT_WRAPPER__REFERENCED_ELEMENT = eINSTANCE.getElementWrapper_ReferencedElement();
 
 		/**
 		 * The meta object literal for the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.UncertaintyImpl <em>Uncertainty</em>}' class.

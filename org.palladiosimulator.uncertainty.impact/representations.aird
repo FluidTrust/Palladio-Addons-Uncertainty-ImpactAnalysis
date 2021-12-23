@@ -55,6 +55,8 @@
     <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.resourceenvironment_diagram</semanticResources>
     <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.usagemodel</semanticResources>
     <semanticResources>src/evaluation/cwa/models/user/pcm/cwa.usagemodel_diagram</semanticResources>
+    <semanticResources>src/test/resources/models/expert/test.uncertaintytype</semanticResources>
+    <semanticResources>src/test/resources/models/expert/test.add</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Q5JEYFqcEeyjS5hmr-doJA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Q6FfkFqcEeyjS5hmr-doJA" name="new UsageModel Diagram" repPath="#_Q5jUEFqcEeyjS5hmr-doJA" changeId="374716ff-dbb0-46b8-b122-aa74377f508c">

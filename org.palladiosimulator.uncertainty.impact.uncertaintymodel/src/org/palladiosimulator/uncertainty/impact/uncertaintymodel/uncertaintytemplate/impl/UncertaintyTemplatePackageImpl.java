@@ -23,10 +23,6 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.AddPackage;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.impl.AddPackageImpl;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.PalladioElementTypePackage;
-
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.palladioelementtype.impl.PalladioElementTypePackageImpl;
-
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyPackage;
 
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.UncertaintyPackageImpl;
@@ -113,8 +109,6 @@ public class UncertaintyTemplatePackageImpl extends EPackageImpl implements Unce
 		UncertaintyPackageImpl theUncertaintyPackage = (UncertaintyPackageImpl)(registeredPackage instanceof UncertaintyPackageImpl ? registeredPackage : UncertaintyPackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(UncertaintyTypePackage.eNS_URI);
 		UncertaintyTypePackageImpl theUncertaintyTypePackage = (UncertaintyTypePackageImpl)(registeredPackage instanceof UncertaintyTypePackageImpl ? registeredPackage : UncertaintyTypePackage.eINSTANCE);
-		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(PalladioElementTypePackage.eNS_URI);
-		PalladioElementTypePackageImpl thePalladioElementTypePackage = (PalladioElementTypePackageImpl)(registeredPackage instanceof PalladioElementTypePackageImpl ? registeredPackage : PalladioElementTypePackage.eINSTANCE);
 		registeredPackage = EPackage.Registry.INSTANCE.getEPackage(AddPackage.eNS_URI);
 		AddPackageImpl theAddPackage = (AddPackageImpl)(registeredPackage instanceof AddPackageImpl ? registeredPackage : AddPackage.eINSTANCE);
 
@@ -122,14 +116,12 @@ public class UncertaintyTemplatePackageImpl extends EPackageImpl implements Unce
 		theUncertaintyTemplatePackage.createPackageContents();
 		theUncertaintyPackage.createPackageContents();
 		theUncertaintyTypePackage.createPackageContents();
-		thePalladioElementTypePackage.createPackageContents();
 		theAddPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theUncertaintyTemplatePackage.initializePackageContents();
 		theUncertaintyPackage.initializePackageContents();
 		theUncertaintyTypePackage.initializePackageContents();
-		thePalladioElementTypePackage.initializePackageContents();
 		theAddPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
@@ -163,17 +155,8 @@ public class UncertaintyTemplatePackageImpl extends EPackageImpl implements Unce
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getUncertaintyTemplate_PalladioElementTypeContainer() {
-		return (EReference)uncertaintyTemplateEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getUncertaintyTemplate_UncertaintyTypeContainer() {
-		return (EReference)uncertaintyTemplateEClass.getEStructuralFeatures().get(2);
+		return (EReference)uncertaintyTemplateEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -206,7 +189,6 @@ public class UncertaintyTemplatePackageImpl extends EPackageImpl implements Unce
 		// Create classes and their features
 		uncertaintyTemplateEClass = createEClass(UNCERTAINTY_TEMPLATE);
 		createEReference(uncertaintyTemplateEClass, UNCERTAINTY_TEMPLATE__ADD_CONTAINER);
-		createEReference(uncertaintyTemplateEClass, UNCERTAINTY_TEMPLATE__PALLADIO_ELEMENT_TYPE_CONTAINER);
 		createEReference(uncertaintyTemplateEClass, UNCERTAINTY_TEMPLATE__UNCERTAINTY_TYPE_CONTAINER);
 	}
 
@@ -235,7 +217,6 @@ public class UncertaintyTemplatePackageImpl extends EPackageImpl implements Unce
 
 		// Obtain other dependent packages
 		AddPackage theAddPackage = (AddPackage)EPackage.Registry.INSTANCE.getEPackage(AddPackage.eNS_URI);
-		PalladioElementTypePackage thePalladioElementTypePackage = (PalladioElementTypePackage)EPackage.Registry.INSTANCE.getEPackage(PalladioElementTypePackage.eNS_URI);
 		UncertaintyTypePackage theUncertaintyTypePackage = (UncertaintyTypePackage)EPackage.Registry.INSTANCE.getEPackage(UncertaintyTypePackage.eNS_URI);
 
 		// Create type parameters
@@ -247,7 +228,6 @@ public class UncertaintyTemplatePackageImpl extends EPackageImpl implements Unce
 		// Initialize classes, features, and operations; add parameters
 		initEClass(uncertaintyTemplateEClass, UncertaintyTemplate.class, "UncertaintyTemplate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUncertaintyTemplate_AddContainer(), theAddPackage.getADDContainer(), null, "addContainer", null, 1, 1, UncertaintyTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUncertaintyTemplate_PalladioElementTypeContainer(), thePalladioElementTypePackage.getPalladioElementTypeContainer(), null, "palladioElementTypeContainer", null, 1, 1, UncertaintyTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getUncertaintyTemplate_UncertaintyTypeContainer(), theUncertaintyTypePackage.getUncertaintyTypeContainer(), null, "uncertaintyTypeContainer", null, 1, 1, UncertaintyTemplate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource

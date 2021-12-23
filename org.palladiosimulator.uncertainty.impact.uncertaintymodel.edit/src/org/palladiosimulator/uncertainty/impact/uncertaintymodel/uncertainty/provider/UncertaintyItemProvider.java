@@ -196,7 +196,7 @@ public class UncertaintyItemProvider extends IdentifierItemProvider {
 		newChildDescriptors.add
 			(createChildParameter
 				(UncertaintyPackage.Literals.UNCERTAINTY__ASSIGNED_ELEMENT,
-				 UncertaintyFactory.eINSTANCE.createPalladioElementWrapper()));
+				 UncertaintyFactory.eINSTANCE.createElementWrapper()));
 	}
 
 	/**

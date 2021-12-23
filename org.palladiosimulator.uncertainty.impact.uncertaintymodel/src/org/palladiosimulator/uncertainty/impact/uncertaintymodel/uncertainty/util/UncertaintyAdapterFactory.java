@@ -73,8 +73,8 @@ public class UncertaintyAdapterFactory extends AdapterFactoryImpl {
 	protected UncertaintySwitch<Adapter> modelSwitch =
 		new UncertaintySwitch<Adapter>() {
 			@Override
-			public Adapter casePalladioElementWrapper(PalladioElementWrapper object) {
-				return createPalladioElementWrapperAdapter();
+			public Adapter caseElementWrapper(ElementWrapper object) {
+				return createElementWrapperAdapter();
 			}
 			@Override
 			public Adapter caseUncertainty(Uncertainty object) {
@@ -125,16 +125,16 @@ public class UncertaintyAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper <em>Palladio Element Wrapper</em>}'.
+	 * Creates a new adapter for an object of class '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper <em>Element Wrapper</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper
+	 * @see org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper
 	 * @generated
 	 */
-	public Adapter createPalladioElementWrapperAdapter() {
+	public Adapter createElementWrapperAdapter() {
 		return null;
 	}
 

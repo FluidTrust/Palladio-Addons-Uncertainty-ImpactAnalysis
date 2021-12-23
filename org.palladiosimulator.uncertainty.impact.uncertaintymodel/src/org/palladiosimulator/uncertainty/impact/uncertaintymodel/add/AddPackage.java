@@ -184,7 +184,7 @@ public interface AddPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @ordered
 	 */
-	int ADD_OPERATION_COUNT =  0;
+	int ADD_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.add.ADDClass <em>ADD Class</em>}' enum.

@@ -13,23 +13,23 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.palladiosimulator.pcm.core.entity.Entity;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.PalladioElementWrapper;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.ElementWrapper;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.UncertaintyPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Palladio Element Wrapper</b></em>'.
+ * An implementation of the model object '<em><b>Element Wrapper</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.PalladioElementWrapperImpl#getReferencedElement <em>Referenced Element</em>}</li>
+ *   <li>{@link org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.impl.ElementWrapperImpl#getReferencedElement <em>Referenced Element</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class PalladioElementWrapperImpl extends MinimalEObjectImpl.Container implements PalladioElementWrapper {
+public class ElementWrapperImpl extends MinimalEObjectImpl.Container implements ElementWrapper {
 	/**
 	 * The cached value of the '{@link #getReferencedElement() <em>Referenced Element</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -45,7 +45,7 @@ public class PalladioElementWrapperImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PalladioElementWrapperImpl() {
+	protected ElementWrapperImpl() {
 		super();
 	}
 
@@ -56,7 +56,7 @@ public class PalladioElementWrapperImpl extends MinimalEObjectImpl.Container imp
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return UncertaintyPackage.Literals.PALLADIO_ELEMENT_WRAPPER;
+		return UncertaintyPackage.Literals.ELEMENT_WRAPPER;
 	}
 
 	/**
@@ -70,7 +70,7 @@ public class PalladioElementWrapperImpl extends MinimalEObjectImpl.Container imp
 			referencedElement = (Entity)eResolveProxy(oldReferencedElement);
 			if (referencedElement != oldReferencedElement) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UncertaintyPackage.PALLADIO_ELEMENT_WRAPPER__REFERENCED_ELEMENT, oldReferencedElement, referencedElement));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UncertaintyPackage.ELEMENT_WRAPPER__REFERENCED_ELEMENT, oldReferencedElement, referencedElement));
 			}
 		}
 		return referencedElement;
@@ -94,7 +94,7 @@ public class PalladioElementWrapperImpl extends MinimalEObjectImpl.Container imp
 		Entity oldReferencedElement = referencedElement;
 		referencedElement = newReferencedElement;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, UncertaintyPackage.PALLADIO_ELEMENT_WRAPPER__REFERENCED_ELEMENT, oldReferencedElement, referencedElement));
+			eNotify(new ENotificationImpl(this, Notification.SET, UncertaintyPackage.ELEMENT_WRAPPER__REFERENCED_ELEMENT, oldReferencedElement, referencedElement));
 	}
 
 	/**
@@ -105,7 +105,7 @@ public class PalladioElementWrapperImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case UncertaintyPackage.PALLADIO_ELEMENT_WRAPPER__REFERENCED_ELEMENT:
+			case UncertaintyPackage.ELEMENT_WRAPPER__REFERENCED_ELEMENT:
 				if (resolve) return getReferencedElement();
 				return basicGetReferencedElement();
 		}
@@ -120,7 +120,7 @@ public class PalladioElementWrapperImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case UncertaintyPackage.PALLADIO_ELEMENT_WRAPPER__REFERENCED_ELEMENT:
+			case UncertaintyPackage.ELEMENT_WRAPPER__REFERENCED_ELEMENT:
 				setReferencedElement((Entity)newValue);
 				return;
 		}
@@ -135,7 +135,7 @@ public class PalladioElementWrapperImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case UncertaintyPackage.PALLADIO_ELEMENT_WRAPPER__REFERENCED_ELEMENT:
+			case UncertaintyPackage.ELEMENT_WRAPPER__REFERENCED_ELEMENT:
 				setReferencedElement((Entity)null);
 				return;
 		}
@@ -150,10 +150,10 @@ public class PalladioElementWrapperImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case UncertaintyPackage.PALLADIO_ELEMENT_WRAPPER__REFERENCED_ELEMENT:
+			case UncertaintyPackage.ELEMENT_WRAPPER__REFERENCED_ELEMENT:
 				return referencedElement != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
-} //PalladioElementWrapperImpl
+} //ElementWrapperImpl
