@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<add:ADDContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:add="http://www.example.org/add">
+  <adds id="_Vn290GbzEeyZX8-bSemQ7Q" name="Distribution (System)" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO"/>
+  <adds id="_bGxi4Go7Eeyp9od8Nz5fnw" name="Persistence of Data (What)" addClass="PROPERTY_DECISION" amountOfAlternatives="OPEN_SET" probabilityOfRevisability="UNLIKELY" costsOfRevision="LOW"/>
+  <adds id="_xzekUGo7Eeyp9od8Nz5fnw" name="Persistence of Data (Where)" addClass="PROPERTY_DECISION" amountOfAlternatives="OPEN_SET" possibilityOfRevisability="NO" costsOfRevision="LOW"/>
+  <adds id="_2h1w4Go7Eeyp9od8Nz5fnw" name="Persistence of Data (How)" addClass="PROPERTY_DECISION" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO"/>
+  <adds id="_8uNzkGo7Eeyp9od8Nz5fnw" name="Data Processing (Where)" addClass="PROPERTY_DECISION" amountOfAlternatives="OPEN_SET" costsOfRevision="LOW"/>
+  <adds id="_51Z98Go8Eeyp9od8Nz5fnw" name="Interface Access (Input)" addClass="PROPERTY_DECISION" amountOfAlternatives="OPEN_SET" costsOfRevision="LOW"/>
+  <adds id="_AaYG0Go9Eeyp9od8Nz5fnw" name="Interface Acess (Output)" addClass="PROPERTY_DECISION" amountOfAlternatives="OPEN_SET" costsOfRevision="LOW"/>
+  <adds id="_OdPkoGo9Eeyp9od8Nz5fnw" name="Interface Design"/>
+  <adds id="_SVQ_EGo9Eeyp9od8Nz5fnw" name="Data Minimization" addClass="PROPERTY_DECISION" probabilityOfRevisability="UNLIKELY" costsOfRevision="LOW"/>
+  <adds id="_XbvwsGo9Eeyp9od8Nz5fnw" name="Duration of Data Storage" addClass="EXECUTIVE_DECISION" probabilityOfRevisability="UNLIKELY" costsOfRevision="LOW"/>
+  <adds id="_dgN0kGo9Eeyp9od8Nz5fnw" name="User Identification" addClass="EXECUTIVE_DECISION" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO" costsOfRevision="LOW"/>
+  <adds id="_hcEmIGo9Eeyp9od8Nz5fnw" name="Communication Encryption" addClass="BEHAVIOURAL_DECISION" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO" costsOfRevision="LOW"/>
+  <adds id="_qq8wgGo9Eeyp9od8Nz5fnw" name="Data Separation" addClass="PROPERTY_DECISION"/>
+  <adds id="_uIEXoGo9Eeyp9od8Nz5fnw" name="Logging" addClass="PROPERTY_DECISION" costsOfRevision="LOW"/>
+  <adds id="_36ALwGo9Eeyp9od8Nz5fnw" name="Choice DB System" addClass="EXECUTIVE_DECISION" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO"/>
+  <adds id="_8KRHEGo9Eeyp9od8Nz5fnw" name="Authentification" addClass="EXECUTIVE_DECISION" probabilityOfRevisability="UNLIKELY"/>
+  <adds id="_AJYA8Go-Eeyp9od8Nz5fnw" name="Choice UI Pattern" probabilityOfRevisability="UNLIKELY"/>
+  <adds id="_GgD2MGo-Eeyp9od8Nz5fnw" name="Choice Component" amountOfAlternatives="OPEN_SET" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO"/>
+  <adds id="_MGJ8AGo-Eeyp9od8Nz5fnw" name="Input Validation" addClass="PROPERTY_DECISION" probabilityOfRevisability="UNLIKELY"/>
+  <adds id="_PzGu4Go-Eeyp9od8Nz5fnw" name="Deployment Location" addClass="EXECUTIVE_DECISION" costsOfRevision="LOW"/>
+  <adds id="_WkyeEGo-Eeyp9od8Nz5fnw" name="Virtualization" probabilityOfRevisability="UNLIKELY" costsOfRevision="LOW"/>
+  <adds id="_a9WZwGo-Eeyp9od8Nz5fnw" name="Data Pseudonomisation" probabilityOfRevisability="UNLIKELY" costsOfRevision="LOW"/>
+</add:ADDContainer>
