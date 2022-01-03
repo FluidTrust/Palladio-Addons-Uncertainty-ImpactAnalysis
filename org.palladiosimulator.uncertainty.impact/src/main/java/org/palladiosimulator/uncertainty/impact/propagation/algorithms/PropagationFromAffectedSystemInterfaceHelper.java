@@ -20,27 +20,25 @@ import org.palladiosimulator.uncertainty.impact.propagation.util.PropagationRule
 import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyPropagationFactoryHelper;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.CausingUncertainty;
-import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtSystemInterface;
+import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtComponentInterfaceType;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactEntity;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UncertaintyPropagation;
 
-public class PropagationFromAffectedComponentInterfaceType extends AbstractPropagationHelper {
+public class PropagationFromAffectedSystemInterfaceHelper extends AbstractPropagationHelper {
 
-	public PropagationFromAffectedComponentInterfaceType(UCArchitectureVersion version,
+	public PropagationFromAffectedSystemInterfaceHelper(UCArchitectureVersion version,
 			UncertaintyPropagation uncertaintyPropagation) {
 		super(version, uncertaintyPropagation);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	protected List<? extends UCImpactEntity<? extends Entity>> propagateUncertainty(Uncertainty uncertainty,
 			PropagationRuleTypes rule) throws UncertaintyPropagationException {
-
 		try {
 			switch (rule) {
 
-			case FROM_COMPONENT_INTERFACE_TYPE_TO_SYSTEM_INTERFACE:
-				return propagateFromComponentInterfaceTypeToSystemInterfaces(uncertainty);
+			case FROM_SYSTEM_INTERFACE_TO_COMPONENT_INTERFACE_TYPE:
+				return propagateFromSystemInterfaceToComponentInterfaceType(uncertainty);
 
 			default:
 				throw new UncertaintyPropagationException(
@@ -51,25 +49,19 @@ public class PropagationFromAffectedComponentInterfaceType extends AbstractPropa
 			throw new UncertaintyPropagationException(
 					"Propagation not possible due to following error: " + e.getMessage());
 		}
-
 	}
 
 	/**
-	 * Important: Algorithm: ComponentInterfaceType to System Interfaces <br>
+	 * Important: Algorithm: System Interfaces to ComponentInterfaceType <br>
 	 * <ul>
 	 * <li>Retrieve all system interfaces</li>
-	 * <li>Check if system interface references expected component interface.
+	 * <li>Extract matching system interface
+	 * <li>Extract system delegation connector which reference the expected system
+	 * interface
+	 * <li>Use delegation connector to extract referencing assembly</li>
+	 * <li>Iteratively inspect if encapsulated Component is BasicComponent</li>
 	 * <ul>
-	 * <li>If yes: Continue and build path.
-	 * <li>If no: Stop propagation as end of path will not be the expected
-	 * interface.
-	 * </ul>
-	 * <li>For each system interface: Extract referencing assembly</li>
-	 * <li>For each assembly: iteratively inspect if encapsulated Component is
-	 * BasicComponent</li>
-	 * <ul>
-	 * <li>Yes: Check if one of its interfaces match the expected. If yes, add
-	 * original system interface to result list</li>
+	 * <li>Yes: Add interface that matches the system interface</li>
 	 * <li>No: Recursively check all encapsulated components</li>
 	 * </ul>
 	 * </ul>
@@ -82,37 +74,37 @@ public class PropagationFromAffectedComponentInterfaceType extends AbstractPropa
 	 * @throws UncertaintyPropagationException
 	 * @throws PalladioElementNotFoundException
 	 */
-	private List<? extends UCImpactEntity<? extends Entity>> propagateFromComponentInterfaceTypeToSystemInterfaces(
+	private List<? extends UCImpactEntity<? extends Entity>> propagateFromSystemInterfaceToComponentInterfaceType(
 			Uncertainty uncertainty) throws UncertaintyPropagationException, PalladioElementNotFoundException {
 
-		List<UCImpactAtSystemInterface> affectedSystemInterfaces = new ArrayList<>();
+		List<UCImpactAtComponentInterfaceType> affectedComponentInterfaceTypes = new ArrayList<>();
 
-		Role expectedInterface = extractComponentInterfaceType(uncertainty);
+		Role systemInterface = extractSystemInterfaceType(uncertainty);
 
 		List<ProvidedDelegationConnector> providedSystemInterfaceDelegationConnectors = PalladioModelsLookupHelper
 				.getAllProvidedDelegationConnectors(version.getSystem());
 
 		for (ProvidedDelegationConnector providedSystemInterfaceDelegationConnector : providedSystemInterfaceDelegationConnectors) {
 
-			if (!providedSystemInterfaceDelegationConnector.getInnerProvidedRole_ProvidedDelegationConnector().getId()
-					.equals(expectedInterface.getId())) {
+			if (!providedSystemInterfaceDelegationConnector.getOuterProvidedRole_ProvidedDelegationConnector().getId()
+					.equals(systemInterface.getId())) {
+				// Outer role is the actual system interface
 				continue;
 			}
 
-			// Outer provided role represents system interface
-			Role systemInterface = providedSystemInterfaceDelegationConnector
-					.getOuterProvidedRole_ProvidedDelegationConnector();
+			Role expectedInterface = providedSystemInterfaceDelegationConnector
+					.getInnerProvidedRole_ProvidedDelegationConnector();
+
 			AssemblyContext referencingAssemblyContext = providedSystemInterfaceDelegationConnector
 					.getAssemblyContext_ProvidedDelegationConnector();
 
 			List<Entity> incompletePath = new LinkedList<>();
-			// Prepend as reverse order is required
 			incompletePath.add(systemInterface);
-			incompletePath.add(0, providedSystemInterfaceDelegationConnector);
-			incompletePath.add(0, referencingAssemblyContext);
+			incompletePath.add(providedSystemInterfaceDelegationConnector);
+			incompletePath.add(referencingAssemblyContext);
 
-			inspectAssemblyContexRecursivelyForMatchingComponentInterfaces(referencingAssemblyContext,
-					expectedInterface, incompletePath, uncertainty, systemInterface, affectedSystemInterfaces);
+			inspectAssemblyContexRecursivelyForExistingBasicComponents(expectedInterface, referencingAssemblyContext,
+					incompletePath, uncertainty, affectedComponentInterfaceTypes);
 		}
 
 		/*
@@ -127,69 +119,63 @@ public class PropagationFromAffectedComponentInterfaceType extends AbstractPropa
 
 		for (RequiredDelegationConnector requiredSystemInterfaceDelegationConnector : requiredSystemInterfaceDelegationConnectors) {
 
-			if (!requiredSystemInterfaceDelegationConnector.getInnerRequiredRole_RequiredDelegationConnector().getId()
-					.equals(expectedInterface.getId())) {
+			if (!requiredSystemInterfaceDelegationConnector.getOuterRequiredRole_RequiredDelegationConnector().getId()
+					.equals(systemInterface.getId())) {
+				// Outer role is the actual system interface
 				continue;
 			}
 
-			// Outer required role also represents system interface
-			Role systemInterface = requiredSystemInterfaceDelegationConnector
-					.getOuterRequiredRole_RequiredDelegationConnector();
+			Role expectedInterface = requiredSystemInterfaceDelegationConnector
+					.getInnerRequiredRole_RequiredDelegationConnector();
+
 			AssemblyContext referencingAssemblyContext = requiredSystemInterfaceDelegationConnector
 					.getAssemblyContext_RequiredDelegationConnector();
 
 			List<Entity> incompletePath = new LinkedList<>();
 			// Prepend as reverse order is required
 			incompletePath.add(systemInterface);
-			incompletePath.add(0, requiredSystemInterfaceDelegationConnector);
-			incompletePath.add(0, referencingAssemblyContext);
+			incompletePath.add(requiredSystemInterfaceDelegationConnector);
+			incompletePath.add(referencingAssemblyContext);
 
-			inspectAssemblyContexRecursivelyForMatchingComponentInterfaces(referencingAssemblyContext,
-					expectedInterface, incompletePath, uncertainty, systemInterface, affectedSystemInterfaces);
+			inspectAssemblyContexRecursivelyForExistingBasicComponents(expectedInterface, referencingAssemblyContext,
+					incompletePath, uncertainty, affectedComponentInterfaceTypes);
 		}
 
-		return affectedSystemInterfaces;
+		return affectedComponentInterfaceTypes;
 
 	}
 
 	/**
 	 * Inspect assembly context recursively. If encapsulated component is basic
-	 * component, check all Roles if one of them matches the expected. If yes, path
-	 * from System interface to interface is found and system interfaces needs to be
-	 * added to affected system Interfaces. If not found, ignore this path. If
-	 * encapsulated component is composite component, inspect assemblies of this
-	 * component. Remember: In this case, we need to build the path in the reverse
-	 * order as we need impact from BasicComponentBehaviour to SystemInterface but
-	 * can only traverse PalladioModel from SystemInterfaces to
-	 * BasicComponentBehaviours. Ugly but necessary.
+	 * component, add interface that matches the expected interface. If not,
+	 * recursively inspect encapsulate CompositeComponent.
 	 * 
 	 * @param assemblyContext
-	 * @param expectedInterface
 	 * @param incompletePath
 	 * @param uncertainty
-	 * @param systemInterface
-	 * @param affectedSystemInterfaces
+	 * @param affectedComponentInterfaceTypes
 	 * @throws UncertaintyPropagationException
 	 */
-	private void inspectAssemblyContexRecursivelyForMatchingComponentInterfaces(AssemblyContext assemblyContext,
-			Role expectedInterface, List<Entity> incompletePath, Uncertainty uncertainty, Role systemInterface,
-			List<UCImpactAtSystemInterface> affectedSystemInterfaces) throws UncertaintyPropagationException {
+	private void inspectAssemblyContexRecursivelyForExistingBasicComponents(Role expectedInterface,
+			AssemblyContext assemblyContext, List<Entity> incompletePath, Uncertainty uncertainty,
+			List<UCImpactAtComponentInterfaceType> affectedComponentInterfaceTypes)
+			throws UncertaintyPropagationException {
 
 		RepositoryComponent repositoryComponent = assemblyContext.getEncapsulatedComponent__AssemblyContext();
 
 		if (repositoryComponent instanceof BasicComponent) {
 			BasicComponent basicComponent = (BasicComponent) repositoryComponent;
 
-			List<Role> interfaces = new ArrayList<>();
-			interfaces.addAll(basicComponent.getProvidedRoles_InterfaceProvidingEntity());
-			interfaces.addAll(basicComponent.getRequiredRoles_InterfaceRequiringEntity());
+			List<Role> componentInterfaces = new ArrayList<>();
+			componentInterfaces.addAll(basicComponent.getProvidedRoles_InterfaceProvidingEntity());
+			componentInterfaces.addAll(basicComponent.getRequiredRoles_InterfaceRequiringEntity());
 
-			for (Role interfaze : interfaces) {
+			for (Role componentInterface : componentInterfaces) {
 
-				if (interfaze.getId().equals(expectedInterface.getId())) { // MATCH!
+				if (componentInterface.getId().equals(expectedInterface.getId())) { // MATCH!
 					List<Entity> local_path = new LinkedList<>(incompletePath);
-					local_path.add(0, basicComponent);
-					local_path.add(0, interfaze);
+					local_path.add(basicComponent);
+					local_path.add(componentInterface);
 
 					// Create UCImpactAtSystemInterface with encapsulated CausingUncertainty
 					CausingUncertainty causingUncertainty = UncertaintyPropagationFactoryHelper
@@ -197,14 +183,14 @@ public class PropagationFromAffectedComponentInterfaceType extends AbstractPropa
 					causingUncertainty.setCausingUncertainty(uncertainty);
 					causingUncertainty.getPath().addAll(local_path);
 
-					UCImpactAtSystemInterface ucImpactAtSystemInterface = UncertaintyPropagationFactoryHelper
-							.createUCImpactAtSystemInterface();
+					UCImpactAtComponentInterfaceType ucImpactAtSystemInterface = UncertaintyPropagationFactoryHelper
+							.createUCImpactAtComponentInterfaceType();
 					ucImpactAtSystemInterface.setToolderived(true);
-					ucImpactAtSystemInterface.setAffectedElement(systemInterface);
+					ucImpactAtSystemInterface.setAffectedElement(componentInterface);
 					ucImpactAtSystemInterface.getCausingElements().add(causingUncertainty);
 
 					// Add to result set
-					affectedSystemInterfaces.add(ucImpactAtSystemInterface);
+					affectedComponentInterfaceTypes.add(ucImpactAtSystemInterface);
 				}
 
 			}
@@ -214,18 +200,18 @@ public class PropagationFromAffectedComponentInterfaceType extends AbstractPropa
 					.getAssemblyContexts__ComposedStructure()) {
 				// Copy path due to recursion
 				List<Entity> local_path = new LinkedList<>(incompletePath);
-				local_path.add(0, repositoryComponent);
-				local_path.add(0, innerAssemblyContext);
+				local_path.add(repositoryComponent);
+				local_path.add(innerAssemblyContext);
 
-				inspectAssemblyContexRecursivelyForMatchingComponentInterfaces(innerAssemblyContext, expectedInterface,
-						incompletePath, uncertainty, systemInterface, affectedSystemInterfaces);
+				inspectAssemblyContexRecursivelyForExistingBasicComponents(expectedInterface, innerAssemblyContext,
+						incompletePath, uncertainty, affectedComponentInterfaceTypes);
 			}
 
 		}
 
 	}
 
-	private Role extractComponentInterfaceType(Uncertainty uncertainty) throws UncertaintyPropagationException {
+	private Role extractSystemInterfaceType(Uncertainty uncertainty) throws UncertaintyPropagationException {
 		Entity referencedElement = uncertainty.getAssignedElement().getReferencedElement();
 		if (referencedElement instanceof Role) {
 			return (Role) referencedElement;

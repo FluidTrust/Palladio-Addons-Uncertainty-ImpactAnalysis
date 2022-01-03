@@ -30,7 +30,9 @@
     <impactOnElementTypes>COMPONENT_INTERFACE_INSTANCE</impactOnElementTypes>
     <impactOnElementTypes>COMPONENT_INTERFACE_TYPE</impactOnElementTypes>
   </uncertaintyTypes>
-  <uncertaintyTypes id="_LWF3YDvjEeyKcZ3NE6_IOQ" name="Assignable_to_SystemInterface" assignableElementType="SYSTEM_INTERFACE"/>
+  <uncertaintyTypes id="_LWF3YDvjEeyKcZ3NE6_IOQ" name="Assignable_to_SystemInterface" assignableElementType="SYSTEM_INTERFACE">
+    <impactOnElementTypes>COMPONENT_INTERFACE_TYPE</impactOnElementTypes>
+  </uncertaintyTypes>
   <uncertaintyTypes id="_MYM0oDvjEeyKcZ3NE6_IOQ" name="Assignable_to_UsageBehaviour" assignableElementType="USAGE_BEHAVIOUR">
     <resolvedBy href="test.add#_fs_LQDWREeyX2v1Sswnu1Q"/>
   </uncertaintyTypes>

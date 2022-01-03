@@ -21,7 +21,7 @@ import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactE
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UncertaintyPropagation;
 import org.palladiosimulator.uncertaintymodel.plugin.TestBase;
 
-public class PropagationFromAffectedComponentInterfaceTypeTest extends TestBase {
+public class PropagationFromAffectedComponentInterfaceTypeHelperTest extends TestBase {
 
 	
 	

@@ -6,9 +6,10 @@ import org.palladiosimulator.uncertainty.impact.exception.UncertaintyPropagation
 import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedBasicComponentBehaviourHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedBasicComponentTypesHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedCommunicationComponentsHelper;
-import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedComponentInterfaceType;
+import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedComponentInterfaceTypeHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedHardwareResourceHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedSystemHelper;
+import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedSystemInterfaceHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyPropagationFactoryHelper;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtBasicComponentBehaviour;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtBasicComponentType;
@@ -174,7 +175,7 @@ public class UCImpactPropagationAnalysis {
 			return;
 		}
 
-		PropagationFromAffectedComponentInterfaceType helper = new PropagationFromAffectedComponentInterfaceType(
+		PropagationFromAffectedComponentInterfaceTypeHelper helper = new PropagationFromAffectedComponentInterfaceTypeHelper(
 				version, uncertaintyPropagation);
 		helper.propagate(affectedComponentInterfaceTypes);
 	}
@@ -209,9 +210,12 @@ public class UCImpactPropagationAnalysis {
 		if (affectedSystemInterfaces.isEmpty()) {
 			return;
 		}
-		throw new UncertaintyPropagationException(
-				"Currently no propagation supported from uncertainty impact at system interfaces!");
 
+		PropagationFromAffectedSystemInterfaceHelper helper = new PropagationFromAffectedSystemInterfaceHelper(version,
+				uncertaintyPropagation);
+
+		helper.propagate(affectedSystemInterfaces);
+		
 	}
 
 	private static void caclulcatePropagationFromAffectedUsageBehaviours(
