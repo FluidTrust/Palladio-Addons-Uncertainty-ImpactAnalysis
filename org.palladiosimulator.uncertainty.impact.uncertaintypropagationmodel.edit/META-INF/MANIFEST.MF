@@ -8,7 +8,7 @@ Bundle-ClassPath: .
 Bundle-Activator: org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.provider.UCImpactMarksEditPlugin$Implementation
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: J2SE-1.5
+Bundle-RequiredExecutionEnvironment: JavaSE-11
 Export-Package: org.palladiosimulator.uncertainty.impact.uncertaintypropagation.provider,
  org.palladiosimulator.uncertainty.impact.uncertaintypropagationmodel.provider
 Require-Bundle: org.eclipse.core.runtime,

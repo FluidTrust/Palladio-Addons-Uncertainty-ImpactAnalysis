@@ -677,36 +677,6 @@ public abstract class TestBase {
 
 	}
 
-	/*
-	 * We want to have more specific information for entities: Add the actual type.
-	 */
-	private static String extractEntityName(Entity entity) {
-
-		StringBuilder sb = new StringBuilder();
-		sb.append(entity.getEntityName()); // Name of affectedElement
-		sb.append(" (");
-		sb.append(entity.getId()); // Id of affectedElement
-		sb.append(")");
-		sb.append(": ");
-		sb.append(getEntityClassName(entity)); // Add class name
-
-		return sb.toString();
-	}
-
-	/**
-	 * Palladio types are always named/should always be named: "xyImpl" <br>
-	 * Remove Impl!
-	 * 
-	 * @param entity
-	 * @return
-	 */
-	private static String getEntityClassName(Entity entity) {
-		String className = entity.getClass().getSimpleName();
-		if (className.endsWith("Impl")) {
-			return entity.getClass().getSimpleName().substring(0, className.length() - 4);
-		}
-		return className;
-	}
 
 	public void testUncertaintyEqualsUncertainty(Uncertainty uncertainty_1, Uncertainty uncertainty_2) {
 		assertNotNull(uncertainty_1);
@@ -839,7 +809,7 @@ public abstract class TestBase {
 		String expected_id_and_name = expected_name + "(" + expected_id + ")";
 		String actual_id_and_name = actual_name + "(" + actual_id + ")";
 
-		assertEquals(expected_name, actual_name);
+		assertEquals(expected_id_and_name, actual_id_and_name);
 	}
 
 }
