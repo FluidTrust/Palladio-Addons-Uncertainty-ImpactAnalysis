@@ -100,49 +100,36 @@ public class UncertaintyPropagationResultViewModelConverter {
 					ucImpactUncertainties.put(uncertainty.getId(), viewModel);
 				}
 
-				viewModel.addAffectedElement(convertImpactEntityToString(entity), convertEntityPathToStringPath(path));
+				viewModel.addAffectedElement(convertEntityToString(entity.getAffectedElement()), convertEntitiesToString(path));
 
 			}
 		}
 	}
 
-	/*
-	 * Path contains List of Entity which has to be converted to String for
-	 * representation purposes.
-	 */
-	private static List<String> convertEntityPathToStringPath(List<Entity> path) {
+
+	private static List<String> convertEntitiesToString(List<Entity> path) {
 		List<String> entityListAsString = new ArrayList<>();
 
 		if (path.isEmpty()) {
-			/*
-			 * Direct impact (uncertainty assigned to this element). Always the first entry
-			 * in the list of affected elements, as each uncertainty used as propagation
-			 * input always references only one element
-			 */
+		
 			entityListAsString.add(" --- ");
 			return entityListAsString;
 		}
 
 		for (Entity pathElement : path) {
-			entityListAsString.add(convertPathElementToString(pathElement));
+			entityListAsString.add(convertEntityToString(pathElement));
 		}
 
 		return entityListAsString;
 	}
 
-	/*
-	 * Extract and convert referenced architectural element (=Entity) to String for
-	 * presentation purposes.
-	 */
-	private static String convertImpactEntityToString(UCImpactEntity<?> entity) {
-		return entity.getAffectedElement().getEntityName() + " (" + entity.getAffectedElement().getId() + ")";
-	}
+	
 
 	/*
-	 * We want to have more specific information for path entities: Add the actual
-	 * type.
+	 * We want to have more specific information for entities: Add the actual
+	 * class name.
 	 */
-	private static String convertPathElementToString(Entity entity) {
+	private static String convertEntityToString(Entity entity) {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append(entity.getEntityName()); // Name of affectedElement
