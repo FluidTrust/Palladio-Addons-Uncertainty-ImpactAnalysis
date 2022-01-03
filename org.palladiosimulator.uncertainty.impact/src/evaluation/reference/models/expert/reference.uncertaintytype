@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uncertaintytype:UncertaintyTypeContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uncertaintytype="http://www.example.org/uncertaintyType">
+  <uncertaintyTypes id="_oGN8EGvAEeyb24aCBR-a3Q" name="What is the distribution?" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION">
+    <resolvedBy href="reference.add#_M8hrkGu4Eeyb24aCBR-a3Q"/>
+    <impactOnElementTypes>COMMUNICATION_COMPONENT</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_82bboGvAEeyb24aCBR-a3Q" name="How is communicated?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="COMMUNICATION_COMPONENT">
+    <resolvedBy href="reference.add#_TELmUGu4Eeyb24aCBR-a3Q"/>
+    <impactOnElementTypes>HARDWARE_RESOURCE</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_MGOmoGvBEeyb24aCBR-a3Q" name="Where is deployed?" location="SYSTEM_ENVIRONMENT" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" resolutionTime="DEPLOYMENT_TIME" assignableElementType="HARDWARE_RESOURCE">
+    <resolvedBy href="reference.add#_hWAtMGu4Eeyb24aCBR-a3Q"/>
+    <impactOnElementTypes>COMMUNICATION_COMPONENT</impactOnElementTypes>
+    <impactOnElementTypes>COMPONENT_INSTANCE</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_i0MzYGvBEeyb24aCBR-a3Q" name="What data is persisted?" location="SYSTEM_BEHAVIOUR" informationAvailability="RECOGNIZED_IGNORANCE" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="BASIC_COMPONENT_TYPE">
+    <resolvedBy href="reference.add#_n1t7kGu4Eeyb24aCBR-a3Q"/>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_lRzBwGvCEeyb24aCBR-a3Q" name="Is the data to be persisted confidential?" location="SYSTEM_BEHAVIOUR" informationAvailability="RECOGNIZED_IGNORANCE" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" rootCause="MISSING_INFORMATION" assignableElementType="BASIC_COMPONENT_TYPE"/>
+  <uncertaintyTypes id="_0NRikGvCEeyb24aCBR-a3Q" name="How is data persisted?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="BASIC_COMPONENT_TYPE">
+    <resolvedBy href="reference.add#_zaUAIGu4Eeyb24aCBR-a3Q"/>
+    <impactOnElementTypes>HARDWARE_RESOURCE</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_BnLjgGvDEeyb24aCBR-zuO" name="Which authentication mechanisms are chosen?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="COMPONENT_INTERFACE_TYPE">
+    <resolvedBy href="reference.add#_5R6ssGu4Eeyb24aCBR-a3Q"/>
+    <impactOnElementTypes>SYSTEM_INTERFACE</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_4XAioGvDEeyb24aCBR-a3Q" name="What kind of access control is used?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="COMPONENT_INTERFACE_TYPE">
+    <resolvedBy href="reference.add#_-WrnEGu4Eeyb24aCBR-a3Q"/>
+    <impactOnElementTypes>SYSTEM_INTERFACE</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_pNnFIGvEEeyb24aCBR-a3Q" name="Which component is chosen?" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION">
+    <resolvedBy href="reference.add#_GZY5QGu5Eeyb24aCBR-a3Q"/>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_1LlTAGvEEeyb24aCBR-a3Q" name="Which subjects access the interface?" location="INPUT" informationAvailability="RECOGNIZED_IGNORANCE" manageability="PARTIAL_REDUCIBLE" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="RUN_TIME" assignableElementType="SYSTEM_INTERFACE">
+    <impactOnElementTypes>COMPONENT_INTERFACE_TYPE</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_yfYtEGx1EeyrFeTi1UGh_g" name="What is the user behavior?" location="INPUT" manageability="PARTIAL_REDUCIBLE" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="RUN_TIME" assignableElementType="USAGE_BEHAVIOUR">
+    <resolvedBy href="reference.add#_jDxaEGu5Eeyb24aCBR-a3Q"/>
+    <impactOnElementTypes>COMPONENT_INTERFACE_INSTANCE</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_fn5-0Gx3EeyrFeTi1UGh_g" name="What data is entered?" location="INPUT" informationAvailability="RECOGNIZED_IGNORANCE" manageability="PARTIAL_REDUCIBLE" severityOfImpact="LOW" resolutionTime="RUN_TIME" assignableElementType="SYSTEM_INTERFACE">
+    <resolvedBy href="reference.add#_feNBkGu5Eeyb24aCBR-a3Q"/>
+    <impactOnElementTypes>COMPONENT_INTERFACE_INSTANCE</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_JzO0wGx7EeyrFeTi1UGh_g" name="What data is provided?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="SYSTEM_INTERFACE">
+    <resolvedBy href="reference.add#_Vn-jUGu5Eeyb24aCBR-a3Q"/>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_gJu8sGx7EeyrFeTi1UGh_g" name="Is the data anonymized?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="BASIC_COMPONENT_TYPE">
+    <resolvedBy href="reference.add#_p-fwgGu5Eeyb24aCBR-a3Q"/>
+    <impactOnElementTypes>SYSTEM_INTERFACE</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_PKR8gGx8EeyrFeTi1UGh_g" name="What is the structure of the interface?" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="COMPONENT_INTERFACE_TYPE">
+    <resolvedBy href="reference.add#_w0wdsGu5Eeyb24aCBR-a3Q"/>
+    <impactOnElementTypes>SYSTEM_INTERFACE</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_rP1R8Gx8EeyrFeTi1UGh_g" name="Can access control cover all matters?" location="SYSTEM_BEHAVIOUR" informationAvailability="RECOGNIZED_IGNORANCE" manageability="IRREDUCIBLE" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="NEVER" assignableElementType="SYSTEM_INTERFACE"/>
+  <uncertaintyTypes id="_7XOzUGx8EeyrFeTi1UGh_g" name="Are the access control rules correct?" location="SYSTEM_BEHAVIOUR" informationAvailability="RECOGNIZED_IGNORANCE" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="RUN_TIME" assignableElementType="SYSTEM_INTERFACE"/>
+  <uncertaintyTypes id="_GoZlkGx9EeyrFeTi1UGh_g" name="What is the behavior of the component? " location="SYSTEM_BEHAVIOUR" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" resolutionTime="RUN_TIME" assignableElementType="COMPONENT_INTERFACE_TYPE"/>
+  <uncertaintyTypes id="_eq6jYGx9EeyrFeTi1UGh_g" name="Is the component currently compromised?" location="SYSTEM_BEHAVIOUR" informationAvailability="RECOGNIZED_IGNORANCE" manageability="PARTIAL_REDUCIBLE" resolutionTime="RUN_TIME" assignableElementType="COMPONENT_INTERFACE_TYPE"/>
+  <uncertaintyTypes id="_vmPcEGx9EeyrFeTi1UGh_g" name="Is the component's provider trustworthy?" location="SYSTEM_BEHAVIOUR" informationAvailability="RECOGNIZED_IGNORANCE" manageability="IRREDUCIBLE" resolutionTime="NEVER" assignableElementType="BASIC_COMPONENT_TYPE"/>
+  <uncertaintyTypes id="_73r_kGx9EeyrFeTi1UGh_g" name="Is the data entered correct?" location="INPUT" manageability="PARTIAL_REDUCIBLE" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="RUN_TIME" assignableElementType="USAGE_BEHAVIOUR">
+    <impactOnElementTypes>SYSTEM_INTERFACE</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_gDj74Gx-EeyrFeTi1UGh_g" name="Is user data stored/processed?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="BASIC_COMPONENT_TYPE">
+    <impactOnElementTypes>HARDWARE_RESOURCE</impactOnElementTypes>
+  </uncertaintyTypes>
+  <uncertaintyTypes id="_ySd8UGx-EeyrFeTi1UGh_g" name="Is the deployment provider trustworthy?" location="SYSTEM_ENVIRONMENT" informationAvailability="RECOGNIZED_IGNORANCE" resolutionTime="NEVER" assignableElementType="HARDWARE_RESOURCE"/>
+  <uncertaintyTypes id="_9fJQIGx-EeyrFeTi1UGh_g" name="Is confidential data transmitted?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" rootCause="MISSING_INFORMATION" assignableElementType="COMMUNICATION_COMPONENT"/>
+</uncertaintytype:UncertaintyTypeContainer>

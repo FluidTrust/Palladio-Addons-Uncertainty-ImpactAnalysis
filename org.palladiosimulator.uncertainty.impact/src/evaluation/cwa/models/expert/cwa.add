@@ -17,9 +17,9 @@
   <adds id="_36ALwGo9Eeyp9od8Nz5fnw" name="Choice DB System" addClass="EXECUTIVE_DECISION" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO"/>
   <adds id="_8KRHEGo9Eeyp9od8Nz5fnw" name="Authentification" addClass="EXECUTIVE_DECISION" probabilityOfRevisability="UNLIKELY"/>
   <adds id="_AJYA8Go-Eeyp9od8Nz5fnw" name="Choice UI Pattern" probabilityOfRevisability="UNLIKELY"/>
-  <adds id="_GgD2MGo-Eeyp9od8Nz5fnw" name="Choice Component" amountOfAlternatives="OPEN_SET" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO"/>
+  <adds id="_GgD2MGo-Eeyp9od8Nz5fnw" name="Choice of Component" amountOfAlternatives="OPEN_SET" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO"/>
   <adds id="_MGJ8AGo-Eeyp9od8Nz5fnw" name="Input Validation" addClass="PROPERTY_DECISION" probabilityOfRevisability="UNLIKELY"/>
   <adds id="_PzGu4Go-Eeyp9od8Nz5fnw" name="Deployment Location" addClass="EXECUTIVE_DECISION" costsOfRevision="LOW"/>
   <adds id="_WkyeEGo-Eeyp9od8Nz5fnw" name="Virtualization" probabilityOfRevisability="UNLIKELY" costsOfRevision="LOW"/>
-  <adds id="_a9WZwGo-Eeyp9od8Nz5fnw" name="Data Pseudonomisation" probabilityOfRevisability="UNLIKELY" costsOfRevision="LOW"/>
+  <adds id="_a9WZwGo-Eeyp9od8Nz5fnw" name="Anonymization of Data" probabilityOfRevisability="UNLIKELY" costsOfRevision="LOW"/>
 </add:ADDContainer>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<add:ADDContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:add="http://www.example.org/add">
+  <adds id="_M8hrkGu4Eeyb24aCBR-a3Q" name="Distribution (System)" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO"/>
+  <adds id="_TELmUGu4Eeyb24aCBR-a3Q" name="Communication Encryption" addClass="BEHAVIOURAL_DECISION" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO"/>
+  <adds id="_hWAtMGu4Eeyb24aCBR-a3Q" name="Deployment Location" addClass="EXECUTIVE_DECISION" amountOfAlternatives="OPEN_SET" costsOfRevision="LOW"/>
+  <adds id="_n1t7kGu4Eeyb24aCBR-a3Q" name="Persistence of Data (What)" addClass="PROPERTY_DECISION" amountOfAlternatives="OPEN_SET" costsOfRevision="LOW"/>
+  <adds id="_zaUAIGu4Eeyb24aCBR-a3Q" name="Persistence od Data (How)" addClass="PROPERTY_DECISION" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO" costsOfRevision="LOW"/>
+  <adds id="_5R6ssGu4Eeyb24aCBR-a3Q" name="Authentication" addClass="EXECUTIVE_DECISION" probabilityOfRevisability="UNLIKELY" costsOfRevision="LOW"/>
+  <adds id="_-WrnEGu4Eeyb24aCBR-a3Q" name="Authorization (Access Control)" addClass="EXECUTIVE_DECISION" probabilityOfRevisability="UNLIKELY" costsOfRevision="LOW"/>
+  <adds id="_GZY5QGu5Eeyb24aCBR-a3Q" name="Choice of Component" amountOfAlternatives="OPEN_SET" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO"/>
+  <adds id="_Vn-jUGu5Eeyb24aCBR-a3Q" name="Interface Access (Output)" addClass="PROPERTY_DECISION" amountOfAlternatives="OPEN_SET" costsOfRevision="LOW"/>
+  <adds id="_feNBkGu5Eeyb24aCBR-a3Q" name="Interface Access (Input)" addClass="PROPERTY_DECISION" amountOfAlternatives="OPEN_SET" costsOfRevision="LOW"/>
+  <adds id="_jDxaEGu5Eeyb24aCBR-a3Q" name="User Behaviour" addClass="PROPERTY_DECISION" amountOfAlternatives="OPEN_SET" costsOfRevision="LOW"/>
+  <adds id="_p-fwgGu5Eeyb24aCBR-a3Q" name="Anonymization of Data" addClass="PROPERTY_DECISION" probabilityOfRevisability="UNLIKELY" possibilityOfRevisability="NO" costsOfRevision="LOW"/>
+  <adds id="_w0wdsGu5Eeyb24aCBR-a3Q" name="Interface Design" amountOfAlternatives="OPEN_SET" costsOfRevision="LOW"/>
+</add:ADDContainer>
