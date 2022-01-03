@@ -96,20 +96,20 @@ public class PropagationFromAffectedBasicComponentBehaviourHelper extends Abstra
 		// Starting element
 		BasicComponentBehaviour basicComponentBehaviour = extractBasicComponentBehaviour(uncertainty);
 
-		List<ProvidedDelegationConnector> providedSystemInterfaces = PalladioModelsLookupHelper
+		List<ProvidedDelegationConnector> providedSystemInterfaceDelegationConnectors = PalladioModelsLookupHelper
 				.getAllProvidedDelegationConnectors(version.getSystem());
 
-		for (ProvidedDelegationConnector providedSystemInterface : providedSystemInterfaces) {
+		for (ProvidedDelegationConnector providedSystemInterfaceDelegationConnector : providedSystemInterfaceDelegationConnectors) {
 
 			// Outer provided role represents system interface
-			Role systemInterface = providedSystemInterface.getOuterProvidedRole_ProvidedDelegationConnector();
-			AssemblyContext referencingAssemblyContext = providedSystemInterface
+			Role systemInterface = providedSystemInterfaceDelegationConnector.getOuterProvidedRole_ProvidedDelegationConnector();
+			AssemblyContext referencingAssemblyContext = providedSystemInterfaceDelegationConnector
 					.getAssemblyContext_ProvidedDelegationConnector();
 
 			List<Entity> incompletePath = new LinkedList<>();
 			// Prepend as reverse order is required
 			incompletePath.add(systemInterface);
-			incompletePath.add(0, providedSystemInterface);
+			incompletePath.add(0, providedSystemInterfaceDelegationConnector);
 			incompletePath.add(0, referencingAssemblyContext);
 			
 			inspectAssemblyContexRecursivelyForMatchingBasicComponentBehaviour(referencingAssemblyContext,
@@ -123,20 +123,20 @@ public class PropagationFromAffectedBasicComponentBehaviourHelper extends Abstra
 		 * super type with required methods)
 		 */
 
-		List<RequiredDelegationConnector> requiredSystemInterfaces = PalladioModelsLookupHelper
+		List<RequiredDelegationConnector> requiredSystemInterfaceDelegationConnectors = PalladioModelsLookupHelper
 				.getAllRequiredDelegationConnectors(version.getSystem());
 
-		for (RequiredDelegationConnector requiredSystemInterface : requiredSystemInterfaces) {
+		for (RequiredDelegationConnector requiredSystemInterfaceDelegationConnector : requiredSystemInterfaceDelegationConnectors) {
 
 			// Outer required role also represents system interface
-			Role systemInterface = requiredSystemInterface.getOuterRequiredRole_RequiredDelegationConnector();
-			AssemblyContext referencingAssemblyContext = requiredSystemInterface
+			Role systemInterface = requiredSystemInterfaceDelegationConnector.getOuterRequiredRole_RequiredDelegationConnector();
+			AssemblyContext referencingAssemblyContext = requiredSystemInterfaceDelegationConnector
 					.getAssemblyContext_RequiredDelegationConnector();
 
 			List<Entity> incompletePath = new LinkedList<>();
 			// Prepend as reverse order is required
 			incompletePath.add(systemInterface);
-			incompletePath.add(0, requiredSystemInterface);
+			incompletePath.add(0, requiredSystemInterfaceDelegationConnector);
 			incompletePath.add(0, referencingAssemblyContext);
 
 			inspectAssemblyContexRecursivelyForMatchingBasicComponentBehaviour(referencingAssemblyContext,
@@ -189,7 +189,7 @@ public class PropagationFromAffectedBasicComponentBehaviourHelper extends Abstra
 					local_path.add(0, basicComponent);
 					local_path.add(0, basicComponentBehaviour);
 
-					// Create UCImpactAtHardwareResource with encapsulated CausingUncertainty
+					// Create UCImpactAtSystemInterface with encapsulated CausingUncertainty
 					CausingUncertainty causingUncertainty = UncertaintyPropagationFactoryHelper
 							.createCausingUncertainty(uncertaintyPropagation);
 					causingUncertainty.setCausingUncertainty(uncertainty);

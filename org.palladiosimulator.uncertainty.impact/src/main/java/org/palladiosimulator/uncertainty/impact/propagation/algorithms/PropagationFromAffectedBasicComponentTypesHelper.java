@@ -1,22 +1,32 @@
 package org.palladiosimulator.uncertainty.impact.propagation.algorithms;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 import org.palladiosimulator.pcm.allocation.AllocationContext;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
+import org.palladiosimulator.pcm.core.composition.ProvidedDelegationConnector;
+import org.palladiosimulator.pcm.core.composition.RequiredDelegationConnector;
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.CompositeComponent;
 import org.palladiosimulator.pcm.repository.RepositoryComponent;
+import org.palladiosimulator.pcm.repository.Role;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
+import org.palladiosimulator.pcm.seff.ResourceDemandingSEFF;
+import org.palladiosimulator.pcm.seff.ServiceEffectSpecification;
+import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyPropagationException;
+import org.palladiosimulator.uncertainty.impact.model.util.PalladioModelsLookupHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.UCArchitectureVersion;
 import org.palladiosimulator.uncertainty.impact.propagation.util.PropagationRuleTypes;
 import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyPropagationFactoryHelper;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.BasicComponentBehaviour;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.CausingUncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtHardwareResource;
+import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtSystemInterface;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactEntity;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UncertaintyPropagation;
 
@@ -40,13 +50,21 @@ public class PropagationFromAffectedBasicComponentTypesHelper extends AbstractPr
 	@Override
 	protected List<? extends UCImpactEntity<? extends Entity>> propagateUncertainty(Uncertainty uncertainty,
 			PropagationRuleTypes rule) throws UncertaintyPropagationException {
-		switch (rule) {
-		case FROM_BASIC_COMPONENT_TYPE_TO_HARDWARE_RESOURCE:
-			return propagateFromBasicComponentTypeToHardwareResource(uncertainty);
+		try {
+			switch (rule) {
+			case FROM_BASIC_COMPONENT_TYPE_TO_HARDWARE_RESOURCE:
+				return propagateFromBasicComponentTypeToHardwareResource(uncertainty);
 
-		default:
+			case FROM_BASIC_COMPONENT_TYPE_TO_SYSTEM_INTERFACE:
+				return propagateFromBasicComponentTypeToSystemInterface(uncertainty);
+
+			default:
+				throw new UncertaintyPropagationException(
+						"Propagation not possible as rule " + rule + " is not yet implemented");
+			}
+		} catch (PalladioElementNotFoundException e) {
 			throw new UncertaintyPropagationException(
-					"Propagation not possible as rule " + rule + " is not yet implemented");
+					"Propagation not possible due to following error: " + e.getMessage());
 		}
 
 	}
@@ -157,7 +175,7 @@ public class PropagationFromAffectedBasicComponentTypesHelper extends AbstractPr
 				RepositoryComponent newRepositoryComponent = assemblyContext
 						.getEncapsulatedComponent__AssemblyContext();
 
-				//Add currently inspected repository and encapsulated assembly to path
+				// Add currently inspected repository and encapsulated assembly to path
 				local_path.add(0, repositoryComponent);
 				local_path.add(0, assemblyContext);
 
@@ -166,6 +184,155 @@ public class PropagationFromAffectedBasicComponentTypesHelper extends AbstractPr
 
 			}
 
+		}
+
+	}
+
+	/**
+	 * Algorithm: BasicComponentType to SystemInterface <br>
+	 * Workflow: <br>
+	 * <ul>
+	 * <li>Retrieve all system interfaces</li>
+	 * <li>For each interface: Extract referencing assembly</li>
+	 * <li>For each assembly: iteratively inspect if encapsulated Component is
+	 * BasicComponent</li>
+	 * <ul>
+	 * <li>Yes: Check if basic component matches the expected</li>
+	 * <li>No: Recursively check all encapsulated components</li>
+	 * </ul>
+	 * </ul>
+	 * Always add current "visited" entity to path (in correct order).
+	 * 
+	 * @param uncertainty
+	 * @throws UncertaintyPropagationException
+	 * @throws UncertaintyPropagationExceptiono
+	 * @throws PalladioElementNotFoundException
+	 * @throws
+	 */
+	private List<? extends UCImpactEntity<? extends Entity>> propagateFromBasicComponentTypeToSystemInterface(
+			Uncertainty uncertainty) throws UncertaintyPropagationException, PalladioElementNotFoundException {
+
+		// Result
+		List<UCImpactAtSystemInterface> affectedSystemInterfaces = new ArrayList<>();
+
+		// Starting element
+		BasicComponent basicComponent = extractBasicComponent(uncertainty);
+
+		List<ProvidedDelegationConnector> providedSystemInterfaceDelegationConnectors = PalladioModelsLookupHelper
+				.getAllProvidedDelegationConnectors(version.getSystem());
+
+		for (ProvidedDelegationConnector providedSystemInterfaceDelegationConnector : providedSystemInterfaceDelegationConnectors) {
+
+			// Outer provided role represents system interface
+			Role systemInterface = providedSystemInterfaceDelegationConnector.getOuterProvidedRole_ProvidedDelegationConnector();
+			AssemblyContext referencingAssemblyContext = providedSystemInterfaceDelegationConnector
+					.getAssemblyContext_ProvidedDelegationConnector();
+
+			List<Entity> incompletePath = new LinkedList<>();
+			// Prepend as reverse order is required
+			incompletePath.add(systemInterface);
+			incompletePath.add(0, providedSystemInterfaceDelegationConnector);
+			incompletePath.add(0, referencingAssemblyContext);
+
+			inspectAssemblyContexRecursivelyForMatchingBasicComponent(referencingAssemblyContext, basicComponent,
+					incompletePath, uncertainty, systemInterface, affectedSystemInterfaces);
+		}
+
+		/*
+		 * Due to palladio implementation, we need to inspect required and provided
+		 * delegation connectors separately.
+		 * (ProvidedDelegationConnector,RequiredDelegationConnector do not have common
+		 * super type with required methods)
+		 */
+
+		List<RequiredDelegationConnector> requiredSystemInterfaceDelegationConnectors = PalladioModelsLookupHelper
+				.getAllRequiredDelegationConnectors(version.getSystem());
+
+		for (RequiredDelegationConnector requiredSystemInterfaceDelegationConnector : requiredSystemInterfaceDelegationConnectors) {
+
+			// Outer required role also represents system interface
+			Role systemInterface = requiredSystemInterfaceDelegationConnector.getOuterRequiredRole_RequiredDelegationConnector();
+			AssemblyContext referencingAssemblyContext = requiredSystemInterfaceDelegationConnector
+					.getAssemblyContext_RequiredDelegationConnector();
+
+			List<Entity> incompletePath = new LinkedList<>();
+			// Prepend as reverse order is required
+			incompletePath.add(systemInterface);
+			incompletePath.add(0, requiredSystemInterfaceDelegationConnector);
+			incompletePath.add(0, referencingAssemblyContext);
+
+			inspectAssemblyContexRecursivelyForMatchingBasicComponent(referencingAssemblyContext, basicComponent,
+					incompletePath, uncertainty, systemInterface, affectedSystemInterfaces);
+		}
+
+		return affectedSystemInterfaces;
+
+	}
+
+	/**
+	 * Inspect assembly context recursively. If encapsulated component is basic
+	 * component, check if ID matches the expected basic component. If yes, path
+	 * from System interface to BasicComponent is found and system interfaces needs
+	 * to be added to affected system Interfaces. If not found, ignore this path. If
+	 * encapsulated component is composite component, inspect assemblies of this
+	 * component. Remember: In this case, we need to build the path in the reverse
+	 * order as we need impact from BasicComponentBehaviour to SystemInterface but
+	 * can only traverse PalladioModel from SystemInterfaces to
+	 * BasicComponentBehaviours. Ugly but necessary.
+	 * 
+	 * @param assemblyContext
+	 * @param basicComponentBehaviour
+	 * @param incompletePath
+	 * @param uncertainty
+	 * @param systemInterface
+	 * @param affectedSystemInterfaces
+	 * @throws UncertaintyPropagationException
+	 */
+	private void inspectAssemblyContexRecursivelyForMatchingBasicComponent(AssemblyContext assemblyContext,
+			BasicComponent expectedBasicComponent, List<Entity> incompletePath, Uncertainty uncertainty,
+			Role systemInterface, List<UCImpactAtSystemInterface> affectedSystemInterfaces)
+			throws UncertaintyPropagationException {
+
+		RepositoryComponent repositoryComponent = assemblyContext.getEncapsulatedComponent__AssemblyContext();
+
+		if (repositoryComponent instanceof BasicComponent) {
+			BasicComponent basicComponent = (BasicComponent) repositoryComponent;
+
+			if (basicComponent.getId().equals(expectedBasicComponent.getId())) { // MATCH!
+				List<Entity> local_path = new LinkedList<>(incompletePath);
+				local_path.add(0, basicComponent);
+
+				// Create UCImpactAtSystemInterface with encapsulated CausingUncertainty
+				CausingUncertainty causingUncertainty = UncertaintyPropagationFactoryHelper
+						.createCausingUncertainty(uncertaintyPropagation);
+				causingUncertainty.setCausingUncertainty(uncertainty);
+				causingUncertainty.getPath().addAll(local_path);
+
+				UCImpactAtSystemInterface ucImpactAtSystemInterface = UncertaintyPropagationFactoryHelper
+						.createUCImpactAtSystemInterface();
+				ucImpactAtSystemInterface.setToolderived(true);
+				ucImpactAtSystemInterface.setAffectedElement(systemInterface);
+				ucImpactAtSystemInterface.getCausingElements().add(causingUncertainty);
+				
+				affectedSystemInterfaces.add(ucImpactAtSystemInterface);
+			}
+
+		} else if (repositoryComponent instanceof CompositeComponent) {
+			// Loop over all assembly contexts of -> For each context, do recursive call
+			for (AssemblyContext innerAssemblyContext : ((CompositeComponent) repositoryComponent)
+					.getAssemblyContexts__ComposedStructure()) {
+				// Copy path due to recursion
+				List<Entity> local_path = new LinkedList<>(incompletePath);
+				local_path.add(0, repositoryComponent);
+				local_path.add(0, innerAssemblyContext);
+
+				inspectAssemblyContexRecursivelyForMatchingBasicComponent(innerAssemblyContext, expectedBasicComponent,
+						incompletePath, uncertainty, systemInterface, affectedSystemInterfaces);
+			}
+
+		} else {
+			throw new UncertaintyPropagationException("RepositoryComponent " + repositoryComponent.getEntityName()
+					+ " is expected to be either basic component or composite component");
 		}
 
 	}

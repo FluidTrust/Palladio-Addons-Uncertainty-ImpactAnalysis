@@ -7,6 +7,7 @@
   <uncertaintyTypes id="_HOiMIDvjEeyKcZ3NE6_IOQ" name="Assignable_to_BasicComponentType" informationAvailability="RECOGNIZED_IGNORANCE" assignableElementType="BASIC_COMPONENT_TYPE">
     <resolvedBy href="sample.add#_UPKRMDvgEey_pcVcOzlgag"/>
     <impactOnElementTypes>HARDWARE_RESOURCE</impactOnElementTypes>
+    <impactOnElementTypes>SYSTEM_INTERFACE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_JkrkIDvjEeyKcZ3NE6_IOQ" name="Assignable_to_CommunicationComponents" nature="EPISTEMIC" assignableElementType="COMMUNICATION_COMPONENT">
     <resolvedBy href="sample.add#_fs_LQDWREeyX2v1Sswnu1Q"/>
