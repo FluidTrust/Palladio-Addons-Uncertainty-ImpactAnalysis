@@ -305,7 +305,7 @@ public abstract class TestBase {
 			throws UncertaintyTemplateElementNotFoundException, PalladioElementNotFoundException {
 		return createUncertainty("uncertainty_at_component_interface_type",
 				testTemplateLoader.getUncertaintyType_Assignable_to_ComponentInterfaceType(),
-				createElementWrapper(bookStore.getComponentInterfaceType_Provided_IBook()));
+				createElementWrapper(bookStore.getComponentInterfaceType_Provided_IBrowseBooks()));
 
 	}
 

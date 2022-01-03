@@ -18,6 +18,7 @@
   <uncertaintyTypes id="_KZVUMDvjEeyKcZ3NE6_IOQ" name="Assignable_to_ComponentInterfaceInstance" severityOfImpact="LOW" assignableElementType="COMPONENT_INTERFACE_INSTANCE"/>
   <uncertaintyTypes id="_KppoIDvjEeyKcZ3NE6_IOQ" name="Assignable_to_ComponentInterfaceType" impactOnConfidentiality="INDIRECT" assignableElementType="COMPONENT_INTERFACE_TYPE">
     <resolvedBy href="test.add#_dEna0DWREeyX2v1Sswnu1Q"/>
+    <impactOnElementTypes>SYSTEM_INTERFACE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_K6ybcDvjEeyKcZ3NE6_IOQ" name="Assignable_to_HardwareResource" assignableElementType="HARDWARE_RESOURCE">
     <impactOnElementTypes>COMMUNICATION_COMPONENT</impactOnElementTypes>

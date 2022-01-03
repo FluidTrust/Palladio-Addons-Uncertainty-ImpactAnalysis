@@ -6,6 +6,7 @@ import org.palladiosimulator.uncertainty.impact.exception.UncertaintyPropagation
 import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedBasicComponentBehaviourHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedBasicComponentTypesHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedCommunicationComponentsHelper;
+import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedComponentInterfaceType;
 import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedHardwareResourceHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.algorithms.PropagationFromAffectedSystemHelper;
 import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyPropagationFactoryHelper;
@@ -36,9 +37,9 @@ import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.Uncertain
 public class UCImpactPropagationAnalysis {
 
 	private UCImpactPropagationAnalysis() {
-		
+
 	}
-	
+
 	public static UCArchitectureVersion runUncertaintyPropagationAnalysis(UCArchitectureVersion version)
 			throws UncertaintyPropagationException {
 
@@ -52,13 +53,15 @@ public class UCImpactPropagationAnalysis {
 		version.getModificationMarkRepository().getChangePropagationSteps().add(uncertaintyPropagation);
 
 		calculatePropagation(version, uncertaintyPropagation);
-		
+
 		return version;
 
 	}
 
 	/**
-	 * Extracts propagation input for each type (= class extending {@link UCImpactEntity})
+	 * Extracts propagation input for each type (= class extending
+	 * {@link UCImpactEntity})
+	 * 
 	 * @param version
 	 * @param uncertaintyPropagation
 	 * @throws UncertaintyPropagationException
@@ -66,7 +69,7 @@ public class UCImpactPropagationAnalysis {
 	private static void calculatePropagation(UCArchitectureVersion version,
 			UncertaintyPropagation uncertaintyPropagation) throws UncertaintyPropagationException {
 
-		//Seed holds input data
+		// Seed holds input data
 		UCPropagationRulesSeed seed = version.getModificationMarkRepository().getSeedModifications();
 
 		caclulcatePropagationFromAffectedBasicComponentBehaviours(seed.getAffectedBasicComponentBehaviours(), version,
@@ -170,9 +173,10 @@ public class UCImpactPropagationAnalysis {
 		if (affectedComponentInterfaceTypes.isEmpty()) {
 			return;
 		}
-		throw new UncertaintyPropagationException(
-				"Currently no propagation supported from uncertainty impact at component interfaces types!");
 
+		PropagationFromAffectedComponentInterfaceType helper = new PropagationFromAffectedComponentInterfaceType(
+				version, uncertaintyPropagation);
+		helper.propagate(affectedComponentInterfaceTypes);
 	}
 
 	private static void caclulcatePropagationFromAffectedHardwareResources(
