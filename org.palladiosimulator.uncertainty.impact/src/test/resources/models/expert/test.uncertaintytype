@@ -20,6 +20,7 @@
   </uncertaintyTypes>
   <uncertaintyTypes id="_K6ybcDvjEeyKcZ3NE6_IOQ" name="Assignable_to_HardwareResource" assignableElementType="HARDWARE_RESOURCE">
     <impactOnElementTypes>COMMUNICATION_COMPONENT</impactOnElementTypes>
+    <impactOnElementTypes>COMPONENT_INSTANCE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_LIVvQDvjEeyKcZ3NE6_IOQ" name="Assignable_to_System">
     <impactOnElementTypes>SYSTEM_INTERFACE</impactOnElementTypes>

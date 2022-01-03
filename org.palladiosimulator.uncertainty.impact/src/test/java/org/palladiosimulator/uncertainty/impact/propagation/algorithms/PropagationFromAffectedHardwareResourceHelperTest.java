@@ -21,17 +21,17 @@ import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactE
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UncertaintyPropagation;
 import org.palladiosimulator.uncertaintymodel.plugin.TestBase;
 
-public class PropagationFromAffectedHardwareResourceHelperTest  extends TestBase{
-	
+public class PropagationFromAffectedHardwareResourceHelperTest extends TestBase {
+
 	@Test
-	public void testPropagation_uncertainty_at_hardware_resource()
+	public void testPropagation_uncertainty_at_hardware_resource_to_communication_components()
 			throws InitializePropagationException, UncertaintyTemplateElementNotFoundException,
 			PalladioElementNotFoundException, LoadModelFailedException, UncertaintyPropagationException {
 
 		/**
 		 * Assigned at bookStore.getBasicComponentBehaviour_home__Book_Shop_Web_Pages()
 		 * <br>
-		 * Impact on: SystemInterfaces
+		 * Impact on: CommunicationComponents
 		 * 
 		 */
 		Uncertainty uncertainty_at_hardware_resource = createUncertainty_Book_Store_at_hardware_resource();
@@ -115,6 +115,72 @@ public class PropagationFromAffectedHardwareResourceHelperTest  extends TestBase
 		// test impact on ICustomerConnector
 		testUCImpactEntityForSingleUncertainty(thirdImpact, bookStore.getCommunicationComponent_ICustomerConnector(),
 				List.of(thirdImpact_firstCausingUncertainty));
+
+	}
+
+	@Test
+	public void testPropagation_uncertainty_at_hardware_resource_to_component_instances()
+			throws InitializePropagationException, UncertaintyTemplateElementNotFoundException,
+			PalladioElementNotFoundException, LoadModelFailedException, UncertaintyPropagationException {
+
+		/**
+		 * Assigned at bookStore.getBasicComponentBehaviour_home__Book_Shop_Web_Pages()
+		 * <br>
+		 * Impact on: ComponentInstances
+		 * 
+		 */
+		Uncertainty uncertainty_at_hardware_resource = createUncertainty_Book_Store_at_hardware_resource();
+
+		UCArchitectureVersion version = initializePropagation(uncertainty_at_hardware_resource);
+		UCArchitectureVersion versionWithPropagationResults = UCImpactPropagationAnalysis
+				.runUncertaintyPropagationAnalysis(version);
+
+		// Execute propagation
+		UncertaintyPropagation uncertaintyPropagation = (UncertaintyPropagation) versionWithPropagationResults
+				.getModificationMarkRepository().getChangePropagationSteps().get(0);
+
+		assertNotNull(uncertaintyPropagation);
+
+		List<? extends UCImpactEntity<?>> affectedEntities = uncertaintyPropagation.getAffecteComponentInstances();
+		assertEquals(2, affectedEntities.size());
+
+		// Note: Wrong order due to conversion
+		UCImpactEntity<?> firstImpact = affectedEntities.get(1); // Assembly_BookShopWebPages
+		UCImpactEntity<?> secondImpact = affectedEntities.get(0); // Assembly_BookShopBusinessRules 
+
+		// ---------------------------------- Assembly_BookShopBusinessRules
+
+		List<Entity> firstImpact_firstCausingUncertainty_path = new ArrayList<>();
+		firstImpact_firstCausingUncertainty_path.add(bookStore.getHardwareResource_Web__Application_Server());
+		firstImpact_firstCausingUncertainty_path.add(bookStore
+				.getAllocationContext_Allocation_Assembly_Book_Shop_Business_Rules_Book_Shop_Business_Rules_Book_Shop_Business_Rules());
+		firstImpact_firstCausingUncertainty_path
+				.add(bookStore.getComponentInstance_Assembly_Book_Shop_Business_Rules_Book_Shop_Business_Rules());
+
+		CausingUncertainty firstImpact_firstCausingUncertainty = createTempCausingUncertainty(
+				uncertainty_at_hardware_resource, firstImpact_firstCausingUncertainty_path);
+
+	
+		// Test impact at Assembly_BookShopBusinessRules
+		testUCImpactEntityForSingleUncertainty(firstImpact,
+				bookStore.getComponentInstance_Assembly_Book_Shop_Business_Rules_Book_Shop_Business_Rules(),
+				List.of(firstImpact_firstCausingUncertainty));
+
+		// -------------------------- Assembly_BookShopWebPages
+
+		List<Entity> secondImpact_firstCausingUncertainty_path = new ArrayList<>();
+		secondImpact_firstCausingUncertainty_path.add(bookStore.getHardwareResource_Web__Application_Server());
+		secondImpact_firstCausingUncertainty_path.add(bookStore
+				.getAllocationContext_Allocation_Assembly_Book_Shop_Web_Pages_Book_Shop_Web_Pages_Book_Shop_Web_Pages());
+		secondImpact_firstCausingUncertainty_path
+				.add(bookStore.getComponentInstance_Assembly_Book_Shop_Web_Pages_Book_Shop_Web_Pages());
+
+		CausingUncertainty secondImpact_firstCausingUncertainty = createTempCausingUncertainty(
+				uncertainty_at_hardware_resource, secondImpact_firstCausingUncertainty_path);
+
+		// test impact on IBusinessConnector
+		testUCImpactEntityForSingleUncertainty(secondImpact, bookStore.getComponentInstance_Assembly_Book_Shop_Web_Pages_Book_Shop_Web_Pages(),
+				List.of(secondImpact_firstCausingUncertainty));
 
 	}
 

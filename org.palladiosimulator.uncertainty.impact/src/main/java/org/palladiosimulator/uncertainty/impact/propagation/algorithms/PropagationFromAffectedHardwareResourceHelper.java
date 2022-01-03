@@ -8,6 +8,8 @@ import org.palladiosimulator.pcm.allocation.AllocationContext;
 import org.palladiosimulator.pcm.core.composition.AssemblyConnector;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.entity.Entity;
+import org.palladiosimulator.pcm.repository.CompositeComponent;
+import org.palladiosimulator.pcm.repository.RepositoryComponent;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
 import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyPropagationException;
@@ -18,6 +20,7 @@ import org.palladiosimulator.uncertainty.impact.propagation.util.UncertaintyProp
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Uncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.CausingUncertainty;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtCommunicationComponents;
+import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactAtComponentInstance;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UCImpactEntity;
 import org.palladiosimulator.uncertainty.impact.uncertaintypropagation.UncertaintyPropagation;
 
@@ -44,6 +47,8 @@ public class PropagationFromAffectedHardwareResourceHelper extends AbstractPropa
 			switch (rule) {
 			case FROM_HARDWARE_RESOURCE_TO_COMMUNICATION_COMPONENT:
 				return propagateFromHardwareResourceToCommunicationComponents(uncertainty);
+			case FROM_HARDWARE_RESOURCE_TO_COMPONENT_INSTANCE:
+				return propagateFromHardwareResourceToComponentInstance(uncertainty);
 
 			default:
 				throw new UncertaintyPropagationException(
@@ -91,7 +96,7 @@ public class PropagationFromAffectedHardwareResourceHelper extends AbstractPropa
 
 		// Extract IDs of hardware resource and nested resources
 		List<ResourceContainer> hardwareResourceWithNestedResources = new ArrayList<>();
-		findNestedResourceContainers(hardwareResourceWithNestedResources, hardwareResource);
+		findNestedResourceContainersRecursively(hardwareResourceWithNestedResources, hardwareResource);
 		// We need to check against this set of IDs
 		List<String> nestedResourceContainerIDs = hardwareResourceWithNestedResources.stream()
 				.map(ResourceContainer::getId).collect(Collectors.toList());
@@ -128,6 +133,7 @@ public class PropagationFromAffectedHardwareResourceHelper extends AbstractPropa
 				if (nestedResourceContainerIDs.contains(allocatedHardwareResource.getId())) { // MATCH!
 					// Build path in reverse order!
 					List<Entity> path = new ArrayList<>();
+					// TODO add encapsulating resource containers
 					path.add(hardwareResource);
 					path.add(allocationContext);
 					path.add(assemblyContext);
@@ -155,16 +161,63 @@ public class PropagationFromAffectedHardwareResourceHelper extends AbstractPropa
 
 	}
 
+	/**
+	 * Algorithm: HardwareResource to ComponentInstances <br>
+	 * Workflow: <br>
+	 * <ul>
+	 * <li>Check for all allocation context if referenced resource container matches
+	 * the expected
+	 * <li>If yes: Extract referenced assembly context (=component instance)
+	 * </ul>
+	 * 
+	 * @param uncertainty
+	 * @return
+	 * @throws UncertaintyPropagationException
+	 */
+	private List<? extends UCImpactEntity<? extends Entity>> propagateFromHardwareResourceToComponentInstance(
+			Uncertainty uncertainty) throws UncertaintyPropagationException {
+
+		List<UCImpactAtComponentInstance> affectedComponentInstances = new ArrayList<>();
+
+		ResourceContainer hardwareResource = extractHardwareResource(uncertainty);
+
+		for (AllocationContext allocationContext : version.getAllocation().getAllocationContexts_Allocation()) {
+
+			if (allocationContext.getResourceContainer_AllocationContext().getId().equals(hardwareResource.getId())) {
+				List<Entity> path = new ArrayList<>();
+				path.add(hardwareResource);
+				path.add(allocationContext);
+				path.add(allocationContext.getAssemblyContext_AllocationContext());
+
+				CausingUncertainty causingUncertainty = UncertaintyPropagationFactoryHelper
+						.createCausingUncertainty(this.uncertaintyPropagation);
+				causingUncertainty.setCausingUncertainty(uncertainty);
+				causingUncertainty.getPath().addAll(path);
+
+				UCImpactAtComponentInstance ucImpact = UncertaintyPropagationFactoryHelper
+						.createUCImpactAtComponentInstance();
+				ucImpact.setAffectedElement(allocationContext.getAssemblyContext_AllocationContext());
+				ucImpact.getCausingElements().add(causingUncertainty);
+				ucImpact.setToolderived(true);
+
+				affectedComponentInstances.add(ucImpact);
+			}
+
+		}
+
+		return affectedComponentInstances;
+	}
+
 	/*
 	 * Resource Container might contain nested resource container.
 	 */
-	private void findNestedResourceContainers(List<ResourceContainer> resultList,
+	private void findNestedResourceContainersRecursively(List<ResourceContainer> resultList,
 			ResourceContainer resourceContainerToBeChecked) {
 
 		resultList.add(resourceContainerToBeChecked);
 		for (ResourceContainer nestedResourceContainer : resourceContainerToBeChecked
 				.getNestedResourceContainers__ResourceContainer()) {
-			findNestedResourceContainers(resultList, nestedResourceContainer);
+			findNestedResourceContainersRecursively(resultList, nestedResourceContainer);
 		}
 	}
 
