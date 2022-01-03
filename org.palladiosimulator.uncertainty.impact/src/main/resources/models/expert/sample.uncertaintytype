@@ -35,5 +35,6 @@
   </uncertaintyTypes>
   <uncertaintyTypes id="_MYM0oDvjEeyKcZ3NE6_IOQ" name="Assignable_to_UsageBehaviour" assignableElementType="USAGE_BEHAVIOUR">
     <resolvedBy href="sample.add#_fs_LQDWREeyX2v1Sswnu1Q"/>
+    <impactOnElementTypes>COMPONENT_INTERFACE_INSTANCE</impactOnElementTypes>
   </uncertaintyTypes>
 </uncertaintytype:UncertaintyTypeContainer>

@@ -183,14 +183,14 @@ public class PropagationFromAffectedSystemInterfaceHelper extends AbstractPropag
 					causingUncertainty.setCausingUncertainty(uncertainty);
 					causingUncertainty.getPath().addAll(local_path);
 
-					UCImpactAtComponentInterfaceType ucImpactAtSystemInterface = UncertaintyPropagationFactoryHelper
+					UCImpactAtComponentInterfaceType ucImpactAtComponentInterfaceType = UncertaintyPropagationFactoryHelper
 							.createUCImpactAtComponentInterfaceType();
-					ucImpactAtSystemInterface.setToolderived(true);
-					ucImpactAtSystemInterface.setAffectedElement(componentInterface);
-					ucImpactAtSystemInterface.getCausingElements().add(causingUncertainty);
+					ucImpactAtComponentInterfaceType.setToolderived(true);
+					ucImpactAtComponentInterfaceType.setAffectedElement(componentInterface);
+					ucImpactAtComponentInterfaceType.getCausingElements().add(causingUncertainty);
 
 					// Add to result set
-					affectedComponentInterfaceTypes.add(ucImpactAtSystemInterface);
+					affectedComponentInterfaceTypes.add(ucImpactAtComponentInterfaceType);
 				}
 
 			}

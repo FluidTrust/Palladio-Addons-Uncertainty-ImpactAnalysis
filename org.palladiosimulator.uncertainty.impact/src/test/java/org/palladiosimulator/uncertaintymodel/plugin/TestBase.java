@@ -310,7 +310,7 @@ public abstract class TestBase {
 			throws UncertaintyTemplateElementNotFoundException, PalladioElementNotFoundException {
 		return createUncertainty("uncertainty_at_usage_behaviour",
 				testTemplateLoader.getUncertaintyType_Assignable_to_UsageBehaviour(),
-				createElementWrapper(bookStore.getUsageBehaviour_Load_Images()));
+				createElementWrapper(bookStore.getUsageBehaviour_Browse_Books()));
 
 	}
 

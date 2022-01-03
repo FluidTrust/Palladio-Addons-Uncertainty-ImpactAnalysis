@@ -59,7 +59,7 @@ public class PalladioModelsLookupHelper {
 		 * Special handling necessary ->
 		 * (palladioElementTypeFactoryHelper.createBasicComponentBehaviour()) as
 		 * ResourceDemandingSEFF does not extend Entity -> Need to encapsulate in newly
-		 * create type BasicComponentBehaviour whcih extends from Entity
+		 * create type BasicComponentBehaviour which extends from Entity
 		 * 
 		 */
 		return getAllBasicComponentTypeEntities(repository).stream()
@@ -179,12 +179,12 @@ public class PalladioModelsLookupHelper {
 		validate(repository);
 		List<Role> roles = new ArrayList<>();
 
-		roles.addAll(
-				repository.getComponents__Repository().stream().map(InterfaceProvidingEntity::getProvidedRoles_InterfaceProvidingEntity)
-						.flatMap(List::stream).collect(Collectors.toList()));
-		roles.addAll(
-				repository.getComponents__Repository().stream().map(InterfaceRequiringEntity::getRequiredRoles_InterfaceRequiringEntity)
-						.flatMap(List::stream).collect(Collectors.toList()));
+		roles.addAll(repository.getComponents__Repository().stream()
+				.map(InterfaceProvidingEntity::getProvidedRoles_InterfaceProvidingEntity).flatMap(List::stream)
+				.collect(Collectors.toList()));
+		roles.addAll(repository.getComponents__Repository().stream()
+				.map(InterfaceRequiringEntity::getRequiredRoles_InterfaceRequiringEntity).flatMap(List::stream)
+				.collect(Collectors.toList()));
 		return roles;
 	}
 
@@ -380,9 +380,8 @@ public class PalladioModelsLookupHelper {
 			throws PalladioElementNotFoundException {
 		validate(system);
 
-		return system.getConnectors__ComposedStructure().stream()
-				.filter(ProvidedDelegationConnector.class::isInstance).map(ProvidedDelegationConnector.class::cast)
-				.collect(Collectors.toList());
+		return system.getConnectors__ComposedStructure().stream().filter(ProvidedDelegationConnector.class::isInstance)
+				.map(ProvidedDelegationConnector.class::cast).collect(Collectors.toList());
 	}
 
 	/*
@@ -395,9 +394,16 @@ public class PalladioModelsLookupHelper {
 			throws PalladioElementNotFoundException {
 		validate(system);
 
-		return system.getConnectors__ComposedStructure().stream()
-				.filter(RequiredDelegationConnector.class::isInstance).map(RequiredDelegationConnector.class::cast)
-				.collect(Collectors.toList());
+		return system.getConnectors__ComposedStructure().stream().filter(RequiredDelegationConnector.class::isInstance)
+				.map(RequiredDelegationConnector.class::cast).collect(Collectors.toList());
+	}
+
+	public static ComponentInterfaceInstance getComponentInterfaceInstanceEntityByAssemblyContextAndRole(System system,
+			AssemblyContext assemblyContext, Role role) throws PalladioElementNotFoundException {
+
+		String id = assemblyContext.getId() + "$" + role.getId();
+
+		return getComponentInterfaceInstanceEntityById(system, id);
 	}
 
 }
