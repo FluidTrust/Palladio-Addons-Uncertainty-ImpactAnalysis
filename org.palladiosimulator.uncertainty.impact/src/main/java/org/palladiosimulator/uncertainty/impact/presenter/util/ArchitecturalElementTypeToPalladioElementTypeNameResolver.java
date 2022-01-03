@@ -1,10 +1,11 @@
 package org.palladiosimulator.uncertainty.impact.presenter.util;
 
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
+
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 
 /**
  * Utility class to "translate" ArchitecturalElementTypes in Palladio-related

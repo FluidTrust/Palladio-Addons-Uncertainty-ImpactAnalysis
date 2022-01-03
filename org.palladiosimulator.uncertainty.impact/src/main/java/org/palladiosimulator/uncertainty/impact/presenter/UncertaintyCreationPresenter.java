@@ -10,12 +10,12 @@ import org.palladiosimulator.uncertainty.impact.model.api.IPalladioModel;
 import org.palladiosimulator.uncertainty.impact.model.api.IUncertaintyTemplateModel;
 import org.palladiosimulator.uncertainty.impact.presenter.api.IUncertaintyCreationPresenter;
 import org.palladiosimulator.uncertainty.impact.presenter.util.ModelToViewModelConverter;
+import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.UncertaintyType;
 import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyCreationView;
 import org.palladiosimulator.uncertainty.impact.view.listener.api.IUncertaintyCreationViewListener;
 import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
-import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype.ArchitecturalElementTypes;
 /**
  * MVP-related presenter for views of type {@link IUncertaintyCreationView}.
  * Implements {@link IUncertaintyCreationViewListener} to be capable to listen

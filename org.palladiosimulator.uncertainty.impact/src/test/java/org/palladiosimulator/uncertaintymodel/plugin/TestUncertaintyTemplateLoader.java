@@ -1,5 +1,6 @@
 package org.palladiosimulator.uncertaintymodel.plugin;
 
+import org.palladiosimulator.evaluation.generator.PalladioModelConvenienceMethodGenerator;
 import org.palladiosimulator.uncertainty.impact.exception.LoadModelFailedException;
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyTemplateElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.model.UncertaintyTemplateModel;

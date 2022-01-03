@@ -151,7 +151,7 @@ public class ModelToViewModelConverter {
 	public static PalladioElementViewModel convertPalladioElementToPalladioElementViewModel(Entity entity) {
 		PalladioElementViewModel viewModel = new PalladioElementViewModel();
 		viewModel.setId(entity.getId());
-		viewModel.setName(entity.getEntityName());
+		viewModel.setName(extractEntityName(entity));
 
 		return viewModel;
 	}
@@ -167,6 +167,37 @@ public class ModelToViewModelConverter {
 			List<? extends Entity> entities) {
 		return entities.stream().map(ModelToViewModelConverter::convertPalladioElementToPalladioElementViewModel)
 				.collect(Collectors.toList());
+	}
+	
+	/*
+	 * We want to have more specific information for entities: Add the actual
+	 * type.
+	 */
+	private static String extractEntityName(Entity entity) {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append(entity.getEntityName()); // Name of affectedElement
+		sb.append(" (");
+		sb.append(entity.getId()); // Id of affectedElement
+		sb.append(")");
+		sb.append(": ");
+		sb.append(getEntityClassName(entity)); // Add class name
+
+		return sb.toString();
+	}
+
+	/**
+	 * Palladio types are always named/should always be named: "xyImpl" <br>
+	 * Remove Impl!
+	 * @param entity
+	 * @return
+	 */
+	private static String getEntityClassName(Entity entity) {
+		String className = entity.getClass().getSimpleName();
+		if(className.endsWith("Impl")) {
+			return entity.getClass().getSimpleName().substring(0, className.length() - 4);
+		}
+		return className;
 	}
 
 }

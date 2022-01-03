@@ -18,9 +18,9 @@ import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.Text;
-import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyCreationView;
 import org.palladiosimulator.uncertainty.impact.view.api.IDisplayUncertaintyPropagationResultView;
 import org.palladiosimulator.uncertainty.impact.view.api.IDisplayUncertaintyTypeInfoView;
+import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyCreationView;
 import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyView;
 import org.palladiosimulator.uncertainty.impact.view.listener.api.IUncertaintyViewListener;
 import org.palladiosimulator.uncertainty.impact.view.model.PalladioElementViewModel;
@@ -475,7 +475,7 @@ public class UncertaintyView extends AbstractView implements IUncertaintyView {
 				UncertaintyViewModel uncertaintyViewModel = (UncertaintyViewModel) element;
 
 				PalladioElementViewModel palladioElement = uncertaintyViewModel.getAssignedElement();
-				return palladioElement.getName() + " (" + palladioElement.getId() + ")";
+				return palladioElement.getName();
 
 			}
 

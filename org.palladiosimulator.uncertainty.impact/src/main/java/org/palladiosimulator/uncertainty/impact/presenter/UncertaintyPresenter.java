@@ -31,7 +31,6 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype
 import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyView;
 import org.palladiosimulator.uncertainty.impact.view.listener.api.IUncertaintyViewListener;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyPropagationResultViewModel;
-import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyTypeViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyViewModel;
 
 /**
