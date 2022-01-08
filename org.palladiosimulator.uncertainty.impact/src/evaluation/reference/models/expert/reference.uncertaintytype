@@ -36,7 +36,6 @@
     <impactOnElementTypes>COMPONENT_INTERFACE_TYPE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_yfYtEGx1EeyrFeTi1UGh_g" name="What is the user behavior?" location="INPUT" manageability="PARTIAL_REDUCIBLE" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="RUN_TIME" assignableElementType="USAGE_BEHAVIOUR">
-    <resolvedBy href="reference.add#_jDxaEGu5Eeyb24aCBR-a3Q"/>
     <impactOnElementTypes>COMPONENT_INTERFACE_INSTANCE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_fn5-0Gx3EeyrFeTi1UGh_g" name="What data is entered?" location="INPUT" informationAvailability="RECOGNIZED_IGNORANCE" manageability="PARTIAL_REDUCIBLE" severityOfImpact="LOW" resolutionTime="RUN_TIME" assignableElementType="SYSTEM_INTERFACE">

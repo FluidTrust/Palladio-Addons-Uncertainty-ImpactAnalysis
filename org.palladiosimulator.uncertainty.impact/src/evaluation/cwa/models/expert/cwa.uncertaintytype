@@ -74,4 +74,7 @@
   <uncertaintyTypes id="_wZcQcGpVEeyp9od8Nz5fnw" name="Is the data anonymized?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="BASIC_COMPONENT_TYPE">
     <resolvedBy href="cwa.add#_a9WZwGo-Eeyp9od8Nz5fnw"/>
   </uncertaintyTypes>
+  <uncertaintyTypes id="_oYXwwHBaEeywLb6LaI0O3Q" name="Where is data processed?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="HARDWARE_RESOURCE">
+    <resolvedBy href="cwa.add#_8uNzkGo7Eeyp9od8Nz5fnw"/>
+  </uncertaintyTypes>
 </uncertaintytype:UncertaintyTypeContainer>
