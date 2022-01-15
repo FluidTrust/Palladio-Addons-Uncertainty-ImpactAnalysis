@@ -17,7 +17,7 @@
     <resolvedBy href="cwa.add#_2h1w4Go7Eeyp9od8Nz5fnw"/>
     <impactOnElementTypes>HARDWARE_RESOURCE</impactOnElementTypes>
   </uncertaintyTypes>
-  <uncertaintyTypes id="_YUWk8GpDEeyp9od8Nz5fnw" name="Is the persisted data confidential?" assignableElementType="BASIC_COMPONENT_TYPE"/>
+  <uncertaintyTypes id="_YUWk8GpDEeyp9od8Nz5fnw" name="Is the data to be persisted confidential?" assignableElementType="BASIC_COMPONENT_TYPE"/>
   <uncertaintyTypes id="_vlSU0GpDEeyp9od8Nz5fnw" name="What data is entered?" location="INPUT" informationAvailability="RECOGNIZED_IGNORANCE" manageability="PARTIAL_REDUCIBLE" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" assignableElementType="SYSTEM_INTERFACE">
     <resolvedBy href="cwa.add#_51Z98Go8Eeyp9od8Nz5fnw"/>
   </uncertaintyTypes>
@@ -50,7 +50,7 @@
   <uncertaintyTypes id="_2OtRIGpJEeyp9od8Nz5fnw" name="What kind of storage is used?" location="SYSTEM_ENVIRONMENT" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="HARDWARE_RESOURCE">
     <resolvedBy href="cwa.add#_36ALwGo9Eeyp9od8Nz5fnw"/>
   </uncertaintyTypes>
-  <uncertaintyTypes id="_BPnZ0GpKEeyp9od8Nu8gt" name="Which authentication mechanisms are chosen?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="COMPONENT_INTERFACE_TYPE">
+  <uncertaintyTypes id="_BPnZ0GpKEeyp9od8Nu8gt" name="Which authentication mechanisms are used?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="COMPONENT_INTERFACE_TYPE">
     <resolvedBy href="cwa.add#_8KRHEGo9Eeyp9od8Nz5fnw"/>
     <impactOnElementTypes>SYSTEM_INTERFACE</impactOnElementTypes>
   </uncertaintyTypes>
