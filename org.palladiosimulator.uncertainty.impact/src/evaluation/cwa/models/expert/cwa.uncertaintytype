@@ -3,11 +3,15 @@
   <uncertaintyTypes id="_nYW3AGpAEeyp9od8Nz5fnw" name="What is the distribution?" location="SYSTEM_ENVIRONMENT" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" resolutionTime="DEPLOYMENT_TIME" assignableElementType="HARDWARE_RESOURCE">
     <resolvedBy href="cwa.add#_Vn290GbzEeyZX8-bSemQ7Q"/>
     <impactOnElementTypes>COMPONENT_INSTANCE</impactOnElementTypes>
+    <impactOnElementTypes>COMMUNICATION_COMPONENT</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_3THtwGpEEeyp9od8Nz5fnw" name="What is the structure of the interface?" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="COMPONENT_INTERFACE_TYPE">
     <resolvedBy href="cwa.add#_OdPkoGo9Eeyp9od8Nz5fnw"/>
   </uncertaintyTypes>
-  <uncertaintyTypes id="_1ajUgGpCEeyp9od8Nz5fnw" name="Where is data persisted?"/>
+  <uncertaintyTypes id="_1ajUgGpCEeyp9od8Nz5fnw" name="Where is data persisted?" assignableElementType="HARDWARE_RESOURCE">
+    <impactOnElementTypes>COMMUNICATION_COMPONENT</impactOnElementTypes>
+    <impactOnElementTypes>COMPONENT_INSTANCE</impactOnElementTypes>
+  </uncertaintyTypes>
   <uncertaintyTypes id="_4t3U0GpBEeyp9od8Nz5fnw" name="Correct Design for secure Architecture?" informationAvailability="RECOGNIZED_IGNORANCE" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" resolutionTime="NEVER"/>
   <uncertaintyTypes id="_IGazMGpCEeyp9od8Nz5fnw" name="What data is persisted?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="BASIC_COMPONENT_TYPE">
     <resolvedBy href="cwa.add#_bGxi4Go7Eeyp9od8Nz5fnw"/>
@@ -16,10 +20,12 @@
   <uncertaintyTypes id="_b3P5YGpCEeyp9od8Nz5fnw" name="How is data persisted?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" rootCause="MISSING_INFORMATION" assignableElementType="BASIC_COMPONENT_TYPE">
     <resolvedBy href="cwa.add#_2h1w4Go7Eeyp9od8Nz5fnw"/>
     <impactOnElementTypes>HARDWARE_RESOURCE</impactOnElementTypes>
+    <impactOnElementTypes>COMMUNICATION_COMPONENT</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_YUWk8GpDEeyp9od8Nz5fnw" name="Is the data to be persisted confidential?" assignableElementType="BASIC_COMPONENT_TYPE"/>
   <uncertaintyTypes id="_vlSU0GpDEeyp9od8Nz5fnw" name="What data is entered?" location="INPUT" informationAvailability="RECOGNIZED_IGNORANCE" manageability="PARTIAL_REDUCIBLE" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" assignableElementType="SYSTEM_INTERFACE">
     <resolvedBy href="cwa.add#_51Z98Go8Eeyp9od8Nz5fnw"/>
+    <impactOnElementTypes>COMPONENT_INSTANCE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_myxg4GpEEeyp9od8Nz5fnw" name="What data is provided?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="SYSTEM_INTERFACE">
     <resolvedBy href="cwa.add#_AaYG0Go9Eeyp9od8Nz5fnw"/>
@@ -29,20 +35,23 @@
   </uncertaintyTypes>
   <uncertaintyTypes id="_jL91cGpIEeyp9od8Nz5fnw" name="How long is data bein stored?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="RUN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="BASIC_COMPONENT_TYPE">
     <resolvedBy href="cwa.add#_XbvwsGo9Eeyp9od8Nz5fnw"/>
+    <impactOnElementTypes>HARDWARE_RESOURCE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_vvFXwGpIEeyp9od8Nz5fnw" name="How is user identification performed?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="SYSTEM_INTERFACE">
     <resolvedBy href="cwa.add#_dgN0kGo9Eeyp9od8Nz5fnw"/>
   </uncertaintyTypes>
   <uncertaintyTypes id="_8FOOAGpIEeyp9od8Nz5fnw" name="How is communicated?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="COMMUNICATION_COMPONENT">
     <resolvedBy href="cwa.add#_hcEmIGo9Eeyp9od8Nz5fnw"/>
+    <impactOnElementTypes>HARDWARE_RESOURCE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_Pz1tsGpJEeyp9od8Nz5fnw" name="Is communication intercepted?" location="SYSTEM_ENVIRONMENT" informationAvailability="RECOGNIZED_IGNORANCE" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="RUN_TIME" assignableElementType="COMMUNICATION_COMPONENT"/>
   <uncertaintyTypes id="_ap8UkGpJEeyp9od8Nz5fnw" name="Is data manipulated?" informationAvailability="RECOGNIZED_IGNORANCE" nature="EPISTEMIC" resolutionTime="RUN_TIME" assignableElementType="COMMUNICATION_COMPONENT">
     <impactOnElementTypes>COMPONENT_INTERFACE_INSTANCE</impactOnElementTypes>
     <impactOnElementTypes>COMPONENT_INSTANCE</impactOnElementTypes>
   </uncertaintyTypes>
-  <uncertaintyTypes id="_ihBlkGpJEeyp9od8Nz5fnw" name="Is data separation performed?">
+  <uncertaintyTypes id="_ihBlkGpJEeyp9od8Nz5fnw" name="Is data separation performed?" assignableElementType="COMPONENT_INSTANCE">
     <resolvedBy href="cwa.add#_qq8wgGo9Eeyp9od8Nz5fnw"/>
+    <impactOnElementTypes>COMMUNICATION_COMPONENT</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_osCWUGpJEeyp9od8Nz5fnw" name="What data is logged?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="BASIC_COMPONENT_TYPE">
     <resolvedBy href="cwa.add#_uIEXoGo9Eeyp9od8Nz5fnw"/>
@@ -56,6 +65,7 @@
   </uncertaintyTypes>
   <uncertaintyTypes id="_s6r2IGpLEeyp9od8Nz5fnw" name="Which UI Pattern is used?" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="NONE" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION">
     <resolvedBy href="cwa.add#_AJYA8Go-Eeyp9od8Nz5fnw"/>
+    <impactOnElementTypes>SYSTEM_INTERFACE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_7mFTkGpLEeyp9od8Nz5fnw" name="Which component is chosen?" informationAvailability="SCENARIO_UNCERTAINTY" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION">
     <resolvedBy href="cwa.add#_GgD2MGo-Eeyp9od8Nz5fnw"/>
@@ -76,5 +86,6 @@
   </uncertaintyTypes>
   <uncertaintyTypes id="_oYXwwHBaEeywLb6LaI0O3Q" name="Where is data processed?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="HARDWARE_RESOURCE">
     <resolvedBy href="cwa.add#_8uNzkGo7Eeyp9od8Nz5fnw"/>
+    <impactOnElementTypes>COMMUNICATION_COMPONENT</impactOnElementTypes>
   </uncertaintyTypes>
 </uncertaintytype:UncertaintyTypeContainer>
