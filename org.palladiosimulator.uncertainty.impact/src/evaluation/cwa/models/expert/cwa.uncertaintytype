@@ -77,6 +77,8 @@
   <uncertaintyTypes id="_JLDlYGpVEeyp9od8Nz5fnw" name="Are SQL Injection performed?" location="INPUT" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="RUN_TIME" assignableElementType="USAGE_BEHAVIOUR"/>
   <uncertaintyTypes id="_d0fukGpVEeyp9od8Nz5fnw" name="Where is deployed?" location="SYSTEM_ENVIRONMENT" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" resolutionTime="DEPLOYMENT_TIME" assignableElementType="HARDWARE_RESOURCE">
     <resolvedBy href="cwa.add#_PzGu4Go-Eeyp9od8Nz5fnw"/>
+    <impactOnElementTypes>COMMUNICATION_COMPONENT</impactOnElementTypes>
+    <impactOnElementTypes>COMPONENT_INSTANCE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_ojdLoGpVEeyp9od8Nz5fnw" name="Is virtualization used?" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" resolutionTime="DEPLOYMENT_TIME" assignableElementType="HARDWARE_RESOURCE">
     <resolvedBy href="cwa.add#_WkyeEGo-Eeyp9od8Nz5fnw"/>
