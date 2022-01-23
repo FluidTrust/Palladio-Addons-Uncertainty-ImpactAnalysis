@@ -58,8 +58,9 @@ public class PropagationFromAffectedSystemInterfaceHelperTest extends TestBase {
 				.add(bookStore.getDelegationConnector_Provided_IBowseBooks_Delegation());
 		firstImpact_firstCausingUncertainty_path
 				.add(bookStore.getComponentInstance_Assembly_Book_Shop_Web_Pages_Book_Shop_Web_Pages());
-		firstImpact_firstCausingUncertainty_path.add(bookStore.getBasicComponentType_Book_Shop_Web_Pages());
 		firstImpact_firstCausingUncertainty_path.add(bookStore.getComponentInterfaceType_Provided_IBrowseBooks());
+		firstImpact_firstCausingUncertainty_path.add(bookStore.getBasicComponentType_Book_Shop_Web_Pages());
+		
 
 		CausingUncertainty firstImpact_firstCausingUncertainty = createTempCausingUncertainty(
 				uncertainty_at_basic_component_behaviour, firstImpact_firstCausingUncertainty_path);

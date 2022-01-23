@@ -174,8 +174,8 @@ public class PropagationFromAffectedSystemInterfaceHelper extends AbstractPropag
 
 				if (componentInterface.getId().equals(expectedInterface.getId())) { // MATCH!
 					List<Entity> local_path = new LinkedList<>(incompletePath);
-					local_path.add(basicComponent);
 					local_path.add(componentInterface);
+					local_path.add(basicComponent);
 
 					// Create UCImpactAtSystemInterface with encapsulated CausingUncertainty
 					CausingUncertainty causingUncertainty = UncertaintyPropagationFactoryHelper
