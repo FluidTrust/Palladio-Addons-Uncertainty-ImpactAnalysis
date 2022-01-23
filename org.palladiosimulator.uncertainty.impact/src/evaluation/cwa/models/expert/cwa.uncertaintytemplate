@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uncertaintytemplate:UncertaintyTemplate xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uncertaintytemplate="http://www.example.org/uncertaintyTemplate">
+  <addContainer href="cwa.add#/"/>
+  <uncertaintyTypeContainer href="cwa.uncertaintytype#/"/>
+</uncertaintytemplate:UncertaintyTemplate>

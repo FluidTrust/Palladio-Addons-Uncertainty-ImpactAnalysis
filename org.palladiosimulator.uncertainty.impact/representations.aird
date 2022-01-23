@@ -64,6 +64,7 @@
     <semanticResources>src/evaluation/reference/models/expert/reference.add</semanticResources>
     <semanticResources>src/evaluation/reference/models/expert/reference.uncertaintytype</semanticResources>
     <semanticResources>src/main/resources/models/user/modified/temp.uncertaintypropagation</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/expert/cwa.uncertaintytemplate</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Q5JEYFqcEeyjS5hmr-doJA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Q6FfkFqcEeyjS5hmr-doJA" name="new UsageModel Diagram" repPath="#_Q5jUEFqcEeyjS5hmr-doJA" changeId="374716ff-dbb0-46b8-b122-aa74377f508c">

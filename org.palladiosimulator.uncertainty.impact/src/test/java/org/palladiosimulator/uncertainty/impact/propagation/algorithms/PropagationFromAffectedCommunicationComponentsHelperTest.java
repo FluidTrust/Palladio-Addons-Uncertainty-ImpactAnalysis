@@ -52,6 +52,7 @@ public class PropagationFromAffectedCommunicationComponentsHelperTest extends Te
 
 		List<Entity> firstImpact_firstCausingUncertainty_path = new ArrayList<>();
 		firstImpact_firstCausingUncertainty_path.add(bookStore.getCommunicationComponent_IBusinessConnector());
+		firstImpact_firstCausingUncertainty_path.add(bookStore.getComponentInterfaceType_Provided_IBusiness());
 		firstImpact_firstCausingUncertainty_path
 				.add(bookStore.getComponentInstance_Assembly_Book_Shop_Business_Rules_Book_Shop_Business_Rules());
 		firstImpact_firstCausingUncertainty_path.add(bookStore
@@ -63,6 +64,9 @@ public class PropagationFromAffectedCommunicationComponentsHelperTest extends Te
 
 		List<Entity> secondImpact_secondCausingUncertainty_path = new ArrayList<>();
 		secondImpact_secondCausingUncertainty_path.add(bookStore.getCommunicationComponent_IBusinessConnector());
+		
+		secondImpact_secondCausingUncertainty_path.add(bookStore.getComponentInterfaceType_RequiredIBusiness());
+
 		secondImpact_secondCausingUncertainty_path
 				.add(bookStore.getComponentInstance_Assembly_Book_Shop_Web_Pages_Book_Shop_Web_Pages());
 		secondImpact_secondCausingUncertainty_path.add(bookStore

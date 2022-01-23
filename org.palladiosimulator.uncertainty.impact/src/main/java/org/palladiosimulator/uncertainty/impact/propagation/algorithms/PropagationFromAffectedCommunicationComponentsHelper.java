@@ -7,6 +7,7 @@ import org.palladiosimulator.pcm.allocation.AllocationContext;
 import org.palladiosimulator.pcm.core.composition.AssemblyConnector;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.entity.Entity;
+import org.palladiosimulator.pcm.repository.Role;
 import org.palladiosimulator.pcm.resourceenvironment.ResourceContainer;
 import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyPropagationException;
@@ -81,38 +82,72 @@ public class PropagationFromAffectedCommunicationComponentsHelper extends Abstra
 		List<UCImpactAtHardwareResource> affectedHardwareResources = new ArrayList<>();
 
 		AssemblyConnector communicationComponent = extractCommunicationComponent(uncertainty);
-		List<AssemblyContext> assemblyContexts = new ArrayList<>();
-		assemblyContexts.add(communicationComponent.getProvidingAssemblyContext_AssemblyConnector());
-		assemblyContexts.add(communicationComponent.getRequiringAssemblyContext_AssemblyConnector());
+		
+		//TODO refactor method!
+		
+		//Create path for providing role
+		AssemblyContext providingAssemblyContext = communicationComponent.getProvidingAssemblyContext_AssemblyConnector();
+		Role providingRole = communicationComponent.getProvidedRole_AssemblyConnector();
+		AllocationContext providingAllocationContext = PalladioModelsLookupHelper
+				.getAllocationContextForGivenAssemblyContext(version.getAllocation(), providingAssemblyContext);
+		ResourceContainer providingHardwareResource = providingAllocationContext.getResourceContainer_AllocationContext();
+		
+		
+		List<Entity> providingPath = new ArrayList<>();
+		providingPath.add(communicationComponent);
+		providingPath.add(providingRole);
+		providingPath.add(providingAssemblyContext);
+		providingPath.add(providingAllocationContext);
+		providingPath.add(providingHardwareResource);
+		
+		
+		
+		CausingUncertainty providingCausingUncertainty = UncertaintyPropagationFactoryHelper
+				.createCausingUncertainty(this.uncertaintyPropagation);
+		providingCausingUncertainty.setCausingUncertainty(uncertainty);
+		providingCausingUncertainty.getPath().addAll(providingPath);
 
-		for (AssemblyContext assemblyContext : assemblyContexts) {
+		UCImpactAtHardwareResource providingUCImpact = UncertaintyPropagationFactoryHelper
+				.createUCImpactAtHardwareResource();
+		providingUCImpact.setAffectedElement(providingHardwareResource);
+		providingUCImpact.getCausingElements().add(providingCausingUncertainty);
+		providingUCImpact.setToolderived(true);
+		
+		
+		//Create path for requiring role
+		AssemblyContext requiredAssemblyContext = communicationComponent.getRequiringAssemblyContext_AssemblyConnector();
+		Role requiringRole = communicationComponent.getRequiredRole_AssemblyConnector();
+		AllocationContext requiringAllocationContext = PalladioModelsLookupHelper
+				.getAllocationContextForGivenAssemblyContext(version.getAllocation(), requiredAssemblyContext);
+		ResourceContainer requiringHardwareResource = requiringAllocationContext.getResourceContainer_AllocationContext();
+		
+		
+		List<Entity> requiringPath = new ArrayList<>(); 
+		requiringPath.add(communicationComponent);
+		requiringPath.add(requiringRole);
+		requiringPath.add(requiredAssemblyContext);
+		requiringPath.add(requiringAllocationContext);
+		requiringPath.add(requiringHardwareResource);
+		
+		
+		
+		CausingUncertainty requiringCausingUncertainty = UncertaintyPropagationFactoryHelper
+				.createCausingUncertainty(this.uncertaintyPropagation);
+		requiringCausingUncertainty.setCausingUncertainty(uncertainty);
+		requiringCausingUncertainty.getPath().addAll(requiringPath);
 
-			AllocationContext allocationContext = PalladioModelsLookupHelper
-					.getAllocationContextForGivenAssemblyContext(version.getAllocation(), assemblyContext);
+		UCImpactAtHardwareResource requiringUCImpact = UncertaintyPropagationFactoryHelper
+				.createUCImpactAtHardwareResource();
+		requiringUCImpact.setAffectedElement(requiringHardwareResource);
+		requiringUCImpact.getCausingElements().add(requiringCausingUncertainty);
+		requiringUCImpact.setToolderived(true);
 
-			ResourceContainer hardwareResource = allocationContext.getResourceContainer_AllocationContext();
-
-			List<Entity> path = new ArrayList<>();
-			path.add(communicationComponent);
-			path.add(assemblyContext);
-			path.add(allocationContext);
-			path.add(hardwareResource);
-
-			CausingUncertainty causingUncertainty = UncertaintyPropagationFactoryHelper
-					.createCausingUncertainty(this.uncertaintyPropagation);
-			causingUncertainty.setCausingUncertainty(uncertainty);
-			causingUncertainty.getPath().addAll(path);
-
-			UCImpactAtHardwareResource ucImpact = UncertaintyPropagationFactoryHelper
-					.createUCImpactAtHardwareResource();
-			ucImpact.setAffectedElement(hardwareResource);
-			ucImpact.getCausingElements().add(causingUncertainty);
-			ucImpact.setToolderived(true);
-
-			affectedHardwareResources.add(ucImpact);
-
-		}
-
+		
+		
+		
+		affectedHardwareResources.add(providingUCImpact);
+		affectedHardwareResources.add(requiringUCImpact);
+		
 		return affectedHardwareResources;
 
 	}
