@@ -57,7 +57,7 @@ public class ViewFactory {
 	
 	
 	/**
-	 * Create composite for parent with given number of Columns and given span. Alignment is "H_Align_Gill)
+	 * Create composite for parent with given number of Columns and given span. Alignment is "H_Align_Fill)
 	 * @param parent
 	 * @param colNumber
 	 * @param hSpan
@@ -88,6 +88,10 @@ public class ViewFactory {
 		GridData data = new GridData(SWT.FILL, SWT.FILL, true, true);
 		data.heightHint = 500;
 		sc.setLayoutData(data);
+		
+		GridLayout layout = new GridLayout();
+		sc.setLayout(layout);
+		
 		return sc;
 	}
 	

@@ -1,13 +1,19 @@
 package org.palladiosimulator.uncertainty.impact.view;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.Shell;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyPropagationResultViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyPropagationResultViewModel.UCImpactUncertaintyAffectedElementViewModel;
@@ -23,7 +29,7 @@ import org.palladiosimulator.uncertainty.impact.view.util.ViewFactory;
  */
 public class DisplayUncertaintyPropagationResultViewDialog extends TitleAreaDialog {
 
-	private List<UncertaintyPropagationResultViewModel> uncertaintyPropagationResultViewModels;
+	private final List<UncertaintyPropagationResultViewModel> uncertaintyPropagationResultViewModels;
 
 	public DisplayUncertaintyPropagationResultViewDialog(Shell parentShell,
 			List<UncertaintyPropagationResultViewModel> uncertaintyPropagationResultViewModels) {
@@ -42,32 +48,137 @@ public class DisplayUncertaintyPropagationResultViewDialog extends TitleAreaDial
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
+		
+		Composite innerParentComposite = ViewFactory.createComposite(parent, 1, 1);
 
 		/*
-		 * Propagation result might exceed screen size -> wrap with scrollable
-		 * composite.
+		 *Composite that holds buttons for assessment purposes 
 		 */
-		ScrolledComposite sc = ViewFactory.createScrolledComposite(parent);
+		Composite buttonComposite = ViewFactory.createComposite(innerParentComposite, 3, 1);
+		fillButtonComposite(buttonComposite);
+		
 
+
+		// Set content
+		setPropagationContent(innerParentComposite,  uncertaintyPropagationResultViewModels);
+
+		return parent;
+	}
+	
+	private void fillButtonComposite(Composite parent) {
+		
+		
+		ViewFactory.createLabel(parent, "Uncertainty Assessment: ");
+		
+		Button sortButton = ViewFactory.createButton(parent, "Sort (Amount of Affected Element)", new GridData(GridData.HORIZONTAL_ALIGN_BEGINNING));
+
+		Button restoreDefaultButton = ViewFactory.createButton(parent, "Restore Default", new GridData(GridData.HORIZONTAL_ALIGN_BEGINNING));
+
+		
+
+
+		sortButton.addListener(SWT.Selection, new Listener() {
+
+			@Override
+			public void handleEvent(Event event) {
+				switch (event.type) {
+				case SWT.Selection:
+					setPropagationContent(parent, sortResultAccordingToAmountOfAffectedElements(uncertaintyPropagationResultViewModels));
+					break;
+				}
+
+			}
+
+		});
+		
+		
+		restoreDefaultButton.addListener(SWT.Selection, new Listener() {
+
+			@Override
+			public void handleEvent(Event event) {
+				switch (event.type) {
+				case SWT.Selection:
+					setPropagationContent(parent, uncertaintyPropagationResultViewModels);
+					break;
+				}
+
+			}
+
+		});
+	}
+	
+	
+	
+
+	private List<UncertaintyPropagationResultViewModel> sortResultAccordingToAmountOfAffectedElements(
+			List<UncertaintyPropagationResultViewModel> listToBeSorted) {
+		
+		
+		 List<UncertaintyPropagationResultViewModel> result = new ArrayList<>(listToBeSorted);
+		 
+		 Collections.sort(result, (a ,b) ->  Integer.compare(b.getAffectedElements().size(), a.getAffectedElements().size()));
+		 
+		 
+		 return result;
+		
+		
+
+	}
+
+	private void setPropagationContent(Composite parent, 
+			List<UncertaintyPropagationResultViewModel> localUncertaintyPropagationResultViewModels) {
+
+		
+		ScrolledComposite sc = null;
+		
+		for(Control child : parent.getParent().getChildren()) {
+			
+			if(child instanceof ScrolledComposite) {
+				sc = (ScrolledComposite)child;
+			}
+		}
+		
+		
+		if(sc == null) {
+			sc = ViewFactory.createScrolledComposite(parent);
+		}
+		
+		
+		if(sc.getContent()!=null) {
+			Composite comp = (Composite) sc.getContent();
+			
+			
+			for(Control child : comp.getChildren()) {
+				child.dispose();
+			}
+			sc.getContent().dispose();
+		}
+		
+		
 		Composite propagationResultComposite = ViewFactory.createDialogComposite(sc);
-
 		// Set scrollable content (= propagation results)
 		sc.setContent(propagationResultComposite);
+		
+		
+		
 
-		//Set content
-		for (UncertaintyPropagationResultViewModel viewModel : uncertaintyPropagationResultViewModels) {
+		// Set content
+		for (UncertaintyPropagationResultViewModel viewModel : localUncertaintyPropagationResultViewModels) {
 			addViewModel(propagationResultComposite, viewModel);
 			addPlaceholder(propagationResultComposite);
 		}
 
 		// re-calculate size as soon as content is filled
 		sc.setMinSize(propagationResultComposite.computeSize(SWT.DEFAULT, SWT.DEFAULT));
-
-		return parent;
+		sc.getParent().getParent().layout(true, true);
+		
+		
 	}
 
 	/**
-	 * Add view model representation for each uncertainty propagation result view model
+	 * Add view model representation for each uncertainty propagation result view
+	 * model
+	 * 
 	 * @param container
 	 * @param propagationViewModel
 	 */
@@ -108,7 +219,7 @@ public class DisplayUncertaintyPropagationResultViewDialog extends TitleAreaDial
 	private void addLabel(Composite container, String text) {
 		ViewFactory.createFillingLabel(container, text);
 	}
-	
+
 	private void addEmptyLabel(Composite container) {
 		ViewFactory.createFillingLabel(container, "");
 	}
