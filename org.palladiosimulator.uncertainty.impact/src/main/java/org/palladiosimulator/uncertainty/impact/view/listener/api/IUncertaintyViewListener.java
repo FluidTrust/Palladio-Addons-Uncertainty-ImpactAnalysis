@@ -16,7 +16,7 @@ public interface IUncertaintyViewListener {
 
 	public void onSaveUncertaintyModelButtonClicked(String uncertaintyModelPath);
 
-	public void onSavePropagationButtonClicked(List<UncertaintyViewModel> list);
+	public void onSavePropagationButtonClicked(List<UncertaintyViewModel> list,  String uncertaintyPath);
 
 	public void onPropagateUncertaintiesButtonClicked(List<UncertaintyViewModel> collect);
 

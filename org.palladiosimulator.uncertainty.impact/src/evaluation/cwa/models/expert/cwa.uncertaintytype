@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uncertaintytype:UncertaintyTypeContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:uncertaintytype="http://www.example.org/uncertaintyType">
-  <uncertaintyTypes id="_nYW3AGpAEeyp9od8Nz5fnw" name="What is the distribution?" location="SYSTEM_ENVIRONMENT" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" resolutionTime="DEPLOYMENT_TIME" assignableElementType="HARDWARE_RESOURCE">
+  <uncertaintyTypes id="_nYW3AGpAEeyp9od8Nz5fnw" name="What is the distribution?" location="SYSTEM_ENVIRONMENT" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" resolutionTime="DEPLOYMENT_TIME">
     <resolvedBy href="cwa.add#_Vn290GbzEeyZX8-bSemQ7Q"/>
     <impactOnElementTypes>COMPONENT_INSTANCE</impactOnElementTypes>
     <impactOnElementTypes>COMMUNICATION_COMPONENT</impactOnElementTypes>
@@ -37,8 +37,9 @@
     <resolvedBy href="cwa.add#_XbvwsGo9Eeyp9od8Nz5fnw"/>
     <impactOnElementTypes>HARDWARE_RESOURCE</impactOnElementTypes>
   </uncertaintyTypes>
-  <uncertaintyTypes id="_vvFXwGpIEeyp9od8Nz5fnw" name="How is user identification performed?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="SYSTEM_INTERFACE">
+  <uncertaintyTypes id="_vvFXwGpIEeyp9od8Nz5fnw" name="How is user identification performed?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="COMPONENT_INTERFACE_TYPE">
     <resolvedBy href="cwa.add#_dgN0kGo9Eeyp9od8Nz5fnw"/>
+    <impactOnElementTypes>SYSTEM_INTERFACE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_8FOOAGpIEeyp9od8Nz5fnw" name="How is communicated?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="COMMUNICATION_COMPONENT">
     <resolvedBy href="cwa.add#_hcEmIGo9Eeyp9od8Nz5fnw"/>
@@ -47,7 +48,6 @@
   <uncertaintyTypes id="_Pz1tsGpJEeyp9od8Nz5fnw" name="Is communication intercepted?" location="SYSTEM_ENVIRONMENT" informationAvailability="RECOGNIZED_IGNORANCE" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="RUN_TIME" assignableElementType="COMMUNICATION_COMPONENT"/>
   <uncertaintyTypes id="_ap8UkGpJEeyp9od8Nz5fnw" name="Is data manipulated?" informationAvailability="RECOGNIZED_IGNORANCE" nature="EPISTEMIC" resolutionTime="RUN_TIME" assignableElementType="COMMUNICATION_COMPONENT">
     <impactOnElementTypes>COMPONENT_INTERFACE_INSTANCE</impactOnElementTypes>
-    <impactOnElementTypes>COMPONENT_INSTANCE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_ihBlkGpJEeyp9od8Nz5fnw" name="Is data separation performed?" assignableElementType="COMPONENT_INSTANCE">
     <resolvedBy href="cwa.add#_qq8wgGo9Eeyp9od8Nz5fnw"/>
@@ -71,10 +71,12 @@
     <resolvedBy href="cwa.add#_GgD2MGo-Eeyp9od8Nz5fnw"/>
   </uncertaintyTypes>
   <uncertaintyTypes id="_o1elMGpUEeyp9od8Nz5fnw" name="Is the component insecure due to software bugs?" location="SYSTEM_BEHAVIOUR" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" resolutionTime="NEVER" assignableElementType="BASIC_COMPONENT_TYPE"/>
-  <uncertaintyTypes id="_zm0A0GpUEeyp9od8Nz5fnw" name="Is input validated?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" rootCause="MISSING_INFORMATION" assignableElementType="BASIC_COMPONENT_TYPE">
+  <uncertaintyTypes id="_zm0A0GpUEeyp9od8Nz5fnw" name="Is input validated?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" severityOfImpact="LOW" rootCause="MISSING_INFORMATION" assignableElementType="SYSTEM_INTERFACE">
     <resolvedBy href="cwa.add#_MGJ8AGo-Eeyp9od8Nz5fnw"/>
   </uncertaintyTypes>
-  <uncertaintyTypes id="_JLDlYGpVEeyp9od8Nz5fnw" name="Are SQL Injection performed?" location="INPUT" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="RUN_TIME" assignableElementType="USAGE_BEHAVIOUR"/>
+  <uncertaintyTypes id="_JLDlYGpVEeyp9od8Nz5fnw" name="Are SQL Injection performed?" location="INPUT" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="RUN_TIME" assignableElementType="USAGE_BEHAVIOUR">
+    <impactOnElementTypes>COMPONENT_INTERFACE_INSTANCE</impactOnElementTypes>
+  </uncertaintyTypes>
   <uncertaintyTypes id="_d0fukGpVEeyp9od8Nz5fnw" name="Where is deployed?" location="SYSTEM_ENVIRONMENT" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" resolutionTime="DEPLOYMENT_TIME" assignableElementType="HARDWARE_RESOURCE">
     <resolvedBy href="cwa.add#_PzGu4Go-Eeyp9od8Nz5fnw"/>
     <impactOnElementTypes>COMMUNICATION_COMPONENT</impactOnElementTypes>
@@ -85,6 +87,7 @@
   </uncertaintyTypes>
   <uncertaintyTypes id="_wZcQcGpVEeyp9od8Nz5fnw" name="Is the data anonymized?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="BASIC_COMPONENT_TYPE">
     <resolvedBy href="cwa.add#_a9WZwGo-Eeyp9od8Nz5fnw"/>
+    <impactOnElementTypes>COMPONENT_INTERFACE_TYPE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_oYXwwHBaEeywLb6LaI0O3Q" name="Where is data processed?" location="SYSTEM_BEHAVIOUR" informationAvailability="SCENARIO_UNCERTAINTY" nature="EPISTEMIC" manageability="PARTIAL_REDUCIBLE" impactOnConfidentiality="INDIRECT" resolutionTime="DESIGN_TIME" rootCause="MISSING_INFORMATION" assignableElementType="HARDWARE_RESOURCE">
     <resolvedBy href="cwa.add#_8uNzkGo7Eeyp9od8Nz5fnw"/>

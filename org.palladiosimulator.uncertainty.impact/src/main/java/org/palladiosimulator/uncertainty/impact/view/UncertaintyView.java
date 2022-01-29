@@ -334,7 +334,7 @@ public class UncertaintyView extends AbstractView implements IUncertaintyView {
 
 					// propagate and save checked elements only
 					listener.onSavePropagationButtonClicked(
-							checkedElements.stream().map(UncertaintyViewModel.class::cast).collect(Collectors.toList()));
+							checkedElements.stream().map(UncertaintyViewModel.class::cast).collect(Collectors.toList()), uncertaintyModelPathText.getText());
 
 					break;
 

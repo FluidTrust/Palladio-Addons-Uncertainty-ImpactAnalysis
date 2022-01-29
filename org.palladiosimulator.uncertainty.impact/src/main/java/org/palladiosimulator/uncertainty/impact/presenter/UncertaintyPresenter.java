@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import org.apache.commons.io.FilenameUtils;
 import org.palladiosimulator.uncertainty.impact.exception.ElementTypeNotSupportedException;
 import org.palladiosimulator.uncertainty.impact.exception.InitializePropagationException;
 import org.palladiosimulator.uncertainty.impact.exception.LoadModelFailedException;
@@ -32,6 +33,7 @@ import org.palladiosimulator.uncertainty.impact.view.api.IUncertaintyView;
 import org.palladiosimulator.uncertainty.impact.view.listener.api.IUncertaintyViewListener;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyPropagationResultViewModel;
 import org.palladiosimulator.uncertainty.impact.view.model.UncertaintyViewModel;
+import org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants;
 
 /**
  * MVP-related presenter for views of type {@link IUncertaintyView}. Implements
@@ -192,8 +194,7 @@ public class UncertaintyPresenter implements IUncertaintyPresenter, IUncertainty
 	 * @throws UncertaintyTemplateElementNotFoundException
 	 */
 	@Override
-	public void onDisplayTypeInformationButtonClicked(UncertaintyViewModel uncertaintyViewModel)
-			 {
+	public void onDisplayTypeInformationButtonClicked(UncertaintyViewModel uncertaintyViewModel) {
 
 		/*
 		 * UncertaintyViewModel already references UncertaintyTypeViewModel but we
@@ -207,11 +208,10 @@ public class UncertaintyPresenter implements IUncertaintyPresenter, IUncertainty
 			uncertaintyType = uncertaintyTemplateModel.getUncertaintyTypeById(uncertaintyTypeId);
 			view.displayUncertaintyTypeInformation(
 					ModelToViewModelConverter.convertUncertaintyTypeToUncertaintyTypeViewModel(uncertaintyType));
-			
+
 		} catch (UncertaintyTemplateElementNotFoundException e) {
 			view.showMessage("Error while retrieving uncertainty type information. Error message: " + e.getMessage());
 		}
-		
 
 	}
 
@@ -262,7 +262,8 @@ public class UncertaintyPresenter implements IUncertaintyPresenter, IUncertainty
 	 * propagation model)
 	 */
 	@Override
-	public void onSavePropagationButtonClicked(List<UncertaintyViewModel> uncertaintyViewModels) {
+	public void onSavePropagationButtonClicked(List<UncertaintyViewModel> uncertaintyViewModels,
+			String uncertaintyPath) {
 
 		if (!allModelsInitialized()) {
 			return;
@@ -274,12 +275,23 @@ public class UncertaintyPresenter implements IUncertaintyPresenter, IUncertainty
 		}
 
 		try {
-			SaveUncertaintyPropagationModelHelper.saveUncertaintyPropagation(ucArchitectureVersion);
+			SaveUncertaintyPropagationModelHelper.saveUncertaintyPropagation(ucArchitectureVersion,
+					generateUncertaintyPropagationModelPath(uncertaintyPath));
 			view.showMessage("Save propagation successfull!");
 		} catch (SaveModelFailedException e) {
 			view.showMessage("Save propagation not successfull. Error message: " + e.getMessage());
 		}
 
+	}
+
+	/*
+	 * Transforms path from .uncertainty to .uncertaintypropagation
+	 */
+	private String generateUncertaintyPropagationModelPath(String uncertaintyModelPath) {
+
+		String noExtension = FilenameUtils.removeExtension(uncertaintyModelPath);
+
+		return noExtension + UncertaintyPluginConstants.FILEEXTENSION_UNCERTAINTY_PROPAGATION_WITH_DOT;
 	}
 
 	private UCArchitectureVersion executePropagation(List<UncertaintyViewModel> uncertaintyViewModels) {

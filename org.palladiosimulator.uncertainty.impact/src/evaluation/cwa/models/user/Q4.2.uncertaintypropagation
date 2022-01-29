@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uncertaintypropagation:UCImpactRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:allocation="http://palladiosimulator.org/PalladioComponentModel/Allocation/5.2" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.2" xmlns:uncertainty="http://www.example.org/uncertainty" xmlns:uncertaintypropagation="http://www.example.org/uncertaintyPropagation" xmlns:usagemodel="http://palladiosimulator.org/PalladioComponentModel/UsageModel/5.2">
+  <seedModifications xsi:type="uncertaintypropagation:UCPropagationRulesSeed">
+    <affectedBasicComponentTypes causingElements="_YlMwYIEYEeyvaZf_O3Z4uA _YlMwdIEYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_c0MJsFmiEeyIwpELWBrX7Q"/>
+    </affectedBasicComponentTypes>
+    <affectedBasicComponentTypes causingElements="_YlMwZYEYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_l1GtsFqsEeyjS5hmr-doJA"/>
+    </affectedBasicComponentTypes>
+    <affectedBasicComponentTypes causingElements="_YlMwZoEYEeyvaZf_O3Z4uA _YlMwcoEYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_JnEbIFsvEeyjS5hmr-doJA"/>
+    </affectedBasicComponentTypes>
+    <affectedBasicComponentTypes causingElements="_YlMwaYEYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_5rjAUFszEeyjS5hmr-doJA"/>
+    </affectedBasicComponentTypes>
+    <affectedCommunicationComponents causingElements="_YlMwaIEYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_KgZsYGG9EeyYW-3yWDgzyw"/>
+    </affectedCommunicationComponents>
+    <affectedCommunicationComponents causingElements="_YlMwc4EYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#__i6_MFs6EeyZguoeZPFbfQ"/>
+    </affectedCommunicationComponents>
+    <affectedComponentInterfaceTypes causingElements="_YlMwZIEYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.repository#_Ve-dQFsvEeyjS5hmr-doJA"/>
+    </affectedComponentInterfaceTypes>
+    <affectedComponentInterfaceTypes causingElements="_YlMwZ4EYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="repository:OperationRequiredRole" href="pcm/cwa.repository#_540PEGG8EeyYW-3yWDgzyw"/>
+    </affectedComponentInterfaceTypes>
+    <affectedComponentInterfaceTypes causingElements="_YlMwa4EYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="repository:OperationRequiredRole" href="pcm/cwa.repository#_z_r4gGG8EeyYW-3yWDgzyw"/>
+    </affectedComponentInterfaceTypes>
+    <affectedHardwareResources causingElements="_YlMwYYEYEeyvaZf_O3Z4uA _YlMwYoEYEeyvaZf_O3Z4uA _YlMwb4EYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+    </affectedHardwareResources>
+    <affectedHardwareResources causingElements="_YlMwaoEYEeyvaZf_O3Z4uA _YlMwcIEYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_v-rZAFqcEeyjS5hmr-doJA"/>
+    </affectedHardwareResources>
+    <affectedSystems causingElements="_YlMwbIEYEeyvaZf_O3Z4uA _YlMwbYEYEeyvaZf_O3Z4uA _YlMwcYEYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+    </affectedSystems>
+    <affectedSystemInterfaces causingElements="_YlMwY4EYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_wNXHQFs2EeyZguoeZPFbfQ"/>
+    </affectedSystemInterfaces>
+    <affectedSystemInterfaces causingElements="_YlMwboEYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_WCKfYGG9EeyYW-3yWDgzyw"/>
+    </affectedSystemInterfaces>
+    <affectedUsageBehaviours causingElements="_YlMwdYEYEeyvaZf_O3Z4uA">
+      <affectedElement xsi:type="usagemodel:EntryLevelSystemCall" href="pcm/cwa.usagemodel#_kcW4EGG9EeyYW-3yWDgzyw"/>
+    </affectedUsageBehaviours>
+    <causingUncertainties id="_YlMwYIEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_X2Gm0ID5Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwYYEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_ZwDLAID5Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwYoEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_glA3sID5Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwY4EYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_nzqPsID5Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwZIEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_roB5MID5Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwZYEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_uKiSMID5Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwZoEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_wS_zgID5Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwZ4EYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_zUywkID5Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwaIEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_3mJg8IENEeyeB-2n5eIveg"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwaYEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_7noJcID5Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwaoEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_CZgs8ID6Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwa4EYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_E0Q4IID6Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwbIEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_GnM1YID6Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwbYEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_Jyj-IID6Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwboEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_Mdky4ID6Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwb4EYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_Oy3PQID6Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwcIEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_ny8cAIEPEeyeB-2n5eIveg"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwcYEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_ZSNjAID6Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwcoEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_che7YID6Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwc4EYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_f98bMID6Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwdIEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_oQhVYID6Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwdYEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_yF1NoID6Eey-AqW8Trn55g"/>
+    </causingUncertainties>
+  </seedModifications>
+  <changePropagationSteps xsi:type="uncertaintypropagation:UncertaintyPropagation">
+    <affectedCommunicationComponents causingElements="_YlNXcIEYEeyvaZf_O3Z4uA _YlNXdIEYEeyvaZf_O3Z4uA _YlNXd4EYEeyvaZf_O3Z4uA" toolderived="true">
+      <affectedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_LseyAFs7EeyZguoeZPFbfQ"/>
+    </affectedCommunicationComponents>
+    <affectedCommunicationComponents causingElements="_YlNXcYEYEeyvaZf_O3Z4uA _YlNXdYEYEeyvaZf_O3Z4uA _YlNXeIEYEeyvaZf_O3Z4uA" toolderived="true">
+      <affectedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_jeVdoFs7EeyZguoeZPFbfQ"/>
+    </affectedCommunicationComponents>
+    <affectedCommunicationComponents causingElements="_YlNXcoEYEeyvaZf_O3Z4uA _YlNXdoEYEeyvaZf_O3Z4uA _YlNXeYEYEeyvaZf_O3Z4uA" toolderived="true">
+      <affectedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_EpCQYGG9EeyYW-3yWDgzyw"/>
+    </affectedCommunicationComponents>
+    <affecteComponentInstances causingElements="_YlNXc4EYEeyvaZf_O3Z4uA _YlNXeoEYEeyvaZf_O3Z4uA" toolderived="true">
+      <affectedElement xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+    </affecteComponentInstances>
+    <affectedComponentInterfaceInstances affectedElement="_efuEAFs6EeyZguoeZPFbfQ$_ujDeYFsyEeyjS5hmr-doJA" causingElements="_YlN-moEYEeyvaZf_O3Z4uA" toolderived="true"/>
+    <affectedHardwareResources causingElements="_YlMwdoEYEeyvaZf_O3Z4uA _YlMwd4EYEeyvaZf_O3Z4uA" toolderived="true">
+      <affectedElement xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_v-rZAFqcEeyjS5hmr-doJA"/>
+    </affectedHardwareResources>
+    <affectedHardwareResources causingElements="_YlMweIEYEeyvaZf_O3Z4uA" toolderived="true">
+      <affectedElement xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_ymr7wFwKEeyZguoeZPFbfQ"/>
+    </affectedHardwareResources>
+    <affectedHardwareResources causingElements="_YlMweYEYEeyvaZf_O3Z4uA" toolderived="true">
+      <affectedElement xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_4aV2oIEQEeybrP7eTZQWRw"/>
+    </affectedHardwareResources>
+    <affectedSystemInterface causingElements="_YlN-gIEYEeyvaZf_O3Z4uA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_wNXHQFs2EeyZguoeZPFbfQ"/>
+    </affectedSystemInterface>
+    <affectedSystemInterface causingElements="_YlN-gYEYEeyvaZf_O3Z4uA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_ihDygFs6EeyZguoeZPFbfQ"/>
+    </affectedSystemInterface>
+    <affectedSystemInterface causingElements="_YlN-goEYEeyvaZf_O3Z4uA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_WCKfYGG9EeyYW-3yWDgzyw"/>
+    </affectedSystemInterface>
+    <affectedSystemInterface causingElements="_YlN-g4EYEeyvaZf_O3Z4uA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationRequiredRole" href="pcm/cwa.system#_am3GoFs7EeyZguoeZPFbfQ"/>
+    </affectedSystemInterface>
+    <affectedSystemInterface causingElements="_YlN-hIEYEeyvaZf_O3Z4uA" toolderived="true">
+      <affectedElement xsi:type="repository:OperationRequiredRole" href="pcm/cwa.system#_Rt4mwGG9EeyYW-3yWDgzyw"/>
+    </affectedSystemInterface>
+    <causingUncertainties id="_YlMwdoEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_X2Gm0ID5Eey-AqW8Trn55g"/>
+      <path xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_c0MJsFmiEeyIwpELWBrX7Q"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.repository#_adwrcFsvEeyjS5hmr-doJA"/>
+      <path xsi:type="repository:CompositeComponent" href="pcm/cwa.repository#_U1OjoFqVEeyjS5hmr-doJA"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_skotEFs2EeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_wTRSMFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_v-rZAFqcEeyjS5hmr-doJA"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMwd4EYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_wS_zgID5Eey-AqW8Trn55g"/>
+      <path xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_JnEbIFsvEeyjS5hmr-doJA"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.repository#_b4T94FsvEeyjS5hmr-doJA"/>
+      <path xsi:type="repository:CompositeComponent" href="pcm/cwa.repository#_U1OjoFqVEeyjS5hmr-doJA"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_skotEFs2EeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_wTRSMFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_v-rZAFqcEeyjS5hmr-doJA"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMweIEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_3mJg8IENEeyeB-2n5eIveg"/>
+      <path xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_KgZsYGG9EeyYW-3yWDgzyw"/>
+      <path xsi:type="repository:OperationProvidedRole" href="pcm/cwa.repository#_icU9IFsyEeyjS5hmr-doJA"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_zBPAQFs6EeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_uJdtEFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_ymr7wFwKEeyZguoeZPFbfQ"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlMweYEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_3mJg8IENEeyeB-2n5eIveg"/>
+      <path xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_KgZsYGG9EeyYW-3yWDgzyw"/>
+      <path xsi:type="repository:OperationRequiredRole" href="pcm/cwa.repository#_ux8oUGG8EeyYW-3yWDgzyw"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_852XIGG8EeyYW-3yWDgzyw"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_BJuhQIEUEeybrP7eTZQWRw"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_4aV2oIEQEeybrP7eTZQWRw"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlNXcIEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_ZwDLAID5Eey-AqW8Trn55g"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_yF8JsFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_LseyAFs7EeyZguoeZPFbfQ"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlNXcYEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_ZwDLAID5Eey-AqW8Trn55g"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_yF8JsFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_jeVdoFs7EeyZguoeZPFbfQ"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlNXcoEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_ZwDLAID5Eey-AqW8Trn55g"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_yF8JsFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_EpCQYGG9EeyYW-3yWDgzyw"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlNXc4EYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_ZwDLAID5Eey-AqW8Trn55g"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_yF8JsFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlNXdIEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_glA3sID5Eey-AqW8Trn55g"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_yF8JsFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_LseyAFs7EeyZguoeZPFbfQ"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlNXdYEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_glA3sID5Eey-AqW8Trn55g"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_yF8JsFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_jeVdoFs7EeyZguoeZPFbfQ"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlNXdoEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_glA3sID5Eey-AqW8Trn55g"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_yF8JsFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_EpCQYGG9EeyYW-3yWDgzyw"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlNXd4EYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_Oy3PQID6Eey-AqW8Trn55g"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_yF8JsFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_LseyAFs7EeyZguoeZPFbfQ"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlNXeIEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_Oy3PQID6Eey-AqW8Trn55g"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_yF8JsFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_jeVdoFs7EeyZguoeZPFbfQ"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlNXeYEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_Oy3PQID6Eey-AqW8Trn55g"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_yF8JsFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_EpCQYGG9EeyYW-3yWDgzyw"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlNXeoEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_Oy3PQID6Eey-AqW8Trn55g"/>
+      <path xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+      <path xsi:type="allocation:AllocationContext" href="pcm/cwa.allocation#_yF8JsFwLEeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlN-gIEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_GnM1YID6Eey-AqW8Trn55g"/>
+      <path xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+      <path xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_wNXHQFs2EeyZguoeZPFbfQ"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlN-gYEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_GnM1YID6Eey-AqW8Trn55g"/>
+      <path xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+      <path xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_ihDygFs6EeyZguoeZPFbfQ"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlN-goEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_GnM1YID6Eey-AqW8Trn55g"/>
+      <path xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+      <path xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_WCKfYGG9EeyYW-3yWDgzyw"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlN-g4EYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_GnM1YID6Eey-AqW8Trn55g"/>
+      <path xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+      <path xsi:type="repository:OperationRequiredRole" href="pcm/cwa.system#_am3GoFs7EeyZguoeZPFbfQ"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlN-hIEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_GnM1YID6Eey-AqW8Trn55g"/>
+      <path xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+      <path xsi:type="repository:OperationRequiredRole" href="pcm/cwa.system#_Rt4mwGG9EeyYW-3yWDgzyw"/>
+    </causingUncertainties>
+    <causingUncertainties id="_YlN-moEYEeyvaZf_O3Z4uA">
+      <causingUncertainty href="Q4.2.uncertainty#_yF1NoID6Eey-AqW8Trn55g"/>
+      <path xsi:type="usagemodel:EntryLevelSystemCall" href="pcm/cwa.usagemodel#_kcW4EGG9EeyYW-3yWDgzyw"/>
+      <path xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_ihDygFs6EeyZguoeZPFbfQ"/>
+      <path xsi:type="composition:ProvidedDelegationConnector" href="pcm/cwa.system#_o9viEFs6EeyZguoeZPFbfQ"/>
+      <path xsi:type="uncertainty:ComponentInterfaceInstance" href="#_efuEAFs6EeyZguoeZPFbfQ$_ujDeYFsyEeyjS5hmr-doJA"/>
+    </causingUncertainties>
+    <componentInterfaceInstanceContainer>
+      <componentInterfaceInstances id="_efuEAFs6EeyZguoeZPFbfQ$_ujDeYFsyEeyjS5hmr-doJA" entityName="Assembly_Portal &lt;Portal> - Provided_IPortal_Portal">
+        <assemblyContext href="pcm/cwa.system#_efuEAFs6EeyZguoeZPFbfQ"/>
+        <interface xsi:type="repository:OperationProvidedRole" href="pcm/cwa.repository#_ujDeYFsyEeyjS5hmr-doJA"/>
+      </componentInterfaceInstances>
+    </componentInterfaceInstanceContainer>
+    <basicComponentBehaviourContainer/>
+  </changePropagationSteps>
+</uncertaintypropagation:UCImpactRepository>

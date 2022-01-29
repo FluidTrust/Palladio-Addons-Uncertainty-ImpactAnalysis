@@ -51,19 +51,25 @@ public class SaveUncertaintyPropagationModelHelper {
 
 	/**
 	 * Saves uncertainty propagation to predefined path: <br>
-	 * src/main/resources/models/user/modified/temp.uncertaintypropagation
+
 	 * 
 	 * @param version
 	 * @throws SaveModelFailedException
 	 */
-	public static void saveUncertaintyPropagation(UCArchitectureVersion version) throws SaveModelFailedException {
+	public static void saveUncertaintyPropagation(UCArchitectureVersion version, String path) throws SaveModelFailedException {
 
 		// Need to use PlatformResourceURI for saving!
-		URI uri = URI.createPlatformResourceURI(PLUGIN_URI_PREFIX + UNCERTAINTY_PROPAGATION_DEFAULT_LOCATION, false);
+		URI uri = getRelativePluginURI(path);
 
 		// Delegate with default path
 		saveUncertaintyPropagation(version, uri);
 
+	}
+	
+	
+	private static URI getRelativePluginURI(final String relativePath) {
+		// Need to use PlatformResourceURI for saving!
+		return URI.createPlatformResourceURI(PLUGIN_URI_PREFIX + relativePath, false);
 	}
 
 	/**

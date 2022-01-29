@@ -9,11 +9,11 @@
           <branchedBehaviour_BranchTransition id="_Gvx_wFtBEeyZguoeZPFbfQ">
             <actions_ScenarioBehaviour xsi:type="usagemodel:Start" id="_Gvx_wVtBEeyZguoeZPFbfQ" successor="_kcW4EGG9EeyYW-3yWDgzyw"/>
             <actions_ScenarioBehaviour xsi:type="usagemodel:Stop" id="_Gvym0FtBEeyZguoeZPFbfQ" predecessor="_qCJb4GG9EeyYW-3yWDgzyw"/>
-            <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_kcW4EGG9EeyYW-3yWDgzyw" successor="_qCJb4GG9EeyYW-3yWDgzyw" predecessor="_Gvx_wVtBEeyZguoeZPFbfQ">
+            <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_kcW4EGG9EeyYW-3yWDgzyw" entityName="provideTeleTANIHotline" successor="_qCJb4GG9EeyYW-3yWDgzyw" predecessor="_Gvx_wVtBEeyZguoeZPFbfQ">
               <providedRole_EntryLevelSystemCall href="cwa.system#_ihDygFs6EeyZguoeZPFbfQ"/>
               <operationSignature__EntryLevelSystemCall href="cwa.repository#_cGUi8FqmEeyjS5hmr-doJA"/>
             </actions_ScenarioBehaviour>
-            <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_qCJb4GG9EeyYW-3yWDgzyw" successor="_Gvym0FtBEeyZguoeZPFbfQ" predecessor="_kcW4EGG9EeyYW-3yWDgzyw">
+            <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_qCJb4GG9EeyYW-3yWDgzyw" entityName="provideTeleTANMobileUser" successor="_Gvym0FtBEeyZguoeZPFbfQ" predecessor="_kcW4EGG9EeyYW-3yWDgzyw">
               <providedRole_EntryLevelSystemCall href="cwa.system#_WCKfYGG9EeyYW-3yWDgzyw"/>
               <operationSignature__EntryLevelSystemCall href="cwa.repository#_OdiFwGG8EeyYW-3yWDgzyw"/>
             </actions_ScenarioBehaviour>
@@ -23,14 +23,14 @@
           <branchedBehaviour_BranchTransition id="_Nh2wgFtBEeyZguoeZPFbfQ">
             <actions_ScenarioBehaviour xsi:type="usagemodel:Start" id="_Nh2wgVtBEeyZguoeZPFbfQ" successor="_vS7ZAGG9EeyYW-3yWDgzyw"/>
             <actions_ScenarioBehaviour xsi:type="usagemodel:Stop" id="_Nh2wgltBEeyZguoeZPFbfQ" predecessor="_vS7ZAGG9EeyYW-3yWDgzyw"/>
-            <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_vS7ZAGG9EeyYW-3yWDgzyw" successor="_Nh2wgltBEeyZguoeZPFbfQ" predecessor="_Nh2wgVtBEeyZguoeZPFbfQ">
+            <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_vS7ZAGG9EeyYW-3yWDgzyw" entityName="scanTestQRCodeMobileUser" successor="_Nh2wgltBEeyZguoeZPFbfQ" predecessor="_Nh2wgVtBEeyZguoeZPFbfQ">
               <providedRole_EntryLevelSystemCall href="cwa.system#_WCKfYGG9EeyYW-3yWDgzyw"/>
               <operationSignature__EntryLevelSystemCall href="cwa.repository#_CdA6MGG8EeyYW-3yWDgzyw"/>
             </actions_ScenarioBehaviour>
           </branchedBehaviour_BranchTransition>
         </branchTransitions_Branch>
       </actions_ScenarioBehaviour>
-      <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_yBOLQGG9EeyYW-3yWDgzyw" successor="_991pAVtAEeyZguoeZPFbfQ" predecessor="_F3By0FtBEeyZguoeZPFbfQ">
+      <actions_ScenarioBehaviour xsi:type="usagemodel:EntryLevelSystemCall" id="_yBOLQGG9EeyYW-3yWDgzyw" entityName="uploadDiagnosisKeysMobileUser" successor="_991pAVtAEeyZguoeZPFbfQ" predecessor="_F3By0FtBEeyZguoeZPFbfQ">
         <providedRole_EntryLevelSystemCall href="cwa.system#_WCKfYGG9EeyYW-3yWDgzyw"/>
         <operationSignature__EntryLevelSystemCall href="cwa.repository#_M6bUQGG8EeyYW-3yWDgzyw"/>
       </actions_ScenarioBehaviour>

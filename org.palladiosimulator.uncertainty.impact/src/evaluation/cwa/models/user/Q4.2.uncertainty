@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uncertainty:UncertaintyContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.2" xmlns:uncertainty="http://www.example.org/uncertainty" xmlns:usagemodel="http://palladiosimulator.org/PalladioComponentModel/UsageModel/5.2">
+  <uncertainties id="_T0LpgID5Eey-AqW8Trn55g" name="CU1">
+    <assignedElement>
+      <referencedElement xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_nYW3AGpAEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_X2Gm0ID5Eey-AqW8Trn55g" name="CU2">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_c0MJsFmiEeyIwpELWBrX7Q"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_IGazMGpCEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_ZwDLAID5Eey-AqW8Trn55g" name="CU3">
+    <assignedElement>
+      <referencedElement xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_1ajUgGpCEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_b8HZ8ID5Eey-AqW8Trn55g" name="CU4">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_I9ECkFs0EeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_b3P5YGpCEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_glA3sID5Eey-AqW8Trn55g" name="CU5">
+    <assignedElement>
+      <referencedElement xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_oYXwwHBaEeywLb6LaI0O3Q"/>
+  </uncertainties>
+  <uncertainties id="_j0H4AID5Eey-AqW8Trn55g" name="CU6">
+    <assignedElement>
+      <referencedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_WCKfYGG9EeyYW-3yWDgzyw"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_vlSU0GpDEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_nzqPsID5Eey-AqW8Trn55g" name="CU7">
+    <assignedElement>
+      <referencedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_wNXHQFs2EeyZguoeZPFbfQ"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_myxg4GpEEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_roB5MID5Eey-AqW8Trn55g" name="CU8">
+    <assignedElement>
+      <referencedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.repository#_Ve-dQFsvEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_3THtwGpEEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_uKiSMID5Eey-AqW8Trn55g" name="CU9">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_l1GtsFqsEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_Fc_ygGpFEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_wS_zgID5Eey-AqW8Trn55g" name="CU10">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_JnEbIFsvEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_jL91cGpIEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_zUywkID5Eey-AqW8Trn55g" name="CU11">
+    <assignedElement>
+      <referencedElement xsi:type="repository:OperationRequiredRole" href="pcm/cwa.repository#_540PEGG8EeyYW-3yWDgzyw"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_vvFXwGpIEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_3mJg8IENEeyeB-2n5eIveg" name="CU12">
+    <assignedElement>
+      <referencedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_KgZsYGG9EeyYW-3yWDgzyw"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_8FOOAGpIEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_48ex0ID5Eey-AqW8Trn55g" name="CU13">
+    <assignedElement>
+      <referencedElement xsi:type="composition:AssemblyContext" href="pcm/cwa.system#_FeoIoFs7EeyZguoeZPFbfQ"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_ihBlkGpJEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_7noJcID5Eey-AqW8Trn55g" name="CU14">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_5rjAUFszEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_osCWUGpJEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_CZgs8ID6Eey-AqW8Trn55g" name="CU15">
+    <assignedElement>
+      <referencedElement xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_v-rZAFqcEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_2OtRIGpJEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_E0Q4IID6Eey-AqW8Trn55g" name="CU16">
+    <assignedElement>
+      <referencedElement xsi:type="repository:OperationRequiredRole" href="pcm/cwa.repository#_z_r4gGG8EeyYW-3yWDgzyw"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_BPnZ0GpKEeyp9od8Nu8gt"/>
+  </uncertainties>
+  <uncertainties id="_GnM1YID6Eey-AqW8Trn55g" name="CU17">
+    <assignedElement>
+      <referencedElement xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_s6r2IGpLEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_Jyj-IID6Eey-AqW8Trn55g" name="CU18">
+    <assignedElement>
+      <referencedElement xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_7mFTkGpLEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_Mdky4ID6Eey-AqW8Trn55g" name="CU19">
+    <assignedElement>
+      <referencedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_WCKfYGG9EeyYW-3yWDgzyw"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_zm0A0GpUEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_Oy3PQID6Eey-AqW8Trn55g" name="CU20">
+    <assignedElement>
+      <referencedElement xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_d0fukGpVEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_ny8cAIEPEeyeB-2n5eIveg" name="CU21">
+    <assignedElement>
+      <referencedElement xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_v-rZAFqcEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_ojdLoGpVEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_Xq7cIID6Eey-AqW8Trn55g" name="CU22">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_5rjAUFszEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_wZcQcGpVEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_ZSNjAID6Eey-AqW8Trn55g" name="CU23">
+    <assignedElement>
+      <referencedElement xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_4t3U0GpBEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_che7YID6Eey-AqW8Trn55g" name="CU24">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_JnEbIFsvEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_YUWk8GpDEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_f98bMID6Eey-AqW8Trn55g" name="CU25">
+    <assignedElement>
+      <referencedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#__i6_MFs6EeyZguoeZPFbfQ"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_Pz1tsGpJEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="__B0oUIENEeyeB-2n5eIveg" name="CU26">
+    <assignedElement>
+      <referencedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_EpCQYGG9EeyYW-3yWDgzyw"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_ap8UkGpJEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_oQhVYID6Eey-AqW8Trn55g" name="CU27">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_c0MJsFmiEeyIwpELWBrX7Q"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_o1elMGpUEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_yF1NoID6Eey-AqW8Trn55g" name="CU28">
+    <assignedElement>
+      <referencedElement xsi:type="usagemodel:EntryLevelSystemCall" href="pcm/cwa.usagemodel#_kcW4EGG9EeyYW-3yWDgzyw"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_JLDlYGpVEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertaintyTemplate href="../expert/cwa.uncertaintytemplate#/"/>
+</uncertainty:UncertaintyContainer>

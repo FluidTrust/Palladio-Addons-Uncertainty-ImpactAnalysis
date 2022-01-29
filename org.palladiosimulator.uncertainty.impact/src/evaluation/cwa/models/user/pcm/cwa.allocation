@@ -22,4 +22,8 @@
     <resourceContainer_AllocationContext href="cwa.resourceenvironment#_WMc6UFwLEeyZguoeZPFbfQ"/>
     <assemblyContext_AllocationContext href="cwa.system#_hD8e0Fs7EeyZguoeZPFbfQ"/>
   </allocationContexts_Allocation>
+  <allocationContexts_Allocation id="_BJuhQIEUEeybrP7eTZQWRw" entityName="Allocation_Assembly_CoronaWarnApp &lt;CoronaWarnApp> &lt;CoronaWarnApp>">
+    <resourceContainer_AllocationContext href="cwa.resourceenvironment#_4aV2oIEQEeybrP7eTZQWRw"/>
+    <assemblyContext_AllocationContext href="cwa.system#_852XIGG8EeyYW-3yWDgzyw"/>
+  </allocationContexts_Allocation>
 </allocation:Allocation>
