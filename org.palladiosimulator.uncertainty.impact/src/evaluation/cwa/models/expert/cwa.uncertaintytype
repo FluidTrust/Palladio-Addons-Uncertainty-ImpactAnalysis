@@ -46,7 +46,7 @@
     <impactOnElementTypes>HARDWARE_RESOURCE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_Pz1tsGpJEeyp9od8Nz5fnw" name="Is communication intercepted?" location="SYSTEM_ENVIRONMENT" informationAvailability="RECOGNIZED_IGNORANCE" nature="EPISTEMIC" impactOnConfidentiality="INDIRECT" resolutionTime="RUN_TIME" assignableElementType="COMMUNICATION_COMPONENT"/>
-  <uncertaintyTypes id="_ap8UkGpJEeyp9od8Nz5fnw" name="Is data manipulated?" informationAvailability="RECOGNIZED_IGNORANCE" nature="EPISTEMIC" resolutionTime="RUN_TIME" assignableElementType="COMMUNICATION_COMPONENT">
+  <uncertaintyTypes id="_ap8UkGpJEeyp9od8Nz5fnw" name="Is data manipulated?" informationAvailability="RECOGNIZED_IGNORANCE" nature="EPISTEMIC" manageability="IRREDUCIBLE" resolutionTime="RUN_TIME" assignableElementType="COMMUNICATION_COMPONENT">
     <impactOnElementTypes>COMPONENT_INTERFACE_INSTANCE</impactOnElementTypes>
   </uncertaintyTypes>
   <uncertaintyTypes id="_ihBlkGpJEeyp9od8Nz5fnw" name="Is data separation performed?" assignableElementType="COMPONENT_INSTANCE">
