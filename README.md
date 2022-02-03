@@ -314,7 +314,7 @@ The PCM defines various architectural elements to which uncertainties can and wi
 * **Component Interface Type**
 	* Technical element: Role
 	* Description:
-		* Refer to interface of all instantiated components of a certain type
+		* Refer to interface of all available basic components
 	* Additional Information:
 		* Only delegation to Role
 * **Hardware Resource**

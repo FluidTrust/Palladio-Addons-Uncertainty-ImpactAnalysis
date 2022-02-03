@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uncertainty:UncertaintyContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" xmlns:uncertainty="http://www.example.org/uncertainty">
+  <uncertainties id="_d61C4ITqEeyIQZY5ACVczg" name="S1_1">
+    <assignedElement>
+      <referencedElement xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_zudcIFwKEeyZguoeZPFbfQ"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_1ajUgGpCEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_fpFNEITtEeyIQZY5ACVczg" name="S1_2">
+    <assignedElement>
+      <referencedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.repository#_1PQJQFs1EeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_3THtwGpEEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_wZoZIITtEeyIQZY5ACVczg" name="S1_3">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_7oWWkFq3EeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_IGazMGpCEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_GT-wkITuEeyIQZY5ACVczg" name="S1_4">
+    <assignedElement>
+      <referencedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_jeVdoFs7EeyZguoeZPFbfQ"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_8FOOAGpIEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_TCGB8ITuEeyIQZY5ACVczg" name="S1_5">
+    <assignedElement>
+      <referencedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_EpCQYGG9EeyYW-3yWDgzyw"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_8FOOAGpIEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_utYdQITuEeyIQZY5ACVczg" name="S1_6">
+    <assignedElement>
+      <referencedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_LseyAFs7EeyZguoeZPFbfQ"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_8FOOAGpIEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_qYij8ITuEeyIQZY5ACVczg" name="S1_7">
+    <assignedElement>
+      <referencedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_jeVdoFs7EeyZguoeZPFbfQ"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_Pz1tsGpJEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertaintyTemplate href="../expert/cwa.uncertaintytemplate#/"/>
+</uncertainty:UncertaintyContainer>

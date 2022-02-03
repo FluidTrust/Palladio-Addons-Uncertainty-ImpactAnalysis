@@ -48,34 +48,30 @@ public class DisplayUncertaintyPropagationResultViewDialog extends TitleAreaDial
 
 	@Override
 	protected Control createDialogArea(Composite parent) {
-		
+
 		Composite innerParentComposite = ViewFactory.createComposite(parent, 1, 1);
 
 		/*
-		 *Composite that holds buttons for assessment purposes 
+		 * Composite that holds buttons for assessment purposes
 		 */
 		Composite buttonComposite = ViewFactory.createComposite(innerParentComposite, 3, 1);
 		fillButtonComposite(buttonComposite);
-		
-
 
 		// Set content
-		setPropagationContent(innerParentComposite,  uncertaintyPropagationResultViewModels);
+		setPropagationContent(innerParentComposite, uncertaintyPropagationResultViewModels);
 
 		return parent;
 	}
-	
+
 	private void fillButtonComposite(Composite parent) {
-		
-		
+
 		ViewFactory.createLabel(parent, "Uncertainty Assessment: ");
-		
-		Button sortButton = ViewFactory.createButton(parent, "Sort (Amount of Affected Element)", new GridData(GridData.HORIZONTAL_ALIGN_BEGINNING));
 
-		Button restoreDefaultButton = ViewFactory.createButton(parent, "Restore Default", new GridData(GridData.HORIZONTAL_ALIGN_BEGINNING));
+		Button sortButton = ViewFactory.createButton(parent, "Sort (Amount of Affected Element)",
+				new GridData(GridData.HORIZONTAL_ALIGN_BEGINNING));
 
-		
-
+		Button restoreDefaultButton = ViewFactory.createButton(parent, "Restore Default",
+				new GridData(GridData.HORIZONTAL_ALIGN_BEGINNING));
 
 		sortButton.addListener(SWT.Selection, new Listener() {
 
@@ -83,15 +79,15 @@ public class DisplayUncertaintyPropagationResultViewDialog extends TitleAreaDial
 			public void handleEvent(Event event) {
 				switch (event.type) {
 				case SWT.Selection:
-					setPropagationContent(parent, sortResultAccordingToAmountOfAffectedElements(uncertaintyPropagationResultViewModels));
+					setPropagationContent(parent,
+							sortResultAccordingToAmountOfAffectedElements(uncertaintyPropagationResultViewModels));
 					break;
 				}
 
 			}
 
 		});
-		
-		
+
 		restoreDefaultButton.addListener(SWT.Selection, new Listener() {
 
 			@Override
@@ -106,61 +102,47 @@ public class DisplayUncertaintyPropagationResultViewDialog extends TitleAreaDial
 
 		});
 	}
-	
-	
-	
 
 	private List<UncertaintyPropagationResultViewModel> sortResultAccordingToAmountOfAffectedElements(
 			List<UncertaintyPropagationResultViewModel> listToBeSorted) {
-		
-		
-		 List<UncertaintyPropagationResultViewModel> result = new ArrayList<>(listToBeSorted);
-		 
-		 Collections.sort(result, (a ,b) ->  Integer.compare(b.getAffectedElements().size(), a.getAffectedElements().size()));
-		 
-		 
-		 return result;
-		
-		
+
+		List<UncertaintyPropagationResultViewModel> result = new ArrayList<>(listToBeSorted);
+
+		Collections.sort(result,
+				(a, b) -> Integer.compare(b.getAffectedElements().size(), a.getAffectedElements().size()));
+
+		return result;
 
 	}
 
-	private void setPropagationContent(Composite parent, 
+	private void setPropagationContent(Composite parent,
 			List<UncertaintyPropagationResultViewModel> localUncertaintyPropagationResultViewModels) {
 
-		
 		ScrolledComposite sc = null;
-		
-		for(Control child : parent.getParent().getChildren()) {
-			
-			if(child instanceof ScrolledComposite) {
-				sc = (ScrolledComposite)child;
+
+		for (Control child : parent.getParent().getChildren()) {
+
+			if (child instanceof ScrolledComposite) {
+				sc = (ScrolledComposite) child;
 			}
 		}
-		
-		
-		if(sc == null) {
+
+		if (sc == null) {
 			sc = ViewFactory.createScrolledComposite(parent);
 		}
-		
-		
-		if(sc.getContent()!=null) {
+
+		if (sc.getContent() != null) {
 			Composite comp = (Composite) sc.getContent();
-			
-			
-			for(Control child : comp.getChildren()) {
+
+			for (Control child : comp.getChildren()) {
 				child.dispose();
 			}
 			sc.getContent().dispose();
 		}
-		
-		
+
 		Composite propagationResultComposite = ViewFactory.createDialogComposite(sc);
 		// Set scrollable content (= propagation results)
 		sc.setContent(propagationResultComposite);
-		
-		
-		
 
 		// Set content
 		for (UncertaintyPropagationResultViewModel viewModel : localUncertaintyPropagationResultViewModels) {
@@ -171,8 +153,7 @@ public class DisplayUncertaintyPropagationResultViewDialog extends TitleAreaDial
 		// re-calculate size as soon as content is filled
 		sc.setMinSize(propagationResultComposite.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 		sc.getParent().getParent().layout(true, true);
-		
-		
+
 	}
 
 	/**

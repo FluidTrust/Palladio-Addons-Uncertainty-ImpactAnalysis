@@ -94,10 +94,6 @@ public class PropagationFromAffectedComponentInterfaceTypeHelper extends Abstrac
 
 		for (ProvidedDelegationConnector providedSystemInterfaceDelegationConnector : providedSystemInterfaceDelegationConnectors) {
 
-			if (!providedSystemInterfaceDelegationConnector.getInnerProvidedRole_ProvidedDelegationConnector().getId()
-					.equals(expectedInterface.getId())) {
-				continue;
-			}
 
 			// Outer provided role represents system interface
 			Role systemInterface = providedSystemInterfaceDelegationConnector
@@ -127,10 +123,6 @@ public class PropagationFromAffectedComponentInterfaceTypeHelper extends Abstrac
 
 		for (RequiredDelegationConnector requiredSystemInterfaceDelegationConnector : requiredSystemInterfaceDelegationConnectors) {
 
-			if (!requiredSystemInterfaceDelegationConnector.getInnerRequiredRole_RequiredDelegationConnector().getId()
-					.equals(expectedInterface.getId())) {
-				continue;
-			}
 
 			// Outer required role also represents system interface
 			Role systemInterface = requiredSystemInterfaceDelegationConnector
@@ -176,7 +168,8 @@ public class PropagationFromAffectedComponentInterfaceTypeHelper extends Abstrac
 			List<UCImpactAtSystemInterface> affectedSystemInterfaces) throws UncertaintyPropagationException {
 
 		RepositoryComponent repositoryComponent = assemblyContext.getEncapsulatedComponent__AssemblyContext();
-
+		
+		
 		if (repositoryComponent instanceof BasicComponent) {
 			BasicComponent basicComponent = (BasicComponent) repositoryComponent;
 

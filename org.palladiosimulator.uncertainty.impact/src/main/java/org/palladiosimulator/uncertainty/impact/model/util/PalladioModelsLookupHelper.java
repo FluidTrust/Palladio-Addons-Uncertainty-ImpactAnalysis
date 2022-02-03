@@ -178,11 +178,12 @@ public class PalladioModelsLookupHelper {
 			throws PalladioElementNotFoundException {
 		validate(repository);
 		List<Role> roles = new ArrayList<>();
-
-		roles.addAll(repository.getComponents__Repository().stream()
+		
+		
+		roles.addAll(repository.getComponents__Repository().stream().filter(BasicComponent.class :: isInstance)
 				.map(InterfaceProvidingEntity::getProvidedRoles_InterfaceProvidingEntity).flatMap(List::stream)
 				.collect(Collectors.toList()));
-		roles.addAll(repository.getComponents__Repository().stream()
+		roles.addAll(repository.getComponents__Repository().stream().filter(BasicComponent.class :: isInstance)
 				.map(InterfaceRequiringEntity::getRequiredRoles_InterfaceRequiringEntity).flatMap(List::stream)
 				.collect(Collectors.toList()));
 		return roles;

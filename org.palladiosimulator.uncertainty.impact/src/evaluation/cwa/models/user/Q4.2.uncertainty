@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
 <uncertainty:UncertaintyContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:composition="http://palladiosimulator.org/PalladioComponentModel/Core/Composition/5.2" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:resourceenvironment="http://palladiosimulator.org/PalladioComponentModel/ResourceEnvironment/5.2" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.2" xmlns:uncertainty="http://www.example.org/uncertainty" xmlns:usagemodel="http://palladiosimulator.org/PalladioComponentModel/UsageModel/5.2">
-  <uncertainties id="_T0LpgID5Eey-AqW8Trn55g" name="CU1">
+  <uncertainties id="_rvYW8IQxEeyIQZY5ACVczg" name="CU1">
     <assignedElement>
       <referencedElement xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
     </assignedElement>
@@ -8,7 +8,7 @@
   </uncertainties>
   <uncertainties id="_X2Gm0ID5Eey-AqW8Trn55g" name="CU2">
     <assignedElement>
-      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_c0MJsFmiEeyIwpELWBrX7Q"/>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_JnEbIFsvEeyjS5hmr-doJA"/>
     </assignedElement>
     <uncertaintyType href="../expert/cwa.uncertaintytype#_IGazMGpCEeyp9od8Nz5fnw"/>
   </uncertainties>
