@@ -3,6 +3,7 @@ package org.palladiosimulator.uncertainty.impact.propagation.algorithms;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.composition.ProvidedDelegationConnector;
@@ -170,10 +171,11 @@ public class PropagationFromAffectedComponentInterfaceTypeHelper extends Abstrac
 
 		if (encapsulatedComponent instanceof BasicComponent) {
 			BasicComponent basicComponent = (BasicComponent) encapsulatedComponent;
-			List<ProvidedRole> providedRoles = basicComponent.getProvidedRoles_InterfaceProvidingEntity();
+			List<String> providedRoleIDs = basicComponent.getProvidedRoles_InterfaceProvidingEntity().stream()
+					.map(Role::getId).collect(Collectors.toList());
 
 			if (innerRole.getId().equals(expectedProvidedRole.getId())
-					&& providedRoles.contains(expectedProvidedRole)) { // MATCH!!!
+					&& providedRoleIDs.contains(expectedProvidedRole.getId())) { // MATCH!!!
 				List<Entity> completePath = new LinkedList<>(incompletePath);
 				completePath.add(0, outerRole);
 				completePath.add(0, providedDelegationConnector);
@@ -224,7 +226,7 @@ public class PropagationFromAffectedComponentInterfaceTypeHelper extends Abstrac
 
 	}
 
-	//See inspectProvidedDelegationConnectorsRecursively
+	// See inspectProvidedDelegationConnectorsRecursively
 	private void inspectRequiredDelegationConnectorsRecursively(RequiredDelegationConnector requiredDelegationConnector,
 			OperationRequiredRole expectedRequiredRole, OperationInterface expectedInterface,
 			List<Entity> incompletePath, Uncertainty uncertainty,
@@ -242,10 +244,11 @@ public class PropagationFromAffectedComponentInterfaceTypeHelper extends Abstrac
 
 		if (encapsulatedComponent instanceof BasicComponent) {
 			BasicComponent basicComponent = (BasicComponent) encapsulatedComponent;
-			List<RequiredRole> requiredRoles = basicComponent.getRequiredRoles_InterfaceRequiringEntity();
+			List<String> requiredRoleIDs = basicComponent.getRequiredRoles_InterfaceRequiringEntity().stream()
+					.map(Role::getId).collect(Collectors.toList());
 
 			if (innerRole.getId().equals(expectedRequiredRole.getId())
-					&& requiredRoles.contains(expectedRequiredRole)) { // MATCH!!!
+					&& requiredRoleIDs.contains(expectedRequiredRole.getId())) { // MATCH!!!
 				List<Entity> completePath = new LinkedList<>(incompletePath);
 				completePath.add(0, outerRole);
 				completePath.add(0, requiredDelegationConnector);

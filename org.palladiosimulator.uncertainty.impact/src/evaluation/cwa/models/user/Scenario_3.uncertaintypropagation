@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uncertaintypropagation:UCImpactRepository xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:uncertaintypropagation="http://www.example.org/uncertaintyPropagation">
+  <seedModifications xsi:type="uncertaintypropagation:UCPropagationRulesSeed">
+    <affectedComponentInterfaceTypes causingElements="_FIQW4IX3Eey-NJ8mluO6Ng">
+      <affectedElement xsi:type="repository:OperationRequiredRole" href="pcm/cwa.repository#_q0NncGG8EeyYW-3yWDgzyw"/>
+    </affectedComponentInterfaceTypes>
+    <causingUncertainties id="_FIQW4IX3Eey-NJ8mluO6Ng">
+      <causingUncertainty href="Scenario_3.uncertainty#_DRwvUIX3Eey-NJ8mluO6Ng"/>
+    </causingUncertainties>
+  </seedModifications>
+  <changePropagationSteps xsi:type="uncertaintypropagation:UncertaintyPropagation">
+    <componentInterfaceInstanceContainer/>
+    <basicComponentBehaviourContainer/>
+  </changePropagationSteps>
+</uncertaintypropagation:UCImpactRepository>

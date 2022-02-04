@@ -36,5 +36,11 @@
     </assignedElement>
     <uncertaintyType href="../expert/cwa.uncertaintytype#_2OtRIGpJEeyp9od8Nz5fnw"/>
   </uncertainties>
+  <uncertainties id="_4ewXYIYEEey-NJ8mluO6Ng" name="S2_7">
+    <assignedElement>
+      <referencedElement xsi:type="resourceenvironment:ResourceContainer" href="pcm/cwa.resourceenvironment#_v-rZAFqcEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_ojdLoGpVEeyp9od8Nz5fnw"/>
+  </uncertainties>
   <uncertaintyTemplate href="../expert/cwa.uncertaintytemplate#/"/>
 </uncertainty:UncertaintyContainer>

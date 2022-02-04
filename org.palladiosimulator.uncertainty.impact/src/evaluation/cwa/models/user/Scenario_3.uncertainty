@@ -36,5 +36,17 @@
     </assignedElement>
     <uncertaintyType href="../expert/cwa.uncertaintytype#_BPnZ0GpKEeyp9od8Nu8gt"/>
   </uncertainties>
+  <uncertainties id="_-Vy6sIXtEey4wIpjkfvxng" name="S3_7">
+    <assignedElement>
+      <referencedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.repository#_Ve-dQFsvEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_vvFXwGpIEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_DRwvUIX3Eey-NJ8mluO6Ng" name="S3_8">
+    <assignedElement>
+      <referencedElement xsi:type="repository:OperationRequiredRole" href="pcm/cwa.repository#_q0NncGG8EeyYW-3yWDgzyw"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_BPnZ0GpKEeyp9od8Nu8gt"/>
+  </uncertainties>
   <uncertaintyTemplate href="../expert/cwa.uncertaintytemplate#/"/>
 </uncertainty:UncertaintyContainer>

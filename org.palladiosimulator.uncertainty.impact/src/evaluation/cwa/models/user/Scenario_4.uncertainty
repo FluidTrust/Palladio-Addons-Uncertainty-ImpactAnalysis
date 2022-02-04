@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uncertainty:UncertaintyContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:system="http://palladiosimulator.org/PalladioComponentModel/System/5.2" xmlns:uncertainty="http://www.example.org/uncertainty">
+  <uncertainties id="_mV0q0IX-Eey-NJ8mluO6Ng" name="S4_1">
+    <assignedElement>
+      <referencedElement xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_s6r2IGpLEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_pY1I0IX-Eey-NJ8mluO6Ng" name="S4_2">
+    <assignedElement>
+      <referencedElement xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_7mFTkGpLEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_zsmesIX-Eey-NJ8mluO6Ng" name="S4_3">
+    <assignedElement>
+      <referencedElement xsi:type="system:System" href="pcm/cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_4t3U0GpBEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_35WL8IX-Eey-NJ8mluO6Ng" name="S4_4">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_488TsFrMEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_o1elMGpUEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertaintyTemplate href="../expert/cwa.uncertaintytemplate#/"/>
+</uncertainty:UncertaintyContainer>
