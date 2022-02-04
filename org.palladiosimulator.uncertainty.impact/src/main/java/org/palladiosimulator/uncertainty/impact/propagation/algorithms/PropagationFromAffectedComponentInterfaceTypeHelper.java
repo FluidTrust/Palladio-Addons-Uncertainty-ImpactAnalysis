@@ -7,10 +7,16 @@ import java.util.List;
 import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.composition.ProvidedDelegationConnector;
 import org.palladiosimulator.pcm.core.composition.RequiredDelegationConnector;
+import org.palladiosimulator.pcm.core.entity.ComposedProvidingRequiringEntity;
 import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.pcm.repository.BasicComponent;
 import org.palladiosimulator.pcm.repository.CompositeComponent;
+import org.palladiosimulator.pcm.repository.OperationInterface;
+import org.palladiosimulator.pcm.repository.OperationProvidedRole;
+import org.palladiosimulator.pcm.repository.OperationRequiredRole;
+import org.palladiosimulator.pcm.repository.ProvidedRole;
 import org.palladiosimulator.pcm.repository.RepositoryComponent;
+import org.palladiosimulator.pcm.repository.RequiredRole;
 import org.palladiosimulator.pcm.repository.Role;
 import org.palladiosimulator.uncertainty.impact.exception.PalladioElementNotFoundException;
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyPropagationException;
@@ -40,7 +46,7 @@ public class PropagationFromAffectedComponentInterfaceTypeHelper extends Abstrac
 			switch (rule) {
 
 			case FROM_COMPONENT_INTERFACE_TYPE_TO_SYSTEM_INTERFACE:
-				return propagateFromComponentInterfaceTypeToSystemInterfaces(uncertainty);
+				return propagateFromComponentInterfaceTypeToSystemInterfacesNew(uncertainty);
 
 			default:
 				throw new UncertaintyPropagationException(
@@ -94,7 +100,6 @@ public class PropagationFromAffectedComponentInterfaceTypeHelper extends Abstrac
 
 		for (ProvidedDelegationConnector providedSystemInterfaceDelegationConnector : providedSystemInterfaceDelegationConnectors) {
 
-
 			// Outer provided role represents system interface
 			Role systemInterface = providedSystemInterfaceDelegationConnector
 					.getOuterProvidedRole_ProvidedDelegationConnector();
@@ -123,7 +128,6 @@ public class PropagationFromAffectedComponentInterfaceTypeHelper extends Abstrac
 
 		for (RequiredDelegationConnector requiredSystemInterfaceDelegationConnector : requiredSystemInterfaceDelegationConnectors) {
 
-
 			// Outer required role also represents system interface
 			Role systemInterface = requiredSystemInterfaceDelegationConnector
 					.getOuterRequiredRole_RequiredDelegationConnector();
@@ -141,6 +145,190 @@ public class PropagationFromAffectedComponentInterfaceTypeHelper extends Abstrac
 		}
 
 		return affectedSystemInterfaces;
+
+	}
+
+	private List<? extends UCImpactEntity<? extends Entity>> propagateFromComponentInterfaceTypeToSystemInterfacesNew(
+			Uncertainty uncertainty) throws UncertaintyPropagationException, PalladioElementNotFoundException {
+
+		List<UCImpactAtSystemInterface> affectedSystemInterfaces = new ArrayList<>();
+
+		Role expectedRole = extractComponentInterfaceType(uncertainty);
+
+		if (expectedRole instanceof OperationProvidedRole) {
+			OperationProvidedRole expectedProvidedRole = (OperationProvidedRole) expectedRole;
+			OperationInterface expectedInterface = expectedProvidedRole.getProvidedInterface__OperationProvidedRole();
+			List<Entity> incompletePath = new LinkedList<>();
+
+			// Start with system provided interfaces
+			List<ProvidedDelegationConnector> providedSystemInterfaceDelegationConnectors = PalladioModelsLookupHelper
+					.getAllProvidedDelegationConnectors(version.getSystem());
+
+			for (ProvidedDelegationConnector providedDelegationConnector : providedSystemInterfaceDelegationConnectors) {
+				inspectProvidedDelegationConnectorsRecursively(providedDelegationConnector, expectedProvidedRole,
+						expectedInterface, incompletePath, uncertainty, affectedSystemInterfaces);
+			}
+
+		} else if (expectedRole instanceof OperationRequiredRole) {
+			OperationRequiredRole expectedRequiredRole = (OperationRequiredRole) expectedRole;
+			OperationInterface expectedInterface = expectedRequiredRole.getRequiredInterface__OperationRequiredRole();
+			List<Entity> incompletePath = new LinkedList<>();
+
+			// Continue with system requiring interfaces
+			List<RequiredDelegationConnector> requiredSystemInterfaceDelegationConnectors = PalladioModelsLookupHelper
+					.getAllRequiredDelegationConnectors(version.getSystem());
+
+			for (RequiredDelegationConnector requiredSystemInterfaceDelegationConnector : requiredSystemInterfaceDelegationConnectors) {
+				inspectRequiredDelegationConnectorsRecursively(requiredSystemInterfaceDelegationConnector,
+						expectedRequiredRole, expectedInterface, incompletePath, uncertainty, affectedSystemInterfaces);
+			}
+
+		} else {
+			throw new UncertaintyPropagationException("Cannot propagate. Type error occured!");
+		}
+
+		return affectedSystemInterfaces;
+	}
+
+	private void inspectProvidedDelegationConnectorsRecursively(ProvidedDelegationConnector providedDelegationConnector,
+			OperationProvidedRole expectedProvidedRole, OperationInterface expectedInterface,
+			List<Entity> incompletePath, Uncertainty uncertainty,
+			List<UCImpactAtSystemInterface> affectedSystemInterfaces)
+			throws UncertaintyPropagationException, PalladioElementNotFoundException {
+
+		OperationProvidedRole outerRole = providedDelegationConnector
+				.getOuterProvidedRole_ProvidedDelegationConnector();
+		OperationProvidedRole innerRole = providedDelegationConnector
+				.getInnerProvidedRole_ProvidedDelegationConnector();
+		AssemblyContext referencedAssemblyContext = providedDelegationConnector
+				.getAssemblyContext_ProvidedDelegationConnector();
+		RepositoryComponent encapsulatedComponent = referencedAssemblyContext
+				.getEncapsulatedComponent__AssemblyContext();
+
+		if (encapsulatedComponent instanceof BasicComponent) {
+			BasicComponent basicComponent = (BasicComponent) encapsulatedComponent;
+			List<ProvidedRole> providedRoles = basicComponent.getProvidedRoles_InterfaceProvidingEntity();
+
+			if (innerRole.getId().equals(expectedProvidedRole.getId())
+					&& providedRoles.contains(expectedProvidedRole)) { // MATCH!!!
+				List<Entity> completePath = new LinkedList<>(incompletePath);
+				completePath.add(0, outerRole);
+				completePath.add(0, providedDelegationConnector);
+				completePath.add(0, referencedAssemblyContext);
+				completePath.add(0, basicComponent);
+				completePath.add(0, expectedProvidedRole);
+
+				// Create UCImpactAtSystemInterface with encapsulated CausingUncertainty
+				CausingUncertainty causingUncertainty = UncertaintyPropagationFactoryHelper
+						.createCausingUncertainty(uncertaintyPropagation);
+				causingUncertainty.setCausingUncertainty(uncertainty);
+				causingUncertainty.getPath().addAll(completePath);
+
+				UCImpactAtSystemInterface ucImpactAtSystemInterface = UncertaintyPropagationFactoryHelper
+						.createUCImpactAtSystemInterface();
+				ucImpactAtSystemInterface.setToolderived(true);
+				// Last element was first element added and therefore system interface!
+				ucImpactAtSystemInterface.setAffectedElement((Role) completePath.get(completePath.size() - 1));
+				ucImpactAtSystemInterface.getCausingElements().add(causingUncertainty);
+
+				// Add to result set
+				affectedSystemInterfaces.add(ucImpactAtSystemInterface);
+			}
+
+		} else {
+			CompositeComponent compositeComponent = (CompositeComponent) encapsulatedComponent;
+			List<Entity> innerIncompletePath = new LinkedList<>(incompletePath);
+			innerIncompletePath.add(0, outerRole);
+			innerIncompletePath.add(0, providedDelegationConnector);
+			innerIncompletePath.add(0, referencedAssemblyContext);
+			innerIncompletePath.add(0, compositeComponent);
+
+			List<ProvidedDelegationConnector> innerProvidedDelegationConnectors = PalladioModelsLookupHelper
+					.getAllProvidedDelegationConnectors(compositeComponent);
+
+			for (ProvidedDelegationConnector innerProvidedDelegationConnector : innerProvidedDelegationConnectors) {
+				// outer role of encapsulated component matches inner role of outer delegation
+				// connector
+				if (innerProvidedDelegationConnector.getOuterProvidedRole_ProvidedDelegationConnector().getId()
+						.equals(innerRole.getId())) {
+					inspectProvidedDelegationConnectorsRecursively(innerProvidedDelegationConnector,
+							expectedProvidedRole, expectedInterface, innerIncompletePath, uncertainty,
+							affectedSystemInterfaces);
+				}
+			}
+
+		}
+
+	}
+
+	private void inspectRequiredDelegationConnectorsRecursively(RequiredDelegationConnector requiredDelegationConnector,
+			OperationRequiredRole expectedRequiredRole, OperationInterface expectedInterface,
+			List<Entity> incompletePath, Uncertainty uncertainty,
+			List<UCImpactAtSystemInterface> affectedSystemInterfaces)
+			throws UncertaintyPropagationException, PalladioElementNotFoundException {
+
+		OperationRequiredRole outerRole = requiredDelegationConnector
+				.getOuterRequiredRole_RequiredDelegationConnector();
+		OperationRequiredRole innerRole = requiredDelegationConnector
+				.getInnerRequiredRole_RequiredDelegationConnector();
+		AssemblyContext referencedAssemblyContext = requiredDelegationConnector
+				.getAssemblyContext_RequiredDelegationConnector();
+		RepositoryComponent encapsulatedComponent = referencedAssemblyContext
+				.getEncapsulatedComponent__AssemblyContext();
+
+		if (encapsulatedComponent instanceof BasicComponent) {
+			BasicComponent basicComponent = (BasicComponent) encapsulatedComponent;
+			List<RequiredRole> requiredRoles = basicComponent.getRequiredRoles_InterfaceRequiringEntity();
+
+			if (innerRole.getId().equals(expectedRequiredRole.getId())
+					&& requiredRoles.contains(expectedRequiredRole)) { // MATCH!!!
+				List<Entity> completePath = new LinkedList<>(incompletePath);
+				completePath.add(0, outerRole);
+				completePath.add(0, requiredDelegationConnector);
+				completePath.add(0, referencedAssemblyContext);
+				completePath.add(0, basicComponent);
+				completePath.add(0, expectedRequiredRole);
+
+				// Create UCImpactAtSystemInterface with encapsulated CausingUncertainty
+				CausingUncertainty causingUncertainty = UncertaintyPropagationFactoryHelper
+						.createCausingUncertainty(uncertaintyPropagation);
+				causingUncertainty.setCausingUncertainty(uncertainty);
+				causingUncertainty.getPath().addAll(completePath);
+
+				UCImpactAtSystemInterface ucImpactAtSystemInterface = UncertaintyPropagationFactoryHelper
+						.createUCImpactAtSystemInterface();
+				ucImpactAtSystemInterface.setToolderived(true);
+				// Last element was first element added and therefore system interface!
+				ucImpactAtSystemInterface.setAffectedElement((Role) completePath.get(completePath.size() - 1));
+				ucImpactAtSystemInterface.getCausingElements().add(causingUncertainty);
+
+				// Add to result set
+				affectedSystemInterfaces.add(ucImpactAtSystemInterface);
+			}
+
+		} else {
+			CompositeComponent compositeComponent = (CompositeComponent) encapsulatedComponent;
+			List<Entity> innerIncompletePath = new LinkedList<>(incompletePath);
+			innerIncompletePath.add(0, outerRole);
+			innerIncompletePath.add(0, requiredDelegationConnector);
+			innerIncompletePath.add(0, referencedAssemblyContext);
+			innerIncompletePath.add(0, compositeComponent);
+
+			List<RequiredDelegationConnector> innerProvidedDelegationConnectors = PalladioModelsLookupHelper
+					.getAllRequiredDelegationConnectors(compositeComponent);
+
+			for (RequiredDelegationConnector innerProvidedDelegationConnector : innerProvidedDelegationConnectors) {
+				// outer role of encapsulated component matches inner role of outer delegation
+				// connector
+				if (innerProvidedDelegationConnector.getOuterRequiredRole_RequiredDelegationConnector().getId()
+						.equals(innerRole.getId())) {
+					inspectRequiredDelegationConnectorsRecursively(innerProvidedDelegationConnector,
+							expectedRequiredRole, expectedInterface, innerIncompletePath, uncertainty,
+							affectedSystemInterfaces);
+				}
+			}
+
+		}
 
 	}
 
@@ -168,8 +356,7 @@ public class PropagationFromAffectedComponentInterfaceTypeHelper extends Abstrac
 			List<UCImpactAtSystemInterface> affectedSystemInterfaces) throws UncertaintyPropagationException {
 
 		RepositoryComponent repositoryComponent = assemblyContext.getEncapsulatedComponent__AssemblyContext();
-		
-		
+
 		if (repositoryComponent instanceof BasicComponent) {
 			BasicComponent basicComponent = (BasicComponent) repositoryComponent;
 

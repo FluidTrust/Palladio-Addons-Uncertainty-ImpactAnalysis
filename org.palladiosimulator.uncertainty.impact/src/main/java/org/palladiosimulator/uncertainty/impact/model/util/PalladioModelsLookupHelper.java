@@ -13,6 +13,8 @@ import org.palladiosimulator.pcm.core.composition.AssemblyContext;
 import org.palladiosimulator.pcm.core.composition.DelegationConnector;
 import org.palladiosimulator.pcm.core.composition.ProvidedDelegationConnector;
 import org.palladiosimulator.pcm.core.composition.RequiredDelegationConnector;
+import org.palladiosimulator.pcm.core.entity.ComposedProvidingRequiringEntity;
+import org.palladiosimulator.pcm.core.entity.Entity;
 import org.palladiosimulator.pcm.core.entity.InterfaceProvidingEntity;
 import org.palladiosimulator.pcm.core.entity.InterfaceRequiringEntity;
 import org.palladiosimulator.pcm.repository.BasicComponent;
@@ -351,6 +353,14 @@ public class PalladioModelsLookupHelper {
 		}
 
 	}
+	
+	private static void validate(Entity entity) throws PalladioElementNotFoundException {
+		if (entity == null) {
+			throw new PalladioElementNotFoundException(
+					"Cannot retrieve elements from entity as entity is null.");
+		}
+
+	}
 
 	private static void validate(Allocation allocation) throws PalladioElementNotFoundException {
 		if (allocation == null) {
@@ -377,11 +387,11 @@ public class PalladioModelsLookupHelper {
 	 * class DelegationConntector)
 	 * 
 	 */
-	public static List<ProvidedDelegationConnector> getAllProvidedDelegationConnectors(System system)
+	public static List<ProvidedDelegationConnector> getAllProvidedDelegationConnectors(ComposedProvidingRequiringEntity entity)
 			throws PalladioElementNotFoundException {
-		validate(system);
+		validate(entity);
 
-		return system.getConnectors__ComposedStructure().stream().filter(ProvidedDelegationConnector.class::isInstance)
+		return entity.getConnectors__ComposedStructure().stream().filter(ProvidedDelegationConnector.class::isInstance)
 				.map(ProvidedDelegationConnector.class::cast).collect(Collectors.toList());
 	}
 
@@ -391,11 +401,11 @@ public class PalladioModelsLookupHelper {
 	 * class DelegationConntector)
 	 * 
 	 */
-	public static List<RequiredDelegationConnector> getAllRequiredDelegationConnectors(System system)
+	public static List<RequiredDelegationConnector> getAllRequiredDelegationConnectors(ComposedProvidingRequiringEntity entity)
 			throws PalladioElementNotFoundException {
-		validate(system);
+		validate(entity);
 
-		return system.getConnectors__ComposedStructure().stream().filter(RequiredDelegationConnector.class::isInstance)
+		return entity.getConnectors__ComposedStructure().stream().filter(RequiredDelegationConnector.class::isInstance)
 				.map(RequiredDelegationConnector.class::cast).collect(Collectors.toList());
 	}
 

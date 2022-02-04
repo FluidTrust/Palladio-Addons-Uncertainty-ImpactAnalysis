@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uncertainty:UncertaintyContainer xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:repository="http://palladiosimulator.org/PalladioComponentModel/Repository/5.2" xmlns:uncertainty="http://www.example.org/uncertainty" xmlns:usagemodel="http://palladiosimulator.org/PalladioComponentModel/UsageModel/5.2">
+  <uncertainties id="_bpNX8IXOEeyxaLVHNtryPA" name="S3_1">
+    <assignedElement>
+      <referencedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_WCKfYGG9EeyYW-3yWDgzyw"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_myxg4GpEEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_jrvD8IXOEeyxaLVHNtryPA" name="S3_2">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_5rjAUFszEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_Fc_ygGpFEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_n22ZgIXOEeyxaLVHNtryPA" name="S3_3">
+    <assignedElement>
+      <referencedElement xsi:type="repository:BasicComponent" href="pcm/cwa.repository#_5rjAUFszEeyjS5hmr-doJA"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_osCWUGpJEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_slhIEIXOEeyxaLVHNtryPA" name="S3_4">
+    <assignedElement>
+      <referencedElement xsi:type="repository:OperationProvidedRole" href="pcm/cwa.system#_WCKfYGG9EeyYW-3yWDgzyw"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_zm0A0GpUEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_0H2REIXOEeyxaLVHNtryPA" name="S3_5">
+    <assignedElement>
+      <referencedElement xsi:type="usagemodel:EntryLevelSystemCall" href="pcm/cwa.usagemodel#_yBOLQGG9EeyYW-3yWDgzyw"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_JLDlYGpVEeyp9od8Nz5fnw"/>
+  </uncertainties>
+  <uncertainties id="_6Vh7UIXOEeyxaLVHNtryPA" name="S3_6">
+    <assignedElement>
+      <referencedElement xsi:type="repository:OperationRequiredRole" href="pcm/cwa.repository#_d7700GG5Eeyu14wnCa3pKQ"/>
+    </assignedElement>
+    <uncertaintyType href="../expert/cwa.uncertaintytype#_BPnZ0GpKEeyp9od8Nu8gt"/>
+  </uncertainties>
+  <uncertaintyTemplate href="../expert/cwa.uncertaintytemplate#/"/>
+</uncertainty:UncertaintyContainer>

@@ -59,6 +59,16 @@ public class DisplayUncertaintyPropagationResultViewDialog extends TitleAreaDial
 
 		// Set content
 		setPropagationContent(innerParentComposite, uncertaintyPropagationResultViewModels);
+		
+		
+		for(UncertaintyPropagationResultViewModel uncertaintyPropagationResultViewModel : uncertaintyPropagationResultViewModels) {
+			System.out.println("");
+			System.out.println(uncertaintyPropagationResultViewModel.getUncertainty().getName());
+			for(UCImpactUncertaintyAffectedElementViewModel model :  uncertaintyPropagationResultViewModel.getAffectedElements()) {
+				System.out.println(model.getElement());
+			}
+		}
+		
 
 		return parent;
 	}

@@ -67,9 +67,11 @@
     <semanticResources>src/evaluation/cwa/models/expert/cwa.uncertaintytemplate</semanticResources>
     <semanticResources>src/evaluation/cwa/models/user/Q4.2.uncertainty</semanticResources>
     <semanticResources>src/evaluation/cwa/models/user/Q4.2.uncertaintypropagation</semanticResources>
-    <semanticResources>src/evaluation/cwa/models/user/Q6.1_Scenario_2.uncertainty</semanticResources>
-    <semanticResources>src/evaluation/cwa/models/user/Q6.1_Scenario_1.uncertaintypropagation</semanticResources>
-    <semanticResources>src/evaluation/cwa/models/user/Q6.1_Scenario_1.uncertainty</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/Scenario_1.uncertainty</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/Scenario_1.uncertaintypropagation</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/Scenario_2.uncertainty</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/Scenario_2.uncertaintypropagation</semanticResources>
+    <semanticResources>src/evaluation/cwa/models/user/Scenario_3.uncertainty</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" uid="_Q5JEYFqcEeyjS5hmr-doJA">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/org.palladiosimulator.editors.sirius.usage/description/usage.odesign#//@ownedViewpoints[name='UsageModel']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" uid="_Q6FfkFqcEeyjS5hmr-doJA" name="new UsageModel Diagram" repPath="#_Q5jUEFqcEeyjS5hmr-doJA" changeId="374716ff-dbb0-46b8-b122-aa74377f508c">

@@ -24,19 +24,13 @@
     </assignedElement>
     <uncertaintyType href="../expert/cwa.uncertaintytype#_8FOOAGpIEeyp9od8Nz5fnw"/>
   </uncertainties>
-  <uncertainties id="_TCGB8ITuEeyIQZY5ACVczg" name="S1_5">
-    <assignedElement>
-      <referencedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_EpCQYGG9EeyYW-3yWDgzyw"/>
-    </assignedElement>
-    <uncertaintyType href="../expert/cwa.uncertaintytype#_8FOOAGpIEeyp9od8Nz5fnw"/>
-  </uncertainties>
-  <uncertainties id="_utYdQITuEeyIQZY5ACVczg" name="S1_6">
+  <uncertainties id="_utYdQITuEeyIQZY5ACVczg" name="S1_5">
     <assignedElement>
       <referencedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_LseyAFs7EeyZguoeZPFbfQ"/>
     </assignedElement>
     <uncertaintyType href="../expert/cwa.uncertaintytype#_8FOOAGpIEeyp9od8Nz5fnw"/>
   </uncertainties>
-  <uncertainties id="_qYij8ITuEeyIQZY5ACVczg" name="S1_7">
+  <uncertainties id="_qYij8ITuEeyIQZY5ACVczg" name="S1_6">
     <assignedElement>
       <referencedElement xsi:type="composition:AssemblyConnector" href="pcm/cwa.system#_jeVdoFs7EeyZguoeZPFbfQ"/>
     </assignedElement>

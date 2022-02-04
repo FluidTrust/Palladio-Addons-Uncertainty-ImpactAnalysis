@@ -217,7 +217,7 @@
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_WccAkWG9EeyYW-3yWDgzyw"/>
     </children>
     <element xmi:type="system:System" href="cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AOYbcVqVEeyjS5hmr-doJA" x="25" y="30" width="1271" height="696"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AOYbcVqVEeyjS5hmr-doJA" x="170" y="10" width="1271" height="696"/>
   </children>
   <styles xmi:type="notation:DiagramStyle" xmi:id="__1rnkVqUEeyjS5hmr-doJA"/>
   <element xmi:type="system:System" href="cwa.system#_4AJ1wFqUEeyjS5hmr-doJA"/>
