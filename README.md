@@ -181,11 +181,6 @@ This document provides a profound introduction into a Palladio extension which e
  ~> **Open Model_Hierarchy.pdf  to get a better overview!**
 
 ### Models
-* PalladioElementType
-	* org/palladiosimulator/uncertainty/impact/model/uncertaintymodel/model/palladioElementType.ecore
-	* Instance defines which palladio element types are currently supported by the plugin 
-		*  Might be extended in the future
-	* See Chapter *Palladio Element Types* for more specific information
 *  ADD
 	* org/palladiosimulator/uncertainty/impact/model/uncertaintymodel/model/add.ecore
 	* Instances define Set of Architectural Design Decisions (ADDs) with corresponding attributes
@@ -200,14 +195,11 @@ This document provides a profound introduction into a Palladio extension which e
 		* Reference to .add model
 			* Uncertainties might be resolved by specific ADD
 			* Reference to instantiated ADD indicates that uncertainties of given type are resolved by specific ADD 
-		* Reference to .palladioelementtype model: 
+		* Contains Enum that specifcies supported element types (See Supported Element Types) 
 			* Uncertainties of a certain type can only be assigned to one specific palladio element type
 			* Uncertainties of a certain type might have impact on various other element types
 * UncertaintyTemplate
 	* org/palladiosimulator/uncertainty/impact/model/uncertaintymodel/model/uncertaintyTemplate.ecore
-	* Instances reference one .uncertaintytype/.add/.palladioelementtype instance
-		* Only as kind of container
-		* ~> Facilitates reference for user (only reference one model instead of three)
 * Uncertainty
 	* org/palladiosimulator/uncertainty/impact/model/uncertaintymodel/model/uncertainty.ecore
 	* Instances define set of architecture specific Uncertainties
@@ -224,8 +216,6 @@ This document provides a profound introduction into a Palladio extension which e
 -------------------------------------------------
 
 * Scope:
-	* sample.palladioelementtype //do not use any other instance
-		* **Plug-In specific**: No exchange possible (code needs to be adapted otherwise)
 	* .add/.uncertaintyType/.uncertaintytemplate
 		* **Domain specific**: Created for domain (for instance: Information Systems)
 		* Valid for and referenced by all instances of .uncertainty models in a certain domain
@@ -239,21 +229,17 @@ This document provides a profound introduction into a Palladio extension which e
 
 ## Roles
 
-* Role 1) Plug-In Developer (Us)
-	* Define all Meta-Models (M2)
-	* Instantiate ".palladioelementtype" Model
-		* Defines which palladio element types are currently supported by the plugin (might be extended in the future)
-	* See Section "Palladio Element Types"
-* Role 2) "Expert" Architects:
+
+* Role 1) "Expert" Architects:
 	* Instantiates ".uncertaintytype", ".add", ".uncertaintytemplate" models
 		* Based on domain knowlegde & expertise 
 		* Supported by uncertainty taxonomy (see master thesis)
-* Role 3) "User" Architects
+* Role 2) "User" Architects
 	* Instantiate ".uncertainty"
 		* Do not need knowledge about the various types of uncertainty
 		* Use the plugin to annotate their architecture with actual uncertainties
 		* Use the plugin to propagate their uncertainties through the architecture
-* Role 4) Plug-In
+* Role 3) Plug-In
 	* Create UncertaintyPropagation model instances on the fly when user trigger "Propagate Uncertainties"
 	* Could be manually created by User Architects using the tree editor
 		* Cumbersome and error-prone!
@@ -266,8 +252,63 @@ This document provides a profound introduction into a Palladio extension which e
 ### Intro
 The PCM defines various architectural elements to which uncertainties can and will be assigned. However, their technical names do not always fit  our purpose. In the course of the uncertainty analysis, it became apparent that the technical PCM names are often not meaningful enough. For instance, the technical Element *AssemblyConnector* describes the communication between components in software architecture. A more suitable name in this case is therefore *CommunicationComponent*. But more important, the PCM uses the same technical elements to describe syntactically identical, but semantically different elements. The technical element *Role* for instance, refers to interfaces in general. As we want to distinguish between interfaces on component and system level, as well as between interfaces of instantiated components and component types, it is not possible to use the technical names. The introduction of self-defined names therefore allows for a more fine-grained selection of various element types.
 
-### Overview of supported elements
 
+
+
+
+
+
+## Uncertainty Propagation
+// See doc/Architectural_review.pdf for more detailed information
+
+Uncertainties can have a direct and an indirect impact on architectural elements. Direct impacts means that an uncertainty is directly assigned to an architectural element (type of the architectural element matches the assignableElementType as specified in the choosen uncertainty type). Indirect means, that uncertainties can have an indirect impact on other "structurally reachable"  architectural elements. The types (more than one possible!) of those elements are specified by the choosen uncertainty type (impactOn list).
+
+
+The reachable architectural elements are identified via propagation algorithms during the propagation. Propagation algorithms are selected by the starting element type (i.e. the assignable element type) and the ending element type (i.e. one of the types of the impactOn list). As n palladio elements produce n² combinations of starting and ending elements, we (Plugin Developer) must implement n² different algorithms which calculate all "reachable" elements, for uncertainties at a specific elements. So far, onyl a few (~6) algorithms are implemented
+
+
+"Structurally reachable" refers to architectural elements that are reachable from other architectural element when traversing the palladio models. 
+
+------------------------------
+
+### Example:
+
+#### Situation:
+
+* Component A is encapsulated in AssemblyContext A which is allocatioed on AllocationContext A which is deployed on Resource Container A
+* Component B is encapsulated in AssemblyContext B which is allocatioed on AllocationContext B which is deployed on Resource Container B
+* Uncertainty Type 1:
+	* Assignable Element Type: Components
+	* Impact On: Resource Container
+* Uncertainty x
+	* Type: Uncertainty Type 1
+	* Referenced Element: Component A
+	
+
+#### Propagation Algorithm: "Component ~> Resource Container"
+
+* Given Component 1
+	* ~> find AssemblyContexts in which instances of Component 1 are encapsulated
+	* ~> For each AssemblyContext:
+		* Retrieve AllocationContext & ResourceContainer
+
+#### Application of Propagation:
+
+* Given Uncertainty x 
+	* ReferencedElement: Component A
+	* Impact On: ResourceContainer //Info retrieved via Uncertainty Type 1
+	* Select propagation algortihm:
+		* From Component to Resource Contaner  => "Component ~> Resource Container"
+	* Execute Propagation
+		* Component A ~> AssemblyContext A ~> AllocationContext A ~> Resource Container A
+	* Result:
+		* Uncertainty x with Uncertainty Type 1 and assigned to Component A
+			* Directly affects Component A //trivial
+			* Indirectly affects Resource Container A //Propagation result
+
+## Overview of supported elements
+
+* // Specified as enum in UncertaintyTypeModel 
 
 * **Basic Component Behaviour**
 	* Technical element: ResourceDemaningSEFF
@@ -362,58 +403,8 @@ Following extensions for the future possible (NOT YET IMPLEMENTED!):
 		* Self defined Elemen required (propably quite complex)
 
 
-
-
-
-## Uncertainty Propagation
-//See Architectural_review.pdf for more detailed information
-
-Uncertainties can have a direct and an indirect impact on architectural elements. Direct impacts means that an uncertainty is directly assigned to an architectural element (type of the architectural element matches the assignableElementType as specified in the choosen uncertainty type). Indirect means, that uncertainties can have an indirect impact on other "structurally reachable"  architectural elements. The types (more than one possible!) of those elements are specified by the choosen uncertainty type (impactOn list).
-
-
-The reachable architectural elements are identified via propagation algorithms during the propagation. Propagation algorithms are selected by the starting element type (i.e. the assignable element type) and the ending element type (i.e. one of the types of the impactOn list). As n palladio elements produce n² combinations of starting and ending elements, we (Plugin Developer) must implement n² different algorithms which calculate all "reachable" elements, for uncertainties at a specific elements. So far, onyl a few (~6) algorithms are implemented
-
-
-"Structurally reachable" refers to architectural elements that are reachable from other architectural element when traversing the palladio models. 
-
-------------------------------
-
-### Example:
-
-#### Situation:
-
-* Component A is encapsulated in AssemblyContext A which is allocatioed on AllocationContext A which is deployed on Resource Container A
-* Component B is encapsulated in AssemblyContext B which is allocatioed on AllocationContext B which is deployed on Resource Container B
-* Uncertainty Type 1:
-	* Assignable Element Type: Components
-	* Impact On: Resource Container
-* Uncertainty x
-	* Type: Uncertainty Type 1
-	* Referenced Element: Component A
-	
-
-#### Propagation Algorithm: "Component ~> Resource Container"
-
-* Given Component 1
-	* ~> find AssemblyContexts in which instances of Component 1 are encapsulated
-	* ~> For each AssemblyContext:
-		* Retrieve AllocationContext & ResourceContainer
-
-#### Application of Propagation:
-
-* Given Uncertainty x 
-	* ReferencedElement: Component A
-	* Impact On: ResourceContainer //Info retrieved via Uncertainty Type 1
-	* Select propagation algortihm:
-		* From Component to Resource Contaner  => "Component ~> Resource Container"
-	* Execute Propagation
-		* Component A ~> AssemblyContext A ~> AllocationContext A ~> Resource Container A
-	* Result:
-		* Uncertainty x with Uncertainty Type 1 and assigned to Component A
-			* Directly affects Component A //trivial
-			* Indirectly affects Resource Container A //Propagation result
-
 --------------------------------------------
+
 
 ### Technical Overview:
 
@@ -523,7 +514,7 @@ Refers to Project: org.palladiosimulator.uncertainty.impact (src/main/java).
 	* UncertaintyModel.java
 		* In memory container for Uncertainties
 	* UncertaintyTemplateModel.java
-		* In memory container for PalladioElementType/Add/UncertaintyType Models
+		* In memory container for Add/UncertaintyType Models
 * Model Utility: (org.palladiosimulator.uncertainty.impact.model.util)
 	* PalladioElementWrapperFactoryHelper.java
 		* Need to wrap some Palladio-Elements as not every element extends Identifier/Entity
