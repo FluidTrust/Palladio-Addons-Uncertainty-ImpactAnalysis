@@ -1,13 +1,18 @@
 package org.palladiosimulator.uncertainty.impact.view;
 
+import java.awt.Toolkit;
+import java.awt.datatransfer.StringSelection;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.eclipse.jface.dialogs.IMessageProvider;
 import org.eclipse.jface.dialogs.TitleAreaDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.dnd.Clipboard;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -59,16 +64,15 @@ public class DisplayUncertaintyPropagationResultViewDialog extends TitleAreaDial
 
 		// Set content
 		setPropagationContent(innerParentComposite, uncertaintyPropagationResultViewModels);
-		
-		
-		for(UncertaintyPropagationResultViewModel uncertaintyPropagationResultViewModel : uncertaintyPropagationResultViewModels) {
+
+		for (UncertaintyPropagationResultViewModel uncertaintyPropagationResultViewModel : uncertaintyPropagationResultViewModels) {
 			System.out.println("");
 			System.out.println(uncertaintyPropagationResultViewModel.getUncertainty().getName());
-			for(UCImpactUncertaintyAffectedElementViewModel model :  uncertaintyPropagationResultViewModel.getAffectedElements()) {
+			for (UCImpactUncertaintyAffectedElementViewModel model : uncertaintyPropagationResultViewModel
+					.getAffectedElements()) {
 				System.out.println(model.getElement());
 			}
 		}
-		
 
 		return parent;
 	}
@@ -81,6 +85,9 @@ public class DisplayUncertaintyPropagationResultViewDialog extends TitleAreaDial
 				new GridData(GridData.HORIZONTAL_ALIGN_BEGINNING));
 
 		Button restoreDefaultButton = ViewFactory.createButton(parent, "Restore Default",
+				new GridData(GridData.HORIZONTAL_ALIGN_BEGINNING));
+
+		Button copyResultsButton = ViewFactory.createButton(parent, "Copy results to Clipboard",
 				new GridData(GridData.HORIZONTAL_ALIGN_BEGINNING));
 
 		sortButton.addListener(SWT.Selection, new Listener() {
@@ -105,6 +112,45 @@ public class DisplayUncertaintyPropagationResultViewDialog extends TitleAreaDial
 				switch (event.type) {
 				case SWT.Selection:
 					setPropagationContent(parent, uncertaintyPropagationResultViewModels);
+					break;
+				}
+
+			}
+
+		});
+
+		var clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+		copyResultsButton.addListener(SWT.Selection, new Listener() {
+
+			@Override
+			public void handleEvent(Event event) {
+				switch (event.type) {
+				case SWT.Selection:
+					Optional<String> propagations = uncertaintyPropagationResultViewModels.stream()
+							.map(propagationViewModel -> {
+								UncertaintyViewModel uncertaintyViewModel = propagationViewModel.getUncertainty();
+
+								String propagation = "ID: " + uncertaintyViewModel.getId() + "\n";
+								propagation += "Name: " + uncertaintyViewModel.getName() + "\n";
+
+								// Propagated to elements
+								propagation += "Propagated to: " + "\n";
+								for (UCImpactUncertaintyAffectedElementViewModel affectedElementViewModel : propagationViewModel
+										.getAffectedElements()) {
+									propagation += affectedElementViewModel.getElement() + "\n";
+
+									for (String pathEntryString : affectedElementViewModel.getPath()) {
+										propagation += "\t" + pathEntryString + "\n";
+									}
+
+								}
+								return propagation;
+							}).reduce((String a, String b) -> {
+								return a + "\n\nNEXT UNCERTAINTY \n" + b;
+							});
+					if (propagations.isPresent()) {
+						clipboard.setContents(new StringSelection(propagations.get()), null);
+					}
 					break;
 				}
 
