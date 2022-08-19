@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants.PLUGIN_URI_PREFIX;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +76,7 @@ public class PalladioPresenterTest extends TestBase {
 		modelPaths.add(resourceEnvPath);
 		modelPaths.add(systemPath);
 		modelPaths.add(usageModelPath);
-		modelPaths.add("invalid.allocation");
+		modelPaths.add(PLUGIN_URI_PREFIX + "invalid.allocation");
 
 		cut.onLoadPalladioModelsButtonClicked(modelPaths);
 		assertFalse(palladioModel.isInitialized());

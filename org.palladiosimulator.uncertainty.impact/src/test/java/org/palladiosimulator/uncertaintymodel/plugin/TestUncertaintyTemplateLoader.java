@@ -1,5 +1,7 @@
 package org.palladiosimulator.uncertaintymodel.plugin;
 
+import static org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants.PLUGIN_URI_PREFIX;
+
 import org.palladiosimulator.evaluation.generator.PalladioModelConvenienceMethodGenerator;
 import org.palladiosimulator.uncertainty.impact.exception.LoadModelFailedException;
 import org.palladiosimulator.uncertainty.impact.exception.UncertaintyTemplateElementNotFoundException;
@@ -14,7 +16,8 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertaintytype
  *
  */
 public class TestUncertaintyTemplateLoader extends TestBase {// TODO adapt paths to required models
-	private String uncertaintyTemplatePath = "src/test/resources/models/expert/test.uncertaintytemplate";
+	private String uncertaintyTemplatePath =
+			PLUGIN_URI_PREFIX + "src/test/resources/models/expert/test.uncertaintytemplate";
 
 	private UncertaintyTemplateModel model;
 

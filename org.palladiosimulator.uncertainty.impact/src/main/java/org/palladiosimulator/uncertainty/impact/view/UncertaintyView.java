@@ -1,5 +1,7 @@
 package org.palladiosimulator.uncertainty.impact.view;
 
+import static org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants.PLUGIN_URI_PREFIX;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -80,7 +82,7 @@ public class UncertaintyView extends AbstractView implements IUncertaintyView {
 		ViewFactory.createLabel(loadUncertaintyModelComposite, "Path to uncertainty model");
 
 		uncertaintyModelPathText = ViewFactory.createText(loadUncertaintyModelComposite,
-				"src/main/resources/models/user/sample.uncertainty", 2);
+				PLUGIN_URI_PREFIX + "src/main/resources/models/user/sample.uncertainty", 2);
 
 		Button button = ViewFactory.createButton(loadUncertaintyModelComposite, "Load Model");
 		button.addListener(SWT.Selection, new Listener() {

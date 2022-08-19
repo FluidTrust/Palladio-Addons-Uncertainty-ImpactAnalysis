@@ -1,5 +1,7 @@
 package org.palladiosimulator.uncertainty.impact.view;
 
+import static org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants.PLUGIN_URI_PREFIX;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,11 +33,16 @@ public class LoadPalladioModelsView extends AbstractView implements ILoadPalladi
 
 	private IPalladioViewListener listener;
 
-	private static String defaultAllocationModelPath = "src/main/resources/models/user/pcm/BookShop.allocation";
-	private static String defaultRepositoryModelPath = "src/main/resources/models/user/pcm/BookShop.repository";
-	private static String defaultResourceEnvironmentModelPath = "src/main/resources/models/user/pcm/BookShop.resourceenvironment";
-	private static String defaultSystemModelPath = "src/main/resources/models/user/pcm/BookShop.system";
-	private static String defaultUsageModelPath = "src/main/resources/models/user/pcm/BookShop.usagemodel";
+	private static String defaultAllocationModelPath =
+			PLUGIN_URI_PREFIX + "src/main/resources/models/user/pcm/BookShop.allocation";
+	private static String defaultRepositoryModelPath =
+			PLUGIN_URI_PREFIX + "src/main/resources/models/user/pcm/BookShop.repository";
+	private static String defaultResourceEnvironmentModelPath =
+			PLUGIN_URI_PREFIX + "src/main/resources/models/user/pcm/BookShop.resourceenvironment";
+	private static String defaultSystemModelPath =
+			PLUGIN_URI_PREFIX + "src/main/resources/models/user/pcm/BookShop.system";
+	private static String defaultUsageModelPath =
+			PLUGIN_URI_PREFIX + "src/main/resources/models/user/pcm/BookShop.usagemodel";
 
 	public LoadPalladioModelsView(Composite parent) {
 		super(parent);

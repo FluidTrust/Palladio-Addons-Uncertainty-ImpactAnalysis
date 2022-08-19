@@ -369,7 +369,7 @@ public class UncertaintyPresenterTest extends TestBase {
 		uncertaintyTemplateModel.loadUncertaintyTemplateModel(uncertaintyTemplatePath);
 
 		// Execute test
-		cut.onLoadExistingModelButtonClicked("invalidPath");
+		cut.onLoadExistingModelButtonClicked(PLUGIN_URI_PREFIX + "invalidPath");
 
 		// Assert no model loaded
 		assertFalse(uncertaintyModel.isInitialized());
@@ -458,7 +458,7 @@ public class UncertaintyPresenterTest extends TestBase {
 		String modelSavePath = testDataPath + "temp.uncertainty";
 
 		// Execute test -> Save model to different location
-		cut.onSaveUncertaintyModelButtonClicked(modelSavePath);
+		cut.onSaveUncertaintyModelButtonClicked(PLUGIN_URI_PREFIX + modelSavePath);
 
 		// assert view is called correctly
 		verify(view).showMessage("Save uncertainty model successful!");

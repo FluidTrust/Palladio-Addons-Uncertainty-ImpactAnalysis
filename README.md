@@ -90,21 +90,34 @@ This document provides a profound introduction into a Palladio extension which e
 		* Contact me!
 
 ### Step 4: Start Plugin in "inner" Eclipse Instance
-* Start new eclipse instance from current instance
-	* RightClick -> org.palladiosimulator.uncertainty.impact -> Run As -> Eclipse Application
-	* Create new workspace (do not reuse workspace of "outer" instance)
-	* Import org.palladiosimulator.uncertainty.impact from UncertaintPlugin
-		* Tree Editors for Uncertainty Models available in inner instance
-		* Sample uncertainty models located in
-			* src/test/resources
-			* src/main/resources
-		* Important: Do not change models in src/test/resources, as they are loaded for UnitTests
-			* Only create/change tests in src/main/resources
-	* Open Uncertainty View:
-		* Window -> Show View -> Other -> Search "UncertaintyView" -> Open
-		* Resize Window & Have fun!
+- Start new eclipse instance from current instance
+	- RightClick -> org.palladiosimulator.uncertainty.impact -> Run As -> Eclipse Application
+	- Create new workspace (do not reuse workspace of "outer" instance)
+    	- If not prompted to the _workspace selection dialog_,
+    	configur workspace in _Run Configurations_:
+			1. Create folder for "inner"-workspace next to the "outer"-workspace
+    		2. Open _Run Configurations_ dialog
+    		3. Under _Workspace Data_ insert
+    		`${workspace_loc}/../<foldername "inner"-workspace>`
+	- Import org.palladiosimulator.uncertainty.impact from UncertaintPlugin
+		- Tree Editors for Uncertainty Models available in inner instance
+		- Sample uncertainty models located in
+			- src/test/resources
+			- src/main/resources
+		- Important: Do not change models in src/test/resources, as they are loaded for UnitTests
+			- Only create/change tests in src/main/resources
+	- Open Uncertainty View:
+		- Window -> Show View -> Other -> Search "UncertaintyView" -> Open
+		- Resize Window & Have fun!
 
 ## Usage of UIA Plugin
+
+**Note:** The root directory for models to be analyzed is the "inner"-workspace folder.
+For example, for a project `org.palladiosimulator.uncertainty.impact`
+and models within this project `src/main/resources/models/...`
+the full path to be specified is
+`org.palladiosimulator.uncertainty.impact/src/main/resources/models/...`.
+For clarity, we let out the project name when specifying the paths in this documentation.
 
 ### Prerequisites
 * Installation completed
@@ -113,8 +126,10 @@ This document provides a profound introduction into a Palladio extension which e
 * Models loaded
 	* 1) Use sample models (already specified as default when starting the plugin)
 		* Palladio Models: Book Store Example
-		* Uncertainty Template Model: src/main/resources/models/expert/sample.uncertaintytemplate
-		* Uncertainty Model: src/main/resources/models/user/sample.uncertainty
+		* Uncertainty Template Model:
+			`src/main/resources/models/expert/sample.uncertaintytemplate`
+		* Uncertainty Model:
+			`src/main/resources/models/user/sample.uncertainty`
 	* 2) Define own models
 		* Models as specified in section *Models*
 		* Important: Models need to be in workspace (inner eclipse instance)!

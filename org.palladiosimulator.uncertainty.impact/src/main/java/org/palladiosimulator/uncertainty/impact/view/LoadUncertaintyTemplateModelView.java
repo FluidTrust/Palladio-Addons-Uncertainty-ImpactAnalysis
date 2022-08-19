@@ -1,5 +1,7 @@
 package org.palladiosimulator.uncertainty.impact.view;
 
+import static org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants.PLUGIN_URI_PREFIX;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
@@ -24,7 +26,8 @@ public class LoadUncertaintyTemplateModelView extends AbstractView implements IL
 
 	private Text pathToUncertaintyTemplateField;
 
-	private static String defaultUncertaintyTemplatePath = "src/main/resources/models/expert/sample.uncertaintytemplate";
+	private static String defaultUncertaintyTemplatePath =
+			PLUGIN_URI_PREFIX + "src/main/resources/models/expert/sample.uncertaintytemplate";
 
 	public LoadUncertaintyTemplateModelView(Composite parent) {
 		super(parent);

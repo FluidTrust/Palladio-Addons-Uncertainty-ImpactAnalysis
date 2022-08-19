@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
+import static org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants.PLUGIN_URI_PREFIX;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -41,7 +42,7 @@ public class UncertaintyTemplatePresenterTest extends TestBase {
 
 	@Test
 	public void testOnLoadUncertaintyTemplateButtonClicked_NotSuccessfull() {
-		cut.onLoadUncertaintyTemplateButtonClicked("invalidPath");
+		cut.onLoadUncertaintyTemplateButtonClicked(PLUGIN_URI_PREFIX + "invalidPath");
 		assertFalse(uncertaintyTemplateModel.isInitialized());
 		verify(view, times(1)).showMessage("Error while loading uncertainty template model. Error message = "
 				+ "Load resource with path '/resource/org.palladiosimulator.uncertainty.impact/invalidPath' failed.");
