@@ -47,7 +47,8 @@ public class SaveUncertaintyModelHelperTest extends TestBase {
 		model.addUncertainty(uncertainty_at_component_interface_instance);
 
 		// Execute save
-		SaveUncertaintyModelHelper.saveUncertaintyModel(model.getUncertaintyModel(), modelSavePath);
+		SaveUncertaintyModelHelper.saveUncertaintyModel(
+				model.getUncertaintyModel(), PLUGIN_URI_PREFIX + modelSavePath);
 
 		// Load saved model again (UncertaintyContainer is EMF representation for
 		// UncertaintyModel)

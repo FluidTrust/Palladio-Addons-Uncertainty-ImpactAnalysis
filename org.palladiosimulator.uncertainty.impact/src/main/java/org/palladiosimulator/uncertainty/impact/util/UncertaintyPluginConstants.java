@@ -7,7 +7,7 @@ public class UncertaintyPluginConstants {
 	}
 
 	// Plugin related constants
-	public static final String PLUGIN_URI_PREFIX = "/org.palladiosimulator.uncertainty.impact/";
+	public static final String PLUGIN_URI_PREFIX = "org.palladiosimulator.uncertainty.impact/";
 
 	// Uncertainty propagation related constants
 	public static final String FILEEXTENSION_UNCERTAINTY_PROPAGATION = "uncertaintypropagation";

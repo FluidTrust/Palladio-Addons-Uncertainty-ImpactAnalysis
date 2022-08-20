@@ -1,5 +1,7 @@
 package org.palladiosimulator.uncertaintymodel.plugin;
 
+import static org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants.PLUGIN_URI_PREFIX;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,11 +28,16 @@ import org.palladiosimulator.uncertainty.impact.uncertaintymodel.uncertainty.Com
  *
  */
 public class BookStoreLoader extends TestBase {// TODO adapt paths to required models
-	String allocationPath = "src/test/resources/models/user/pcm/BookShop.allocation";
-	String repositoryPath = "src/test/resources/models/user/pcm/BookShop.repository";
-	String resourceEnvPath = "src/test/resources/models/user/pcm/BookShop.resourceenvironment";
-	String systemPath = "src/test/resources/models/user/pcm/BookShop.system";
-	String usageModelPath = "src/test/resources/models/user/pcm/BookShop.usagemodel";
+	String allocationPath =
+		PLUGIN_URI_PREFIX + "src/test/resources/models/user/pcm/BookShop.allocation";
+	String repositoryPath =
+		PLUGIN_URI_PREFIX + "src/test/resources/models/user/pcm/BookShop.repository";
+	String resourceEnvPath =
+		PLUGIN_URI_PREFIX + "src/test/resources/models/user/pcm/BookShop.resourceenvironment";
+	String systemPath =
+		PLUGIN_URI_PREFIX + "src/test/resources/models/user/pcm/BookShop.system";
+	String usageModelPath =
+		PLUGIN_URI_PREFIX + "src/test/resources/models/user/pcm/BookShop.usagemodel";
 
 	List<String> palladioModelPaths = new ArrayList<>(
 			List.of(allocationPath, repositoryPath, resourceEnvPath, systemPath, usageModelPath));

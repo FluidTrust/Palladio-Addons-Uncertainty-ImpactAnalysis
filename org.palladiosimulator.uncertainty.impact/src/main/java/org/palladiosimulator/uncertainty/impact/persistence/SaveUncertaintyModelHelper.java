@@ -36,7 +36,7 @@ public class SaveUncertaintyModelHelper {
 			throw new SaveModelFailedException("Invalid path provided!");
 		}
 		
-		URI saveUri = getRelativePluginURI(modelPath);
+		URI saveUri = URI.createPlatformResourceURI(modelPath, false);
 
 		prepareUncertaintyModelForSaving(uncertaintyContainer);
 		EMFPersistenceHelper.saveEmfModelToURI(uncertaintyContainer, saveUri);
@@ -45,11 +45,6 @@ public class SaveUncertaintyModelHelper {
 
 	private static boolean checkPath(String modelPath) {
 		return modelPath.endsWith(FILEEXTENSION_UNCERTAINTY_WITH_DOT );
-	}
-
-	private static URI getRelativePluginURI(final String relativePath) {
-		// Need to use PlatformResourceURI for saving!
-		return URI.createPlatformResourceURI(PLUGIN_URI_PREFIX + relativePath, false);
 	}
 
 	/**

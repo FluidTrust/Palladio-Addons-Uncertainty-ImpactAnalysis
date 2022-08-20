@@ -1,7 +1,5 @@
 package org.palladiosimulator.uncertainty.impact.model;
 
-import static org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants.PLUGIN_URI_PREFIX;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,7 +59,7 @@ public abstract class Model {
 
 		for (final String modelPath : modelPaths) {
 			//Need to prepend plugin-relative prefix
-			Resource ressource = EMFPersistenceHelper.loadEmfResourceFromFile(PLUGIN_URI_PREFIX + modelPath, null, resourceSet);
+			Resource ressource = EMFPersistenceHelper.loadEmfResourceFromFile(modelPath, null, resourceSet);
 			listResources.add(ressource);
 		}
 

@@ -1,5 +1,7 @@
 package org.palladiosimulator.uncertaintymodel.plugin;
 
+import static org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants.PLUGIN_URI_PREFIX;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertNull;
@@ -59,14 +61,21 @@ import tools.mdsd.library.standalone.initialization.StandaloneInitializationExce
 public abstract class TestBase {
 
 	// Paths to Palladio Test Models
-	public static final String allocationPath = "src/test/resources/models/user/pcm/BookShop.allocation";
-	public static final String repositoryPath = "src/test/resources/models/user/pcm/BookShop.repository";
-	public static final String resourceEnvPath = "src/test/resources/models/user/pcm/BookShop.resourceenvironment";
-	public static final String systemPath = "src/test/resources/models/user/pcm/BookShop.system";
-	public static final String usageModelPath = "src/test/resources/models/user/pcm/BookShop.usagemodel";
+	public static final String allocationPath =
+		PLUGIN_URI_PREFIX + "src/test/resources/models/user/pcm/BookShop.allocation";
+	public static final String repositoryPath =
+		PLUGIN_URI_PREFIX + "src/test/resources/models/user/pcm/BookShop.repository";
+	public static final String resourceEnvPath =
+		PLUGIN_URI_PREFIX + "src/test/resources/models/user/pcm/BookShop.resourceenvironment";
+	public static final String systemPath =
+		PLUGIN_URI_PREFIX + "src/test/resources/models/user/pcm/BookShop.system";
+	public static final String usageModelPath =
+		PLUGIN_URI_PREFIX + "src/test/resources/models/user/pcm/BookShop.usagemodel";
 
-	public static final String uncertaintyPath = "src/test/resources/models/user/test.uncertainty";
-	public static final String uncertaintyTemplatePath = "src/test/resources/models/expert/test.uncertaintytemplate";
+	public static final String uncertaintyPath =
+		PLUGIN_URI_PREFIX + "src/test/resources/models/user/test.uncertainty";
+	public static final String uncertaintyTemplatePath =
+		PLUGIN_URI_PREFIX + "src/test/resources/models/expert/test.uncertaintytemplate";
 
 	public static final List<String> palladioModelPaths = new ArrayList<>(
 			List.of(allocationPath, repositoryPath, resourceEnvPath, systemPath, usageModelPath));

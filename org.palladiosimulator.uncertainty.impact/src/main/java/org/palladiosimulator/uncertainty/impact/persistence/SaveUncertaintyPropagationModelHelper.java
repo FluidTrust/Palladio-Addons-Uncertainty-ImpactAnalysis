@@ -1,8 +1,5 @@
 package org.palladiosimulator.uncertainty.impact.persistence;
 
-import static org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants.PLUGIN_URI_PREFIX;
-import static org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants.UNCERTAINTY_PROPAGATION_DEFAULT_LOCATION;
-
 import java.util.HashSet;
 import java.util.Set;
 
@@ -59,18 +56,13 @@ public class SaveUncertaintyPropagationModelHelper {
 	public static void saveUncertaintyPropagation(UCArchitectureVersion version, String path) throws SaveModelFailedException {
 
 		// Need to use PlatformResourceURI for saving!
-		URI uri = getRelativePluginURI(path);
+		URI uri = URI.createPlatformResourceURI(path, false);
 
 		// Delegate with default path
 		saveUncertaintyPropagation(version, uri);
 
 	}
-	
-	
-	private static URI getRelativePluginURI(final String relativePath) {
-		// Need to use PlatformResourceURI for saving!
-		return URI.createPlatformResourceURI(PLUGIN_URI_PREFIX + relativePath, false);
-	}
+
 
 	/**
 	 * In the course of the propagation, we create entities "on the fly" (i.e.

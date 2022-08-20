@@ -1,5 +1,7 @@
 package org.palladiosimulator.uncertainty.impact.view;
 
+import static org.palladiosimulator.uncertainty.impact.util.UncertaintyPluginConstants.PLUGIN_URI_PREFIX;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,11 +33,16 @@ public class LoadPalladioModelsView extends AbstractView implements ILoadPalladi
 
 	private IPalladioViewListener listener;
 
-	private static String defaultAllocationModelPath = "src/main/resources/models/user/pcm/BookShop.allocation";
-	private static String defaultRepositoryModelPath = "src/main/resources/models/user/pcm/BookShop.repository";
-	private static String defaultResourceEnvironmentModelPath = "src/main/resources/models/user/pcm/BookShop.resourceenvironment";
-	private static String defaultSystemModelPath = "src/main/resources/models/user/pcm/BookShop.system";
-	private static String defaultUsageModelPath = "src/main/resources/models/user/pcm/BookShop.usagemodel";
+	private static String defaultAllocationModelPath =
+			PLUGIN_URI_PREFIX + "src/main/resources/models/user/pcm/BookShop.allocation";
+	private static String defaultRepositoryModelPath =
+			PLUGIN_URI_PREFIX + "src/main/resources/models/user/pcm/BookShop.repository";
+	private static String defaultResourceEnvironmentModelPath =
+			PLUGIN_URI_PREFIX + "src/main/resources/models/user/pcm/BookShop.resourceenvironment";
+	private static String defaultSystemModelPath =
+			PLUGIN_URI_PREFIX + "src/main/resources/models/user/pcm/BookShop.system";
+	private static String defaultUsageModelPath =
+			PLUGIN_URI_PREFIX + "src/main/resources/models/user/pcm/BookShop.usagemodel";
 
 	public LoadPalladioModelsView(Composite parent) {
 		super(parent);
@@ -51,19 +58,39 @@ public class LoadPalladioModelsView extends AbstractView implements ILoadPalladi
 
 		// Create label and input fields for each palladio model
 		ViewFactory.createLabel(browseModelsComposite, "Path to repository file:");
+		String repositoryModelPath = System.getenv("UIA_REPOSITORY_MODEL_PATH"); 
+		if (repositoryModelPath != null) {
+			defaultRepositoryModelPath = repositoryModelPath;
+		}
 		pathToRepositoryField = ViewFactory.createText(browseModelsComposite, defaultRepositoryModelPath, 2);
 
 		ViewFactory.createLabel(browseModelsComposite, "Path to system file:");
+		String systemModelPath = System.getenv("UIA_SYSTEM_MODEL_PATH"); 
+		if (systemModelPath != null) {
+			defaultSystemModelPath = systemModelPath;
+		}
 		pathToSystemField = ViewFactory.createText(browseModelsComposite, defaultSystemModelPath, 2);
 
 		ViewFactory.createLabel(browseModelsComposite, "Path to allocation file:");
+		String allocationModelPath = System.getenv("UIA_ALLOCATION_MODEL_PATH"); 
+		if (allocationModelPath != null) {
+			defaultAllocationModelPath = allocationModelPath;
+		}
 		pathToAllocationField = ViewFactory.createText(browseModelsComposite, defaultAllocationModelPath, 2);
 
 		ViewFactory.createLabel(browseModelsComposite, "Path to resourceenvironment file:");
+		String resourceEnvironmentModelPath = System.getenv("UIA_RESOURCEENVIRONMENT_MODEL_PATH"); 
+		if (resourceEnvironmentModelPath != null) {
+			defaultResourceEnvironmentModelPath = resourceEnvironmentModelPath;
+		}
 		pathToResourceEnvironmentField = ViewFactory.createText(browseModelsComposite,
 				defaultResourceEnvironmentModelPath, 2);
 
 		ViewFactory.createLabel(browseModelsComposite, "Path to usagemodel file:");
+		String usageModelPath = System.getenv("UIA_USAGE_MODEL_PATH"); 
+		if (usageModelPath != null) {
+			defaultUsageModelPath = usageModelPath;
+		}
 		pathToUsageModelField = ViewFactory.createText(browseModelsComposite, defaultUsageModelPath, 2);
 
 	}
