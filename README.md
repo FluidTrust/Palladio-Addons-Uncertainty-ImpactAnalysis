@@ -119,6 +119,18 @@ the full path to be specified is
 `org.palladiosimulator.uncertainty.impact/src/main/resources/models/...`.
 For clarity, we let out the project name when specifying the paths in this documentation.
 
+## Environment Variables
+This extension accepts the following environment variables:
+- `UIA_UNCERTAINTY_PATH`
+- `UIA_UNCERTAINTYTEMPLATE_PATH`
+- `UIA_ALLOCATION_MODEL_PATH`
+- `UIA_REPOSITORY_MODEL_PATH`
+- `UIA_RESOURCEENVIRONMENT_MODEL_PATH`
+- `UIA_SYSTEM_MODEL_PATH`
+- `UIA_USAGE_MODEL_PATH`
+
+If set, each variable will be used as the initial value for the _Uncertainty View_.
+
 ### Prerequisites
 * Installation completed
 * Plugin started

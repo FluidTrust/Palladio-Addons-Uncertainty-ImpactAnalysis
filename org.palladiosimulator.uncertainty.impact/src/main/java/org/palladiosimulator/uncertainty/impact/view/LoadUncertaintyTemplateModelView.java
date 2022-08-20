@@ -42,6 +42,10 @@ public class LoadUncertaintyTemplateModelView extends AbstractView implements IL
 		
 		// Create label and input field
 		ViewFactory.createLabel(browseModelComposite, "Path to uncertainty template:        ");
+		String uncertaintyTemplatePath = System.getenv("UIA_UNCERTAINTYTEMPLATE_PATH");
+		if (uncertaintyTemplatePath != null) {
+			defaultUncertaintyTemplatePath = uncertaintyTemplatePath;
+		}
 		pathToUncertaintyTemplateField = ViewFactory.createText(browseModelComposite, defaultUncertaintyTemplatePath, 2);
 
 

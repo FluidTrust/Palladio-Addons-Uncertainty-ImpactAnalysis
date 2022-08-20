@@ -58,19 +58,39 @@ public class LoadPalladioModelsView extends AbstractView implements ILoadPalladi
 
 		// Create label and input fields for each palladio model
 		ViewFactory.createLabel(browseModelsComposite, "Path to repository file:");
+		String repositoryModelPath = System.getenv("UIA_REPOSITORY_MODEL_PATH"); 
+		if (repositoryModelPath != null) {
+			defaultRepositoryModelPath = repositoryModelPath;
+		}
 		pathToRepositoryField = ViewFactory.createText(browseModelsComposite, defaultRepositoryModelPath, 2);
 
 		ViewFactory.createLabel(browseModelsComposite, "Path to system file:");
+		String systemModelPath = System.getenv("UIA_SYSTEM_MODEL_PATH"); 
+		if (systemModelPath != null) {
+			defaultSystemModelPath = systemModelPath;
+		}
 		pathToSystemField = ViewFactory.createText(browseModelsComposite, defaultSystemModelPath, 2);
 
 		ViewFactory.createLabel(browseModelsComposite, "Path to allocation file:");
+		String allocationModelPath = System.getenv("UIA_ALLOCATION_MODEL_PATH"); 
+		if (allocationModelPath != null) {
+			defaultAllocationModelPath = allocationModelPath;
+		}
 		pathToAllocationField = ViewFactory.createText(browseModelsComposite, defaultAllocationModelPath, 2);
 
 		ViewFactory.createLabel(browseModelsComposite, "Path to resourceenvironment file:");
+		String resourceEnvironmentModelPath = System.getenv("UIA_RESOURCEENVIRONMENT_MODEL_PATH"); 
+		if (resourceEnvironmentModelPath != null) {
+			defaultResourceEnvironmentModelPath = resourceEnvironmentModelPath;
+		}
 		pathToResourceEnvironmentField = ViewFactory.createText(browseModelsComposite,
 				defaultResourceEnvironmentModelPath, 2);
 
 		ViewFactory.createLabel(browseModelsComposite, "Path to usagemodel file:");
+		String usageModelPath = System.getenv("UIA_USAGE_MODEL_PATH"); 
+		if (usageModelPath != null) {
+			defaultUsageModelPath = usageModelPath;
+		}
 		pathToUsageModelField = ViewFactory.createText(browseModelsComposite, defaultUsageModelPath, 2);
 
 	}
